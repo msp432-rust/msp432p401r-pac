@@ -1,5 +1,5 @@
 [package]
-name = "msp432p401r"
+name = "msp432p401r-pac"
 version = "0.1.0"
 authors = ["Caio Tavares <caio.tavares11@gmail.com>"]
 edition = "2018"
