@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Caio Tavares <caio.tavares11@gmail.com>"]
 description = "MSP432P401R Peripheral Access API (PAC)"
 keywords = ["msp432p401r", "arm", "pac", "cortex-m4"]
-repository = "https://github.com/caiotavares/MSP432P401R-PAC"
+repository = "https://github.com/msp432-rust/msp432p401r-pac"
 license-file = "LICENSE"
 edition = "2018"
 
