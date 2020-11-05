@@ -1,6 +1,6 @@
 [package]
 name = "msp432p401r-pac"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Caio Tavares <caio.tavares11@gmail.com>"]
 description = "MSP432P401R Peripheral Access API (PAC)"
 keywords = ["msp432p401r", "arm", "pac", "cortex-m4"]
