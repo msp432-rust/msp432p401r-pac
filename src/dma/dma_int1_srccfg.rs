@@ -1,18 +1,52 @@
-#[doc = "Reader of register DMA_INT1_SRCCFG"]
-pub type R = crate::R<u32, super::DMA_INT1_SRCCFG>;
-#[doc = "Writer for register DMA_INT1_SRCCFG"]
-pub type W = crate::W<u32, super::DMA_INT1_SRCCFG>;
-#[doc = "Register DMA_INT1_SRCCFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::DMA_INT1_SRCCFG {
-    type Type = u32;
+#[doc = "Register `DMA_INT1_SRCCFG` reader"]
+pub struct R(crate::R<DMA_INT1_SRCCFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DMA_INT1_SRCCFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `INT_SRC`"]
-pub type INT_SRC_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `INT_SRC`"]
+impl core::convert::From<crate::R<DMA_INT1_SRCCFG_SPEC>> for R {
+    fn from(reader: crate::R<DMA_INT1_SRCCFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DMA_INT1_SRCCFG` writer"]
+pub struct W(crate::W<DMA_INT1_SRCCFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DMA_INT1_SRCCFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<DMA_INT1_SRCCFG_SPEC>> for W {
+    fn from(writer: crate::W<DMA_INT1_SRCCFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `INT_SRC` reader - Controls which channel's completion event is mapped as a source of this Interrupt"]
+pub struct INT_SRC_R(crate::FieldReader<u8, u8>);
+impl INT_SRC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        INT_SRC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT_SRC_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT_SRC` writer - Controls which channel's completion event is mapped as a source of this Interrupt"]
 pub struct INT_SRC_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +54,25 @@ impl<'a> INT_SRC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
+        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
         self.w
     }
 }
-#[doc = "Reader of field `EN`"]
-pub type EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EN`"]
+#[doc = "Field `EN` reader - Enables DMA_INT1 mapping"]
+pub struct EN_R(crate::FieldReader<bool, bool>);
+impl EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EN` writer - Enables DMA_INT1 mapping"]
 pub struct EN_W<'a> {
     w: &'a mut W,
 }
@@ -44,7 +90,7 @@ impl<'a> EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -70,5 +116,30 @@ impl W {
     #[inline(always)]
     pub fn en(&mut self) -> EN_W {
         EN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt 1 Source Channel Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_int1_srccfg](index.html) module"]
+pub struct DMA_INT1_SRCCFG_SPEC;
+impl crate::RegisterSpec for DMA_INT1_SRCCFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dma_int1_srccfg::R](R) reader structure"]
+impl crate::Readable for DMA_INT1_SRCCFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dma_int1_srccfg::W](W) writer structure"]
+impl crate::Writable for DMA_INT1_SRCCFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DMA_INT1_SRCCFG to value 0"]
+impl crate::Resettable for DMA_INT1_SRCCFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

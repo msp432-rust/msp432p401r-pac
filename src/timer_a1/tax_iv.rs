@@ -1,5 +1,17 @@
-#[doc = "Reader of register TAxIV"]
-pub type R = crate::R<u16, super::TAXIV>;
+#[doc = "Register `TAxIV` reader"]
+pub struct R(crate::R<TAXIV_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TAXIV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<TAXIV_SPEC>> for R {
+    fn from(reader: crate::R<TAXIV_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "TimerA interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u16)]
@@ -27,64 +39,73 @@ impl From<TAIV_A> for u16 {
         variant as _
     }
 }
-#[doc = "Reader of field `TAIV`"]
-pub type TAIV_R = crate::R<u16, TAIV_A>;
+#[doc = "Field `TAIV` reader - TimerA interrupt vector value"]
+pub struct TAIV_R(crate::FieldReader<u16, TAIV_A>);
 impl TAIV_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        TAIV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, TAIV_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TAIV_A> {
         match self.bits {
-            0 => Val(TAIV_A::TAIV_0),
-            2 => Val(TAIV_A::TAIV_2),
-            4 => Val(TAIV_A::TAIV_4),
-            6 => Val(TAIV_A::TAIV_6),
-            8 => Val(TAIV_A::TAIV_8),
-            10 => Val(TAIV_A::TAIV_10),
-            12 => Val(TAIV_A::TAIV_12),
-            14 => Val(TAIV_A::TAIV_14),
-            i => Res(i),
+            0 => Some(TAIV_A::TAIV_0),
+            2 => Some(TAIV_A::TAIV_2),
+            4 => Some(TAIV_A::TAIV_4),
+            6 => Some(TAIV_A::TAIV_6),
+            8 => Some(TAIV_A::TAIV_8),
+            10 => Some(TAIV_A::TAIV_10),
+            12 => Some(TAIV_A::TAIV_12),
+            14 => Some(TAIV_A::TAIV_14),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `TAIV_0`"]
     #[inline(always)]
     pub fn is_taiv_0(&self) -> bool {
-        *self == TAIV_A::TAIV_0
+        **self == TAIV_A::TAIV_0
     }
     #[doc = "Checks if the value of the field is `TAIV_2`"]
     #[inline(always)]
     pub fn is_taiv_2(&self) -> bool {
-        *self == TAIV_A::TAIV_2
+        **self == TAIV_A::TAIV_2
     }
     #[doc = "Checks if the value of the field is `TAIV_4`"]
     #[inline(always)]
     pub fn is_taiv_4(&self) -> bool {
-        *self == TAIV_A::TAIV_4
+        **self == TAIV_A::TAIV_4
     }
     #[doc = "Checks if the value of the field is `TAIV_6`"]
     #[inline(always)]
     pub fn is_taiv_6(&self) -> bool {
-        *self == TAIV_A::TAIV_6
+        **self == TAIV_A::TAIV_6
     }
     #[doc = "Checks if the value of the field is `TAIV_8`"]
     #[inline(always)]
     pub fn is_taiv_8(&self) -> bool {
-        *self == TAIV_A::TAIV_8
+        **self == TAIV_A::TAIV_8
     }
     #[doc = "Checks if the value of the field is `TAIV_10`"]
     #[inline(always)]
     pub fn is_taiv_10(&self) -> bool {
-        *self == TAIV_A::TAIV_10
+        **self == TAIV_A::TAIV_10
     }
     #[doc = "Checks if the value of the field is `TAIV_12`"]
     #[inline(always)]
     pub fn is_taiv_12(&self) -> bool {
-        *self == TAIV_A::TAIV_12
+        **self == TAIV_A::TAIV_12
     }
     #[doc = "Checks if the value of the field is `TAIV_14`"]
     #[inline(always)]
     pub fn is_taiv_14(&self) -> bool {
-        *self == TAIV_A::TAIV_14
+        **self == TAIV_A::TAIV_14
+    }
+}
+impl core::ops::Deref for TAIV_R {
+    type Target = crate::FieldReader<u16, TAIV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -92,5 +113,21 @@ impl R {
     #[inline(always)]
     pub fn taiv(&self) -> TAIV_R {
         TAIV_R::new((self.bits & 0xffff) as u16)
+    }
+}
+#[doc = "TimerAx Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tax_iv](index.html) module"]
+pub struct TAXIV_SPEC;
+impl crate::RegisterSpec for TAXIV_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [tax_iv::R](R) reader structure"]
+impl crate::Readable for TAXIV_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets TAxIV to value 0"]
+impl crate::Resettable for TAXIV_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

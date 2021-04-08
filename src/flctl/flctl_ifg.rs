@@ -1,21 +1,129 @@
-#[doc = "Reader of register FLCTL_IFG"]
-pub type R = crate::R<u32, super::FLCTL_IFG>;
-#[doc = "Reader of field `RDBRST`"]
-pub type RDBRST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AVPRE`"]
-pub type AVPRE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AVPST`"]
-pub type AVPST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PRG`"]
-pub type PRG_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PRGB`"]
-pub type PRGB_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ERASE`"]
-pub type ERASE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BMRK`"]
-pub type BMRK_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PRG_ERR`"]
-pub type PRG_ERR_R = crate::R<bool, bool>;
+#[doc = "Register `FLCTL_IFG` reader"]
+pub struct R(crate::R<FLCTL_IFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FLCTL_IFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<FLCTL_IFG_SPEC>> for R {
+    fn from(reader: crate::R<FLCTL_IFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `RDBRST` reader - If set to 1, indicates that the Read Burst/Compare operation is complete"]
+pub struct RDBRST_R(crate::FieldReader<bool, bool>);
+impl RDBRST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RDBRST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RDBRST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AVPRE` reader - If set to 1, indicates that the pre-program verify operation has detected an error"]
+pub struct AVPRE_R(crate::FieldReader<bool, bool>);
+impl AVPRE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AVPRE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AVPRE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AVPST` reader - If set to 1, indicates that the post-program verify operation has failed comparison"]
+pub struct AVPST_R(crate::FieldReader<bool, bool>);
+impl AVPST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AVPST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AVPST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRG` reader - If set to 1, indicates that a word Program operation is complete"]
+pub struct PRG_R(crate::FieldReader<bool, bool>);
+impl PRG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PRG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRGB` reader - If set to 1, indicates that the configured Burst Program operation is complete"]
+pub struct PRGB_R(crate::FieldReader<bool, bool>);
+impl PRGB_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PRGB_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRGB_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERASE` reader - If set to 1, indicates that the Erase operation is complete"]
+pub struct ERASE_R(crate::FieldReader<bool, bool>);
+impl ERASE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERASE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ERASE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BMRK` reader - If set to 1, indicates that a Benchmark Compare match occurred"]
+pub struct BMRK_R(crate::FieldReader<bool, bool>);
+impl BMRK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BMRK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BMRK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRG_ERR` reader - If set to 1, indicates a word composition error in full word write mode (possible data loss due to writes crossing over to a new 128bit boundary before full word has been composed)"]
+pub struct PRG_ERR_R(crate::FieldReader<bool, bool>);
+impl PRG_ERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PRG_ERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRG_ERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - If set to 1, indicates that the Read Burst/Compare operation is complete"]
     #[inline(always)]
@@ -56,5 +164,21 @@ impl R {
     #[inline(always)]
     pub fn prg_err(&self) -> PRG_ERR_R {
         PRG_ERR_R::new(((self.bits >> 9) & 0x01) != 0)
+    }
+}
+#[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flctl_ifg](index.html) module"]
+pub struct FLCTL_IFG_SPEC;
+impl crate::RegisterSpec for FLCTL_IFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [flctl_ifg::R](R) reader structure"]
+impl crate::Readable for FLCTL_IFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets FLCTL_IFG to value 0"]
+impl crate::Resettable for FLCTL_IFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

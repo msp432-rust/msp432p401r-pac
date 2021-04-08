@@ -1,13 +1,35 @@
-#[doc = "Reader of register RTCCTL13"]
-pub type R = crate::R<u16, super::RTCCTL13>;
-#[doc = "Writer for register RTCCTL13"]
-pub type W = crate::W<u16, super::RTCCTL13>;
-#[doc = "Register RTCCTL13 `reset()`'s with value 0x70"]
-impl crate::ResetValue for super::RTCCTL13 {
-    type Type = u16;
+#[doc = "Register `RTCCTL13` reader"]
+pub struct R(crate::R<RTCCTL13_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RTCCTL13_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x70
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<RTCCTL13_SPEC>> for R {
+    fn from(reader: crate::R<RTCCTL13_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RTCCTL13` writer"]
+pub struct W(crate::W<RTCCTL13_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RTCCTL13_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<RTCCTL13_SPEC>> for W {
+    fn from(writer: crate::W<RTCCTL13_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Real-time clock time event\n\nValue on reset: 0"]
@@ -29,9 +51,12 @@ impl From<RTCTEV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RTCTEV`"]
-pub type RTCTEV_R = crate::R<u8, RTCTEV_A>;
+#[doc = "Field `RTCTEV` reader - Real-time clock time event"]
+pub struct RTCTEV_R(crate::FieldReader<u8, RTCTEV_A>);
 impl RTCTEV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RTCTEV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCTEV_A {
@@ -46,25 +71,32 @@ impl RTCTEV_R {
     #[doc = "Checks if the value of the field is `RTCTEV_0`"]
     #[inline(always)]
     pub fn is_rtctev_0(&self) -> bool {
-        *self == RTCTEV_A::RTCTEV_0
+        **self == RTCTEV_A::RTCTEV_0
     }
     #[doc = "Checks if the value of the field is `RTCTEV_1`"]
     #[inline(always)]
     pub fn is_rtctev_1(&self) -> bool {
-        *self == RTCTEV_A::RTCTEV_1
+        **self == RTCTEV_A::RTCTEV_1
     }
     #[doc = "Checks if the value of the field is `RTCTEV_2`"]
     #[inline(always)]
     pub fn is_rtctev_2(&self) -> bool {
-        *self == RTCTEV_A::RTCTEV_2
+        **self == RTCTEV_A::RTCTEV_2
     }
     #[doc = "Checks if the value of the field is `RTCTEV_3`"]
     #[inline(always)]
     pub fn is_rtctev_3(&self) -> bool {
-        *self == RTCTEV_A::RTCTEV_3
+        **self == RTCTEV_A::RTCTEV_3
     }
 }
-#[doc = "Write proxy for field `RTCTEV`"]
+impl core::ops::Deref for RTCTEV_R {
+    type Target = crate::FieldReader<u8, RTCTEV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCTEV` writer - Real-time clock time event"]
 pub struct RTCTEV_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +104,7 @@ impl<'a> RTCTEV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCTEV_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Minute changed"]
     #[inline(always)]
@@ -99,7 +129,7 @@ impl<'a> RTCTEV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u16) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u16 & 0x03);
         self.w
     }
 }
@@ -116,25 +146,34 @@ impl From<RTCSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RTCSSEL`"]
-pub type RTCSSEL_R = crate::R<u8, RTCSSEL_A>;
+#[doc = "Field `RTCSSEL` reader - Real-time clock source select"]
+pub struct RTCSSEL_R(crate::FieldReader<u8, RTCSSEL_A>);
 impl RTCSSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RTCSSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, RTCSSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<RTCSSEL_A> {
         match self.bits {
-            0 => Val(RTCSSEL_A::RTCSSEL_0),
-            i => Res(i),
+            0 => Some(RTCSSEL_A::RTCSSEL_0),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `RTCSSEL_0`"]
     #[inline(always)]
     pub fn is_rtcssel_0(&self) -> bool {
-        *self == RTCSSEL_A::RTCSSEL_0
+        **self == RTCSSEL_A::RTCSSEL_0
     }
 }
-#[doc = "Write proxy for field `RTCSSEL`"]
+impl core::ops::Deref for RTCSSEL_R {
+    type Target = crate::FieldReader<u8, RTCSSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCSSEL` writer - Real-time clock source select"]
 pub struct RTCSSEL_W<'a> {
     w: &'a mut W,
 }
@@ -152,7 +191,7 @@ impl<'a> RTCSSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u16) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u16 & 0x03) << 2);
         self.w
     }
 }
@@ -170,9 +209,12 @@ impl From<RTCRDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCRDY`"]
-pub type RTCRDY_R = crate::R<bool, RTCRDY_A>;
+#[doc = "Field `RTCRDY` reader - Real-time clock ready"]
+pub struct RTCRDY_R(crate::FieldReader<bool, RTCRDY_A>);
 impl RTCRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCRDY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCRDY_A {
@@ -184,12 +226,19 @@ impl RTCRDY_R {
     #[doc = "Checks if the value of the field is `RTCRDY_0`"]
     #[inline(always)]
     pub fn is_rtcrdy_0(&self) -> bool {
-        *self == RTCRDY_A::RTCRDY_0
+        **self == RTCRDY_A::RTCRDY_0
     }
     #[doc = "Checks if the value of the field is `RTCRDY_1`"]
     #[inline(always)]
     pub fn is_rtcrdy_1(&self) -> bool {
-        *self == RTCRDY_A::RTCRDY_1
+        **self == RTCRDY_A::RTCRDY_1
+    }
+}
+impl core::ops::Deref for RTCRDY_R {
+    type Target = crate::FieldReader<bool, RTCRDY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "\n\nValue on reset: 1"]
@@ -204,22 +253,31 @@ impl From<RTCMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCMODE`"]
-pub type RTCMODE_R = crate::R<bool, RTCMODE_A>;
+#[doc = "Field `RTCMODE` reader - "]
+pub struct RTCMODE_R(crate::FieldReader<bool, RTCMODE_A>);
 impl RTCMODE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCMODE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, RTCMODE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<RTCMODE_A> {
         match self.bits {
-            true => Val(RTCMODE_A::RTCMODE_1),
-            i => Res(i),
+            true => Some(RTCMODE_A::RTCMODE_1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `RTCMODE_1`"]
     #[inline(always)]
     pub fn is_rtcmode_1(&self) -> bool {
-        *self == RTCMODE_A::RTCMODE_1
+        **self == RTCMODE_A::RTCMODE_1
+    }
+}
+impl core::ops::Deref for RTCMODE_R {
+    type Target = crate::FieldReader<bool, RTCMODE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Real-time clock hold\n\nValue on reset: 1"]
@@ -236,9 +294,12 @@ impl From<RTCHOLD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCHOLD`"]
-pub type RTCHOLD_R = crate::R<bool, RTCHOLD_A>;
+#[doc = "Field `RTCHOLD` reader - Real-time clock hold"]
+pub struct RTCHOLD_R(crate::FieldReader<bool, RTCHOLD_A>);
 impl RTCHOLD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCHOLD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCHOLD_A {
@@ -250,15 +311,22 @@ impl RTCHOLD_R {
     #[doc = "Checks if the value of the field is `RTCHOLD_0`"]
     #[inline(always)]
     pub fn is_rtchold_0(&self) -> bool {
-        *self == RTCHOLD_A::RTCHOLD_0
+        **self == RTCHOLD_A::RTCHOLD_0
     }
     #[doc = "Checks if the value of the field is `RTCHOLD_1`"]
     #[inline(always)]
     pub fn is_rtchold_1(&self) -> bool {
-        *self == RTCHOLD_A::RTCHOLD_1
+        **self == RTCHOLD_A::RTCHOLD_1
     }
 }
-#[doc = "Write proxy for field `RTCHOLD`"]
+impl core::ops::Deref for RTCHOLD_R {
+    type Target = crate::FieldReader<bool, RTCHOLD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCHOLD` writer - Real-time clock hold"]
 pub struct RTCHOLD_W<'a> {
     w: &'a mut W,
 }
@@ -266,9 +334,7 @@ impl<'a> RTCHOLD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCHOLD_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Real-time clock is operational"]
     #[inline(always)]
@@ -293,7 +359,7 @@ impl<'a> RTCHOLD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
@@ -311,9 +377,12 @@ impl From<RTCBCD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCBCD`"]
-pub type RTCBCD_R = crate::R<bool, RTCBCD_A>;
+#[doc = "Field `RTCBCD` reader - Real-time clock BCD select"]
+pub struct RTCBCD_R(crate::FieldReader<bool, RTCBCD_A>);
 impl RTCBCD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCBCD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCBCD_A {
@@ -325,15 +394,22 @@ impl RTCBCD_R {
     #[doc = "Checks if the value of the field is `RTCBCD_0`"]
     #[inline(always)]
     pub fn is_rtcbcd_0(&self) -> bool {
-        *self == RTCBCD_A::RTCBCD_0
+        **self == RTCBCD_A::RTCBCD_0
     }
     #[doc = "Checks if the value of the field is `RTCBCD_1`"]
     #[inline(always)]
     pub fn is_rtcbcd_1(&self) -> bool {
-        *self == RTCBCD_A::RTCBCD_1
+        **self == RTCBCD_A::RTCBCD_1
     }
 }
-#[doc = "Write proxy for field `RTCBCD`"]
+impl core::ops::Deref for RTCBCD_R {
+    type Target = crate::FieldReader<bool, RTCBCD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCBCD` writer - Real-time clock BCD select"]
 pub struct RTCBCD_W<'a> {
     w: &'a mut W,
 }
@@ -341,9 +417,7 @@ impl<'a> RTCBCD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCBCD_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Binary (hexadecimal) code selected"]
     #[inline(always)]
@@ -368,7 +442,7 @@ impl<'a> RTCBCD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
@@ -391,9 +465,12 @@ impl From<RTCCALF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RTCCALF`"]
-pub type RTCCALF_R = crate::R<u8, RTCCALF_A>;
+#[doc = "Field `RTCCALF` reader - Real-time clock calibration frequency"]
+pub struct RTCCALF_R(crate::FieldReader<u8, RTCCALF_A>);
 impl RTCCALF_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RTCCALF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCCALF_A {
@@ -408,25 +485,32 @@ impl RTCCALF_R {
     #[doc = "Checks if the value of the field is `RTCCALF_0`"]
     #[inline(always)]
     pub fn is_rtccalf_0(&self) -> bool {
-        *self == RTCCALF_A::RTCCALF_0
+        **self == RTCCALF_A::RTCCALF_0
     }
     #[doc = "Checks if the value of the field is `RTCCALF_1`"]
     #[inline(always)]
     pub fn is_rtccalf_1(&self) -> bool {
-        *self == RTCCALF_A::RTCCALF_1
+        **self == RTCCALF_A::RTCCALF_1
     }
     #[doc = "Checks if the value of the field is `RTCCALF_2`"]
     #[inline(always)]
     pub fn is_rtccalf_2(&self) -> bool {
-        *self == RTCCALF_A::RTCCALF_2
+        **self == RTCCALF_A::RTCCALF_2
     }
     #[doc = "Checks if the value of the field is `RTCCALF_3`"]
     #[inline(always)]
     pub fn is_rtccalf_3(&self) -> bool {
-        *self == RTCCALF_A::RTCCALF_3
+        **self == RTCCALF_A::RTCCALF_3
     }
 }
-#[doc = "Write proxy for field `RTCCALF`"]
+impl core::ops::Deref for RTCCALF_R {
+    type Target = crate::FieldReader<u8, RTCCALF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCCALF` writer - Real-time clock calibration frequency"]
 pub struct RTCCALF_W<'a> {
     w: &'a mut W,
 }
@@ -434,9 +518,7 @@ impl<'a> RTCCALF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCCALF_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "No frequency output to RTCCLK pin"]
     #[inline(always)]
@@ -461,7 +543,7 @@ impl<'a> RTCCALF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u16) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u16 & 0x03) << 8);
         self.w
     }
 }
@@ -527,5 +609,30 @@ impl W {
     #[inline(always)]
     pub fn rtccalf(&mut self) -> RTCCALF_W {
         RTCCALF_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "RTCCTL13 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtcctl13](index.html) module"]
+pub struct RTCCTL13_SPEC;
+impl crate::RegisterSpec for RTCCTL13_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [rtcctl13::R](R) reader structure"]
+impl crate::Readable for RTCCTL13_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [rtcctl13::W](W) writer structure"]
+impl crate::Writable for RTCCTL13_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RTCCTL13 to value 0x70"]
+impl crate::Resettable for RTCCTL13_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x70
     }
 }

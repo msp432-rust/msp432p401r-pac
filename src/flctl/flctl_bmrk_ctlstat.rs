@@ -1,18 +1,52 @@
-#[doc = "Reader of register FLCTL_BMRK_CTLSTAT"]
-pub type R = crate::R<u32, super::FLCTL_BMRK_CTLSTAT>;
-#[doc = "Writer for register FLCTL_BMRK_CTLSTAT"]
-pub type W = crate::W<u32, super::FLCTL_BMRK_CTLSTAT>;
-#[doc = "Register FLCTL_BMRK_CTLSTAT `reset()`'s with value 0"]
-impl crate::ResetValue for super::FLCTL_BMRK_CTLSTAT {
-    type Type = u32;
+#[doc = "Register `FLCTL_BMRK_CTLSTAT` reader"]
+pub struct R(crate::R<FLCTL_BMRK_CTLSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FLCTL_BMRK_CTLSTAT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `I_BMRK`"]
-pub type I_BMRK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `I_BMRK`"]
+impl core::convert::From<crate::R<FLCTL_BMRK_CTLSTAT_SPEC>> for R {
+    fn from(reader: crate::R<FLCTL_BMRK_CTLSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FLCTL_BMRK_CTLSTAT` writer"]
+pub struct W(crate::W<FLCTL_BMRK_CTLSTAT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FLCTL_BMRK_CTLSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<FLCTL_BMRK_CTLSTAT_SPEC>> for W {
+    fn from(writer: crate::W<FLCTL_BMRK_CTLSTAT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `I_BMRK` reader - When 1, increments the Instruction Benchmark count register on each instruction fetch to the Flash"]
+pub struct I_BMRK_R(crate::FieldReader<bool, bool>);
+impl I_BMRK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        I_BMRK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for I_BMRK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `I_BMRK` writer - When 1, increments the Instruction Benchmark count register on each instruction fetch to the Flash"]
 pub struct I_BMRK_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> I_BMRK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `D_BMRK`"]
-pub type D_BMRK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `D_BMRK`"]
+#[doc = "Field `D_BMRK` reader - When 1, increments the Data Benchmark count register on each data read access to the Flash"]
+pub struct D_BMRK_R(crate::FieldReader<bool, bool>);
+impl D_BMRK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        D_BMRK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for D_BMRK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `D_BMRK` writer - When 1, increments the Data Benchmark count register on each data read access to the Flash"]
 pub struct D_BMRK_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> D_BMRK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `CMP_EN`"]
-pub type CMP_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CMP_EN`"]
+#[doc = "Field `CMP_EN` reader - When 1, enables comparison of the Instruction or Data Benchmark Registers against the threshold value"]
+pub struct CMP_EN_R(crate::FieldReader<bool, bool>);
+impl CMP_EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CMP_EN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CMP_EN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CMP_EN` writer - When 1, enables comparison of the Instruction or Data Benchmark Registers against the threshold value"]
 pub struct CMP_EN_W<'a> {
     w: &'a mut W,
 }
@@ -78,7 +136,7 @@ impl<'a> CMP_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -96,9 +154,12 @@ impl From<CMP_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CMP_SEL`"]
-pub type CMP_SEL_R = crate::R<bool, CMP_SEL_A>;
+#[doc = "Field `CMP_SEL` reader - Selects which benchmark register should be compared against the threshold"]
+pub struct CMP_SEL_R(crate::FieldReader<bool, CMP_SEL_A>);
 impl CMP_SEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CMP_SEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMP_SEL_A {
@@ -110,15 +171,22 @@ impl CMP_SEL_R {
     #[doc = "Checks if the value of the field is `EN_1_0X0`"]
     #[inline(always)]
     pub fn is_en_1_0x0(&self) -> bool {
-        *self == CMP_SEL_A::EN_1_0X0
+        **self == CMP_SEL_A::EN_1_0X0
     }
     #[doc = "Checks if the value of the field is `EN_2_0X1`"]
     #[inline(always)]
     pub fn is_en_2_0x1(&self) -> bool {
-        *self == CMP_SEL_A::EN_2_0X1
+        **self == CMP_SEL_A::EN_2_0X1
     }
 }
-#[doc = "Write proxy for field `CMP_SEL`"]
+impl core::ops::Deref for CMP_SEL_R {
+    type Target = crate::FieldReader<bool, CMP_SEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CMP_SEL` writer - Selects which benchmark register should be compared against the threshold"]
 pub struct CMP_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -126,9 +194,7 @@ impl<'a> CMP_SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CMP_SEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Compares the Instruction Benchmark Register against the threshold value"]
     #[inline(always)]
@@ -153,7 +219,7 @@ impl<'a> CMP_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -199,5 +265,30 @@ impl W {
     #[inline(always)]
     pub fn cmp_sel(&mut self) -> CMP_SEL_W {
         CMP_SEL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Benchmark Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flctl_bmrk_ctlstat](index.html) module"]
+pub struct FLCTL_BMRK_CTLSTAT_SPEC;
+impl crate::RegisterSpec for FLCTL_BMRK_CTLSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [flctl_bmrk_ctlstat::R](R) reader structure"]
+impl crate::Readable for FLCTL_BMRK_CTLSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [flctl_bmrk_ctlstat::W](W) writer structure"]
+impl crate::Writable for FLCTL_BMRK_CTLSTAT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FLCTL_BMRK_CTLSTAT to value 0"]
+impl crate::Resettable for FLCTL_BMRK_CTLSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

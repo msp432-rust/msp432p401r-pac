@@ -1,16 +1,38 @@
-#[doc = "Reader of register FLCTL_ERASE_CTLSTAT"]
-pub type R = crate::R<u32, super::FLCTL_ERASE_CTLSTAT>;
-#[doc = "Writer for register FLCTL_ERASE_CTLSTAT"]
-pub type W = crate::W<u32, super::FLCTL_ERASE_CTLSTAT>;
-#[doc = "Register FLCTL_ERASE_CTLSTAT `reset()`'s with value 0"]
-impl crate::ResetValue for super::FLCTL_ERASE_CTLSTAT {
-    type Type = u32;
+#[doc = "Register `FLCTL_ERASE_CTLSTAT` reader"]
+pub struct R(crate::R<FLCTL_ERASE_CTLSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FLCTL_ERASE_CTLSTAT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `START`"]
+impl core::convert::From<crate::R<FLCTL_ERASE_CTLSTAT_SPEC>> for R {
+    fn from(reader: crate::R<FLCTL_ERASE_CTLSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FLCTL_ERASE_CTLSTAT` writer"]
+pub struct W(crate::W<FLCTL_ERASE_CTLSTAT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FLCTL_ERASE_CTLSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<FLCTL_ERASE_CTLSTAT_SPEC>> for W {
+    fn from(writer: crate::W<FLCTL_ERASE_CTLSTAT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `START` writer - Start of Erase operation"]
 pub struct START_W<'a> {
     w: &'a mut W,
 }
@@ -28,7 +50,7 @@ impl<'a> START_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -46,9 +68,12 @@ impl From<MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MODE`"]
-pub type MODE_R = crate::R<bool, MODE_A>;
+#[doc = "Field `MODE` reader - Erase mode selected by application"]
+pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MODE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE_A {
@@ -60,15 +85,22 @@ impl MODE_R {
     #[doc = "Checks if the value of the field is `MODE_0`"]
     #[inline(always)]
     pub fn is_mode_0(&self) -> bool {
-        *self == MODE_A::MODE_0
+        **self == MODE_A::MODE_0
     }
     #[doc = "Checks if the value of the field is `MODE_1`"]
     #[inline(always)]
     pub fn is_mode_1(&self) -> bool {
-        *self == MODE_A::MODE_1
+        **self == MODE_A::MODE_1
     }
 }
-#[doc = "Write proxy for field `MODE`"]
+impl core::ops::Deref for MODE_R {
+    type Target = crate::FieldReader<bool, MODE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MODE` writer - Erase mode selected by application"]
 pub struct MODE_W<'a> {
     w: &'a mut W,
 }
@@ -76,9 +108,7 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Sector Erase (controlled by FLTCTL_ERASE_SECTADDR)"]
     #[inline(always)]
@@ -103,7 +133,7 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -124,37 +154,46 @@ impl From<TYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TYPE`"]
-pub type TYPE_R = crate::R<u8, TYPE_A>;
+#[doc = "Field `TYPE` reader - Type of memory that erase operation is carried out on"]
+pub struct TYPE_R(crate::FieldReader<u8, TYPE_A>);
 impl TYPE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TYPE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TYPE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TYPE_A> {
         match self.bits {
-            0 => Val(TYPE_A::TYPE_0),
-            1 => Val(TYPE_A::TYPE_1),
-            3 => Val(TYPE_A::TYPE_3),
-            i => Res(i),
+            0 => Some(TYPE_A::TYPE_0),
+            1 => Some(TYPE_A::TYPE_1),
+            3 => Some(TYPE_A::TYPE_3),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `TYPE_0`"]
     #[inline(always)]
     pub fn is_type_0(&self) -> bool {
-        *self == TYPE_A::TYPE_0
+        **self == TYPE_A::TYPE_0
     }
     #[doc = "Checks if the value of the field is `TYPE_1`"]
     #[inline(always)]
     pub fn is_type_1(&self) -> bool {
-        *self == TYPE_A::TYPE_1
+        **self == TYPE_A::TYPE_1
     }
     #[doc = "Checks if the value of the field is `TYPE_3`"]
     #[inline(always)]
     pub fn is_type_3(&self) -> bool {
-        *self == TYPE_A::TYPE_3
+        **self == TYPE_A::TYPE_3
     }
 }
-#[doc = "Write proxy for field `TYPE`"]
+impl core::ops::Deref for TYPE_R {
+    type Target = crate::FieldReader<u8, TYPE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TYPE` writer - Type of memory that erase operation is carried out on"]
 pub struct TYPE_W<'a> {
     w: &'a mut W,
 }
@@ -182,7 +221,7 @@ impl<'a> TYPE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
         self.w
     }
 }
@@ -205,9 +244,12 @@ impl From<STATUS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `STATUS`"]
-pub type STATUS_R = crate::R<u8, STATUS_A>;
+#[doc = "Field `STATUS` reader - Status of erase operations in the Flash memory"]
+pub struct STATUS_R(crate::FieldReader<u8, STATUS_A>);
 impl STATUS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        STATUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STATUS_A {
@@ -222,27 +264,46 @@ impl STATUS_R {
     #[doc = "Checks if the value of the field is `STATUS_0`"]
     #[inline(always)]
     pub fn is_status_0(&self) -> bool {
-        *self == STATUS_A::STATUS_0
+        **self == STATUS_A::STATUS_0
     }
     #[doc = "Checks if the value of the field is `STATUS_1`"]
     #[inline(always)]
     pub fn is_status_1(&self) -> bool {
-        *self == STATUS_A::STATUS_1
+        **self == STATUS_A::STATUS_1
     }
     #[doc = "Checks if the value of the field is `STATUS_2`"]
     #[inline(always)]
     pub fn is_status_2(&self) -> bool {
-        *self == STATUS_A::STATUS_2
+        **self == STATUS_A::STATUS_2
     }
     #[doc = "Checks if the value of the field is `STATUS_3`"]
     #[inline(always)]
     pub fn is_status_3(&self) -> bool {
-        *self == STATUS_A::STATUS_3
+        **self == STATUS_A::STATUS_3
     }
 }
-#[doc = "Reader of field `ADDR_ERR`"]
-pub type ADDR_ERR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CLR_STAT`"]
+impl core::ops::Deref for STATUS_R {
+    type Target = crate::FieldReader<u8, STATUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADDR_ERR` reader - Erase Operation was terminated due to attempted erase of reserved memory address"]
+pub struct ADDR_ERR_R(crate::FieldReader<bool, bool>);
+impl ADDR_ERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ADDR_ERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADDR_ERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CLR_STAT` writer - Clear status bits 18-16 of this register"]
 pub struct CLR_STAT_W<'a> {
     w: &'a mut W,
 }
@@ -260,7 +321,7 @@ impl<'a> CLR_STAT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -306,5 +367,30 @@ impl W {
     #[inline(always)]
     pub fn clr_stat(&mut self) -> CLR_STAT_W {
         CLR_STAT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Erase Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flctl_erase_ctlstat](index.html) module"]
+pub struct FLCTL_ERASE_CTLSTAT_SPEC;
+impl crate::RegisterSpec for FLCTL_ERASE_CTLSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [flctl_erase_ctlstat::R](R) reader structure"]
+impl crate::Readable for FLCTL_ERASE_CTLSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [flctl_erase_ctlstat::W](W) writer structure"]
+impl crate::Writable for FLCTL_ERASE_CTLSTAT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FLCTL_ERASE_CTLSTAT to value 0"]
+impl crate::Resettable for FLCTL_ERASE_CTLSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

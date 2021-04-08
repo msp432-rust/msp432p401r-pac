@@ -1,13 +1,35 @@
-#[doc = "Reader of register PCMIE"]
-pub type R = crate::R<u32, super::PCMIE>;
-#[doc = "Writer for register PCMIE"]
-pub type W = crate::W<u32, super::PCMIE>;
-#[doc = "Register PCMIE `reset()`'s with value 0"]
-impl crate::ResetValue for super::PCMIE {
-    type Type = u32;
+#[doc = "Register `PCMIE` reader"]
+pub struct R(crate::R<PCMIE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PCMIE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<PCMIE_SPEC>> for R {
+    fn from(reader: crate::R<PCMIE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PCMIE` writer"]
+pub struct W(crate::W<PCMIE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PCMIE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PCMIE_SPEC>> for W {
+    fn from(writer: crate::W<PCMIE_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "LPM invalid transition interrupt enable\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<LPM_INVALID_TR_IE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LPM_INVALID_TR_IE`"]
-pub type LPM_INVALID_TR_IE_R = crate::R<bool, LPM_INVALID_TR_IE_A>;
+#[doc = "Field `LPM_INVALID_TR_IE` reader - LPM invalid transition interrupt enable"]
+pub struct LPM_INVALID_TR_IE_R(crate::FieldReader<bool, LPM_INVALID_TR_IE_A>);
 impl LPM_INVALID_TR_IE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LPM_INVALID_TR_IE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LPM_INVALID_TR_IE_A {
@@ -38,15 +63,22 @@ impl LPM_INVALID_TR_IE_R {
     #[doc = "Checks if the value of the field is `LPM_INVALID_TR_IE_0`"]
     #[inline(always)]
     pub fn is_lpm_invalid_tr_ie_0(&self) -> bool {
-        *self == LPM_INVALID_TR_IE_A::LPM_INVALID_TR_IE_0
+        **self == LPM_INVALID_TR_IE_A::LPM_INVALID_TR_IE_0
     }
     #[doc = "Checks if the value of the field is `LPM_INVALID_TR_IE_1`"]
     #[inline(always)]
     pub fn is_lpm_invalid_tr_ie_1(&self) -> bool {
-        *self == LPM_INVALID_TR_IE_A::LPM_INVALID_TR_IE_1
+        **self == LPM_INVALID_TR_IE_A::LPM_INVALID_TR_IE_1
     }
 }
-#[doc = "Write proxy for field `LPM_INVALID_TR_IE`"]
+impl core::ops::Deref for LPM_INVALID_TR_IE_R {
+    type Target = crate::FieldReader<bool, LPM_INVALID_TR_IE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LPM_INVALID_TR_IE` writer - LPM invalid transition interrupt enable"]
 pub struct LPM_INVALID_TR_IE_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> LPM_INVALID_TR_IE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LPM_INVALID_TR_IE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> LPM_INVALID_TR_IE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<LPM_INVALID_CLK_IE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LPM_INVALID_CLK_IE`"]
-pub type LPM_INVALID_CLK_IE_R = crate::R<bool, LPM_INVALID_CLK_IE_A>;
+#[doc = "Field `LPM_INVALID_CLK_IE` reader - LPM invalid clock interrupt enable"]
+pub struct LPM_INVALID_CLK_IE_R(crate::FieldReader<bool, LPM_INVALID_CLK_IE_A>);
 impl LPM_INVALID_CLK_IE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LPM_INVALID_CLK_IE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LPM_INVALID_CLK_IE_A {
@@ -113,15 +146,22 @@ impl LPM_INVALID_CLK_IE_R {
     #[doc = "Checks if the value of the field is `LPM_INVALID_CLK_IE_0`"]
     #[inline(always)]
     pub fn is_lpm_invalid_clk_ie_0(&self) -> bool {
-        *self == LPM_INVALID_CLK_IE_A::LPM_INVALID_CLK_IE_0
+        **self == LPM_INVALID_CLK_IE_A::LPM_INVALID_CLK_IE_0
     }
     #[doc = "Checks if the value of the field is `LPM_INVALID_CLK_IE_1`"]
     #[inline(always)]
     pub fn is_lpm_invalid_clk_ie_1(&self) -> bool {
-        *self == LPM_INVALID_CLK_IE_A::LPM_INVALID_CLK_IE_1
+        **self == LPM_INVALID_CLK_IE_A::LPM_INVALID_CLK_IE_1
     }
 }
-#[doc = "Write proxy for field `LPM_INVALID_CLK_IE`"]
+impl core::ops::Deref for LPM_INVALID_CLK_IE_R {
+    type Target = crate::FieldReader<bool, LPM_INVALID_CLK_IE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LPM_INVALID_CLK_IE` writer - LPM invalid clock interrupt enable"]
 pub struct LPM_INVALID_CLK_IE_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> LPM_INVALID_CLK_IE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LPM_INVALID_CLK_IE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> LPM_INVALID_CLK_IE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<AM_INVALID_TR_IE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AM_INVALID_TR_IE`"]
-pub type AM_INVALID_TR_IE_R = crate::R<bool, AM_INVALID_TR_IE_A>;
+#[doc = "Field `AM_INVALID_TR_IE` reader - Active mode invalid transition interrupt enable"]
+pub struct AM_INVALID_TR_IE_R(crate::FieldReader<bool, AM_INVALID_TR_IE_A>);
 impl AM_INVALID_TR_IE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AM_INVALID_TR_IE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AM_INVALID_TR_IE_A {
@@ -188,15 +229,22 @@ impl AM_INVALID_TR_IE_R {
     #[doc = "Checks if the value of the field is `AM_INVALID_TR_IE_0`"]
     #[inline(always)]
     pub fn is_am_invalid_tr_ie_0(&self) -> bool {
-        *self == AM_INVALID_TR_IE_A::AM_INVALID_TR_IE_0
+        **self == AM_INVALID_TR_IE_A::AM_INVALID_TR_IE_0
     }
     #[doc = "Checks if the value of the field is `AM_INVALID_TR_IE_1`"]
     #[inline(always)]
     pub fn is_am_invalid_tr_ie_1(&self) -> bool {
-        *self == AM_INVALID_TR_IE_A::AM_INVALID_TR_IE_1
+        **self == AM_INVALID_TR_IE_A::AM_INVALID_TR_IE_1
     }
 }
-#[doc = "Write proxy for field `AM_INVALID_TR_IE`"]
+impl core::ops::Deref for AM_INVALID_TR_IE_R {
+    type Target = crate::FieldReader<bool, AM_INVALID_TR_IE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AM_INVALID_TR_IE` writer - Active mode invalid transition interrupt enable"]
 pub struct AM_INVALID_TR_IE_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> AM_INVALID_TR_IE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AM_INVALID_TR_IE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> AM_INVALID_TR_IE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<DCDC_ERROR_IE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCDC_ERROR_IE`"]
-pub type DCDC_ERROR_IE_R = crate::R<bool, DCDC_ERROR_IE_A>;
+#[doc = "Field `DCDC_ERROR_IE` reader - DC-DC error interrupt enable"]
+pub struct DCDC_ERROR_IE_R(crate::FieldReader<bool, DCDC_ERROR_IE_A>);
 impl DCDC_ERROR_IE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCDC_ERROR_IE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCDC_ERROR_IE_A {
@@ -263,15 +312,22 @@ impl DCDC_ERROR_IE_R {
     #[doc = "Checks if the value of the field is `DCDC_ERROR_IE_0`"]
     #[inline(always)]
     pub fn is_dcdc_error_ie_0(&self) -> bool {
-        *self == DCDC_ERROR_IE_A::DCDC_ERROR_IE_0
+        **self == DCDC_ERROR_IE_A::DCDC_ERROR_IE_0
     }
     #[doc = "Checks if the value of the field is `DCDC_ERROR_IE_1`"]
     #[inline(always)]
     pub fn is_dcdc_error_ie_1(&self) -> bool {
-        *self == DCDC_ERROR_IE_A::DCDC_ERROR_IE_1
+        **self == DCDC_ERROR_IE_A::DCDC_ERROR_IE_1
     }
 }
-#[doc = "Write proxy for field `DCDC_ERROR_IE`"]
+impl core::ops::Deref for DCDC_ERROR_IE_R {
+    type Target = crate::FieldReader<bool, DCDC_ERROR_IE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DCDC_ERROR_IE` writer - DC-DC error interrupt enable"]
 pub struct DCDC_ERROR_IE_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> DCDC_ERROR_IE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DCDC_ERROR_IE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> DCDC_ERROR_IE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -352,5 +406,30 @@ impl W {
     #[inline(always)]
     pub fn dcdc_error_ie(&mut self) -> DCDC_ERROR_IE_W {
         DCDC_ERROR_IE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcmie](index.html) module"]
+pub struct PCMIE_SPEC;
+impl crate::RegisterSpec for PCMIE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pcmie::R](R) reader structure"]
+impl crate::Readable for PCMIE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pcmie::W](W) writer structure"]
+impl crate::Writable for PCMIE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PCMIE to value 0"]
+impl crate::Resettable for PCMIE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

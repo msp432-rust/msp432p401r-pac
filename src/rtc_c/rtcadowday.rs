@@ -1,18 +1,52 @@
-#[doc = "Reader of register RTCADOWDAY"]
-pub type R = crate::R<u16, super::RTCADOWDAY>;
-#[doc = "Writer for register RTCADOWDAY"]
-pub type W = crate::W<u16, super::RTCADOWDAY>;
-#[doc = "Register RTCADOWDAY `reset()`'s with value 0"]
-impl crate::ResetValue for super::RTCADOWDAY {
-    type Type = u16;
+#[doc = "Register `RTCADOWDAY` reader"]
+pub struct R(crate::R<RTCADOWDAY_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RTCADOWDAY_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DayofWeek`"]
-pub type DAYOFWEEK_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DayofWeek`"]
+impl core::convert::From<crate::R<RTCADOWDAY_SPEC>> for R {
+    fn from(reader: crate::R<RTCADOWDAY_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RTCADOWDAY` writer"]
+pub struct W(crate::W<RTCADOWDAY_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RTCADOWDAY_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<RTCADOWDAY_SPEC>> for W {
+    fn from(writer: crate::W<RTCADOWDAY_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DayofWeek` reader - Day of week (0 to 6)"]
+pub struct DAYOFWEEK_R(crate::FieldReader<u8, u8>);
+impl DAYOFWEEK_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DAYOFWEEK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DAYOFWEEK_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DayofWeek` writer - Day of week (0 to 6)"]
 pub struct DAYOFWEEK_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +54,25 @@ impl<'a> DAYOFWEEK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u16) & 0x07);
+        self.w.bits = (self.w.bits & !0x07) | (value as u16 & 0x07);
         self.w
     }
 }
-#[doc = "Reader of field `DOWAE`"]
-pub type DOWAE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DOWAE`"]
+#[doc = "Field `DOWAE` reader - Alarm enable"]
+pub struct DOWAE_R(crate::FieldReader<bool, bool>);
+impl DOWAE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DOWAE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DOWAE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DOWAE` writer - Alarm enable"]
 pub struct DOWAE_W<'a> {
     w: &'a mut W,
 }
@@ -44,13 +90,25 @@ impl<'a> DOWAE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `DayofMonth`"]
-pub type DAYOFMONTH_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DayofMonth`"]
+#[doc = "Field `DayofMonth` reader - Day of month (1 to 28, 29, 30, 31)"]
+pub struct DAYOFMONTH_R(crate::FieldReader<u8, u8>);
+impl DAYOFMONTH_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DAYOFMONTH_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DAYOFMONTH_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DayofMonth` writer - Day of month (1 to 28, 29, 30, 31)"]
 pub struct DAYOFMONTH_W<'a> {
     w: &'a mut W,
 }
@@ -58,13 +116,25 @@ impl<'a> DAYOFMONTH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | (((value as u16) & 0x1f) << 8);
+        self.w.bits = (self.w.bits & !(0x1f << 8)) | ((value as u16 & 0x1f) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `DAYAE`"]
-pub type DAYAE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DAYAE`"]
+#[doc = "Field `DAYAE` reader - Alarm enable"]
+pub struct DAYAE_R(crate::FieldReader<bool, bool>);
+impl DAYAE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DAYAE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DAYAE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DAYAE` writer - Alarm enable"]
 pub struct DAYAE_W<'a> {
     w: &'a mut W,
 }
@@ -82,7 +152,7 @@ impl<'a> DAYAE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
         self.w
     }
 }
@@ -128,5 +198,30 @@ impl W {
     #[inline(always)]
     pub fn dayae(&mut self) -> DAYAE_W {
         DAYAE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "RTCADOWDAY - Hexadecimal Format\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtcadowday](index.html) module"]
+pub struct RTCADOWDAY_SPEC;
+impl crate::RegisterSpec for RTCADOWDAY_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [rtcadowday::R](R) reader structure"]
+impl crate::Readable for RTCADOWDAY_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [rtcadowday::W](W) writer structure"]
+impl crate::Writable for RTCADOWDAY_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RTCADOWDAY to value 0"]
+impl crate::Resettable for RTCADOWDAY_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

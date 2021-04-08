@@ -1,69 +1,465 @@
-#[doc = "Reader of register DMA_INT0_SRCFLG"]
-pub type R = crate::R<u32, super::DMA_INT0_SRCFLG>;
-#[doc = "Reader of field `CH0`"]
-pub type CH0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH1`"]
-pub type CH1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH2`"]
-pub type CH2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH3`"]
-pub type CH3_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH4`"]
-pub type CH4_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH5`"]
-pub type CH5_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH6`"]
-pub type CH6_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH7`"]
-pub type CH7_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH8`"]
-pub type CH8_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH9`"]
-pub type CH9_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH10`"]
-pub type CH10_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH11`"]
-pub type CH11_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH12`"]
-pub type CH12_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH13`"]
-pub type CH13_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH14`"]
-pub type CH14_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH15`"]
-pub type CH15_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH16`"]
-pub type CH16_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH17`"]
-pub type CH17_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH18`"]
-pub type CH18_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH19`"]
-pub type CH19_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH20`"]
-pub type CH20_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH21`"]
-pub type CH21_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH22`"]
-pub type CH22_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH23`"]
-pub type CH23_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH24`"]
-pub type CH24_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH25`"]
-pub type CH25_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH26`"]
-pub type CH26_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH27`"]
-pub type CH27_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH28`"]
-pub type CH28_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH29`"]
-pub type CH29_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH30`"]
-pub type CH30_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH31`"]
-pub type CH31_R = crate::R<bool, bool>;
+#[doc = "Register `DMA_INT0_SRCFLG` reader"]
+pub struct R(crate::R<DMA_INT0_SRCFLG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DMA_INT0_SRCFLG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<DMA_INT0_SRCFLG_SPEC>> for R {
+    fn from(reader: crate::R<DMA_INT0_SRCFLG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `CH0` reader - Channel 0 was the source of DMA_INT0"]
+pub struct CH0_R(crate::FieldReader<bool, bool>);
+impl CH0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH1` reader - Channel 1 was the source of DMA_INT0"]
+pub struct CH1_R(crate::FieldReader<bool, bool>);
+impl CH1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH2` reader - Channel 2 was the source of DMA_INT0"]
+pub struct CH2_R(crate::FieldReader<bool, bool>);
+impl CH2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH3` reader - Channel 3 was the source of DMA_INT0"]
+pub struct CH3_R(crate::FieldReader<bool, bool>);
+impl CH3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH4` reader - Channel 4 was the source of DMA_INT0"]
+pub struct CH4_R(crate::FieldReader<bool, bool>);
+impl CH4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH5` reader - Channel 5 was the source of DMA_INT0"]
+pub struct CH5_R(crate::FieldReader<bool, bool>);
+impl CH5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH6` reader - Channel 6 was the source of DMA_INT0"]
+pub struct CH6_R(crate::FieldReader<bool, bool>);
+impl CH6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH7` reader - Channel 7 was the source of DMA_INT0"]
+pub struct CH7_R(crate::FieldReader<bool, bool>);
+impl CH7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH8` reader - Channel 8 was the source of DMA_INT0"]
+pub struct CH8_R(crate::FieldReader<bool, bool>);
+impl CH8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH8_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH9` reader - Channel 9 was the source of DMA_INT0"]
+pub struct CH9_R(crate::FieldReader<bool, bool>);
+impl CH9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH9_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH10` reader - Channel 10 was the source of DMA_INT0"]
+pub struct CH10_R(crate::FieldReader<bool, bool>);
+impl CH10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH10_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH11` reader - Channel 11 was the source of DMA_INT0"]
+pub struct CH11_R(crate::FieldReader<bool, bool>);
+impl CH11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH12` reader - Channel 12 was the source of DMA_INT0"]
+pub struct CH12_R(crate::FieldReader<bool, bool>);
+impl CH12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH12_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH13` reader - Channel 13 was the source of DMA_INT0"]
+pub struct CH13_R(crate::FieldReader<bool, bool>);
+impl CH13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH13_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH14` reader - Channel 14 was the source of DMA_INT0"]
+pub struct CH14_R(crate::FieldReader<bool, bool>);
+impl CH14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH14_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH15` reader - Channel 15 was the source of DMA_INT0"]
+pub struct CH15_R(crate::FieldReader<bool, bool>);
+impl CH15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH15_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH16` reader - Channel 16 was the source of DMA_INT0"]
+pub struct CH16_R(crate::FieldReader<bool, bool>);
+impl CH16_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH16_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH16_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH17` reader - Channel 17 was the source of DMA_INT0"]
+pub struct CH17_R(crate::FieldReader<bool, bool>);
+impl CH17_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH17_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH17_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH18` reader - Channel 18 was the source of DMA_INT0"]
+pub struct CH18_R(crate::FieldReader<bool, bool>);
+impl CH18_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH18_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH18_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH19` reader - Channel 19 was the source of DMA_INT0"]
+pub struct CH19_R(crate::FieldReader<bool, bool>);
+impl CH19_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH19_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH19_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH20` reader - Channel 20 was the source of DMA_INT0"]
+pub struct CH20_R(crate::FieldReader<bool, bool>);
+impl CH20_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH20_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH20_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH21` reader - Channel 21 was the source of DMA_INT0"]
+pub struct CH21_R(crate::FieldReader<bool, bool>);
+impl CH21_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH21_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH21_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH22` reader - Channel 22 was the source of DMA_INT0"]
+pub struct CH22_R(crate::FieldReader<bool, bool>);
+impl CH22_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH22_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH22_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH23` reader - Channel 23 was the source of DMA_INT0"]
+pub struct CH23_R(crate::FieldReader<bool, bool>);
+impl CH23_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH23_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH23_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH24` reader - Channel 24 was the source of DMA_INT0"]
+pub struct CH24_R(crate::FieldReader<bool, bool>);
+impl CH24_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH24_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH24_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH25` reader - Channel 25 was the source of DMA_INT0"]
+pub struct CH25_R(crate::FieldReader<bool, bool>);
+impl CH25_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH25_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH25_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH26` reader - Channel 26 was the source of DMA_INT0"]
+pub struct CH26_R(crate::FieldReader<bool, bool>);
+impl CH26_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH26_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH26_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH27` reader - Channel 27 was the source of DMA_INT0"]
+pub struct CH27_R(crate::FieldReader<bool, bool>);
+impl CH27_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH27_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH27_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH28` reader - Channel 28 was the source of DMA_INT0"]
+pub struct CH28_R(crate::FieldReader<bool, bool>);
+impl CH28_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH28_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH28_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH29` reader - Channel 29 was the source of DMA_INT0"]
+pub struct CH29_R(crate::FieldReader<bool, bool>);
+impl CH29_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH29_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH29_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH30` reader - Channel 30 was the source of DMA_INT0"]
+pub struct CH30_R(crate::FieldReader<bool, bool>);
+impl CH30_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH30_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH30_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH31` reader - Channel 31 was the source of DMA_INT0"]
+pub struct CH31_R(crate::FieldReader<bool, bool>);
+impl CH31_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH31_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CH31_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Channel 0 was the source of DMA_INT0"]
     #[inline(always)]
@@ -224,5 +620,21 @@ impl R {
     #[inline(always)]
     pub fn ch31(&self) -> CH31_R {
         CH31_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+}
+#[doc = "Interrupt 0 Source Channel Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_int0_srcflg](index.html) module"]
+pub struct DMA_INT0_SRCFLG_SPEC;
+impl crate::RegisterSpec for DMA_INT0_SRCFLG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dma_int0_srcflg::R](R) reader structure"]
+impl crate::Readable for DMA_INT0_SRCFLG_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets DMA_INT0_SRCFLG to value 0"]
+impl crate::Resettable for DMA_INT0_SRCFLG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

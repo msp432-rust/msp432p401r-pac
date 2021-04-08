@@ -1,5 +1,17 @@
-#[doc = "Reader of register P1IV"]
-pub type R = crate::R<u16, super::P1IV>;
+#[doc = "Register `P1IV` reader"]
+pub struct R(crate::R<P1IV_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<P1IV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<P1IV_SPEC>> for R {
+    fn from(reader: crate::R<P1IV_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Port 1 interrupt vector value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -29,70 +41,79 @@ impl From<P1IV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `P1IV`"]
-pub type P1IV_R = crate::R<u8, P1IV_A>;
+#[doc = "Field `P1IV` reader - Port 1 interrupt vector value"]
+pub struct P1IV_R(crate::FieldReader<u8, P1IV_A>);
 impl P1IV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        P1IV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, P1IV_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<P1IV_A> {
         match self.bits {
-            0 => Val(P1IV_A::P1IV_0),
-            2 => Val(P1IV_A::P1IV_2),
-            4 => Val(P1IV_A::P1IV_4),
-            6 => Val(P1IV_A::P1IV_6),
-            8 => Val(P1IV_A::P1IV_8),
-            10 => Val(P1IV_A::P1IV_10),
-            12 => Val(P1IV_A::P1IV_12),
-            14 => Val(P1IV_A::P1IV_14),
-            16 => Val(P1IV_A::P1IV_16),
-            i => Res(i),
+            0 => Some(P1IV_A::P1IV_0),
+            2 => Some(P1IV_A::P1IV_2),
+            4 => Some(P1IV_A::P1IV_4),
+            6 => Some(P1IV_A::P1IV_6),
+            8 => Some(P1IV_A::P1IV_8),
+            10 => Some(P1IV_A::P1IV_10),
+            12 => Some(P1IV_A::P1IV_12),
+            14 => Some(P1IV_A::P1IV_14),
+            16 => Some(P1IV_A::P1IV_16),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `P1IV_0`"]
     #[inline(always)]
     pub fn is_p1iv_0(&self) -> bool {
-        *self == P1IV_A::P1IV_0
+        **self == P1IV_A::P1IV_0
     }
     #[doc = "Checks if the value of the field is `P1IV_2`"]
     #[inline(always)]
     pub fn is_p1iv_2(&self) -> bool {
-        *self == P1IV_A::P1IV_2
+        **self == P1IV_A::P1IV_2
     }
     #[doc = "Checks if the value of the field is `P1IV_4`"]
     #[inline(always)]
     pub fn is_p1iv_4(&self) -> bool {
-        *self == P1IV_A::P1IV_4
+        **self == P1IV_A::P1IV_4
     }
     #[doc = "Checks if the value of the field is `P1IV_6`"]
     #[inline(always)]
     pub fn is_p1iv_6(&self) -> bool {
-        *self == P1IV_A::P1IV_6
+        **self == P1IV_A::P1IV_6
     }
     #[doc = "Checks if the value of the field is `P1IV_8`"]
     #[inline(always)]
     pub fn is_p1iv_8(&self) -> bool {
-        *self == P1IV_A::P1IV_8
+        **self == P1IV_A::P1IV_8
     }
     #[doc = "Checks if the value of the field is `P1IV_10`"]
     #[inline(always)]
     pub fn is_p1iv_10(&self) -> bool {
-        *self == P1IV_A::P1IV_10
+        **self == P1IV_A::P1IV_10
     }
     #[doc = "Checks if the value of the field is `P1IV_12`"]
     #[inline(always)]
     pub fn is_p1iv_12(&self) -> bool {
-        *self == P1IV_A::P1IV_12
+        **self == P1IV_A::P1IV_12
     }
     #[doc = "Checks if the value of the field is `P1IV_14`"]
     #[inline(always)]
     pub fn is_p1iv_14(&self) -> bool {
-        *self == P1IV_A::P1IV_14
+        **self == P1IV_A::P1IV_14
     }
     #[doc = "Checks if the value of the field is `P1IV_16`"]
     #[inline(always)]
     pub fn is_p1iv_16(&self) -> bool {
-        *self == P1IV_A::P1IV_16
+        **self == P1IV_A::P1IV_16
+    }
+}
+impl core::ops::Deref for P1IV_R {
+    type Target = crate::FieldReader<u8, P1IV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -100,5 +121,21 @@ impl R {
     #[inline(always)]
     pub fn p1iv(&self) -> P1IV_R {
         P1IV_R::new((self.bits & 0x1f) as u8)
+    }
+}
+#[doc = "Port 1 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p1iv](index.html) module"]
+pub struct P1IV_SPEC;
+impl crate::RegisterSpec for P1IV_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [p1iv::R](R) reader structure"]
+impl crate::Readable for P1IV_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets P1IV to value 0"]
+impl crate::Resettable for P1IV_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

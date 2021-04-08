@@ -1,37 +1,241 @@
-#[doc = "Reader of register RSTCTL_HARDRESET_STAT"]
-pub type R = crate::R<u32, super::RSTCTL_HARDRESET_STAT>;
-#[doc = "Reader of field `SRC0`"]
-pub type SRC0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC1`"]
-pub type SRC1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC2`"]
-pub type SRC2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC3`"]
-pub type SRC3_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC4`"]
-pub type SRC4_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC5`"]
-pub type SRC5_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC6`"]
-pub type SRC6_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC7`"]
-pub type SRC7_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC8`"]
-pub type SRC8_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC9`"]
-pub type SRC9_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC10`"]
-pub type SRC10_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC11`"]
-pub type SRC11_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC12`"]
-pub type SRC12_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC13`"]
-pub type SRC13_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC14`"]
-pub type SRC14_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SRC15`"]
-pub type SRC15_R = crate::R<bool, bool>;
+#[doc = "Register `RSTCTL_HARDRESET_STAT` reader"]
+pub struct R(crate::R<RSTCTL_HARDRESET_STAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RSTCTL_HARDRESET_STAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<RSTCTL_HARDRESET_STAT_SPEC>> for R {
+    fn from(reader: crate::R<RSTCTL_HARDRESET_STAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `SRC0` reader - Indicates that SRC0 was the source of the Hard Reset"]
+pub struct SRC0_R(crate::FieldReader<bool, bool>);
+impl SRC0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC1` reader - Indicates that SRC1 was the source of the Hard Reset"]
+pub struct SRC1_R(crate::FieldReader<bool, bool>);
+impl SRC1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC2` reader - Indicates that SRC2 was the source of the Hard Reset"]
+pub struct SRC2_R(crate::FieldReader<bool, bool>);
+impl SRC2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC3` reader - Indicates that SRC3 was the source of the Hard Reset"]
+pub struct SRC3_R(crate::FieldReader<bool, bool>);
+impl SRC3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC4` reader - Indicates that SRC4 was the source of the Hard Reset"]
+pub struct SRC4_R(crate::FieldReader<bool, bool>);
+impl SRC4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC5` reader - Indicates that SRC5 was the source of the Hard Reset"]
+pub struct SRC5_R(crate::FieldReader<bool, bool>);
+impl SRC5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC6` reader - Indicates that SRC6 was the source of the Hard Reset"]
+pub struct SRC6_R(crate::FieldReader<bool, bool>);
+impl SRC6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC7` reader - Indicates that SRC7 was the source of the Hard Reset"]
+pub struct SRC7_R(crate::FieldReader<bool, bool>);
+impl SRC7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC8` reader - Indicates that SRC8 was the source of the Hard Reset"]
+pub struct SRC8_R(crate::FieldReader<bool, bool>);
+impl SRC8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC8_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC9` reader - Indicates that SRC9 was the source of the Hard Reset"]
+pub struct SRC9_R(crate::FieldReader<bool, bool>);
+impl SRC9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC9_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC10` reader - Indicates that SRC10 was the source of the Hard Reset"]
+pub struct SRC10_R(crate::FieldReader<bool, bool>);
+impl SRC10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC10_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC11` reader - Indicates that SRC11 was the source of the Hard Reset"]
+pub struct SRC11_R(crate::FieldReader<bool, bool>);
+impl SRC11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC12` reader - Indicates that SRC12 was the source of the Hard Reset"]
+pub struct SRC12_R(crate::FieldReader<bool, bool>);
+impl SRC12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC12_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC13` reader - Indicates that SRC13 was the source of the Hard Reset"]
+pub struct SRC13_R(crate::FieldReader<bool, bool>);
+impl SRC13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC13_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC14` reader - Indicates that SRC14 was the source of the Hard Reset"]
+pub struct SRC14_R(crate::FieldReader<bool, bool>);
+impl SRC14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC14_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRC15` reader - Indicates that SRC15 was the source of the Hard Reset"]
+pub struct SRC15_R(crate::FieldReader<bool, bool>);
+impl SRC15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRC15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SRC15_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Indicates that SRC0 was the source of the Hard Reset"]
     #[inline(always)]
@@ -112,5 +316,21 @@ impl R {
     #[inline(always)]
     pub fn src15(&self) -> SRC15_R {
         SRC15_R::new(((self.bits >> 15) & 0x01) != 0)
+    }
+}
+#[doc = "Hard Reset Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rstctl_hardreset_stat](index.html) module"]
+pub struct RSTCTL_HARDRESET_STAT_SPEC;
+impl crate::RegisterSpec for RSTCTL_HARDRESET_STAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [rstctl_hardreset_stat::R](R) reader structure"]
+impl crate::Readable for RSTCTL_HARDRESET_STAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets RSTCTL_HARDRESET_STAT to value 0"]
+impl crate::Resettable for RSTCTL_HARDRESET_STAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

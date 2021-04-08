@@ -1,13 +1,35 @@
-#[doc = "Reader of register UCAxABCTL"]
-pub type R = crate::R<u16, super::UCAXABCTL>;
-#[doc = "Writer for register UCAxABCTL"]
-pub type W = crate::W<u16, super::UCAXABCTL>;
-#[doc = "Register UCAxABCTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::UCAXABCTL {
-    type Type = u16;
+#[doc = "Register `UCAxABCTL` reader"]
+pub struct R(crate::R<UCAXABCTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UCAXABCTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<UCAXABCTL_SPEC>> for R {
+    fn from(reader: crate::R<UCAXABCTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UCAxABCTL` writer"]
+pub struct W(crate::W<UCAXABCTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UCAXABCTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<UCAXABCTL_SPEC>> for W {
+    fn from(writer: crate::W<UCAXABCTL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Automatic baud-rate detect enable\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<UCABDEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCABDEN`"]
-pub type UCABDEN_R = crate::R<bool, UCABDEN_A>;
+#[doc = "Field `UCABDEN` reader - Automatic baud-rate detect enable"]
+pub struct UCABDEN_R(crate::FieldReader<bool, UCABDEN_A>);
 impl UCABDEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCABDEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCABDEN_A {
@@ -38,15 +63,22 @@ impl UCABDEN_R {
     #[doc = "Checks if the value of the field is `UCABDEN_0`"]
     #[inline(always)]
     pub fn is_ucabden_0(&self) -> bool {
-        *self == UCABDEN_A::UCABDEN_0
+        **self == UCABDEN_A::UCABDEN_0
     }
     #[doc = "Checks if the value of the field is `UCABDEN_1`"]
     #[inline(always)]
     pub fn is_ucabden_1(&self) -> bool {
-        *self == UCABDEN_A::UCABDEN_1
+        **self == UCABDEN_A::UCABDEN_1
     }
 }
-#[doc = "Write proxy for field `UCABDEN`"]
+impl core::ops::Deref for UCABDEN_R {
+    type Target = crate::FieldReader<bool, UCABDEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCABDEN` writer - Automatic baud-rate detect enable"]
 pub struct UCABDEN_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> UCABDEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: UCABDEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Baud-rate detection disabled. Length of break and synch field is not measured."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> UCABDEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<UCBTOE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCBTOE`"]
-pub type UCBTOE_R = crate::R<bool, UCBTOE_A>;
+#[doc = "Field `UCBTOE` reader - Break time out error"]
+pub struct UCBTOE_R(crate::FieldReader<bool, UCBTOE_A>);
 impl UCBTOE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCBTOE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCBTOE_A {
@@ -113,15 +146,22 @@ impl UCBTOE_R {
     #[doc = "Checks if the value of the field is `UCBTOE_0`"]
     #[inline(always)]
     pub fn is_ucbtoe_0(&self) -> bool {
-        *self == UCBTOE_A::UCBTOE_0
+        **self == UCBTOE_A::UCBTOE_0
     }
     #[doc = "Checks if the value of the field is `UCBTOE_1`"]
     #[inline(always)]
     pub fn is_ucbtoe_1(&self) -> bool {
-        *self == UCBTOE_A::UCBTOE_1
+        **self == UCBTOE_A::UCBTOE_1
     }
 }
-#[doc = "Write proxy for field `UCBTOE`"]
+impl core::ops::Deref for UCBTOE_R {
+    type Target = crate::FieldReader<bool, UCBTOE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCBTOE` writer - Break time out error"]
 pub struct UCBTOE_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> UCBTOE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: UCBTOE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No error"]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> UCBTOE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<UCSTOE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `UCSTOE`"]
-pub type UCSTOE_R = crate::R<bool, UCSTOE_A>;
+#[doc = "Field `UCSTOE` reader - Synch field time out error"]
+pub struct UCSTOE_R(crate::FieldReader<bool, UCSTOE_A>);
 impl UCSTOE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        UCSTOE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCSTOE_A {
@@ -188,15 +229,22 @@ impl UCSTOE_R {
     #[doc = "Checks if the value of the field is `UCSTOE_0`"]
     #[inline(always)]
     pub fn is_ucstoe_0(&self) -> bool {
-        *self == UCSTOE_A::UCSTOE_0
+        **self == UCSTOE_A::UCSTOE_0
     }
     #[doc = "Checks if the value of the field is `UCSTOE_1`"]
     #[inline(always)]
     pub fn is_ucstoe_1(&self) -> bool {
-        *self == UCSTOE_A::UCSTOE_1
+        **self == UCSTOE_A::UCSTOE_1
     }
 }
-#[doc = "Write proxy for field `UCSTOE`"]
+impl core::ops::Deref for UCSTOE_R {
+    type Target = crate::FieldReader<bool, UCSTOE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCSTOE` writer - Synch field time out error"]
 pub struct UCSTOE_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> UCSTOE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: UCSTOE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No error"]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> UCSTOE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
@@ -254,9 +300,12 @@ impl From<UCDELIM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `UCDELIM`"]
-pub type UCDELIM_R = crate::R<u8, UCDELIM_A>;
+#[doc = "Field `UCDELIM` reader - Break/synch delimiter length"]
+pub struct UCDELIM_R(crate::FieldReader<u8, UCDELIM_A>);
 impl UCDELIM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        UCDELIM_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCDELIM_A {
@@ -271,25 +320,32 @@ impl UCDELIM_R {
     #[doc = "Checks if the value of the field is `UCDELIM_0`"]
     #[inline(always)]
     pub fn is_ucdelim_0(&self) -> bool {
-        *self == UCDELIM_A::UCDELIM_0
+        **self == UCDELIM_A::UCDELIM_0
     }
     #[doc = "Checks if the value of the field is `UCDELIM_1`"]
     #[inline(always)]
     pub fn is_ucdelim_1(&self) -> bool {
-        *self == UCDELIM_A::UCDELIM_1
+        **self == UCDELIM_A::UCDELIM_1
     }
     #[doc = "Checks if the value of the field is `UCDELIM_2`"]
     #[inline(always)]
     pub fn is_ucdelim_2(&self) -> bool {
-        *self == UCDELIM_A::UCDELIM_2
+        **self == UCDELIM_A::UCDELIM_2
     }
     #[doc = "Checks if the value of the field is `UCDELIM_3`"]
     #[inline(always)]
     pub fn is_ucdelim_3(&self) -> bool {
-        *self == UCDELIM_A::UCDELIM_3
+        **self == UCDELIM_A::UCDELIM_3
     }
 }
-#[doc = "Write proxy for field `UCDELIM`"]
+impl core::ops::Deref for UCDELIM_R {
+    type Target = crate::FieldReader<u8, UCDELIM_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `UCDELIM` writer - Break/synch delimiter length"]
 pub struct UCDELIM_W<'a> {
     w: &'a mut W,
 }
@@ -297,9 +353,7 @@ impl<'a> UCDELIM_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: UCDELIM_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "1 bit time"]
     #[inline(always)]
@@ -324,7 +378,7 @@ impl<'a> UCDELIM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u16) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u16 & 0x03) << 4);
         self.w
     }
 }
@@ -370,5 +424,30 @@ impl W {
     #[inline(always)]
     pub fn ucdelim(&mut self) -> UCDELIM_W {
         UCDELIM_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "eUSCI_Ax Auto Baud Rate Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucax_abctl](index.html) module"]
+pub struct UCAXABCTL_SPEC;
+impl crate::RegisterSpec for UCAXABCTL_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [ucax_abctl::R](R) reader structure"]
+impl crate::Readable for UCAXABCTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ucax_abctl::W](W) writer structure"]
+impl crate::Writable for UCAXABCTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UCAxABCTL to value 0"]
+impl crate::Resettable for UCAXABCTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,52 @@
-#[doc = "Reader of register PCDIR"]
-pub type R = crate::R<u16, super::PCDIR>;
-#[doc = "Writer for register PCDIR"]
-pub type W = crate::W<u16, super::PCDIR>;
-#[doc = "Register PCDIR `reset()`'s with value 0"]
-impl crate::ResetValue for super::PCDIR {
-    type Type = u16;
+#[doc = "Register `PCDIR` reader"]
+pub struct R(crate::R<PCDIR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PCDIR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `P5DIR`"]
-pub type P5DIR_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `P5DIR`"]
+impl core::convert::From<crate::R<PCDIR_SPEC>> for R {
+    fn from(reader: crate::R<PCDIR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PCDIR` writer"]
+pub struct W(crate::W<PCDIR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PCDIR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PCDIR_SPEC>> for W {
+    fn from(writer: crate::W<PCDIR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `P5DIR` reader - Port 5 Direction"]
+pub struct P5DIR_R(crate::FieldReader<u8, u8>);
+impl P5DIR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        P5DIR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for P5DIR_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P5DIR` writer - Port 5 Direction"]
 pub struct P5DIR_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +54,25 @@ impl<'a> P5DIR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u16) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
         self.w
     }
 }
-#[doc = "Reader of field `P6DIR`"]
-pub type P6DIR_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `P6DIR`"]
+#[doc = "Field `P6DIR` reader - Port 6 Direction"]
+pub struct P6DIR_R(crate::FieldReader<u8, u8>);
+impl P6DIR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        P6DIR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for P6DIR_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P6DIR` writer - Port 6 Direction"]
 pub struct P6DIR_W<'a> {
     w: &'a mut W,
 }
@@ -34,7 +80,7 @@ impl<'a> P6DIR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u16) & 0xff) << 8);
+        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
         self.w
     }
 }
@@ -60,5 +106,30 @@ impl W {
     #[inline(always)]
     pub fn p6dir(&mut self) -> P6DIR_W {
         P6DIR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port C Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcdir](index.html) module"]
+pub struct PCDIR_SPEC;
+impl crate::RegisterSpec for PCDIR_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [pcdir::R](R) reader structure"]
+impl crate::Readable for PCDIR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pcdir::W](W) writer structure"]
+impl crate::Writable for PCDIR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PCDIR to value 0"]
+impl crate::Resettable for PCDIR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

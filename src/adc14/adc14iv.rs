@@ -1,13 +1,35 @@
-#[doc = "Reader of register ADC14IV"]
-pub type R = crate::R<u32, super::ADC14IV>;
-#[doc = "Writer for register ADC14IV"]
-pub type W = crate::W<u32, super::ADC14IV>;
-#[doc = "Register ADC14IV `reset()`'s with value 0"]
-impl crate::ResetValue for super::ADC14IV {
-    type Type = u32;
+#[doc = "Register `ADC14IV` reader"]
+pub struct R(crate::R<ADC14IV_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADC14IV_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<ADC14IV_SPEC>> for R {
+    fn from(reader: crate::R<ADC14IV_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ADC14IV` writer"]
+pub struct W(crate::W<ADC14IV_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADC14IV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<ADC14IV_SPEC>> for W {
+    fn from(writer: crate::W<ADC14IV_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "ADC14 interrupt vector value\n\nValue on reset: 0"]
@@ -99,253 +121,262 @@ impl From<ADC14IV_A> for u32 {
         variant as _
     }
 }
-#[doc = "Reader of field `ADC14IV`"]
-pub type ADC14IV_R = crate::R<u32, ADC14IV_A>;
+#[doc = "Field `ADC14IV` reader - ADC14 interrupt vector value"]
+pub struct ADC14IV_R(crate::FieldReader<u32, ADC14IV_A>);
 impl ADC14IV_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        ADC14IV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u32, ADC14IV_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<ADC14IV_A> {
         match self.bits {
-            0 => Val(ADC14IV_A::ADC14IV_0),
-            2 => Val(ADC14IV_A::ADC14IV_2),
-            4 => Val(ADC14IV_A::ADC14IV_4),
-            6 => Val(ADC14IV_A::ADC14IV_6),
-            8 => Val(ADC14IV_A::ADC14IV_8),
-            10 => Val(ADC14IV_A::ADC14IV_10),
-            12 => Val(ADC14IV_A::ADC14IV_12),
-            14 => Val(ADC14IV_A::ADC14IV_14),
-            16 => Val(ADC14IV_A::ADC14IV_16),
-            18 => Val(ADC14IV_A::ADC14IV_18),
-            20 => Val(ADC14IV_A::ADC14IV_20),
-            22 => Val(ADC14IV_A::ADC14IV_22),
-            24 => Val(ADC14IV_A::ADC14IV_24),
-            26 => Val(ADC14IV_A::ADC14IV_26),
-            28 => Val(ADC14IV_A::ADC14IV_28),
-            30 => Val(ADC14IV_A::ADC14IV_30),
-            32 => Val(ADC14IV_A::ADC14IV_32),
-            34 => Val(ADC14IV_A::ADC14IV_34),
-            36 => Val(ADC14IV_A::ADC14IV_36),
-            38 => Val(ADC14IV_A::ADC14IV_38),
-            40 => Val(ADC14IV_A::ADC14IV_40),
-            42 => Val(ADC14IV_A::ADC14IV_42),
-            44 => Val(ADC14IV_A::ADC14IV_44),
-            46 => Val(ADC14IV_A::ADC14IV_46),
-            48 => Val(ADC14IV_A::ADC14IV_48),
-            50 => Val(ADC14IV_A::ADC14IV_50),
-            52 => Val(ADC14IV_A::ADC14IV_52),
-            54 => Val(ADC14IV_A::ADC14IV_54),
-            56 => Val(ADC14IV_A::ADC14IV_56),
-            58 => Val(ADC14IV_A::ADC14IV_58),
-            60 => Val(ADC14IV_A::ADC14IV_60),
-            62 => Val(ADC14IV_A::ADC14IV_62),
-            64 => Val(ADC14IV_A::ADC14IV_64),
-            66 => Val(ADC14IV_A::ADC14IV_66),
-            68 => Val(ADC14IV_A::ADC14IV_68),
-            70 => Val(ADC14IV_A::ADC14IV_70),
-            72 => Val(ADC14IV_A::ADC14IV_72),
-            74 => Val(ADC14IV_A::ADC14IV_74),
-            76 => Val(ADC14IV_A::ADC14IV_76),
-            i => Res(i),
+            0 => Some(ADC14IV_A::ADC14IV_0),
+            2 => Some(ADC14IV_A::ADC14IV_2),
+            4 => Some(ADC14IV_A::ADC14IV_4),
+            6 => Some(ADC14IV_A::ADC14IV_6),
+            8 => Some(ADC14IV_A::ADC14IV_8),
+            10 => Some(ADC14IV_A::ADC14IV_10),
+            12 => Some(ADC14IV_A::ADC14IV_12),
+            14 => Some(ADC14IV_A::ADC14IV_14),
+            16 => Some(ADC14IV_A::ADC14IV_16),
+            18 => Some(ADC14IV_A::ADC14IV_18),
+            20 => Some(ADC14IV_A::ADC14IV_20),
+            22 => Some(ADC14IV_A::ADC14IV_22),
+            24 => Some(ADC14IV_A::ADC14IV_24),
+            26 => Some(ADC14IV_A::ADC14IV_26),
+            28 => Some(ADC14IV_A::ADC14IV_28),
+            30 => Some(ADC14IV_A::ADC14IV_30),
+            32 => Some(ADC14IV_A::ADC14IV_32),
+            34 => Some(ADC14IV_A::ADC14IV_34),
+            36 => Some(ADC14IV_A::ADC14IV_36),
+            38 => Some(ADC14IV_A::ADC14IV_38),
+            40 => Some(ADC14IV_A::ADC14IV_40),
+            42 => Some(ADC14IV_A::ADC14IV_42),
+            44 => Some(ADC14IV_A::ADC14IV_44),
+            46 => Some(ADC14IV_A::ADC14IV_46),
+            48 => Some(ADC14IV_A::ADC14IV_48),
+            50 => Some(ADC14IV_A::ADC14IV_50),
+            52 => Some(ADC14IV_A::ADC14IV_52),
+            54 => Some(ADC14IV_A::ADC14IV_54),
+            56 => Some(ADC14IV_A::ADC14IV_56),
+            58 => Some(ADC14IV_A::ADC14IV_58),
+            60 => Some(ADC14IV_A::ADC14IV_60),
+            62 => Some(ADC14IV_A::ADC14IV_62),
+            64 => Some(ADC14IV_A::ADC14IV_64),
+            66 => Some(ADC14IV_A::ADC14IV_66),
+            68 => Some(ADC14IV_A::ADC14IV_68),
+            70 => Some(ADC14IV_A::ADC14IV_70),
+            72 => Some(ADC14IV_A::ADC14IV_72),
+            74 => Some(ADC14IV_A::ADC14IV_74),
+            76 => Some(ADC14IV_A::ADC14IV_76),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ADC14IV_0`"]
     #[inline(always)]
     pub fn is_adc14iv_0(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_0
+        **self == ADC14IV_A::ADC14IV_0
     }
     #[doc = "Checks if the value of the field is `ADC14IV_2`"]
     #[inline(always)]
     pub fn is_adc14iv_2(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_2
+        **self == ADC14IV_A::ADC14IV_2
     }
     #[doc = "Checks if the value of the field is `ADC14IV_4`"]
     #[inline(always)]
     pub fn is_adc14iv_4(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_4
+        **self == ADC14IV_A::ADC14IV_4
     }
     #[doc = "Checks if the value of the field is `ADC14IV_6`"]
     #[inline(always)]
     pub fn is_adc14iv_6(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_6
+        **self == ADC14IV_A::ADC14IV_6
     }
     #[doc = "Checks if the value of the field is `ADC14IV_8`"]
     #[inline(always)]
     pub fn is_adc14iv_8(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_8
+        **self == ADC14IV_A::ADC14IV_8
     }
     #[doc = "Checks if the value of the field is `ADC14IV_10`"]
     #[inline(always)]
     pub fn is_adc14iv_10(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_10
+        **self == ADC14IV_A::ADC14IV_10
     }
     #[doc = "Checks if the value of the field is `ADC14IV_12`"]
     #[inline(always)]
     pub fn is_adc14iv_12(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_12
+        **self == ADC14IV_A::ADC14IV_12
     }
     #[doc = "Checks if the value of the field is `ADC14IV_14`"]
     #[inline(always)]
     pub fn is_adc14iv_14(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_14
+        **self == ADC14IV_A::ADC14IV_14
     }
     #[doc = "Checks if the value of the field is `ADC14IV_16`"]
     #[inline(always)]
     pub fn is_adc14iv_16(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_16
+        **self == ADC14IV_A::ADC14IV_16
     }
     #[doc = "Checks if the value of the field is `ADC14IV_18`"]
     #[inline(always)]
     pub fn is_adc14iv_18(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_18
+        **self == ADC14IV_A::ADC14IV_18
     }
     #[doc = "Checks if the value of the field is `ADC14IV_20`"]
     #[inline(always)]
     pub fn is_adc14iv_20(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_20
+        **self == ADC14IV_A::ADC14IV_20
     }
     #[doc = "Checks if the value of the field is `ADC14IV_22`"]
     #[inline(always)]
     pub fn is_adc14iv_22(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_22
+        **self == ADC14IV_A::ADC14IV_22
     }
     #[doc = "Checks if the value of the field is `ADC14IV_24`"]
     #[inline(always)]
     pub fn is_adc14iv_24(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_24
+        **self == ADC14IV_A::ADC14IV_24
     }
     #[doc = "Checks if the value of the field is `ADC14IV_26`"]
     #[inline(always)]
     pub fn is_adc14iv_26(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_26
+        **self == ADC14IV_A::ADC14IV_26
     }
     #[doc = "Checks if the value of the field is `ADC14IV_28`"]
     #[inline(always)]
     pub fn is_adc14iv_28(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_28
+        **self == ADC14IV_A::ADC14IV_28
     }
     #[doc = "Checks if the value of the field is `ADC14IV_30`"]
     #[inline(always)]
     pub fn is_adc14iv_30(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_30
+        **self == ADC14IV_A::ADC14IV_30
     }
     #[doc = "Checks if the value of the field is `ADC14IV_32`"]
     #[inline(always)]
     pub fn is_adc14iv_32(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_32
+        **self == ADC14IV_A::ADC14IV_32
     }
     #[doc = "Checks if the value of the field is `ADC14IV_34`"]
     #[inline(always)]
     pub fn is_adc14iv_34(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_34
+        **self == ADC14IV_A::ADC14IV_34
     }
     #[doc = "Checks if the value of the field is `ADC14IV_36`"]
     #[inline(always)]
     pub fn is_adc14iv_36(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_36
+        **self == ADC14IV_A::ADC14IV_36
     }
     #[doc = "Checks if the value of the field is `ADC14IV_38`"]
     #[inline(always)]
     pub fn is_adc14iv_38(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_38
+        **self == ADC14IV_A::ADC14IV_38
     }
     #[doc = "Checks if the value of the field is `ADC14IV_40`"]
     #[inline(always)]
     pub fn is_adc14iv_40(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_40
+        **self == ADC14IV_A::ADC14IV_40
     }
     #[doc = "Checks if the value of the field is `ADC14IV_42`"]
     #[inline(always)]
     pub fn is_adc14iv_42(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_42
+        **self == ADC14IV_A::ADC14IV_42
     }
     #[doc = "Checks if the value of the field is `ADC14IV_44`"]
     #[inline(always)]
     pub fn is_adc14iv_44(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_44
+        **self == ADC14IV_A::ADC14IV_44
     }
     #[doc = "Checks if the value of the field is `ADC14IV_46`"]
     #[inline(always)]
     pub fn is_adc14iv_46(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_46
+        **self == ADC14IV_A::ADC14IV_46
     }
     #[doc = "Checks if the value of the field is `ADC14IV_48`"]
     #[inline(always)]
     pub fn is_adc14iv_48(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_48
+        **self == ADC14IV_A::ADC14IV_48
     }
     #[doc = "Checks if the value of the field is `ADC14IV_50`"]
     #[inline(always)]
     pub fn is_adc14iv_50(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_50
+        **self == ADC14IV_A::ADC14IV_50
     }
     #[doc = "Checks if the value of the field is `ADC14IV_52`"]
     #[inline(always)]
     pub fn is_adc14iv_52(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_52
+        **self == ADC14IV_A::ADC14IV_52
     }
     #[doc = "Checks if the value of the field is `ADC14IV_54`"]
     #[inline(always)]
     pub fn is_adc14iv_54(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_54
+        **self == ADC14IV_A::ADC14IV_54
     }
     #[doc = "Checks if the value of the field is `ADC14IV_56`"]
     #[inline(always)]
     pub fn is_adc14iv_56(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_56
+        **self == ADC14IV_A::ADC14IV_56
     }
     #[doc = "Checks if the value of the field is `ADC14IV_58`"]
     #[inline(always)]
     pub fn is_adc14iv_58(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_58
+        **self == ADC14IV_A::ADC14IV_58
     }
     #[doc = "Checks if the value of the field is `ADC14IV_60`"]
     #[inline(always)]
     pub fn is_adc14iv_60(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_60
+        **self == ADC14IV_A::ADC14IV_60
     }
     #[doc = "Checks if the value of the field is `ADC14IV_62`"]
     #[inline(always)]
     pub fn is_adc14iv_62(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_62
+        **self == ADC14IV_A::ADC14IV_62
     }
     #[doc = "Checks if the value of the field is `ADC14IV_64`"]
     #[inline(always)]
     pub fn is_adc14iv_64(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_64
+        **self == ADC14IV_A::ADC14IV_64
     }
     #[doc = "Checks if the value of the field is `ADC14IV_66`"]
     #[inline(always)]
     pub fn is_adc14iv_66(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_66
+        **self == ADC14IV_A::ADC14IV_66
     }
     #[doc = "Checks if the value of the field is `ADC14IV_68`"]
     #[inline(always)]
     pub fn is_adc14iv_68(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_68
+        **self == ADC14IV_A::ADC14IV_68
     }
     #[doc = "Checks if the value of the field is `ADC14IV_70`"]
     #[inline(always)]
     pub fn is_adc14iv_70(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_70
+        **self == ADC14IV_A::ADC14IV_70
     }
     #[doc = "Checks if the value of the field is `ADC14IV_72`"]
     #[inline(always)]
     pub fn is_adc14iv_72(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_72
+        **self == ADC14IV_A::ADC14IV_72
     }
     #[doc = "Checks if the value of the field is `ADC14IV_74`"]
     #[inline(always)]
     pub fn is_adc14iv_74(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_74
+        **self == ADC14IV_A::ADC14IV_74
     }
     #[doc = "Checks if the value of the field is `ADC14IV_76`"]
     #[inline(always)]
     pub fn is_adc14iv_76(&self) -> bool {
-        *self == ADC14IV_A::ADC14IV_76
+        **self == ADC14IV_A::ADC14IV_76
     }
 }
-#[doc = "Write proxy for field `ADC14IV`"]
+impl core::ops::Deref for ADC14IV_R {
+    type Target = crate::FieldReader<u32, ADC14IV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC14IV` writer - ADC14 interrupt vector value"]
 pub struct ADC14IV_W<'a> {
     w: &'a mut W,
 }
@@ -553,7 +584,7 @@ impl<'a> ADC14IV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
+        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
         self.w
     }
 }
@@ -569,5 +600,30 @@ impl W {
     #[inline(always)]
     pub fn adc14iv(&mut self) -> ADC14IV_W {
         ADC14IV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc14iv](index.html) module"]
+pub struct ADC14IV_SPEC;
+impl crate::RegisterSpec for ADC14IV_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [adc14iv::R](R) reader structure"]
+impl crate::Readable for ADC14IV_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [adc14iv::W](W) writer structure"]
+impl crate::Writable for ADC14IV_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ADC14IV to value 0"]
+impl crate::Resettable for ADC14IV_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

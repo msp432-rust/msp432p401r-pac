@@ -1,5 +1,17 @@
-#[doc = "Reader of register CSSTAT"]
-pub type R = crate::R<u32, super::CSSTAT>;
+#[doc = "Register `CSSTAT` reader"]
+pub struct R(crate::R<CSSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<CSSTAT_SPEC>> for R {
+    fn from(reader: crate::R<CSSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "DCO status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCO_ON_A {
@@ -14,9 +26,12 @@ impl From<DCO_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCO_ON`"]
-pub type DCO_ON_R = crate::R<bool, DCO_ON_A>;
+#[doc = "Field `DCO_ON` reader - DCO status"]
+pub struct DCO_ON_R(crate::FieldReader<bool, DCO_ON_A>);
 impl DCO_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCO_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCO_ON_A {
@@ -28,12 +43,19 @@ impl DCO_ON_R {
     #[doc = "Checks if the value of the field is `DCO_ON_0`"]
     #[inline(always)]
     pub fn is_dco_on_0(&self) -> bool {
-        *self == DCO_ON_A::DCO_ON_0
+        **self == DCO_ON_A::DCO_ON_0
     }
     #[doc = "Checks if the value of the field is `DCO_ON_1`"]
     #[inline(always)]
     pub fn is_dco_on_1(&self) -> bool {
-        *self == DCO_ON_A::DCO_ON_1
+        **self == DCO_ON_A::DCO_ON_1
+    }
+}
+impl core::ops::Deref for DCO_ON_R {
+    type Target = crate::FieldReader<bool, DCO_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "DCO bias status\n\nValue on reset: 1"]
@@ -50,9 +72,12 @@ impl From<DCOBIAS_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCOBIAS_ON`"]
-pub type DCOBIAS_ON_R = crate::R<bool, DCOBIAS_ON_A>;
+#[doc = "Field `DCOBIAS_ON` reader - DCO bias status"]
+pub struct DCOBIAS_ON_R(crate::FieldReader<bool, DCOBIAS_ON_A>);
 impl DCOBIAS_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCOBIAS_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCOBIAS_ON_A {
@@ -64,12 +89,19 @@ impl DCOBIAS_ON_R {
     #[doc = "Checks if the value of the field is `DCOBIAS_ON_0`"]
     #[inline(always)]
     pub fn is_dcobias_on_0(&self) -> bool {
-        *self == DCOBIAS_ON_A::DCOBIAS_ON_0
+        **self == DCOBIAS_ON_A::DCOBIAS_ON_0
     }
     #[doc = "Checks if the value of the field is `DCOBIAS_ON_1`"]
     #[inline(always)]
     pub fn is_dcobias_on_1(&self) -> bool {
-        *self == DCOBIAS_ON_A::DCOBIAS_ON_1
+        **self == DCOBIAS_ON_A::DCOBIAS_ON_1
+    }
+}
+impl core::ops::Deref for DCOBIAS_ON_R {
+    type Target = crate::FieldReader<bool, DCOBIAS_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "HFXT status\n\nValue on reset: 0"]
@@ -86,9 +118,12 @@ impl From<HFXT_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HFXT_ON`"]
-pub type HFXT_ON_R = crate::R<bool, HFXT_ON_A>;
+#[doc = "Field `HFXT_ON` reader - HFXT status"]
+pub struct HFXT_ON_R(crate::FieldReader<bool, HFXT_ON_A>);
 impl HFXT_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFXT_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFXT_ON_A {
@@ -100,12 +135,19 @@ impl HFXT_ON_R {
     #[doc = "Checks if the value of the field is `HFXT_ON_0`"]
     #[inline(always)]
     pub fn is_hfxt_on_0(&self) -> bool {
-        *self == HFXT_ON_A::HFXT_ON_0
+        **self == HFXT_ON_A::HFXT_ON_0
     }
     #[doc = "Checks if the value of the field is `HFXT_ON_1`"]
     #[inline(always)]
     pub fn is_hfxt_on_1(&self) -> bool {
-        *self == HFXT_ON_A::HFXT_ON_1
+        **self == HFXT_ON_A::HFXT_ON_1
+    }
+}
+impl core::ops::Deref for HFXT_ON_R {
+    type Target = crate::FieldReader<bool, HFXT_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "HFXT2 status\n\nValue on reset: 0"]
@@ -122,9 +164,12 @@ impl From<HFXT2_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HFXT2_ON`"]
-pub type HFXT2_ON_R = crate::R<bool, HFXT2_ON_A>;
+#[doc = "Field `HFXT2_ON` reader - HFXT2 status"]
+pub struct HFXT2_ON_R(crate::FieldReader<bool, HFXT2_ON_A>);
 impl HFXT2_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFXT2_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFXT2_ON_A {
@@ -136,12 +181,19 @@ impl HFXT2_ON_R {
     #[doc = "Checks if the value of the field is `HFXT2_ON_0`"]
     #[inline(always)]
     pub fn is_hfxt2_on_0(&self) -> bool {
-        *self == HFXT2_ON_A::HFXT2_ON_0
+        **self == HFXT2_ON_A::HFXT2_ON_0
     }
     #[doc = "Checks if the value of the field is `HFXT2_ON_1`"]
     #[inline(always)]
     pub fn is_hfxt2_on_1(&self) -> bool {
-        *self == HFXT2_ON_A::HFXT2_ON_1
+        **self == HFXT2_ON_A::HFXT2_ON_1
+    }
+}
+impl core::ops::Deref for HFXT2_ON_R {
+    type Target = crate::FieldReader<bool, HFXT2_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "MODOSC status\n\nValue on reset: 0"]
@@ -158,9 +210,12 @@ impl From<MODOSC_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MODOSC_ON`"]
-pub type MODOSC_ON_R = crate::R<bool, MODOSC_ON_A>;
+#[doc = "Field `MODOSC_ON` reader - MODOSC status"]
+pub struct MODOSC_ON_R(crate::FieldReader<bool, MODOSC_ON_A>);
 impl MODOSC_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MODOSC_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODOSC_ON_A {
@@ -172,12 +227,19 @@ impl MODOSC_ON_R {
     #[doc = "Checks if the value of the field is `MODOSC_ON_0`"]
     #[inline(always)]
     pub fn is_modosc_on_0(&self) -> bool {
-        *self == MODOSC_ON_A::MODOSC_ON_0
+        **self == MODOSC_ON_A::MODOSC_ON_0
     }
     #[doc = "Checks if the value of the field is `MODOSC_ON_1`"]
     #[inline(always)]
     pub fn is_modosc_on_1(&self) -> bool {
-        *self == MODOSC_ON_A::MODOSC_ON_1
+        **self == MODOSC_ON_A::MODOSC_ON_1
+    }
+}
+impl core::ops::Deref for MODOSC_ON_R {
+    type Target = crate::FieldReader<bool, MODOSC_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "VLO status\n\nValue on reset: 0"]
@@ -194,9 +256,12 @@ impl From<VLO_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VLO_ON`"]
-pub type VLO_ON_R = crate::R<bool, VLO_ON_A>;
+#[doc = "Field `VLO_ON` reader - VLO status"]
+pub struct VLO_ON_R(crate::FieldReader<bool, VLO_ON_A>);
 impl VLO_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VLO_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VLO_ON_A {
@@ -208,12 +273,19 @@ impl VLO_ON_R {
     #[doc = "Checks if the value of the field is `VLO_ON_0`"]
     #[inline(always)]
     pub fn is_vlo_on_0(&self) -> bool {
-        *self == VLO_ON_A::VLO_ON_0
+        **self == VLO_ON_A::VLO_ON_0
     }
     #[doc = "Checks if the value of the field is `VLO_ON_1`"]
     #[inline(always)]
     pub fn is_vlo_on_1(&self) -> bool {
-        *self == VLO_ON_A::VLO_ON_1
+        **self == VLO_ON_A::VLO_ON_1
+    }
+}
+impl core::ops::Deref for VLO_ON_R {
+    type Target = crate::FieldReader<bool, VLO_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "LFXT status\n\nValue on reset: 0"]
@@ -230,9 +302,12 @@ impl From<LFXT_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LFXT_ON`"]
-pub type LFXT_ON_R = crate::R<bool, LFXT_ON_A>;
+#[doc = "Field `LFXT_ON` reader - LFXT status"]
+pub struct LFXT_ON_R(crate::FieldReader<bool, LFXT_ON_A>);
 impl LFXT_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFXT_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFXT_ON_A {
@@ -244,12 +319,19 @@ impl LFXT_ON_R {
     #[doc = "Checks if the value of the field is `LFXT_ON_0`"]
     #[inline(always)]
     pub fn is_lfxt_on_0(&self) -> bool {
-        *self == LFXT_ON_A::LFXT_ON_0
+        **self == LFXT_ON_A::LFXT_ON_0
     }
     #[doc = "Checks if the value of the field is `LFXT_ON_1`"]
     #[inline(always)]
     pub fn is_lfxt_on_1(&self) -> bool {
-        *self == LFXT_ON_A::LFXT_ON_1
+        **self == LFXT_ON_A::LFXT_ON_1
+    }
+}
+impl core::ops::Deref for LFXT_ON_R {
+    type Target = crate::FieldReader<bool, LFXT_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "REFO status\n\nValue on reset: 0"]
@@ -266,9 +348,12 @@ impl From<REFO_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFO_ON`"]
-pub type REFO_ON_R = crate::R<bool, REFO_ON_A>;
+#[doc = "Field `REFO_ON` reader - REFO status"]
+pub struct REFO_ON_R(crate::FieldReader<bool, REFO_ON_A>);
 impl REFO_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFO_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFO_ON_A {
@@ -280,12 +365,19 @@ impl REFO_ON_R {
     #[doc = "Checks if the value of the field is `REFO_ON_0`"]
     #[inline(always)]
     pub fn is_refo_on_0(&self) -> bool {
-        *self == REFO_ON_A::REFO_ON_0
+        **self == REFO_ON_A::REFO_ON_0
     }
     #[doc = "Checks if the value of the field is `REFO_ON_1`"]
     #[inline(always)]
     pub fn is_refo_on_1(&self) -> bool {
-        *self == REFO_ON_A::REFO_ON_1
+        **self == REFO_ON_A::REFO_ON_1
+    }
+}
+impl core::ops::Deref for REFO_ON_R {
+    type Target = crate::FieldReader<bool, REFO_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "ACLK system clock status\n\nValue on reset: 0"]
@@ -302,9 +394,12 @@ impl From<ACLK_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ACLK_ON`"]
-pub type ACLK_ON_R = crate::R<bool, ACLK_ON_A>;
+#[doc = "Field `ACLK_ON` reader - ACLK system clock status"]
+pub struct ACLK_ON_R(crate::FieldReader<bool, ACLK_ON_A>);
 impl ACLK_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ACLK_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ACLK_ON_A {
@@ -316,12 +411,19 @@ impl ACLK_ON_R {
     #[doc = "Checks if the value of the field is `ACLK_ON_0`"]
     #[inline(always)]
     pub fn is_aclk_on_0(&self) -> bool {
-        *self == ACLK_ON_A::ACLK_ON_0
+        **self == ACLK_ON_A::ACLK_ON_0
     }
     #[doc = "Checks if the value of the field is `ACLK_ON_1`"]
     #[inline(always)]
     pub fn is_aclk_on_1(&self) -> bool {
-        *self == ACLK_ON_A::ACLK_ON_1
+        **self == ACLK_ON_A::ACLK_ON_1
+    }
+}
+impl core::ops::Deref for ACLK_ON_R {
+    type Target = crate::FieldReader<bool, ACLK_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "MCLK system clock status\n\nValue on reset: 0"]
@@ -338,9 +440,12 @@ impl From<MCLK_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MCLK_ON`"]
-pub type MCLK_ON_R = crate::R<bool, MCLK_ON_A>;
+#[doc = "Field `MCLK_ON` reader - MCLK system clock status"]
+pub struct MCLK_ON_R(crate::FieldReader<bool, MCLK_ON_A>);
 impl MCLK_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MCLK_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MCLK_ON_A {
@@ -352,12 +457,19 @@ impl MCLK_ON_R {
     #[doc = "Checks if the value of the field is `MCLK_ON_0`"]
     #[inline(always)]
     pub fn is_mclk_on_0(&self) -> bool {
-        *self == MCLK_ON_A::MCLK_ON_0
+        **self == MCLK_ON_A::MCLK_ON_0
     }
     #[doc = "Checks if the value of the field is `MCLK_ON_1`"]
     #[inline(always)]
     pub fn is_mclk_on_1(&self) -> bool {
-        *self == MCLK_ON_A::MCLK_ON_1
+        **self == MCLK_ON_A::MCLK_ON_1
+    }
+}
+impl core::ops::Deref for MCLK_ON_R {
+    type Target = crate::FieldReader<bool, MCLK_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "HSMCLK system clock status\n\nValue on reset: 0"]
@@ -374,9 +486,12 @@ impl From<HSMCLK_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HSMCLK_ON`"]
-pub type HSMCLK_ON_R = crate::R<bool, HSMCLK_ON_A>;
+#[doc = "Field `HSMCLK_ON` reader - HSMCLK system clock status"]
+pub struct HSMCLK_ON_R(crate::FieldReader<bool, HSMCLK_ON_A>);
 impl HSMCLK_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HSMCLK_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HSMCLK_ON_A {
@@ -388,12 +503,19 @@ impl HSMCLK_ON_R {
     #[doc = "Checks if the value of the field is `HSMCLK_ON_0`"]
     #[inline(always)]
     pub fn is_hsmclk_on_0(&self) -> bool {
-        *self == HSMCLK_ON_A::HSMCLK_ON_0
+        **self == HSMCLK_ON_A::HSMCLK_ON_0
     }
     #[doc = "Checks if the value of the field is `HSMCLK_ON_1`"]
     #[inline(always)]
     pub fn is_hsmclk_on_1(&self) -> bool {
-        *self == HSMCLK_ON_A::HSMCLK_ON_1
+        **self == HSMCLK_ON_A::HSMCLK_ON_1
+    }
+}
+impl core::ops::Deref for HSMCLK_ON_R {
+    type Target = crate::FieldReader<bool, HSMCLK_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "SMCLK system clock status\n\nValue on reset: 0"]
@@ -410,9 +532,12 @@ impl From<SMCLK_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SMCLK_ON`"]
-pub type SMCLK_ON_R = crate::R<bool, SMCLK_ON_A>;
+#[doc = "Field `SMCLK_ON` reader - SMCLK system clock status"]
+pub struct SMCLK_ON_R(crate::FieldReader<bool, SMCLK_ON_A>);
 impl SMCLK_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SMCLK_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMCLK_ON_A {
@@ -424,12 +549,19 @@ impl SMCLK_ON_R {
     #[doc = "Checks if the value of the field is `SMCLK_ON_0`"]
     #[inline(always)]
     pub fn is_smclk_on_0(&self) -> bool {
-        *self == SMCLK_ON_A::SMCLK_ON_0
+        **self == SMCLK_ON_A::SMCLK_ON_0
     }
     #[doc = "Checks if the value of the field is `SMCLK_ON_1`"]
     #[inline(always)]
     pub fn is_smclk_on_1(&self) -> bool {
-        *self == SMCLK_ON_A::SMCLK_ON_1
+        **self == SMCLK_ON_A::SMCLK_ON_1
+    }
+}
+impl core::ops::Deref for SMCLK_ON_R {
+    type Target = crate::FieldReader<bool, SMCLK_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "MODCLK system clock status\n\nValue on reset: 0"]
@@ -446,9 +578,12 @@ impl From<MODCLK_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MODCLK_ON`"]
-pub type MODCLK_ON_R = crate::R<bool, MODCLK_ON_A>;
+#[doc = "Field `MODCLK_ON` reader - MODCLK system clock status"]
+pub struct MODCLK_ON_R(crate::FieldReader<bool, MODCLK_ON_A>);
 impl MODCLK_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MODCLK_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODCLK_ON_A {
@@ -460,12 +595,19 @@ impl MODCLK_ON_R {
     #[doc = "Checks if the value of the field is `MODCLK_ON_0`"]
     #[inline(always)]
     pub fn is_modclk_on_0(&self) -> bool {
-        *self == MODCLK_ON_A::MODCLK_ON_0
+        **self == MODCLK_ON_A::MODCLK_ON_0
     }
     #[doc = "Checks if the value of the field is `MODCLK_ON_1`"]
     #[inline(always)]
     pub fn is_modclk_on_1(&self) -> bool {
-        *self == MODCLK_ON_A::MODCLK_ON_1
+        **self == MODCLK_ON_A::MODCLK_ON_1
+    }
+}
+impl core::ops::Deref for MODCLK_ON_R {
+    type Target = crate::FieldReader<bool, MODCLK_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "VLOCLK system clock status\n\nValue on reset: 0"]
@@ -482,9 +624,12 @@ impl From<VLOCLK_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VLOCLK_ON`"]
-pub type VLOCLK_ON_R = crate::R<bool, VLOCLK_ON_A>;
+#[doc = "Field `VLOCLK_ON` reader - VLOCLK system clock status"]
+pub struct VLOCLK_ON_R(crate::FieldReader<bool, VLOCLK_ON_A>);
 impl VLOCLK_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VLOCLK_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VLOCLK_ON_A {
@@ -496,12 +641,19 @@ impl VLOCLK_ON_R {
     #[doc = "Checks if the value of the field is `VLOCLK_ON_0`"]
     #[inline(always)]
     pub fn is_vloclk_on_0(&self) -> bool {
-        *self == VLOCLK_ON_A::VLOCLK_ON_0
+        **self == VLOCLK_ON_A::VLOCLK_ON_0
     }
     #[doc = "Checks if the value of the field is `VLOCLK_ON_1`"]
     #[inline(always)]
     pub fn is_vloclk_on_1(&self) -> bool {
-        *self == VLOCLK_ON_A::VLOCLK_ON_1
+        **self == VLOCLK_ON_A::VLOCLK_ON_1
+    }
+}
+impl core::ops::Deref for VLOCLK_ON_R {
+    type Target = crate::FieldReader<bool, VLOCLK_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "LFXTCLK system clock status\n\nValue on reset: 0"]
@@ -518,9 +670,12 @@ impl From<LFXTCLK_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LFXTCLK_ON`"]
-pub type LFXTCLK_ON_R = crate::R<bool, LFXTCLK_ON_A>;
+#[doc = "Field `LFXTCLK_ON` reader - LFXTCLK system clock status"]
+pub struct LFXTCLK_ON_R(crate::FieldReader<bool, LFXTCLK_ON_A>);
 impl LFXTCLK_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFXTCLK_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFXTCLK_ON_A {
@@ -532,12 +687,19 @@ impl LFXTCLK_ON_R {
     #[doc = "Checks if the value of the field is `LFXTCLK_ON_0`"]
     #[inline(always)]
     pub fn is_lfxtclk_on_0(&self) -> bool {
-        *self == LFXTCLK_ON_A::LFXTCLK_ON_0
+        **self == LFXTCLK_ON_A::LFXTCLK_ON_0
     }
     #[doc = "Checks if the value of the field is `LFXTCLK_ON_1`"]
     #[inline(always)]
     pub fn is_lfxtclk_on_1(&self) -> bool {
-        *self == LFXTCLK_ON_A::LFXTCLK_ON_1
+        **self == LFXTCLK_ON_A::LFXTCLK_ON_1
+    }
+}
+impl core::ops::Deref for LFXTCLK_ON_R {
+    type Target = crate::FieldReader<bool, LFXTCLK_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "REFOCLK system clock status\n\nValue on reset: 0"]
@@ -554,9 +716,12 @@ impl From<REFOCLK_ON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFOCLK_ON`"]
-pub type REFOCLK_ON_R = crate::R<bool, REFOCLK_ON_A>;
+#[doc = "Field `REFOCLK_ON` reader - REFOCLK system clock status"]
+pub struct REFOCLK_ON_R(crate::FieldReader<bool, REFOCLK_ON_A>);
 impl REFOCLK_ON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFOCLK_ON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFOCLK_ON_A {
@@ -568,12 +733,19 @@ impl REFOCLK_ON_R {
     #[doc = "Checks if the value of the field is `REFOCLK_ON_0`"]
     #[inline(always)]
     pub fn is_refoclk_on_0(&self) -> bool {
-        *self == REFOCLK_ON_A::REFOCLK_ON_0
+        **self == REFOCLK_ON_A::REFOCLK_ON_0
     }
     #[doc = "Checks if the value of the field is `REFOCLK_ON_1`"]
     #[inline(always)]
     pub fn is_refoclk_on_1(&self) -> bool {
-        *self == REFOCLK_ON_A::REFOCLK_ON_1
+        **self == REFOCLK_ON_A::REFOCLK_ON_1
+    }
+}
+impl core::ops::Deref for REFOCLK_ON_R {
+    type Target = crate::FieldReader<bool, REFOCLK_ON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "ACLK Ready status\n\nValue on reset: 0"]
@@ -590,9 +762,12 @@ impl From<ACLK_READY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ACLK_READY`"]
-pub type ACLK_READY_R = crate::R<bool, ACLK_READY_A>;
+#[doc = "Field `ACLK_READY` reader - ACLK Ready status"]
+pub struct ACLK_READY_R(crate::FieldReader<bool, ACLK_READY_A>);
 impl ACLK_READY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ACLK_READY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ACLK_READY_A {
@@ -604,12 +779,19 @@ impl ACLK_READY_R {
     #[doc = "Checks if the value of the field is `ACLK_READY_0`"]
     #[inline(always)]
     pub fn is_aclk_ready_0(&self) -> bool {
-        *self == ACLK_READY_A::ACLK_READY_0
+        **self == ACLK_READY_A::ACLK_READY_0
     }
     #[doc = "Checks if the value of the field is `ACLK_READY_1`"]
     #[inline(always)]
     pub fn is_aclk_ready_1(&self) -> bool {
-        *self == ACLK_READY_A::ACLK_READY_1
+        **self == ACLK_READY_A::ACLK_READY_1
+    }
+}
+impl core::ops::Deref for ACLK_READY_R {
+    type Target = crate::FieldReader<bool, ACLK_READY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "MCLK Ready status\n\nValue on reset: 0"]
@@ -626,9 +808,12 @@ impl From<MCLK_READY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MCLK_READY`"]
-pub type MCLK_READY_R = crate::R<bool, MCLK_READY_A>;
+#[doc = "Field `MCLK_READY` reader - MCLK Ready status"]
+pub struct MCLK_READY_R(crate::FieldReader<bool, MCLK_READY_A>);
 impl MCLK_READY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MCLK_READY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MCLK_READY_A {
@@ -640,12 +825,19 @@ impl MCLK_READY_R {
     #[doc = "Checks if the value of the field is `MCLK_READY_0`"]
     #[inline(always)]
     pub fn is_mclk_ready_0(&self) -> bool {
-        *self == MCLK_READY_A::MCLK_READY_0
+        **self == MCLK_READY_A::MCLK_READY_0
     }
     #[doc = "Checks if the value of the field is `MCLK_READY_1`"]
     #[inline(always)]
     pub fn is_mclk_ready_1(&self) -> bool {
-        *self == MCLK_READY_A::MCLK_READY_1
+        **self == MCLK_READY_A::MCLK_READY_1
+    }
+}
+impl core::ops::Deref for MCLK_READY_R {
+    type Target = crate::FieldReader<bool, MCLK_READY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "HSMCLK Ready status\n\nValue on reset: 0"]
@@ -662,9 +854,12 @@ impl From<HSMCLK_READY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HSMCLK_READY`"]
-pub type HSMCLK_READY_R = crate::R<bool, HSMCLK_READY_A>;
+#[doc = "Field `HSMCLK_READY` reader - HSMCLK Ready status"]
+pub struct HSMCLK_READY_R(crate::FieldReader<bool, HSMCLK_READY_A>);
 impl HSMCLK_READY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HSMCLK_READY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HSMCLK_READY_A {
@@ -676,12 +871,19 @@ impl HSMCLK_READY_R {
     #[doc = "Checks if the value of the field is `HSMCLK_READY_0`"]
     #[inline(always)]
     pub fn is_hsmclk_ready_0(&self) -> bool {
-        *self == HSMCLK_READY_A::HSMCLK_READY_0
+        **self == HSMCLK_READY_A::HSMCLK_READY_0
     }
     #[doc = "Checks if the value of the field is `HSMCLK_READY_1`"]
     #[inline(always)]
     pub fn is_hsmclk_ready_1(&self) -> bool {
-        *self == HSMCLK_READY_A::HSMCLK_READY_1
+        **self == HSMCLK_READY_A::HSMCLK_READY_1
+    }
+}
+impl core::ops::Deref for HSMCLK_READY_R {
+    type Target = crate::FieldReader<bool, HSMCLK_READY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "SMCLK Ready status\n\nValue on reset: 0"]
@@ -698,9 +900,12 @@ impl From<SMCLK_READY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SMCLK_READY`"]
-pub type SMCLK_READY_R = crate::R<bool, SMCLK_READY_A>;
+#[doc = "Field `SMCLK_READY` reader - SMCLK Ready status"]
+pub struct SMCLK_READY_R(crate::FieldReader<bool, SMCLK_READY_A>);
 impl SMCLK_READY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SMCLK_READY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMCLK_READY_A {
@@ -712,12 +917,19 @@ impl SMCLK_READY_R {
     #[doc = "Checks if the value of the field is `SMCLK_READY_0`"]
     #[inline(always)]
     pub fn is_smclk_ready_0(&self) -> bool {
-        *self == SMCLK_READY_A::SMCLK_READY_0
+        **self == SMCLK_READY_A::SMCLK_READY_0
     }
     #[doc = "Checks if the value of the field is `SMCLK_READY_1`"]
     #[inline(always)]
     pub fn is_smclk_ready_1(&self) -> bool {
-        *self == SMCLK_READY_A::SMCLK_READY_1
+        **self == SMCLK_READY_A::SMCLK_READY_1
+    }
+}
+impl core::ops::Deref for SMCLK_READY_R {
+    type Target = crate::FieldReader<bool, SMCLK_READY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "BCLK Ready status\n\nValue on reset: 0"]
@@ -734,9 +946,12 @@ impl From<BCLK_READY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BCLK_READY`"]
-pub type BCLK_READY_R = crate::R<bool, BCLK_READY_A>;
+#[doc = "Field `BCLK_READY` reader - BCLK Ready status"]
+pub struct BCLK_READY_R(crate::FieldReader<bool, BCLK_READY_A>);
 impl BCLK_READY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BCLK_READY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BCLK_READY_A {
@@ -748,12 +963,19 @@ impl BCLK_READY_R {
     #[doc = "Checks if the value of the field is `BCLK_READY_0`"]
     #[inline(always)]
     pub fn is_bclk_ready_0(&self) -> bool {
-        *self == BCLK_READY_A::BCLK_READY_0
+        **self == BCLK_READY_A::BCLK_READY_0
     }
     #[doc = "Checks if the value of the field is `BCLK_READY_1`"]
     #[inline(always)]
     pub fn is_bclk_ready_1(&self) -> bool {
-        *self == BCLK_READY_A::BCLK_READY_1
+        **self == BCLK_READY_A::BCLK_READY_1
+    }
+}
+impl core::ops::Deref for BCLK_READY_R {
+    type Target = crate::FieldReader<bool, BCLK_READY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -861,5 +1083,21 @@ impl R {
     #[inline(always)]
     pub fn bclk_ready(&self) -> BCLK_READY_R {
         BCLK_READY_R::new(((self.bits >> 28) & 0x01) != 0)
+    }
+}
+#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csstat](index.html) module"]
+pub struct CSSTAT_SPEC;
+impl crate::RegisterSpec for CSSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [csstat::R](R) reader structure"]
+impl crate::Readable for CSSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets CSSTAT to value 0x03"]
+impl crate::Resettable for CSSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x03
     }
 }

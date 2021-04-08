@@ -1,13 +1,35 @@
-#[doc = "Reader of register SYS_NMI_CTLSTAT"]
-pub type R = crate::R<u32, super::SYS_NMI_CTLSTAT>;
-#[doc = "Writer for register SYS_NMI_CTLSTAT"]
-pub type W = crate::W<u32, super::SYS_NMI_CTLSTAT>;
-#[doc = "Register SYS_NMI_CTLSTAT `reset()`'s with value 0x07"]
-impl crate::ResetValue for super::SYS_NMI_CTLSTAT {
-    type Type = u32;
+#[doc = "Register `SYS_NMI_CTLSTAT` reader"]
+pub struct R(crate::R<SYS_NMI_CTLSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYS_NMI_CTLSTAT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x07
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SYS_NMI_CTLSTAT_SPEC>> for R {
+    fn from(reader: crate::R<SYS_NMI_CTLSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYS_NMI_CTLSTAT` writer"]
+pub struct W(crate::W<SYS_NMI_CTLSTAT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYS_NMI_CTLSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SYS_NMI_CTLSTAT_SPEC>> for W {
+    fn from(writer: crate::W<SYS_NMI_CTLSTAT_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "CS interrupt as a source of NMI\n\nValue on reset: 1"]
@@ -24,9 +46,12 @@ impl From<CS_SRC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CS_SRC`"]
-pub type CS_SRC_R = crate::R<bool, CS_SRC_A>;
+#[doc = "Field `CS_SRC` reader - CS interrupt as a source of NMI"]
+pub struct CS_SRC_R(crate::FieldReader<bool, CS_SRC_A>);
 impl CS_SRC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CS_SRC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CS_SRC_A {
@@ -38,15 +63,22 @@ impl CS_SRC_R {
     #[doc = "Checks if the value of the field is `CS_SRC_0`"]
     #[inline(always)]
     pub fn is_cs_src_0(&self) -> bool {
-        *self == CS_SRC_A::CS_SRC_0
+        **self == CS_SRC_A::CS_SRC_0
     }
     #[doc = "Checks if the value of the field is `CS_SRC_1`"]
     #[inline(always)]
     pub fn is_cs_src_1(&self) -> bool {
-        *self == CS_SRC_A::CS_SRC_1
+        **self == CS_SRC_A::CS_SRC_1
     }
 }
-#[doc = "Write proxy for field `CS_SRC`"]
+impl core::ops::Deref for CS_SRC_R {
+    type Target = crate::FieldReader<bool, CS_SRC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CS_SRC` writer - CS interrupt as a source of NMI"]
 pub struct CS_SRC_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> CS_SRC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CS_SRC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disables CS interrupt as a source of NMI"]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> CS_SRC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<PSS_SRC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PSS_SRC`"]
-pub type PSS_SRC_R = crate::R<bool, PSS_SRC_A>;
+#[doc = "Field `PSS_SRC` reader - PSS interrupt as a source of NMI"]
+pub struct PSS_SRC_R(crate::FieldReader<bool, PSS_SRC_A>);
 impl PSS_SRC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PSS_SRC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PSS_SRC_A {
@@ -113,15 +146,22 @@ impl PSS_SRC_R {
     #[doc = "Checks if the value of the field is `PSS_SRC_0`"]
     #[inline(always)]
     pub fn is_pss_src_0(&self) -> bool {
-        *self == PSS_SRC_A::PSS_SRC_0
+        **self == PSS_SRC_A::PSS_SRC_0
     }
     #[doc = "Checks if the value of the field is `PSS_SRC_1`"]
     #[inline(always)]
     pub fn is_pss_src_1(&self) -> bool {
-        *self == PSS_SRC_A::PSS_SRC_1
+        **self == PSS_SRC_A::PSS_SRC_1
     }
 }
-#[doc = "Write proxy for field `PSS_SRC`"]
+impl core::ops::Deref for PSS_SRC_R {
+    type Target = crate::FieldReader<bool, PSS_SRC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PSS_SRC` writer - PSS interrupt as a source of NMI"]
 pub struct PSS_SRC_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> PSS_SRC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PSS_SRC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disables the PSS interrupt as a source of NMI"]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> PSS_SRC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<PCM_SRC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PCM_SRC`"]
-pub type PCM_SRC_R = crate::R<bool, PCM_SRC_A>;
+#[doc = "Field `PCM_SRC` reader - PCM interrupt as a source of NMI"]
+pub struct PCM_SRC_R(crate::FieldReader<bool, PCM_SRC_A>);
 impl PCM_SRC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PCM_SRC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PCM_SRC_A {
@@ -188,15 +229,22 @@ impl PCM_SRC_R {
     #[doc = "Checks if the value of the field is `PCM_SRC_0`"]
     #[inline(always)]
     pub fn is_pcm_src_0(&self) -> bool {
-        *self == PCM_SRC_A::PCM_SRC_0
+        **self == PCM_SRC_A::PCM_SRC_0
     }
     #[doc = "Checks if the value of the field is `PCM_SRC_1`"]
     #[inline(always)]
     pub fn is_pcm_src_1(&self) -> bool {
-        *self == PCM_SRC_A::PCM_SRC_1
+        **self == PCM_SRC_A::PCM_SRC_1
     }
 }
-#[doc = "Write proxy for field `PCM_SRC`"]
+impl core::ops::Deref for PCM_SRC_R {
+    type Target = crate::FieldReader<bool, PCM_SRC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PCM_SRC` writer - PCM interrupt as a source of NMI"]
 pub struct PCM_SRC_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> PCM_SRC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PCM_SRC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disbles the PCM interrupt as a source of NMI"]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> PCM_SRC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<PIN_SRC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIN_SRC`"]
-pub type PIN_SRC_R = crate::R<bool, PIN_SRC_A>;
+#[doc = "Field `PIN_SRC` reader - RSTn/NMI pin configuration Note: When the device enters LPM3/LPM4 modes of operation, the functionality selected by this bit is retained. If selected as an NMI, activity on this pin in LPM3/LPM4 wakes the device and processes the interrupt, without causing a POR. If selected as a Reset, activity on this pin in LPM3/LPM4 causes a device-level POR When the device enters LPM3.5/LPM4.5 modes of operation, this bit is always cleared to 0. In other words, the RSTn/NMI pin always assumes a reset functionality in LPM3.5/LPM4.5 modes."]
+pub struct PIN_SRC_R(crate::FieldReader<bool, PIN_SRC_A>);
 impl PIN_SRC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIN_SRC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIN_SRC_A {
@@ -263,15 +312,22 @@ impl PIN_SRC_R {
     #[doc = "Checks if the value of the field is `PIN_SRC_0`"]
     #[inline(always)]
     pub fn is_pin_src_0(&self) -> bool {
-        *self == PIN_SRC_A::PIN_SRC_0
+        **self == PIN_SRC_A::PIN_SRC_0
     }
     #[doc = "Checks if the value of the field is `PIN_SRC_1`"]
     #[inline(always)]
     pub fn is_pin_src_1(&self) -> bool {
-        *self == PIN_SRC_A::PIN_SRC_1
+        **self == PIN_SRC_A::PIN_SRC_1
     }
 }
-#[doc = "Write proxy for field `PIN_SRC`"]
+impl core::ops::Deref for PIN_SRC_R {
+    type Target = crate::FieldReader<bool, PIN_SRC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIN_SRC` writer - RSTn/NMI pin configuration Note: When the device enters LPM3/LPM4 modes of operation, the functionality selected by this bit is retained. If selected as an NMI, activity on this pin in LPM3/LPM4 wakes the device and processes the interrupt, without causing a POR. If selected as a Reset, activity on this pin in LPM3/LPM4 causes a device-level POR When the device enters LPM3.5/LPM4.5 modes of operation, this bit is always cleared to 0. In other words, the RSTn/NMI pin always assumes a reset functionality in LPM3.5/LPM4.5 modes."]
 pub struct PIN_SRC_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> PIN_SRC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIN_SRC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Configures the RSTn_NMI pin as a source of POR Class Reset"]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> PIN_SRC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<CS_FLG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CS_FLG`"]
-pub type CS_FLG_R = crate::R<bool, CS_FLG_A>;
+#[doc = "Field `CS_FLG` reader - CS interrupt was the source of NMI"]
+pub struct CS_FLG_R(crate::FieldReader<bool, CS_FLG_A>);
 impl CS_FLG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CS_FLG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CS_FLG_A {
@@ -338,12 +395,19 @@ impl CS_FLG_R {
     #[doc = "Checks if the value of the field is `CS_FLG_0`"]
     #[inline(always)]
     pub fn is_cs_flg_0(&self) -> bool {
-        *self == CS_FLG_A::CS_FLG_0
+        **self == CS_FLG_A::CS_FLG_0
     }
     #[doc = "Checks if the value of the field is `CS_FLG_1`"]
     #[inline(always)]
     pub fn is_cs_flg_1(&self) -> bool {
-        *self == CS_FLG_A::CS_FLG_1
+        **self == CS_FLG_A::CS_FLG_1
+    }
+}
+impl core::ops::Deref for CS_FLG_R {
+    type Target = crate::FieldReader<bool, CS_FLG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "PSS interrupt was the source of NMI\n\nValue on reset: 0"]
@@ -360,9 +424,12 @@ impl From<PSS_FLG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PSS_FLG`"]
-pub type PSS_FLG_R = crate::R<bool, PSS_FLG_A>;
+#[doc = "Field `PSS_FLG` reader - PSS interrupt was the source of NMI"]
+pub struct PSS_FLG_R(crate::FieldReader<bool, PSS_FLG_A>);
 impl PSS_FLG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PSS_FLG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PSS_FLG_A {
@@ -374,12 +441,19 @@ impl PSS_FLG_R {
     #[doc = "Checks if the value of the field is `PSS_FLG_0`"]
     #[inline(always)]
     pub fn is_pss_flg_0(&self) -> bool {
-        *self == PSS_FLG_A::PSS_FLG_0
+        **self == PSS_FLG_A::PSS_FLG_0
     }
     #[doc = "Checks if the value of the field is `PSS_FLG_1`"]
     #[inline(always)]
     pub fn is_pss_flg_1(&self) -> bool {
-        *self == PSS_FLG_A::PSS_FLG_1
+        **self == PSS_FLG_A::PSS_FLG_1
+    }
+}
+impl core::ops::Deref for PSS_FLG_R {
+    type Target = crate::FieldReader<bool, PSS_FLG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "PCM interrupt was the source of NMI\n\nValue on reset: 0"]
@@ -396,9 +470,12 @@ impl From<PCM_FLG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PCM_FLG`"]
-pub type PCM_FLG_R = crate::R<bool, PCM_FLG_A>;
+#[doc = "Field `PCM_FLG` reader - PCM interrupt was the source of NMI"]
+pub struct PCM_FLG_R(crate::FieldReader<bool, PCM_FLG_A>);
 impl PCM_FLG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PCM_FLG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PCM_FLG_A {
@@ -410,12 +487,19 @@ impl PCM_FLG_R {
     #[doc = "Checks if the value of the field is `PCM_FLG_0`"]
     #[inline(always)]
     pub fn is_pcm_flg_0(&self) -> bool {
-        *self == PCM_FLG_A::PCM_FLG_0
+        **self == PCM_FLG_A::PCM_FLG_0
     }
     #[doc = "Checks if the value of the field is `PCM_FLG_1`"]
     #[inline(always)]
     pub fn is_pcm_flg_1(&self) -> bool {
-        *self == PCM_FLG_A::PCM_FLG_1
+        **self == PCM_FLG_A::PCM_FLG_1
+    }
+}
+impl core::ops::Deref for PCM_FLG_R {
+    type Target = crate::FieldReader<bool, PCM_FLG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "RSTn/NMI pin was the source of NMI\n\nValue on reset: 0"]
@@ -432,9 +516,12 @@ impl From<PIN_FLG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIN_FLG`"]
-pub type PIN_FLG_R = crate::R<bool, PIN_FLG_A>;
+#[doc = "Field `PIN_FLG` reader - RSTn/NMI pin was the source of NMI"]
+pub struct PIN_FLG_R(crate::FieldReader<bool, PIN_FLG_A>);
 impl PIN_FLG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIN_FLG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIN_FLG_A {
@@ -446,15 +533,22 @@ impl PIN_FLG_R {
     #[doc = "Checks if the value of the field is `PIN_FLG_0`"]
     #[inline(always)]
     pub fn is_pin_flg_0(&self) -> bool {
-        *self == PIN_FLG_A::PIN_FLG_0
+        **self == PIN_FLG_A::PIN_FLG_0
     }
     #[doc = "Checks if the value of the field is `PIN_FLG_1`"]
     #[inline(always)]
     pub fn is_pin_flg_1(&self) -> bool {
-        *self == PIN_FLG_A::PIN_FLG_1
+        **self == PIN_FLG_A::PIN_FLG_1
     }
 }
-#[doc = "Write proxy for field `PIN_FLG`"]
+impl core::ops::Deref for PIN_FLG_R {
+    type Target = crate::FieldReader<bool, PIN_FLG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIN_FLG` writer - RSTn/NMI pin was the source of NMI"]
 pub struct PIN_FLG_W<'a> {
     w: &'a mut W,
 }
@@ -462,9 +556,7 @@ impl<'a> PIN_FLG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIN_FLG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Indicates the RSTn_NMI pin was not the source of NMI"]
     #[inline(always)]
@@ -489,7 +581,7 @@ impl<'a> PIN_FLG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -560,5 +652,30 @@ impl W {
     #[inline(always)]
     pub fn pin_flg(&mut self) -> PIN_FLG_W {
         PIN_FLG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "NMI Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sys_nmi_ctlstat](index.html) module"]
+pub struct SYS_NMI_CTLSTAT_SPEC;
+impl crate::RegisterSpec for SYS_NMI_CTLSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sys_nmi_ctlstat::R](R) reader structure"]
+impl crate::Readable for SYS_NMI_CTLSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sys_nmi_ctlstat::W](W) writer structure"]
+impl crate::Writable for SYS_NMI_CTLSTAT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYS_NMI_CTLSTAT to value 0x07"]
+impl crate::Resettable for SYS_NMI_CTLSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x07
     }
 }

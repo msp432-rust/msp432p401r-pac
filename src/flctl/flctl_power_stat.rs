@@ -1,5 +1,17 @@
-#[doc = "Reader of register FLCTL_POWER_STAT"]
-pub type R = crate::R<u32, super::FLCTL_POWER_STAT>;
+#[doc = "Register `FLCTL_POWER_STAT` reader"]
+pub struct R(crate::R<FLCTL_POWER_STAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FLCTL_POWER_STAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<FLCTL_POWER_STAT_SPEC>> for R {
+    fn from(reader: crate::R<FLCTL_POWER_STAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Flash power status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -27,9 +39,12 @@ impl From<PSTAT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PSTAT`"]
-pub type PSTAT_R = crate::R<u8, PSTAT_A>;
+#[doc = "Field `PSTAT` reader - Flash power status"]
+pub struct PSTAT_R(crate::FieldReader<u8, PSTAT_A>);
 impl PSTAT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PSTAT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PSTAT_A {
@@ -48,42 +63,49 @@ impl PSTAT_R {
     #[doc = "Checks if the value of the field is `PSTAT_0`"]
     #[inline(always)]
     pub fn is_pstat_0(&self) -> bool {
-        *self == PSTAT_A::PSTAT_0
+        **self == PSTAT_A::PSTAT_0
     }
     #[doc = "Checks if the value of the field is `PSTAT_1`"]
     #[inline(always)]
     pub fn is_pstat_1(&self) -> bool {
-        *self == PSTAT_A::PSTAT_1
+        **self == PSTAT_A::PSTAT_1
     }
     #[doc = "Checks if the value of the field is `PSTAT_2`"]
     #[inline(always)]
     pub fn is_pstat_2(&self) -> bool {
-        *self == PSTAT_A::PSTAT_2
+        **self == PSTAT_A::PSTAT_2
     }
     #[doc = "Checks if the value of the field is `PSTAT_3`"]
     #[inline(always)]
     pub fn is_pstat_3(&self) -> bool {
-        *self == PSTAT_A::PSTAT_3
+        **self == PSTAT_A::PSTAT_3
     }
     #[doc = "Checks if the value of the field is `PSTAT_4`"]
     #[inline(always)]
     pub fn is_pstat_4(&self) -> bool {
-        *self == PSTAT_A::PSTAT_4
+        **self == PSTAT_A::PSTAT_4
     }
     #[doc = "Checks if the value of the field is `PSTAT_5`"]
     #[inline(always)]
     pub fn is_pstat_5(&self) -> bool {
-        *self == PSTAT_A::PSTAT_5
+        **self == PSTAT_A::PSTAT_5
     }
     #[doc = "Checks if the value of the field is `PSTAT_6`"]
     #[inline(always)]
     pub fn is_pstat_6(&self) -> bool {
-        *self == PSTAT_A::PSTAT_6
+        **self == PSTAT_A::PSTAT_6
     }
     #[doc = "Checks if the value of the field is `PSTAT_7`"]
     #[inline(always)]
     pub fn is_pstat_7(&self) -> bool {
-        *self == PSTAT_A::PSTAT_7
+        **self == PSTAT_A::PSTAT_7
+    }
+}
+impl core::ops::Deref for PSTAT_R {
+    type Target = crate::FieldReader<u8, PSTAT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "PSS FLDO GOOD status\n\nValue on reset: 0"]
@@ -100,9 +122,12 @@ impl From<LDOSTAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LDOSTAT`"]
-pub type LDOSTAT_R = crate::R<bool, LDOSTAT_A>;
+#[doc = "Field `LDOSTAT` reader - PSS FLDO GOOD status"]
+pub struct LDOSTAT_R(crate::FieldReader<bool, LDOSTAT_A>);
 impl LDOSTAT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LDOSTAT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LDOSTAT_A {
@@ -114,12 +139,19 @@ impl LDOSTAT_R {
     #[doc = "Checks if the value of the field is `LDOSTAT_0`"]
     #[inline(always)]
     pub fn is_ldostat_0(&self) -> bool {
-        *self == LDOSTAT_A::LDOSTAT_0
+        **self == LDOSTAT_A::LDOSTAT_0
     }
     #[doc = "Checks if the value of the field is `LDOSTAT_1`"]
     #[inline(always)]
     pub fn is_ldostat_1(&self) -> bool {
-        *self == LDOSTAT_A::LDOSTAT_1
+        **self == LDOSTAT_A::LDOSTAT_1
+    }
+}
+impl core::ops::Deref for LDOSTAT_R {
+    type Target = crate::FieldReader<bool, LDOSTAT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "PSS VREF stable status\n\nValue on reset: 0"]
@@ -136,9 +168,12 @@ impl From<VREFSTAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VREFSTAT`"]
-pub type VREFSTAT_R = crate::R<bool, VREFSTAT_A>;
+#[doc = "Field `VREFSTAT` reader - PSS VREF stable status"]
+pub struct VREFSTAT_R(crate::FieldReader<bool, VREFSTAT_A>);
 impl VREFSTAT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VREFSTAT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VREFSTAT_A {
@@ -150,12 +185,19 @@ impl VREFSTAT_R {
     #[doc = "Checks if the value of the field is `VREFSTAT_0`"]
     #[inline(always)]
     pub fn is_vrefstat_0(&self) -> bool {
-        *self == VREFSTAT_A::VREFSTAT_0
+        **self == VREFSTAT_A::VREFSTAT_0
     }
     #[doc = "Checks if the value of the field is `VREFSTAT_1`"]
     #[inline(always)]
     pub fn is_vrefstat_1(&self) -> bool {
-        *self == VREFSTAT_A::VREFSTAT_1
+        **self == VREFSTAT_A::VREFSTAT_1
+    }
+}
+impl core::ops::Deref for VREFSTAT_R {
+    type Target = crate::FieldReader<bool, VREFSTAT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "PSS IREF stable status\n\nValue on reset: 0"]
@@ -172,9 +214,12 @@ impl From<IREFSTAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IREFSTAT`"]
-pub type IREFSTAT_R = crate::R<bool, IREFSTAT_A>;
+#[doc = "Field `IREFSTAT` reader - PSS IREF stable status"]
+pub struct IREFSTAT_R(crate::FieldReader<bool, IREFSTAT_A>);
 impl IREFSTAT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        IREFSTAT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IREFSTAT_A {
@@ -186,12 +231,19 @@ impl IREFSTAT_R {
     #[doc = "Checks if the value of the field is `IREFSTAT_0`"]
     #[inline(always)]
     pub fn is_irefstat_0(&self) -> bool {
-        *self == IREFSTAT_A::IREFSTAT_0
+        **self == IREFSTAT_A::IREFSTAT_0
     }
     #[doc = "Checks if the value of the field is `IREFSTAT_1`"]
     #[inline(always)]
     pub fn is_irefstat_1(&self) -> bool {
-        *self == IREFSTAT_A::IREFSTAT_1
+        **self == IREFSTAT_A::IREFSTAT_1
+    }
+}
+impl core::ops::Deref for IREFSTAT_R {
+    type Target = crate::FieldReader<bool, IREFSTAT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "PSS trim done status\n\nValue on reset: 0"]
@@ -208,9 +260,12 @@ impl From<TRIMSTAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TRIMSTAT`"]
-pub type TRIMSTAT_R = crate::R<bool, TRIMSTAT_A>;
+#[doc = "Field `TRIMSTAT` reader - PSS trim done status"]
+pub struct TRIMSTAT_R(crate::FieldReader<bool, TRIMSTAT_A>);
 impl TRIMSTAT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TRIMSTAT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRIMSTAT_A {
@@ -222,12 +277,19 @@ impl TRIMSTAT_R {
     #[doc = "Checks if the value of the field is `TRIMSTAT_0`"]
     #[inline(always)]
     pub fn is_trimstat_0(&self) -> bool {
-        *self == TRIMSTAT_A::TRIMSTAT_0
+        **self == TRIMSTAT_A::TRIMSTAT_0
     }
     #[doc = "Checks if the value of the field is `TRIMSTAT_1`"]
     #[inline(always)]
     pub fn is_trimstat_1(&self) -> bool {
-        *self == TRIMSTAT_A::TRIMSTAT_1
+        **self == TRIMSTAT_A::TRIMSTAT_1
+    }
+}
+impl core::ops::Deref for TRIMSTAT_R {
+    type Target = crate::FieldReader<bool, TRIMSTAT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Indicates if Flash is being accessed in 2T mode\n\nValue on reset: 1"]
@@ -244,9 +306,12 @@ impl From<RD_2T_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RD_2T`"]
-pub type RD_2T_R = crate::R<bool, RD_2T_A>;
+#[doc = "Field `RD_2T` reader - Indicates if Flash is being accessed in 2T mode"]
+pub struct RD_2T_R(crate::FieldReader<bool, RD_2T_A>);
 impl RD_2T_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RD_2T_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RD_2T_A {
@@ -258,12 +323,19 @@ impl RD_2T_R {
     #[doc = "Checks if the value of the field is `RD_2T_0`"]
     #[inline(always)]
     pub fn is_rd_2t_0(&self) -> bool {
-        *self == RD_2T_A::RD_2T_0
+        **self == RD_2T_A::RD_2T_0
     }
     #[doc = "Checks if the value of the field is `RD_2T_1`"]
     #[inline(always)]
     pub fn is_rd_2t_1(&self) -> bool {
-        *self == RD_2T_A::RD_2T_1
+        **self == RD_2T_A::RD_2T_1
+    }
+}
+impl core::ops::Deref for RD_2T_R {
+    type Target = crate::FieldReader<bool, RD_2T_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -296,5 +368,21 @@ impl R {
     #[inline(always)]
     pub fn rd_2t(&self) -> RD_2T_R {
         RD_2T_R::new(((self.bits >> 7) & 0x01) != 0)
+    }
+}
+#[doc = "Power Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flctl_power_stat](index.html) module"]
+pub struct FLCTL_POWER_STAT_SPEC;
+impl crate::RegisterSpec for FLCTL_POWER_STAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [flctl_power_stat::R](R) reader structure"]
+impl crate::Readable for FLCTL_POWER_STAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets FLCTL_POWER_STAT to value 0x80"]
+impl crate::Resettable for FLCTL_POWER_STAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x80
     }
 }
