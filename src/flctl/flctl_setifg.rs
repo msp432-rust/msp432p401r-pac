@@ -1,14 +1,24 @@
-#[doc = "Writer for register FLCTL_SETIFG"]
-pub type W = crate::W<u32, super::FLCTL_SETIFG>;
-#[doc = "Register FLCTL_SETIFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::FLCTL_SETIFG {
-    type Type = u32;
+#[doc = "Register `FLCTL_SETIFG` writer"]
+pub struct W(crate::W<FLCTL_SETIFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FLCTL_SETIFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `RDBRST`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<FLCTL_SETIFG_SPEC>> for W {
+    fn from(writer: crate::W<FLCTL_SETIFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RDBRST` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
 pub struct RDBRST_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +36,11 @@ impl<'a> RDBRST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `AVPRE`"]
+#[doc = "Field `AVPRE` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
 pub struct AVPRE_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +58,11 @@ impl<'a> AVPRE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `AVPST`"]
+#[doc = "Field `AVPST` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
 pub struct AVPST_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +80,11 @@ impl<'a> AVPST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `PRG`"]
+#[doc = "Field `PRG` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
 pub struct PRG_W<'a> {
     w: &'a mut W,
 }
@@ -92,11 +102,11 @@ impl<'a> PRG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `PRGB`"]
+#[doc = "Field `PRGB` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
 pub struct PRGB_W<'a> {
     w: &'a mut W,
 }
@@ -114,11 +124,11 @@ impl<'a> PRGB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `ERASE`"]
+#[doc = "Field `ERASE` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
 pub struct ERASE_W<'a> {
     w: &'a mut W,
 }
@@ -136,11 +146,11 @@ impl<'a> ERASE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Write proxy for field `BMRK`"]
+#[doc = "Field `BMRK` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
 pub struct BMRK_W<'a> {
     w: &'a mut W,
 }
@@ -158,11 +168,11 @@ impl<'a> BMRK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `PRG_ERR`"]
+#[doc = "Field `PRG_ERR` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
 pub struct PRG_ERR_W<'a> {
     w: &'a mut W,
 }
@@ -180,7 +190,7 @@ impl<'a> PRG_ERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -224,5 +234,26 @@ impl W {
     #[inline(always)]
     pub fn prg_err(&mut self) -> PRG_ERR_W {
         PRG_ERR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Set Interrupt Flag Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flctl_setifg](index.html) module"]
+pub struct FLCTL_SETIFG_SPEC;
+impl crate::RegisterSpec for FLCTL_SETIFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [flctl_setifg::W](W) writer structure"]
+impl crate::Writable for FLCTL_SETIFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FLCTL_SETIFG to value 0"]
+impl crate::Resettable for FLCTL_SETIFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

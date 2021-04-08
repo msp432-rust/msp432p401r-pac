@@ -1,3 +1,30 @@
-#[doc = "Reader of register RESERVED23"]
-pub type R = crate::R<u32, super::RESERVED23>;
-impl R {}
+#[doc = "Register `RESERVED23` reader"]
+pub struct R(crate::R<RESERVED23_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RESERVED23_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<RESERVED23_SPEC>> for R {
+    fn from(reader: crate::R<RESERVED23_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Reserved\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [reserved23](index.html) module"]
+pub struct RESERVED23_SPEC;
+impl crate::RegisterSpec for RESERVED23_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [reserved23::R](R) reader structure"]
+impl crate::Readable for RESERVED23_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets RESERVED23 to value 0"]
+impl crate::Resettable for RESERVED23_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
+}

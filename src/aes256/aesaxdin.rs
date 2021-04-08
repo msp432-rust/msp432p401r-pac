@@ -1,14 +1,24 @@
-#[doc = "Writer for register AESAXDIN"]
-pub type W = crate::W<u16, super::AESAXDIN>;
-#[doc = "Register AESAXDIN `reset()`'s with value 0"]
-impl crate::ResetValue for super::AESAXDIN {
-    type Type = u16;
+#[doc = "Register `AESAXDIN` writer"]
+pub struct W(crate::W<AESAXDIN_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<AESAXDIN_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `AESXDIN0x`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<AESAXDIN_SPEC>> for W {
+    fn from(writer: crate::W<AESAXDIN_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `AESXDIN0x` writer - AES data in byte n when AESAXDIN is written as half-word"]
 pub struct AESXDIN0X_W<'a> {
     w: &'a mut W,
 }
@@ -16,11 +26,11 @@ impl<'a> AESXDIN0X_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u16) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
         self.w
     }
 }
-#[doc = "Write proxy for field `AESXDIN1x`"]
+#[doc = "Field `AESXDIN1x` writer - AES data in byte n+1 when AESAXDIN is written as half-word"]
 pub struct AESXDIN1X_W<'a> {
     w: &'a mut W,
 }
@@ -28,7 +38,7 @@ impl<'a> AESXDIN1X_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u16) & 0xff) << 8);
+        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
         self.w
     }
 }
@@ -42,5 +52,26 @@ impl W {
     #[inline(always)]
     pub fn aesxdin1x(&mut self) -> AESXDIN1X_W {
         AESXDIN1X_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "AES Accelerator XORed Data In Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [aesaxdin](index.html) module"]
+pub struct AESAXDIN_SPEC;
+impl crate::RegisterSpec for AESAXDIN_SPEC {
+    type Ux = u16;
+}
+#[doc = "`write(|w| ..)` method takes [aesaxdin::W](W) writer structure"]
+impl crate::Writable for AESAXDIN_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets AESAXDIN to value 0"]
+impl crate::Resettable for AESAXDIN_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

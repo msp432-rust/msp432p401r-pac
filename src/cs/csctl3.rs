@@ -1,13 +1,35 @@
-#[doc = "Reader of register CSCTL3"]
-pub type R = crate::R<u32, super::CSCTL3>;
-#[doc = "Writer for register CSCTL3"]
-pub type W = crate::W<u32, super::CSCTL3>;
-#[doc = "Register CSCTL3 `reset()`'s with value 0x0bbb"]
-impl crate::ResetValue for super::CSCTL3 {
-    type Type = u32;
+#[doc = "Register `CSCTL3` reader"]
+pub struct R(crate::R<CSCTL3_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSCTL3_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0bbb
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<CSCTL3_SPEC>> for R {
+    fn from(reader: crate::R<CSCTL3_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CSCTL3` writer"]
+pub struct W(crate::W<CSCTL3_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSCTL3_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CSCTL3_SPEC>> for W {
+    fn from(writer: crate::W<CSCTL3_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Start flag counter for LFXT\n\nValue on reset: 3"]
@@ -29,9 +51,12 @@ impl From<FCNTLF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FCNTLF`"]
-pub type FCNTLF_R = crate::R<u8, FCNTLF_A>;
+#[doc = "Field `FCNTLF` reader - Start flag counter for LFXT"]
+pub struct FCNTLF_R(crate::FieldReader<u8, FCNTLF_A>);
 impl FCNTLF_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FCNTLF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCNTLF_A {
@@ -46,25 +71,32 @@ impl FCNTLF_R {
     #[doc = "Checks if the value of the field is `FCNTLF_0`"]
     #[inline(always)]
     pub fn is_fcntlf_0(&self) -> bool {
-        *self == FCNTLF_A::FCNTLF_0
+        **self == FCNTLF_A::FCNTLF_0
     }
     #[doc = "Checks if the value of the field is `FCNTLF_1`"]
     #[inline(always)]
     pub fn is_fcntlf_1(&self) -> bool {
-        *self == FCNTLF_A::FCNTLF_1
+        **self == FCNTLF_A::FCNTLF_1
     }
     #[doc = "Checks if the value of the field is `FCNTLF_2`"]
     #[inline(always)]
     pub fn is_fcntlf_2(&self) -> bool {
-        *self == FCNTLF_A::FCNTLF_2
+        **self == FCNTLF_A::FCNTLF_2
     }
     #[doc = "Checks if the value of the field is `FCNTLF_3`"]
     #[inline(always)]
     pub fn is_fcntlf_3(&self) -> bool {
-        *self == FCNTLF_A::FCNTLF_3
+        **self == FCNTLF_A::FCNTLF_3
     }
 }
-#[doc = "Write proxy for field `FCNTLF`"]
+impl core::ops::Deref for FCNTLF_R {
+    type Target = crate::FieldReader<u8, FCNTLF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCNTLF` writer - Start flag counter for LFXT"]
 pub struct FCNTLF_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +104,7 @@ impl<'a> FCNTLF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCNTLF_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "4096 cycles"]
     #[inline(always)]
@@ -99,7 +129,7 @@ impl<'a> FCNTLF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -117,7 +147,7 @@ impl From<RFCNTLF_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `RFCNTLF`"]
+#[doc = "Field `RFCNTLF` writer - Reset start fault counter for LFXT"]
 pub struct RFCNTLF_W<'a> {
     w: &'a mut W,
 }
@@ -125,9 +155,7 @@ impl<'a> RFCNTLF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RFCNTLF_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not applicable. Always reads as zero due to self clearing."]
     #[inline(always)]
@@ -152,7 +180,7 @@ impl<'a> RFCNTLF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -170,9 +198,12 @@ impl From<FCNTLF_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FCNTLF_EN`"]
-pub type FCNTLF_EN_R = crate::R<bool, FCNTLF_EN_A>;
+#[doc = "Field `FCNTLF_EN` reader - Enable start fault counter for LFXT"]
+pub struct FCNTLF_EN_R(crate::FieldReader<bool, FCNTLF_EN_A>);
 impl FCNTLF_EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FCNTLF_EN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCNTLF_EN_A {
@@ -184,15 +215,22 @@ impl FCNTLF_EN_R {
     #[doc = "Checks if the value of the field is `FCNTLF_EN_0`"]
     #[inline(always)]
     pub fn is_fcntlf_en_0(&self) -> bool {
-        *self == FCNTLF_EN_A::FCNTLF_EN_0
+        **self == FCNTLF_EN_A::FCNTLF_EN_0
     }
     #[doc = "Checks if the value of the field is `FCNTLF_EN_1`"]
     #[inline(always)]
     pub fn is_fcntlf_en_1(&self) -> bool {
-        *self == FCNTLF_EN_A::FCNTLF_EN_1
+        **self == FCNTLF_EN_A::FCNTLF_EN_1
     }
 }
-#[doc = "Write proxy for field `FCNTLF_EN`"]
+impl core::ops::Deref for FCNTLF_EN_R {
+    type Target = crate::FieldReader<bool, FCNTLF_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCNTLF_EN` writer - Enable start fault counter for LFXT"]
 pub struct FCNTLF_EN_W<'a> {
     w: &'a mut W,
 }
@@ -200,9 +238,7 @@ impl<'a> FCNTLF_EN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCNTLF_EN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Startup fault counter disabled. Counter is cleared."]
     #[inline(always)]
@@ -227,7 +263,7 @@ impl<'a> FCNTLF_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -250,9 +286,12 @@ impl From<FCNTHF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FCNTHF`"]
-pub type FCNTHF_R = crate::R<u8, FCNTHF_A>;
+#[doc = "Field `FCNTHF` reader - Start flag counter for HFXT"]
+pub struct FCNTHF_R(crate::FieldReader<u8, FCNTHF_A>);
 impl FCNTHF_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FCNTHF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCNTHF_A {
@@ -267,25 +306,32 @@ impl FCNTHF_R {
     #[doc = "Checks if the value of the field is `FCNTHF_0`"]
     #[inline(always)]
     pub fn is_fcnthf_0(&self) -> bool {
-        *self == FCNTHF_A::FCNTHF_0
+        **self == FCNTHF_A::FCNTHF_0
     }
     #[doc = "Checks if the value of the field is `FCNTHF_1`"]
     #[inline(always)]
     pub fn is_fcnthf_1(&self) -> bool {
-        *self == FCNTHF_A::FCNTHF_1
+        **self == FCNTHF_A::FCNTHF_1
     }
     #[doc = "Checks if the value of the field is `FCNTHF_2`"]
     #[inline(always)]
     pub fn is_fcnthf_2(&self) -> bool {
-        *self == FCNTHF_A::FCNTHF_2
+        **self == FCNTHF_A::FCNTHF_2
     }
     #[doc = "Checks if the value of the field is `FCNTHF_3`"]
     #[inline(always)]
     pub fn is_fcnthf_3(&self) -> bool {
-        *self == FCNTHF_A::FCNTHF_3
+        **self == FCNTHF_A::FCNTHF_3
     }
 }
-#[doc = "Write proxy for field `FCNTHF`"]
+impl core::ops::Deref for FCNTHF_R {
+    type Target = crate::FieldReader<u8, FCNTHF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCNTHF` writer - Start flag counter for HFXT"]
 pub struct FCNTHF_W<'a> {
     w: &'a mut W,
 }
@@ -293,9 +339,7 @@ impl<'a> FCNTHF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCNTHF_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "2048 cycles"]
     #[inline(always)]
@@ -320,7 +364,7 @@ impl<'a> FCNTHF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
@@ -338,7 +382,7 @@ impl From<RFCNTHF_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `RFCNTHF`"]
+#[doc = "Field `RFCNTHF` writer - Reset start fault counter for HFXT"]
 pub struct RFCNTHF_W<'a> {
     w: &'a mut W,
 }
@@ -346,9 +390,7 @@ impl<'a> RFCNTHF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RFCNTHF_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not applicable. Always reads as zero due to self clearing."]
     #[inline(always)]
@@ -373,7 +415,7 @@ impl<'a> RFCNTHF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -391,9 +433,12 @@ impl From<FCNTHF_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FCNTHF_EN`"]
-pub type FCNTHF_EN_R = crate::R<bool, FCNTHF_EN_A>;
+#[doc = "Field `FCNTHF_EN` reader - Enable start fault counter for HFXT"]
+pub struct FCNTHF_EN_R(crate::FieldReader<bool, FCNTHF_EN_A>);
 impl FCNTHF_EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FCNTHF_EN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCNTHF_EN_A {
@@ -405,15 +450,22 @@ impl FCNTHF_EN_R {
     #[doc = "Checks if the value of the field is `FCNTHF_EN_0`"]
     #[inline(always)]
     pub fn is_fcnthf_en_0(&self) -> bool {
-        *self == FCNTHF_EN_A::FCNTHF_EN_0
+        **self == FCNTHF_EN_A::FCNTHF_EN_0
     }
     #[doc = "Checks if the value of the field is `FCNTHF_EN_1`"]
     #[inline(always)]
     pub fn is_fcnthf_en_1(&self) -> bool {
-        *self == FCNTHF_EN_A::FCNTHF_EN_1
+        **self == FCNTHF_EN_A::FCNTHF_EN_1
     }
 }
-#[doc = "Write proxy for field `FCNTHF_EN`"]
+impl core::ops::Deref for FCNTHF_EN_R {
+    type Target = crate::FieldReader<bool, FCNTHF_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCNTHF_EN` writer - Enable start fault counter for HFXT"]
 pub struct FCNTHF_EN_W<'a> {
     w: &'a mut W,
 }
@@ -421,9 +473,7 @@ impl<'a> FCNTHF_EN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCNTHF_EN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Startup fault counter disabled. Counter is cleared."]
     #[inline(always)]
@@ -448,7 +498,7 @@ impl<'a> FCNTHF_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -471,9 +521,12 @@ impl From<FCNTHF2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FCNTHF2`"]
-pub type FCNTHF2_R = crate::R<u8, FCNTHF2_A>;
+#[doc = "Field `FCNTHF2` reader - Start flag counter for HFXT2"]
+pub struct FCNTHF2_R(crate::FieldReader<u8, FCNTHF2_A>);
 impl FCNTHF2_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FCNTHF2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCNTHF2_A {
@@ -488,25 +541,32 @@ impl FCNTHF2_R {
     #[doc = "Checks if the value of the field is `FCNTHF2_0`"]
     #[inline(always)]
     pub fn is_fcnthf2_0(&self) -> bool {
-        *self == FCNTHF2_A::FCNTHF2_0
+        **self == FCNTHF2_A::FCNTHF2_0
     }
     #[doc = "Checks if the value of the field is `FCNTHF2_1`"]
     #[inline(always)]
     pub fn is_fcnthf2_1(&self) -> bool {
-        *self == FCNTHF2_A::FCNTHF2_1
+        **self == FCNTHF2_A::FCNTHF2_1
     }
     #[doc = "Checks if the value of the field is `FCNTHF2_2`"]
     #[inline(always)]
     pub fn is_fcnthf2_2(&self) -> bool {
-        *self == FCNTHF2_A::FCNTHF2_2
+        **self == FCNTHF2_A::FCNTHF2_2
     }
     #[doc = "Checks if the value of the field is `FCNTHF2_3`"]
     #[inline(always)]
     pub fn is_fcnthf2_3(&self) -> bool {
-        *self == FCNTHF2_A::FCNTHF2_3
+        **self == FCNTHF2_A::FCNTHF2_3
     }
 }
-#[doc = "Write proxy for field `FCNTHF2`"]
+impl core::ops::Deref for FCNTHF2_R {
+    type Target = crate::FieldReader<u8, FCNTHF2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCNTHF2` writer - Start flag counter for HFXT2"]
 pub struct FCNTHF2_W<'a> {
     w: &'a mut W,
 }
@@ -514,9 +574,7 @@ impl<'a> FCNTHF2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCNTHF2_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "2048 cycles"]
     #[inline(always)]
@@ -541,7 +599,7 @@ impl<'a> FCNTHF2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
@@ -559,7 +617,7 @@ impl From<RFCNTHF2_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `RFCNTHF2`"]
+#[doc = "Field `RFCNTHF2` writer - Reset start fault counter for HFXT2"]
 pub struct RFCNTHF2_W<'a> {
     w: &'a mut W,
 }
@@ -567,9 +625,7 @@ impl<'a> RFCNTHF2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RFCNTHF2_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not applicable. Always reads as zero due to self clearing."]
     #[inline(always)]
@@ -594,7 +650,7 @@ impl<'a> RFCNTHF2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -612,9 +668,12 @@ impl From<FCNTHF2_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FCNTHF2_EN`"]
-pub type FCNTHF2_EN_R = crate::R<bool, FCNTHF2_EN_A>;
+#[doc = "Field `FCNTHF2_EN` reader - Enable start fault counter for HFXT2"]
+pub struct FCNTHF2_EN_R(crate::FieldReader<bool, FCNTHF2_EN_A>);
 impl FCNTHF2_EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FCNTHF2_EN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCNTHF2_EN_A {
@@ -626,15 +685,22 @@ impl FCNTHF2_EN_R {
     #[doc = "Checks if the value of the field is `FCNTHF2_EN_0`"]
     #[inline(always)]
     pub fn is_fcnthf2_en_0(&self) -> bool {
-        *self == FCNTHF2_EN_A::FCNTHF2_EN_0
+        **self == FCNTHF2_EN_A::FCNTHF2_EN_0
     }
     #[doc = "Checks if the value of the field is `FCNTHF2_EN_1`"]
     #[inline(always)]
     pub fn is_fcnthf2_en_1(&self) -> bool {
-        *self == FCNTHF2_EN_A::FCNTHF2_EN_1
+        **self == FCNTHF2_EN_A::FCNTHF2_EN_1
     }
 }
-#[doc = "Write proxy for field `FCNTHF2_EN`"]
+impl core::ops::Deref for FCNTHF2_EN_R {
+    type Target = crate::FieldReader<bool, FCNTHF2_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCNTHF2_EN` writer - Enable start fault counter for HFXT2"]
 pub struct FCNTHF2_EN_W<'a> {
     w: &'a mut W,
 }
@@ -642,9 +708,7 @@ impl<'a> FCNTHF2_EN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCNTHF2_EN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Startup fault counter disabled. Counter is cleared."]
     #[inline(always)]
@@ -669,7 +733,7 @@ impl<'a> FCNTHF2_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -750,5 +814,30 @@ impl W {
     #[inline(always)]
     pub fn fcnthf2_en(&mut self) -> FCNTHF2_EN_W {
         FCNTHF2_EN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Control 3 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csctl3](index.html) module"]
+pub struct CSCTL3_SPEC;
+impl crate::RegisterSpec for CSCTL3_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [csctl3::R](R) reader structure"]
+impl crate::Readable for CSCTL3_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [csctl3::W](W) writer structure"]
+impl crate::Writable for CSCTL3_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSCTL3 to value 0x0bbb"]
+impl crate::Resettable for CSCTL3_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0bbb
     }
 }

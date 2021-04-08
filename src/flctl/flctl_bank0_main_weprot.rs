@@ -1,18 +1,52 @@
-#[doc = "Reader of register FLCTL_BANK0_MAIN_WEPROT"]
-pub type R = crate::R<u32, super::FLCTL_BANK0_MAIN_WEPROT>;
-#[doc = "Writer for register FLCTL_BANK0_MAIN_WEPROT"]
-pub type W = crate::W<u32, super::FLCTL_BANK0_MAIN_WEPROT>;
-#[doc = "Register FLCTL_BANK0_MAIN_WEPROT `reset()`'s with value 0xffff_ffff"]
-impl crate::ResetValue for super::FLCTL_BANK0_MAIN_WEPROT {
-    type Type = u32;
+#[doc = "Register `FLCTL_BANK0_MAIN_WEPROT` reader"]
+pub struct R(crate::R<FLCTL_BANK0_MAIN_WEPROT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FLCTL_BANK0_MAIN_WEPROT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xffff_ffff
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PROT0`"]
-pub type PROT0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT0`"]
+impl core::convert::From<crate::R<FLCTL_BANK0_MAIN_WEPROT_SPEC>> for R {
+    fn from(reader: crate::R<FLCTL_BANK0_MAIN_WEPROT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FLCTL_BANK0_MAIN_WEPROT` writer"]
+pub struct W(crate::W<FLCTL_BANK0_MAIN_WEPROT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FLCTL_BANK0_MAIN_WEPROT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<FLCTL_BANK0_MAIN_WEPROT_SPEC>> for W {
+    fn from(writer: crate::W<FLCTL_BANK0_MAIN_WEPROT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PROT0` reader - Protects Sector 0 from program or erase"]
+pub struct PROT0_R(crate::FieldReader<bool, bool>);
+impl PROT0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT0` writer - Protects Sector 0 from program or erase"]
 pub struct PROT0_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> PROT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `PROT1`"]
-pub type PROT1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT1`"]
+#[doc = "Field `PROT1` reader - Protects Sector 1 from program or erase"]
+pub struct PROT1_R(crate::FieldReader<bool, bool>);
+impl PROT1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT1` writer - Protects Sector 1 from program or erase"]
 pub struct PROT1_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> PROT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `PROT2`"]
-pub type PROT2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT2`"]
+#[doc = "Field `PROT2` reader - Protects Sector 2 from program or erase"]
+pub struct PROT2_R(crate::FieldReader<bool, bool>);
+impl PROT2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT2` writer - Protects Sector 2 from program or erase"]
 pub struct PROT2_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> PROT2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `PROT3`"]
-pub type PROT3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT3`"]
+#[doc = "Field `PROT3` reader - Protects Sector 3 from program or erase"]
+pub struct PROT3_R(crate::FieldReader<bool, bool>);
+impl PROT3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT3` writer - Protects Sector 3 from program or erase"]
 pub struct PROT3_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +172,25 @@ impl<'a> PROT3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `PROT4`"]
-pub type PROT4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT4`"]
+#[doc = "Field `PROT4` reader - Protects Sector 4 from program or erase"]
+pub struct PROT4_R(crate::FieldReader<bool, bool>);
+impl PROT4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT4` writer - Protects Sector 4 from program or erase"]
 pub struct PROT4_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +208,25 @@ impl<'a> PROT4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `PROT5`"]
-pub type PROT5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT5`"]
+#[doc = "Field `PROT5` reader - Protects Sector 5 from program or erase"]
+pub struct PROT5_R(crate::FieldReader<bool, bool>);
+impl PROT5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT5` writer - Protects Sector 5 from program or erase"]
 pub struct PROT5_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +244,25 @@ impl<'a> PROT5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `PROT6`"]
-pub type PROT6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT6`"]
+#[doc = "Field `PROT6` reader - Protects Sector 6 from program or erase"]
+pub struct PROT6_R(crate::FieldReader<bool, bool>);
+impl PROT6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT6` writer - Protects Sector 6 from program or erase"]
 pub struct PROT6_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +280,25 @@ impl<'a> PROT6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `PROT7`"]
-pub type PROT7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT7`"]
+#[doc = "Field `PROT7` reader - Protects Sector 7 from program or erase"]
+pub struct PROT7_R(crate::FieldReader<bool, bool>);
+impl PROT7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT7` writer - Protects Sector 7 from program or erase"]
 pub struct PROT7_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +316,25 @@ impl<'a> PROT7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `PROT8`"]
-pub type PROT8_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT8`"]
+#[doc = "Field `PROT8` reader - Protects Sector 8 from program or erase"]
+pub struct PROT8_R(crate::FieldReader<bool, bool>);
+impl PROT8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT8_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT8` writer - Protects Sector 8 from program or erase"]
 pub struct PROT8_W<'a> {
     w: &'a mut W,
 }
@@ -222,13 +352,25 @@ impl<'a> PROT8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `PROT9`"]
-pub type PROT9_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT9`"]
+#[doc = "Field `PROT9` reader - Protects Sector 9 from program or erase"]
+pub struct PROT9_R(crate::FieldReader<bool, bool>);
+impl PROT9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT9_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT9` writer - Protects Sector 9 from program or erase"]
 pub struct PROT9_W<'a> {
     w: &'a mut W,
 }
@@ -246,13 +388,25 @@ impl<'a> PROT9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `PROT10`"]
-pub type PROT10_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT10`"]
+#[doc = "Field `PROT10` reader - Protects Sector 10 from program or erase"]
+pub struct PROT10_R(crate::FieldReader<bool, bool>);
+impl PROT10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT10_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT10` writer - Protects Sector 10 from program or erase"]
 pub struct PROT10_W<'a> {
     w: &'a mut W,
 }
@@ -270,13 +424,25 @@ impl<'a> PROT10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `PROT11`"]
-pub type PROT11_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT11`"]
+#[doc = "Field `PROT11` reader - Protects Sector 11 from program or erase"]
+pub struct PROT11_R(crate::FieldReader<bool, bool>);
+impl PROT11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT11` writer - Protects Sector 11 from program or erase"]
 pub struct PROT11_W<'a> {
     w: &'a mut W,
 }
@@ -294,13 +460,25 @@ impl<'a> PROT11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `PROT12`"]
-pub type PROT12_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT12`"]
+#[doc = "Field `PROT12` reader - Protects Sector 12 from program or erase"]
+pub struct PROT12_R(crate::FieldReader<bool, bool>);
+impl PROT12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT12_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT12` writer - Protects Sector 12 from program or erase"]
 pub struct PROT12_W<'a> {
     w: &'a mut W,
 }
@@ -318,13 +496,25 @@ impl<'a> PROT12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `PROT13`"]
-pub type PROT13_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT13`"]
+#[doc = "Field `PROT13` reader - Protects Sector 13 from program or erase"]
+pub struct PROT13_R(crate::FieldReader<bool, bool>);
+impl PROT13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT13_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT13` writer - Protects Sector 13 from program or erase"]
 pub struct PROT13_W<'a> {
     w: &'a mut W,
 }
@@ -342,13 +532,25 @@ impl<'a> PROT13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `PROT14`"]
-pub type PROT14_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT14`"]
+#[doc = "Field `PROT14` reader - Protects Sector 14 from program or erase"]
+pub struct PROT14_R(crate::FieldReader<bool, bool>);
+impl PROT14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT14_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT14` writer - Protects Sector 14 from program or erase"]
 pub struct PROT14_W<'a> {
     w: &'a mut W,
 }
@@ -366,13 +568,25 @@ impl<'a> PROT14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Reader of field `PROT15`"]
-pub type PROT15_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT15`"]
+#[doc = "Field `PROT15` reader - Protects Sector 15 from program or erase"]
+pub struct PROT15_R(crate::FieldReader<bool, bool>);
+impl PROT15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT15_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT15` writer - Protects Sector 15 from program or erase"]
 pub struct PROT15_W<'a> {
     w: &'a mut W,
 }
@@ -390,13 +604,25 @@ impl<'a> PROT15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Reader of field `PROT16`"]
-pub type PROT16_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT16`"]
+#[doc = "Field `PROT16` reader - Protects Sector 16 from program or erase"]
+pub struct PROT16_R(crate::FieldReader<bool, bool>);
+impl PROT16_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT16_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT16_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT16` writer - Protects Sector 16 from program or erase"]
 pub struct PROT16_W<'a> {
     w: &'a mut W,
 }
@@ -414,13 +640,25 @@ impl<'a> PROT16_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `PROT17`"]
-pub type PROT17_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT17`"]
+#[doc = "Field `PROT17` reader - Protects Sector 17 from program or erase"]
+pub struct PROT17_R(crate::FieldReader<bool, bool>);
+impl PROT17_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT17_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT17_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT17` writer - Protects Sector 17 from program or erase"]
 pub struct PROT17_W<'a> {
     w: &'a mut W,
 }
@@ -438,13 +676,25 @@ impl<'a> PROT17_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Reader of field `PROT18`"]
-pub type PROT18_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT18`"]
+#[doc = "Field `PROT18` reader - Protects Sector 18 from program or erase"]
+pub struct PROT18_R(crate::FieldReader<bool, bool>);
+impl PROT18_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT18_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT18_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT18` writer - Protects Sector 18 from program or erase"]
 pub struct PROT18_W<'a> {
     w: &'a mut W,
 }
@@ -462,13 +712,25 @@ impl<'a> PROT18_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Reader of field `PROT19`"]
-pub type PROT19_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT19`"]
+#[doc = "Field `PROT19` reader - Protects Sector 19 from program or erase"]
+pub struct PROT19_R(crate::FieldReader<bool, bool>);
+impl PROT19_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT19_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT19_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT19` writer - Protects Sector 19 from program or erase"]
 pub struct PROT19_W<'a> {
     w: &'a mut W,
 }
@@ -486,13 +748,25 @@ impl<'a> PROT19_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
-#[doc = "Reader of field `PROT20`"]
-pub type PROT20_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT20`"]
+#[doc = "Field `PROT20` reader - Protects Sector 20 from program or erase"]
+pub struct PROT20_R(crate::FieldReader<bool, bool>);
+impl PROT20_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT20_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT20_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT20` writer - Protects Sector 20 from program or erase"]
 pub struct PROT20_W<'a> {
     w: &'a mut W,
 }
@@ -510,13 +784,25 @@ impl<'a> PROT20_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
-#[doc = "Reader of field `PROT21`"]
-pub type PROT21_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT21`"]
+#[doc = "Field `PROT21` reader - Protects Sector 21 from program or erase"]
+pub struct PROT21_R(crate::FieldReader<bool, bool>);
+impl PROT21_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT21_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT21_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT21` writer - Protects Sector 21 from program or erase"]
 pub struct PROT21_W<'a> {
     w: &'a mut W,
 }
@@ -534,13 +820,25 @@ impl<'a> PROT21_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
-#[doc = "Reader of field `PROT22`"]
-pub type PROT22_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT22`"]
+#[doc = "Field `PROT22` reader - Protects Sector 22 from program or erase"]
+pub struct PROT22_R(crate::FieldReader<bool, bool>);
+impl PROT22_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT22_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT22_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT22` writer - Protects Sector 22 from program or erase"]
 pub struct PROT22_W<'a> {
     w: &'a mut W,
 }
@@ -558,13 +856,25 @@ impl<'a> PROT22_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
-#[doc = "Reader of field `PROT23`"]
-pub type PROT23_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT23`"]
+#[doc = "Field `PROT23` reader - Protects Sector 23 from program or erase"]
+pub struct PROT23_R(crate::FieldReader<bool, bool>);
+impl PROT23_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT23_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT23_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT23` writer - Protects Sector 23 from program or erase"]
 pub struct PROT23_W<'a> {
     w: &'a mut W,
 }
@@ -582,13 +892,25 @@ impl<'a> PROT23_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
-#[doc = "Reader of field `PROT24`"]
-pub type PROT24_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT24`"]
+#[doc = "Field `PROT24` reader - Protects Sector 24 from program or erase"]
+pub struct PROT24_R(crate::FieldReader<bool, bool>);
+impl PROT24_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT24_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT24_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT24` writer - Protects Sector 24 from program or erase"]
 pub struct PROT24_W<'a> {
     w: &'a mut W,
 }
@@ -606,13 +928,25 @@ impl<'a> PROT24_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Reader of field `PROT25`"]
-pub type PROT25_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT25`"]
+#[doc = "Field `PROT25` reader - Protects Sector 25 from program or erase"]
+pub struct PROT25_R(crate::FieldReader<bool, bool>);
+impl PROT25_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT25_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT25_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT25` writer - Protects Sector 25 from program or erase"]
 pub struct PROT25_W<'a> {
     w: &'a mut W,
 }
@@ -630,13 +964,25 @@ impl<'a> PROT25_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Reader of field `PROT26`"]
-pub type PROT26_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT26`"]
+#[doc = "Field `PROT26` reader - Protects Sector 26 from program or erase"]
+pub struct PROT26_R(crate::FieldReader<bool, bool>);
+impl PROT26_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT26_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT26_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT26` writer - Protects Sector 26 from program or erase"]
 pub struct PROT26_W<'a> {
     w: &'a mut W,
 }
@@ -654,13 +1000,25 @@ impl<'a> PROT26_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Reader of field `PROT27`"]
-pub type PROT27_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT27`"]
+#[doc = "Field `PROT27` reader - Protects Sector 27 from program or erase"]
+pub struct PROT27_R(crate::FieldReader<bool, bool>);
+impl PROT27_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT27_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT27_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT27` writer - Protects Sector 27 from program or erase"]
 pub struct PROT27_W<'a> {
     w: &'a mut W,
 }
@@ -678,13 +1036,25 @@ impl<'a> PROT27_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
-#[doc = "Reader of field `PROT28`"]
-pub type PROT28_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT28`"]
+#[doc = "Field `PROT28` reader - Protects Sector 28 from program or erase"]
+pub struct PROT28_R(crate::FieldReader<bool, bool>);
+impl PROT28_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT28_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT28_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT28` writer - Protects Sector 28 from program or erase"]
 pub struct PROT28_W<'a> {
     w: &'a mut W,
 }
@@ -702,13 +1072,25 @@ impl<'a> PROT28_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Reader of field `PROT29`"]
-pub type PROT29_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT29`"]
+#[doc = "Field `PROT29` reader - Protects Sector 29 from program or erase"]
+pub struct PROT29_R(crate::FieldReader<bool, bool>);
+impl PROT29_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT29_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT29_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT29` writer - Protects Sector 29 from program or erase"]
 pub struct PROT29_W<'a> {
     w: &'a mut W,
 }
@@ -726,13 +1108,25 @@ impl<'a> PROT29_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
         self.w
     }
 }
-#[doc = "Reader of field `PROT30`"]
-pub type PROT30_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT30`"]
+#[doc = "Field `PROT30` reader - Protects Sector 30 from program or erase"]
+pub struct PROT30_R(crate::FieldReader<bool, bool>);
+impl PROT30_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT30_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT30_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT30` writer - Protects Sector 30 from program or erase"]
 pub struct PROT30_W<'a> {
     w: &'a mut W,
 }
@@ -750,13 +1144,25 @@ impl<'a> PROT30_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
         self.w
     }
 }
-#[doc = "Reader of field `PROT31`"]
-pub type PROT31_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PROT31`"]
+#[doc = "Field `PROT31` reader - Protects Sector 31 from program or erase"]
+pub struct PROT31_R(crate::FieldReader<bool, bool>);
+impl PROT31_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROT31_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROT31_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROT31` writer - Protects Sector 31 from program or erase"]
 pub struct PROT31_W<'a> {
     w: &'a mut W,
 }
@@ -774,7 +1180,7 @@ impl<'a> PROT31_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -1100,5 +1506,30 @@ impl W {
     #[inline(always)]
     pub fn prot31(&mut self) -> PROT31_W {
         PROT31_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Main Memory Bank0 Write/Erase Protection Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flctl_bank0_main_weprot](index.html) module"]
+pub struct FLCTL_BANK0_MAIN_WEPROT_SPEC;
+impl crate::RegisterSpec for FLCTL_BANK0_MAIN_WEPROT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [flctl_bank0_main_weprot::R](R) reader structure"]
+impl crate::Readable for FLCTL_BANK0_MAIN_WEPROT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [flctl_bank0_main_weprot::W](W) writer structure"]
+impl crate::Writable for FLCTL_BANK0_MAIN_WEPROT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FLCTL_BANK0_MAIN_WEPROT to value 0xffff_ffff"]
+impl crate::Resettable for FLCTL_BANK0_MAIN_WEPROT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff_ffff
     }
 }

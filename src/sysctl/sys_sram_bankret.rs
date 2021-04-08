@@ -1,17 +1,51 @@
-#[doc = "Reader of register SYS_SRAM_BANKRET"]
-pub type R = crate::R<u32, super::SYS_SRAM_BANKRET>;
-#[doc = "Writer for register SYS_SRAM_BANKRET"]
-pub type W = crate::W<u32, super::SYS_SRAM_BANKRET>;
-#[doc = "Register SYS_SRAM_BANKRET `reset()`'s with value 0xff"]
-impl crate::ResetValue for super::SYS_SRAM_BANKRET {
-    type Type = u32;
+#[doc = "Register `SYS_SRAM_BANKRET` reader"]
+pub struct R(crate::R<SYS_SRAM_BANKRET_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYS_SRAM_BANKRET_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xff
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `BNK0_RET`"]
-pub type BNK0_RET_R = crate::R<bool, bool>;
+impl core::convert::From<crate::R<SYS_SRAM_BANKRET_SPEC>> for R {
+    fn from(reader: crate::R<SYS_SRAM_BANKRET_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYS_SRAM_BANKRET` writer"]
+pub struct W(crate::W<SYS_SRAM_BANKRET_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYS_SRAM_BANKRET_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SYS_SRAM_BANKRET_SPEC>> for W {
+    fn from(writer: crate::W<SYS_SRAM_BANKRET_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `BNK0_RET` reader - Bank0 retention"]
+pub struct BNK0_RET_R(crate::FieldReader<bool, bool>);
+impl BNK0_RET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BNK0_RET_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BNK0_RET_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Bank1 retention\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BNK1_RET_A {
@@ -26,9 +60,12 @@ impl From<BNK1_RET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BNK1_RET`"]
-pub type BNK1_RET_R = crate::R<bool, BNK1_RET_A>;
+#[doc = "Field `BNK1_RET` reader - Bank1 retention"]
+pub struct BNK1_RET_R(crate::FieldReader<bool, BNK1_RET_A>);
 impl BNK1_RET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BNK1_RET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BNK1_RET_A {
@@ -40,15 +77,22 @@ impl BNK1_RET_R {
     #[doc = "Checks if the value of the field is `BNK1_RET_0`"]
     #[inline(always)]
     pub fn is_bnk1_ret_0(&self) -> bool {
-        *self == BNK1_RET_A::BNK1_RET_0
+        **self == BNK1_RET_A::BNK1_RET_0
     }
     #[doc = "Checks if the value of the field is `BNK1_RET_1`"]
     #[inline(always)]
     pub fn is_bnk1_ret_1(&self) -> bool {
-        *self == BNK1_RET_A::BNK1_RET_1
+        **self == BNK1_RET_A::BNK1_RET_1
     }
 }
-#[doc = "Write proxy for field `BNK1_RET`"]
+impl core::ops::Deref for BNK1_RET_R {
+    type Target = crate::FieldReader<bool, BNK1_RET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BNK1_RET` writer - Bank1 retention"]
 pub struct BNK1_RET_W<'a> {
     w: &'a mut W,
 }
@@ -56,9 +100,7 @@ impl<'a> BNK1_RET_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BNK1_RET_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Bank1 of the SRAM is not retained in LPM3 or LPM4"]
     #[inline(always)]
@@ -83,7 +125,7 @@ impl<'a> BNK1_RET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -101,9 +143,12 @@ impl From<BNK2_RET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BNK2_RET`"]
-pub type BNK2_RET_R = crate::R<bool, BNK2_RET_A>;
+#[doc = "Field `BNK2_RET` reader - Bank2 retention"]
+pub struct BNK2_RET_R(crate::FieldReader<bool, BNK2_RET_A>);
 impl BNK2_RET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BNK2_RET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BNK2_RET_A {
@@ -115,15 +160,22 @@ impl BNK2_RET_R {
     #[doc = "Checks if the value of the field is `BNK2_RET_0`"]
     #[inline(always)]
     pub fn is_bnk2_ret_0(&self) -> bool {
-        *self == BNK2_RET_A::BNK2_RET_0
+        **self == BNK2_RET_A::BNK2_RET_0
     }
     #[doc = "Checks if the value of the field is `BNK2_RET_1`"]
     #[inline(always)]
     pub fn is_bnk2_ret_1(&self) -> bool {
-        *self == BNK2_RET_A::BNK2_RET_1
+        **self == BNK2_RET_A::BNK2_RET_1
     }
 }
-#[doc = "Write proxy for field `BNK2_RET`"]
+impl core::ops::Deref for BNK2_RET_R {
+    type Target = crate::FieldReader<bool, BNK2_RET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BNK2_RET` writer - Bank2 retention"]
 pub struct BNK2_RET_W<'a> {
     w: &'a mut W,
 }
@@ -131,9 +183,7 @@ impl<'a> BNK2_RET_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BNK2_RET_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Bank2 of the SRAM is not retained in LPM3 or LPM4"]
     #[inline(always)]
@@ -158,7 +208,7 @@ impl<'a> BNK2_RET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -176,9 +226,12 @@ impl From<BNK3_RET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BNK3_RET`"]
-pub type BNK3_RET_R = crate::R<bool, BNK3_RET_A>;
+#[doc = "Field `BNK3_RET` reader - Bank3 retention"]
+pub struct BNK3_RET_R(crate::FieldReader<bool, BNK3_RET_A>);
 impl BNK3_RET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BNK3_RET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BNK3_RET_A {
@@ -190,15 +243,22 @@ impl BNK3_RET_R {
     #[doc = "Checks if the value of the field is `BNK3_RET_0`"]
     #[inline(always)]
     pub fn is_bnk3_ret_0(&self) -> bool {
-        *self == BNK3_RET_A::BNK3_RET_0
+        **self == BNK3_RET_A::BNK3_RET_0
     }
     #[doc = "Checks if the value of the field is `BNK3_RET_1`"]
     #[inline(always)]
     pub fn is_bnk3_ret_1(&self) -> bool {
-        *self == BNK3_RET_A::BNK3_RET_1
+        **self == BNK3_RET_A::BNK3_RET_1
     }
 }
-#[doc = "Write proxy for field `BNK3_RET`"]
+impl core::ops::Deref for BNK3_RET_R {
+    type Target = crate::FieldReader<bool, BNK3_RET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BNK3_RET` writer - Bank3 retention"]
 pub struct BNK3_RET_W<'a> {
     w: &'a mut W,
 }
@@ -206,9 +266,7 @@ impl<'a> BNK3_RET_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BNK3_RET_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Bank3 of the SRAM is not retained in LPM3 or LPM4"]
     #[inline(always)]
@@ -233,7 +291,7 @@ impl<'a> BNK3_RET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -251,9 +309,12 @@ impl From<BNK4_RET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BNK4_RET`"]
-pub type BNK4_RET_R = crate::R<bool, BNK4_RET_A>;
+#[doc = "Field `BNK4_RET` reader - Bank4 retention"]
+pub struct BNK4_RET_R(crate::FieldReader<bool, BNK4_RET_A>);
 impl BNK4_RET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BNK4_RET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BNK4_RET_A {
@@ -265,15 +326,22 @@ impl BNK4_RET_R {
     #[doc = "Checks if the value of the field is `BNK4_RET_0`"]
     #[inline(always)]
     pub fn is_bnk4_ret_0(&self) -> bool {
-        *self == BNK4_RET_A::BNK4_RET_0
+        **self == BNK4_RET_A::BNK4_RET_0
     }
     #[doc = "Checks if the value of the field is `BNK4_RET_1`"]
     #[inline(always)]
     pub fn is_bnk4_ret_1(&self) -> bool {
-        *self == BNK4_RET_A::BNK4_RET_1
+        **self == BNK4_RET_A::BNK4_RET_1
     }
 }
-#[doc = "Write proxy for field `BNK4_RET`"]
+impl core::ops::Deref for BNK4_RET_R {
+    type Target = crate::FieldReader<bool, BNK4_RET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BNK4_RET` writer - Bank4 retention"]
 pub struct BNK4_RET_W<'a> {
     w: &'a mut W,
 }
@@ -281,9 +349,7 @@ impl<'a> BNK4_RET_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BNK4_RET_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Bank4 of the SRAM is not retained in LPM3 or LPM4"]
     #[inline(always)]
@@ -308,7 +374,7 @@ impl<'a> BNK4_RET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -326,9 +392,12 @@ impl From<BNK5_RET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BNK5_RET`"]
-pub type BNK5_RET_R = crate::R<bool, BNK5_RET_A>;
+#[doc = "Field `BNK5_RET` reader - Bank5 retention"]
+pub struct BNK5_RET_R(crate::FieldReader<bool, BNK5_RET_A>);
 impl BNK5_RET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BNK5_RET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BNK5_RET_A {
@@ -340,15 +409,22 @@ impl BNK5_RET_R {
     #[doc = "Checks if the value of the field is `BNK5_RET_0`"]
     #[inline(always)]
     pub fn is_bnk5_ret_0(&self) -> bool {
-        *self == BNK5_RET_A::BNK5_RET_0
+        **self == BNK5_RET_A::BNK5_RET_0
     }
     #[doc = "Checks if the value of the field is `BNK5_RET_1`"]
     #[inline(always)]
     pub fn is_bnk5_ret_1(&self) -> bool {
-        *self == BNK5_RET_A::BNK5_RET_1
+        **self == BNK5_RET_A::BNK5_RET_1
     }
 }
-#[doc = "Write proxy for field `BNK5_RET`"]
+impl core::ops::Deref for BNK5_RET_R {
+    type Target = crate::FieldReader<bool, BNK5_RET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BNK5_RET` writer - Bank5 retention"]
 pub struct BNK5_RET_W<'a> {
     w: &'a mut W,
 }
@@ -356,9 +432,7 @@ impl<'a> BNK5_RET_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BNK5_RET_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Bank5 of the SRAM is not retained in LPM3 or LPM4"]
     #[inline(always)]
@@ -383,7 +457,7 @@ impl<'a> BNK5_RET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -401,9 +475,12 @@ impl From<BNK6_RET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BNK6_RET`"]
-pub type BNK6_RET_R = crate::R<bool, BNK6_RET_A>;
+#[doc = "Field `BNK6_RET` reader - Bank6 retention"]
+pub struct BNK6_RET_R(crate::FieldReader<bool, BNK6_RET_A>);
 impl BNK6_RET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BNK6_RET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BNK6_RET_A {
@@ -415,15 +492,22 @@ impl BNK6_RET_R {
     #[doc = "Checks if the value of the field is `BNK6_RET_0`"]
     #[inline(always)]
     pub fn is_bnk6_ret_0(&self) -> bool {
-        *self == BNK6_RET_A::BNK6_RET_0
+        **self == BNK6_RET_A::BNK6_RET_0
     }
     #[doc = "Checks if the value of the field is `BNK6_RET_1`"]
     #[inline(always)]
     pub fn is_bnk6_ret_1(&self) -> bool {
-        *self == BNK6_RET_A::BNK6_RET_1
+        **self == BNK6_RET_A::BNK6_RET_1
     }
 }
-#[doc = "Write proxy for field `BNK6_RET`"]
+impl core::ops::Deref for BNK6_RET_R {
+    type Target = crate::FieldReader<bool, BNK6_RET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BNK6_RET` writer - Bank6 retention"]
 pub struct BNK6_RET_W<'a> {
     w: &'a mut W,
 }
@@ -431,9 +515,7 @@ impl<'a> BNK6_RET_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BNK6_RET_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Bank6 of the SRAM is not retained in LPM3 or LPM4"]
     #[inline(always)]
@@ -458,7 +540,7 @@ impl<'a> BNK6_RET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -476,9 +558,12 @@ impl From<BNK7_RET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BNK7_RET`"]
-pub type BNK7_RET_R = crate::R<bool, BNK7_RET_A>;
+#[doc = "Field `BNK7_RET` reader - Bank7 retention"]
+pub struct BNK7_RET_R(crate::FieldReader<bool, BNK7_RET_A>);
 impl BNK7_RET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BNK7_RET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BNK7_RET_A {
@@ -490,15 +575,22 @@ impl BNK7_RET_R {
     #[doc = "Checks if the value of the field is `BNK7_RET_0`"]
     #[inline(always)]
     pub fn is_bnk7_ret_0(&self) -> bool {
-        *self == BNK7_RET_A::BNK7_RET_0
+        **self == BNK7_RET_A::BNK7_RET_0
     }
     #[doc = "Checks if the value of the field is `BNK7_RET_1`"]
     #[inline(always)]
     pub fn is_bnk7_ret_1(&self) -> bool {
-        *self == BNK7_RET_A::BNK7_RET_1
+        **self == BNK7_RET_A::BNK7_RET_1
     }
 }
-#[doc = "Write proxy for field `BNK7_RET`"]
+impl core::ops::Deref for BNK7_RET_R {
+    type Target = crate::FieldReader<bool, BNK7_RET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BNK7_RET` writer - Bank7 retention"]
 pub struct BNK7_RET_W<'a> {
     w: &'a mut W,
 }
@@ -506,9 +598,7 @@ impl<'a> BNK7_RET_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BNK7_RET_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Bank7 of the SRAM is not retained in LPM3 or LPM4"]
     #[inline(always)]
@@ -533,7 +623,7 @@ impl<'a> BNK7_RET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -551,9 +641,12 @@ impl From<SRAM_RDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SRAM_RDY`"]
-pub type SRAM_RDY_R = crate::R<bool, SRAM_RDY_A>;
+#[doc = "Field `SRAM_RDY` reader - SRAM ready"]
+pub struct SRAM_RDY_R(crate::FieldReader<bool, SRAM_RDY_A>);
 impl SRAM_RDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SRAM_RDY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SRAM_RDY_A {
@@ -565,12 +658,19 @@ impl SRAM_RDY_R {
     #[doc = "Checks if the value of the field is `SRAM_RDY_0`"]
     #[inline(always)]
     pub fn is_sram_rdy_0(&self) -> bool {
-        *self == SRAM_RDY_A::SRAM_RDY_0
+        **self == SRAM_RDY_A::SRAM_RDY_0
     }
     #[doc = "Checks if the value of the field is `SRAM_RDY_1`"]
     #[inline(always)]
     pub fn is_sram_rdy_1(&self) -> bool {
-        *self == SRAM_RDY_A::SRAM_RDY_1
+        **self == SRAM_RDY_A::SRAM_RDY_1
+    }
+}
+impl core::ops::Deref for SRAM_RDY_R {
+    type Target = crate::FieldReader<bool, SRAM_RDY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -655,5 +755,30 @@ impl W {
     #[inline(always)]
     pub fn bnk7_ret(&mut self) -> BNK7_RET_W {
         BNK7_RET_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "SRAM Bank Retention Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sys_sram_bankret](index.html) module"]
+pub struct SYS_SRAM_BANKRET_SPEC;
+impl crate::RegisterSpec for SYS_SRAM_BANKRET_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sys_sram_bankret::R](R) reader structure"]
+impl crate::Readable for SYS_SRAM_BANKRET_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sys_sram_bankret::W](W) writer structure"]
+impl crate::Writable for SYS_SRAM_BANKRET_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYS_SRAM_BANKRET to value 0xff"]
+impl crate::Resettable for SYS_SRAM_BANKRET_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xff
     }
 }

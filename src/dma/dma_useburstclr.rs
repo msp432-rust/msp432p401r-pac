@@ -1,11 +1,21 @@
-#[doc = "Writer for register DMA_USEBURSTCLR"]
-pub type W = crate::W<u32, super::DMA_USEBURSTCLR>;
-#[doc = "Register DMA_USEBURSTCLR `reset()`'s with value 0"]
-impl crate::ResetValue for super::DMA_USEBURSTCLR {
-    type Type = u32;
+#[doc = "Register `DMA_USEBURSTCLR` writer"]
+pub struct W(crate::W<DMA_USEBURSTCLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DMA_USEBURSTCLR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<DMA_USEBURSTCLR_SPEC>> for W {
+    fn from(writer: crate::W<DMA_USEBURSTCLR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Set the appropriate bit to enable dma_sreq to generate requests.\n\nValue on reset: 0"]
@@ -24,7 +34,7 @@ impl From<CLR_AW> for u32 {
         variant as _
     }
 }
-#[doc = "Write proxy for field `CLR`"]
+#[doc = "Field `CLR` writer - Set the appropriate bit to enable dma_sreq to generate requests."]
 pub struct CLR_W<'a> {
     w: &'a mut W,
 }
@@ -48,7 +58,7 @@ to generate DMA requests. Writing to a bit where a DMA channel is not implemente
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
+        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
         self.w
     }
 }
@@ -57,5 +67,26 @@ impl W {
     #[inline(always)]
     pub fn clr(&mut self) -> CLR_W {
         CLR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Useburst Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_useburstclr](index.html) module"]
+pub struct DMA_USEBURSTCLR_SPEC;
+impl crate::RegisterSpec for DMA_USEBURSTCLR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [dma_useburstclr::W](W) writer structure"]
+impl crate::Writable for DMA_USEBURSTCLR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DMA_USEBURSTCLR to value 0"]
+impl crate::Resettable for DMA_USEBURSTCLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

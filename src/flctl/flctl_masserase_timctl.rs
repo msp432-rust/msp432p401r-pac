@@ -1,9 +1,45 @@
-#[doc = "Reader of register FLCTL_MASSERASE_TIMCTL"]
-pub type R = crate::R<u32, super::FLCTL_MASSERASE_TIMCTL>;
-#[doc = "Reader of field `BOOST_ACTIVE`"]
-pub type BOOST_ACTIVE_R = crate::R<u8, u8>;
-#[doc = "Reader of field `BOOST_HOLD`"]
-pub type BOOST_HOLD_R = crate::R<u8, u8>;
+#[doc = "Register `FLCTL_MASSERASE_TIMCTL` reader"]
+pub struct R(crate::R<FLCTL_MASSERASE_TIMCTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FLCTL_MASSERASE_TIMCTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<FLCTL_MASSERASE_TIMCTL_SPEC>> for R {
+    fn from(reader: crate::R<FLCTL_MASSERASE_TIMCTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `BOOST_ACTIVE` reader - Length of the time for which LDO Boost Signal is kept active"]
+pub struct BOOST_ACTIVE_R(crate::FieldReader<u8, u8>);
+impl BOOST_ACTIVE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BOOST_ACTIVE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BOOST_ACTIVE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BOOST_HOLD` reader - Length for which Flash deactivates the LDO Boost signal before processing any new commands"]
+pub struct BOOST_HOLD_R(crate::FieldReader<u8, u8>);
+impl BOOST_HOLD_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BOOST_HOLD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BOOST_HOLD_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:7 - Length of the time for which LDO Boost Signal is kept active"]
     #[inline(always)]
@@ -15,4 +51,13 @@ impl R {
     pub fn boost_hold(&self) -> BOOST_HOLD_R {
         BOOST_HOLD_R::new(((self.bits >> 8) & 0xff) as u8)
     }
+}
+#[doc = "Mass Erase Timing Control Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flctl_masserase_timctl](index.html) module"]
+pub struct FLCTL_MASSERASE_TIMCTL_SPEC;
+impl crate::RegisterSpec for FLCTL_MASSERASE_TIMCTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [flctl_masserase_timctl::R](R) reader structure"]
+impl crate::Readable for FLCTL_MASSERASE_TIMCTL_SPEC {
+    type Reader = R;
 }

@@ -1,13 +1,35 @@
-#[doc = "Reader of register CSIE"]
-pub type R = crate::R<u32, super::CSIE>;
-#[doc = "Writer for register CSIE"]
-pub type W = crate::W<u32, super::CSIE>;
-#[doc = "Register CSIE `reset()`'s with value 0"]
-impl crate::ResetValue for super::CSIE {
-    type Type = u32;
+#[doc = "Register `CSIE` reader"]
+pub struct R(crate::R<CSIE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSIE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<CSIE_SPEC>> for R {
+    fn from(reader: crate::R<CSIE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CSIE` writer"]
+pub struct W(crate::W<CSIE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSIE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CSIE_SPEC>> for W {
+    fn from(writer: crate::W<CSIE_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "LFXT oscillator fault flag interrupt enable\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<LFXTIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LFXTIE`"]
-pub type LFXTIE_R = crate::R<bool, LFXTIE_A>;
+#[doc = "Field `LFXTIE` reader - LFXT oscillator fault flag interrupt enable"]
+pub struct LFXTIE_R(crate::FieldReader<bool, LFXTIE_A>);
 impl LFXTIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LFXTIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFXTIE_A {
@@ -38,15 +63,22 @@ impl LFXTIE_R {
     #[doc = "Checks if the value of the field is `LFXTIE_0`"]
     #[inline(always)]
     pub fn is_lfxtie_0(&self) -> bool {
-        *self == LFXTIE_A::LFXTIE_0
+        **self == LFXTIE_A::LFXTIE_0
     }
     #[doc = "Checks if the value of the field is `LFXTIE_1`"]
     #[inline(always)]
     pub fn is_lfxtie_1(&self) -> bool {
-        *self == LFXTIE_A::LFXTIE_1
+        **self == LFXTIE_A::LFXTIE_1
     }
 }
-#[doc = "Write proxy for field `LFXTIE`"]
+impl core::ops::Deref for LFXTIE_R {
+    type Target = crate::FieldReader<bool, LFXTIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LFXTIE` writer - LFXT oscillator fault flag interrupt enable"]
 pub struct LFXTIE_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> LFXTIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LFXTIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> LFXTIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<HFXTIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HFXTIE`"]
-pub type HFXTIE_R = crate::R<bool, HFXTIE_A>;
+#[doc = "Field `HFXTIE` reader - HFXT oscillator fault flag interrupt enable"]
+pub struct HFXTIE_R(crate::FieldReader<bool, HFXTIE_A>);
 impl HFXTIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFXTIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFXTIE_A {
@@ -113,15 +146,22 @@ impl HFXTIE_R {
     #[doc = "Checks if the value of the field is `HFXTIE_0`"]
     #[inline(always)]
     pub fn is_hfxtie_0(&self) -> bool {
-        *self == HFXTIE_A::HFXTIE_0
+        **self == HFXTIE_A::HFXTIE_0
     }
     #[doc = "Checks if the value of the field is `HFXTIE_1`"]
     #[inline(always)]
     pub fn is_hfxtie_1(&self) -> bool {
-        *self == HFXTIE_A::HFXTIE_1
+        **self == HFXTIE_A::HFXTIE_1
     }
 }
-#[doc = "Write proxy for field `HFXTIE`"]
+impl core::ops::Deref for HFXTIE_R {
+    type Target = crate::FieldReader<bool, HFXTIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFXTIE` writer - HFXT oscillator fault flag interrupt enable"]
 pub struct HFXTIE_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> HFXTIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HFXTIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> HFXTIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<HFXT2IE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HFXT2IE`"]
-pub type HFXT2IE_R = crate::R<bool, HFXT2IE_A>;
+#[doc = "Field `HFXT2IE` reader - HFXT2 oscillator fault flag interrupt enable"]
+pub struct HFXT2IE_R(crate::FieldReader<bool, HFXT2IE_A>);
 impl HFXT2IE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HFXT2IE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFXT2IE_A {
@@ -188,15 +229,22 @@ impl HFXT2IE_R {
     #[doc = "Checks if the value of the field is `HFXT2IE_0`"]
     #[inline(always)]
     pub fn is_hfxt2ie_0(&self) -> bool {
-        *self == HFXT2IE_A::HFXT2IE_0
+        **self == HFXT2IE_A::HFXT2IE_0
     }
     #[doc = "Checks if the value of the field is `HFXT2IE_1`"]
     #[inline(always)]
     pub fn is_hfxt2ie_1(&self) -> bool {
-        *self == HFXT2IE_A::HFXT2IE_1
+        **self == HFXT2IE_A::HFXT2IE_1
     }
 }
-#[doc = "Write proxy for field `HFXT2IE`"]
+impl core::ops::Deref for HFXT2IE_R {
+    type Target = crate::FieldReader<bool, HFXT2IE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HFXT2IE` writer - HFXT2 oscillator fault flag interrupt enable"]
 pub struct HFXT2IE_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> HFXT2IE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HFXT2IE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> HFXT2IE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<DCOR_OPNIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCOR_OPNIE`"]
-pub type DCOR_OPNIE_R = crate::R<bool, DCOR_OPNIE_A>;
+#[doc = "Field `DCOR_OPNIE` reader - DCO external resistor open circuit fault flag interrupt enable."]
+pub struct DCOR_OPNIE_R(crate::FieldReader<bool, DCOR_OPNIE_A>);
 impl DCOR_OPNIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCOR_OPNIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCOR_OPNIE_A {
@@ -263,15 +312,22 @@ impl DCOR_OPNIE_R {
     #[doc = "Checks if the value of the field is `DCOR_OPNIE_0`"]
     #[inline(always)]
     pub fn is_dcor_opnie_0(&self) -> bool {
-        *self == DCOR_OPNIE_A::DCOR_OPNIE_0
+        **self == DCOR_OPNIE_A::DCOR_OPNIE_0
     }
     #[doc = "Checks if the value of the field is `DCOR_OPNIE_1`"]
     #[inline(always)]
     pub fn is_dcor_opnie_1(&self) -> bool {
-        *self == DCOR_OPNIE_A::DCOR_OPNIE_1
+        **self == DCOR_OPNIE_A::DCOR_OPNIE_1
     }
 }
-#[doc = "Write proxy for field `DCOR_OPNIE`"]
+impl core::ops::Deref for DCOR_OPNIE_R {
+    type Target = crate::FieldReader<bool, DCOR_OPNIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DCOR_OPNIE` writer - DCO external resistor open circuit fault flag interrupt enable."]
 pub struct DCOR_OPNIE_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> DCOR_OPNIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DCOR_OPNIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> DCOR_OPNIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<FCNTLFIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FCNTLFIE`"]
-pub type FCNTLFIE_R = crate::R<bool, FCNTLFIE_A>;
+#[doc = "Field `FCNTLFIE` reader - Start fault counter interrupt enable LFXT"]
+pub struct FCNTLFIE_R(crate::FieldReader<bool, FCNTLFIE_A>);
 impl FCNTLFIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FCNTLFIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCNTLFIE_A {
@@ -338,15 +395,22 @@ impl FCNTLFIE_R {
     #[doc = "Checks if the value of the field is `FCNTLFIE_0`"]
     #[inline(always)]
     pub fn is_fcntlfie_0(&self) -> bool {
-        *self == FCNTLFIE_A::FCNTLFIE_0
+        **self == FCNTLFIE_A::FCNTLFIE_0
     }
     #[doc = "Checks if the value of the field is `FCNTLFIE_1`"]
     #[inline(always)]
     pub fn is_fcntlfie_1(&self) -> bool {
-        *self == FCNTLFIE_A::FCNTLFIE_1
+        **self == FCNTLFIE_A::FCNTLFIE_1
     }
 }
-#[doc = "Write proxy for field `FCNTLFIE`"]
+impl core::ops::Deref for FCNTLFIE_R {
+    type Target = crate::FieldReader<bool, FCNTLFIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCNTLFIE` writer - Start fault counter interrupt enable LFXT"]
 pub struct FCNTLFIE_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> FCNTLFIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCNTLFIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> FCNTLFIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<FCNTHFIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FCNTHFIE`"]
-pub type FCNTHFIE_R = crate::R<bool, FCNTHFIE_A>;
+#[doc = "Field `FCNTHFIE` reader - Start fault counter interrupt enable HFXT"]
+pub struct FCNTHFIE_R(crate::FieldReader<bool, FCNTHFIE_A>);
 impl FCNTHFIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FCNTHFIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCNTHFIE_A {
@@ -413,15 +478,22 @@ impl FCNTHFIE_R {
     #[doc = "Checks if the value of the field is `FCNTHFIE_0`"]
     #[inline(always)]
     pub fn is_fcnthfie_0(&self) -> bool {
-        *self == FCNTHFIE_A::FCNTHFIE_0
+        **self == FCNTHFIE_A::FCNTHFIE_0
     }
     #[doc = "Checks if the value of the field is `FCNTHFIE_1`"]
     #[inline(always)]
     pub fn is_fcnthfie_1(&self) -> bool {
-        *self == FCNTHFIE_A::FCNTHFIE_1
+        **self == FCNTHFIE_A::FCNTHFIE_1
     }
 }
-#[doc = "Write proxy for field `FCNTHFIE`"]
+impl core::ops::Deref for FCNTHFIE_R {
+    type Target = crate::FieldReader<bool, FCNTHFIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCNTHFIE` writer - Start fault counter interrupt enable HFXT"]
 pub struct FCNTHFIE_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> FCNTHFIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCNTHFIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> FCNTHFIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<FCNTHF2IE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FCNTHF2IE`"]
-pub type FCNTHF2IE_R = crate::R<bool, FCNTHF2IE_A>;
+#[doc = "Field `FCNTHF2IE` reader - Start fault counter interrupt enable HFXT2"]
+pub struct FCNTHF2IE_R(crate::FieldReader<bool, FCNTHF2IE_A>);
 impl FCNTHF2IE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FCNTHF2IE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FCNTHF2IE_A {
@@ -488,15 +561,22 @@ impl FCNTHF2IE_R {
     #[doc = "Checks if the value of the field is `FCNTHF2IE_0`"]
     #[inline(always)]
     pub fn is_fcnthf2ie_0(&self) -> bool {
-        *self == FCNTHF2IE_A::FCNTHF2IE_0
+        **self == FCNTHF2IE_A::FCNTHF2IE_0
     }
     #[doc = "Checks if the value of the field is `FCNTHF2IE_1`"]
     #[inline(always)]
     pub fn is_fcnthf2ie_1(&self) -> bool {
-        *self == FCNTHF2IE_A::FCNTHF2IE_1
+        **self == FCNTHF2IE_A::FCNTHF2IE_1
     }
 }
-#[doc = "Write proxy for field `FCNTHF2IE`"]
+impl core::ops::Deref for FCNTHF2IE_R {
+    type Target = crate::FieldReader<bool, FCNTHF2IE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCNTHF2IE` writer - Start fault counter interrupt enable HFXT2"]
 pub struct FCNTHF2IE_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> FCNTHF2IE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FCNTHF2IE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> FCNTHF2IE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<PLLOOLIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PLLOOLIE`"]
-pub type PLLOOLIE_R = crate::R<bool, PLLOOLIE_A>;
+#[doc = "Field `PLLOOLIE` reader - PLL out-of-lock interrupt enable"]
+pub struct PLLOOLIE_R(crate::FieldReader<bool, PLLOOLIE_A>);
 impl PLLOOLIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLLOOLIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLOOLIE_A {
@@ -563,15 +644,22 @@ impl PLLOOLIE_R {
     #[doc = "Checks if the value of the field is `PLLOOLIE_0`"]
     #[inline(always)]
     pub fn is_plloolie_0(&self) -> bool {
-        *self == PLLOOLIE_A::PLLOOLIE_0
+        **self == PLLOOLIE_A::PLLOOLIE_0
     }
     #[doc = "Checks if the value of the field is `PLLOOLIE_1`"]
     #[inline(always)]
     pub fn is_plloolie_1(&self) -> bool {
-        *self == PLLOOLIE_A::PLLOOLIE_1
+        **self == PLLOOLIE_A::PLLOOLIE_1
     }
 }
-#[doc = "Write proxy for field `PLLOOLIE`"]
+impl core::ops::Deref for PLLOOLIE_R {
+    type Target = crate::FieldReader<bool, PLLOOLIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLLOOLIE` writer - PLL out-of-lock interrupt enable"]
 pub struct PLLOOLIE_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> PLLOOLIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PLLOOLIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> PLLOOLIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -624,9 +710,12 @@ impl From<PLLLOSIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PLLLOSIE`"]
-pub type PLLLOSIE_R = crate::R<bool, PLLLOSIE_A>;
+#[doc = "Field `PLLLOSIE` reader - PLL loss-of-signal interrupt enable"]
+pub struct PLLLOSIE_R(crate::FieldReader<bool, PLLLOSIE_A>);
 impl PLLLOSIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLLLOSIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLLOSIE_A {
@@ -638,15 +727,22 @@ impl PLLLOSIE_R {
     #[doc = "Checks if the value of the field is `PLLLOSIE_0`"]
     #[inline(always)]
     pub fn is_plllosie_0(&self) -> bool {
-        *self == PLLLOSIE_A::PLLLOSIE_0
+        **self == PLLLOSIE_A::PLLLOSIE_0
     }
     #[doc = "Checks if the value of the field is `PLLLOSIE_1`"]
     #[inline(always)]
     pub fn is_plllosie_1(&self) -> bool {
-        *self == PLLLOSIE_A::PLLLOSIE_1
+        **self == PLLLOSIE_A::PLLLOSIE_1
     }
 }
-#[doc = "Write proxy for field `PLLLOSIE`"]
+impl core::ops::Deref for PLLLOSIE_R {
+    type Target = crate::FieldReader<bool, PLLLOSIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLLLOSIE` writer - PLL loss-of-signal interrupt enable"]
 pub struct PLLLOSIE_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +750,7 @@ impl<'a> PLLLOSIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PLLLOSIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -681,7 +775,7 @@ impl<'a> PLLLOSIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -699,9 +793,12 @@ impl From<PLLOORIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PLLOORIE`"]
-pub type PLLOORIE_R = crate::R<bool, PLLOORIE_A>;
+#[doc = "Field `PLLOORIE` reader - PLL out-of-range interrupt enable"]
+pub struct PLLOORIE_R(crate::FieldReader<bool, PLLOORIE_A>);
 impl PLLOORIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLLOORIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLLOORIE_A {
@@ -713,15 +810,22 @@ impl PLLOORIE_R {
     #[doc = "Checks if the value of the field is `PLLOORIE_0`"]
     #[inline(always)]
     pub fn is_plloorie_0(&self) -> bool {
-        *self == PLLOORIE_A::PLLOORIE_0
+        **self == PLLOORIE_A::PLLOORIE_0
     }
     #[doc = "Checks if the value of the field is `PLLOORIE_1`"]
     #[inline(always)]
     pub fn is_plloorie_1(&self) -> bool {
-        *self == PLLOORIE_A::PLLOORIE_1
+        **self == PLLOORIE_A::PLLOORIE_1
     }
 }
-#[doc = "Write proxy for field `PLLOORIE`"]
+impl core::ops::Deref for PLLOORIE_R {
+    type Target = crate::FieldReader<bool, PLLOORIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLLOORIE` writer - PLL out-of-range interrupt enable"]
 pub struct PLLOORIE_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +833,7 @@ impl<'a> PLLOORIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PLLOORIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -756,7 +858,7 @@ impl<'a> PLLOORIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -774,9 +876,12 @@ impl From<CALIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CALIE`"]
-pub type CALIE_R = crate::R<bool, CALIE_A>;
+#[doc = "Field `CALIE` reader - REFCNT period counter interrupt enable"]
+pub struct CALIE_R(crate::FieldReader<bool, CALIE_A>);
 impl CALIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CALIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CALIE_A {
@@ -788,15 +893,22 @@ impl CALIE_R {
     #[doc = "Checks if the value of the field is `CALIE_0`"]
     #[inline(always)]
     pub fn is_calie_0(&self) -> bool {
-        *self == CALIE_A::CALIE_0
+        **self == CALIE_A::CALIE_0
     }
     #[doc = "Checks if the value of the field is `CALIE_1`"]
     #[inline(always)]
     pub fn is_calie_1(&self) -> bool {
-        *self == CALIE_A::CALIE_1
+        **self == CALIE_A::CALIE_1
     }
 }
-#[doc = "Write proxy for field `CALIE`"]
+impl core::ops::Deref for CALIE_R {
+    type Target = crate::FieldReader<bool, CALIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CALIE` writer - REFCNT period counter interrupt enable"]
 pub struct CALIE_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +916,7 @@ impl<'a> CALIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CALIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -831,7 +941,7 @@ impl<'a> CALIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -947,5 +1057,30 @@ impl W {
     #[inline(always)]
     pub fn calie(&mut self) -> CALIE_W {
         CALIE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csie](index.html) module"]
+pub struct CSIE_SPEC;
+impl crate::RegisterSpec for CSIE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [csie::R](R) reader structure"]
+impl crate::Readable for CSIE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [csie::W](W) writer structure"]
+impl crate::Writable for CSIE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSIE to value 0"]
+impl crate::Resettable for CSIE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

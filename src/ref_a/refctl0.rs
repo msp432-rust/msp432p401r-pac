@@ -1,7 +1,37 @@
-#[doc = "Reader of register REFCTL0"]
-pub type R = crate::R<u16, super::REFCTL0>;
-#[doc = "Writer for register REFCTL0"]
-pub type W = crate::W<u16, super::REFCTL0>;
+#[doc = "Register `REFCTL0` reader"]
+pub struct R(crate::R<REFCTL0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<REFCTL0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<REFCTL0_SPEC>> for R {
+    fn from(reader: crate::R<REFCTL0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `REFCTL0` writer"]
+pub struct W(crate::W<REFCTL0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<REFCTL0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<REFCTL0_SPEC>> for W {
+    fn from(writer: crate::W<REFCTL0_SPEC>) -> Self {
+        W(writer)
+    }
+}
 #[doc = "Reference enable"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFON_A {
@@ -16,9 +46,12 @@ impl From<REFON_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFON`"]
-pub type REFON_R = crate::R<bool, REFON_A>;
+#[doc = "Field `REFON` reader - Reference enable"]
+pub struct REFON_R(crate::FieldReader<bool, REFON_A>);
 impl REFON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFON_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFON_A {
@@ -30,15 +63,22 @@ impl REFON_R {
     #[doc = "Checks if the value of the field is `REFON_0`"]
     #[inline(always)]
     pub fn is_refon_0(&self) -> bool {
-        *self == REFON_A::REFON_0
+        **self == REFON_A::REFON_0
     }
     #[doc = "Checks if the value of the field is `REFON_1`"]
     #[inline(always)]
     pub fn is_refon_1(&self) -> bool {
-        *self == REFON_A::REFON_1
+        **self == REFON_A::REFON_1
     }
 }
-#[doc = "Write proxy for field `REFON`"]
+impl core::ops::Deref for REFON_R {
+    type Target = crate::FieldReader<bool, REFON_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFON` writer - Reference enable"]
 pub struct REFON_W<'a> {
     w: &'a mut W,
 }
@@ -46,9 +86,7 @@ impl<'a> REFON_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REFON_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Disables reference if no other reference requests are pending"]
     #[inline(always)]
@@ -73,7 +111,7 @@ impl<'a> REFON_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
@@ -91,9 +129,12 @@ impl From<REFOUT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFOUT`"]
-pub type REFOUT_R = crate::R<bool, REFOUT_A>;
+#[doc = "Field `REFOUT` reader - Reference output buffer"]
+pub struct REFOUT_R(crate::FieldReader<bool, REFOUT_A>);
 impl REFOUT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFOUT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFOUT_A {
@@ -105,15 +146,22 @@ impl REFOUT_R {
     #[doc = "Checks if the value of the field is `REFOUT_0`"]
     #[inline(always)]
     pub fn is_refout_0(&self) -> bool {
-        *self == REFOUT_A::REFOUT_0
+        **self == REFOUT_A::REFOUT_0
     }
     #[doc = "Checks if the value of the field is `REFOUT_1`"]
     #[inline(always)]
     pub fn is_refout_1(&self) -> bool {
-        *self == REFOUT_A::REFOUT_1
+        **self == REFOUT_A::REFOUT_1
     }
 }
-#[doc = "Write proxy for field `REFOUT`"]
+impl core::ops::Deref for REFOUT_R {
+    type Target = crate::FieldReader<bool, REFOUT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFOUT` writer - Reference output buffer"]
 pub struct REFOUT_W<'a> {
     w: &'a mut W,
 }
@@ -121,9 +169,7 @@ impl<'a> REFOUT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REFOUT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Reference output not available externally"]
     #[inline(always)]
@@ -148,7 +194,7 @@ impl<'a> REFOUT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
@@ -166,9 +212,12 @@ impl From<REFTCOFF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFTCOFF`"]
-pub type REFTCOFF_R = crate::R<bool, REFTCOFF_A>;
+#[doc = "Field `REFTCOFF` reader - Temperature sensor disabled"]
+pub struct REFTCOFF_R(crate::FieldReader<bool, REFTCOFF_A>);
 impl REFTCOFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFTCOFF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFTCOFF_A {
@@ -180,15 +229,22 @@ impl REFTCOFF_R {
     #[doc = "Checks if the value of the field is `REFTCOFF_0`"]
     #[inline(always)]
     pub fn is_reftcoff_0(&self) -> bool {
-        *self == REFTCOFF_A::REFTCOFF_0
+        **self == REFTCOFF_A::REFTCOFF_0
     }
     #[doc = "Checks if the value of the field is `REFTCOFF_1`"]
     #[inline(always)]
     pub fn is_reftcoff_1(&self) -> bool {
-        *self == REFTCOFF_A::REFTCOFF_1
+        **self == REFTCOFF_A::REFTCOFF_1
     }
 }
-#[doc = "Write proxy for field `REFTCOFF`"]
+impl core::ops::Deref for REFTCOFF_R {
+    type Target = crate::FieldReader<bool, REFTCOFF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFTCOFF` writer - Temperature sensor disabled"]
 pub struct REFTCOFF_W<'a> {
     w: &'a mut W,
 }
@@ -196,9 +252,7 @@ impl<'a> REFTCOFF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REFTCOFF_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Temperature sensor enabled"]
     #[inline(always)]
@@ -223,7 +277,7 @@ impl<'a> REFTCOFF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
@@ -244,37 +298,46 @@ impl From<REFVSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `REFVSEL`"]
-pub type REFVSEL_R = crate::R<u8, REFVSEL_A>;
+#[doc = "Field `REFVSEL` reader - Reference voltage level select"]
+pub struct REFVSEL_R(crate::FieldReader<u8, REFVSEL_A>);
 impl REFVSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        REFVSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, REFVSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<REFVSEL_A> {
         match self.bits {
-            0 => Val(REFVSEL_A::REFVSEL_0),
-            1 => Val(REFVSEL_A::REFVSEL_1),
-            3 => Val(REFVSEL_A::REFVSEL_3),
-            i => Res(i),
+            0 => Some(REFVSEL_A::REFVSEL_0),
+            1 => Some(REFVSEL_A::REFVSEL_1),
+            3 => Some(REFVSEL_A::REFVSEL_3),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `REFVSEL_0`"]
     #[inline(always)]
     pub fn is_refvsel_0(&self) -> bool {
-        *self == REFVSEL_A::REFVSEL_0
+        **self == REFVSEL_A::REFVSEL_0
     }
     #[doc = "Checks if the value of the field is `REFVSEL_1`"]
     #[inline(always)]
     pub fn is_refvsel_1(&self) -> bool {
-        *self == REFVSEL_A::REFVSEL_1
+        **self == REFVSEL_A::REFVSEL_1
     }
     #[doc = "Checks if the value of the field is `REFVSEL_3`"]
     #[inline(always)]
     pub fn is_refvsel_3(&self) -> bool {
-        *self == REFVSEL_A::REFVSEL_3
+        **self == REFVSEL_A::REFVSEL_3
     }
 }
-#[doc = "Write proxy for field `REFVSEL`"]
+impl core::ops::Deref for REFVSEL_R {
+    type Target = crate::FieldReader<u8, REFVSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFVSEL` writer - Reference voltage level select"]
 pub struct REFVSEL_W<'a> {
     w: &'a mut W,
 }
@@ -302,7 +365,7 @@ impl<'a> REFVSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u16) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u16 & 0x03) << 4);
         self.w
     }
 }
@@ -320,9 +383,12 @@ impl From<REFGENOT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFGENOT`"]
-pub type REFGENOT_R = crate::R<bool, REFGENOT_A>;
+#[doc = "Field `REFGENOT` reader - Reference generator one-time trigger"]
+pub struct REFGENOT_R(crate::FieldReader<bool, REFGENOT_A>);
 impl REFGENOT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFGENOT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFGENOT_A {
@@ -334,15 +400,22 @@ impl REFGENOT_R {
     #[doc = "Checks if the value of the field is `REFGENOT_0`"]
     #[inline(always)]
     pub fn is_refgenot_0(&self) -> bool {
-        *self == REFGENOT_A::REFGENOT_0
+        **self == REFGENOT_A::REFGENOT_0
     }
     #[doc = "Checks if the value of the field is `REFGENOT_1`"]
     #[inline(always)]
     pub fn is_refgenot_1(&self) -> bool {
-        *self == REFGENOT_A::REFGENOT_1
+        **self == REFGENOT_A::REFGENOT_1
     }
 }
-#[doc = "Write proxy for field `REFGENOT`"]
+impl core::ops::Deref for REFGENOT_R {
+    type Target = crate::FieldReader<bool, REFGENOT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFGENOT` writer - Reference generator one-time trigger"]
 pub struct REFGENOT_W<'a> {
     w: &'a mut W,
 }
@@ -350,9 +423,7 @@ impl<'a> REFGENOT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REFGENOT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No trigger"]
     #[inline(always)]
@@ -377,7 +448,7 @@ impl<'a> REFGENOT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
@@ -395,9 +466,12 @@ impl From<REFBGOT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFBGOT`"]
-pub type REFBGOT_R = crate::R<bool, REFBGOT_A>;
+#[doc = "Field `REFBGOT` reader - Bandgap and bandgap buffer one-time trigger"]
+pub struct REFBGOT_R(crate::FieldReader<bool, REFBGOT_A>);
 impl REFBGOT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFBGOT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFBGOT_A {
@@ -409,15 +483,22 @@ impl REFBGOT_R {
     #[doc = "Checks if the value of the field is `REFBGOT_0`"]
     #[inline(always)]
     pub fn is_refbgot_0(&self) -> bool {
-        *self == REFBGOT_A::REFBGOT_0
+        **self == REFBGOT_A::REFBGOT_0
     }
     #[doc = "Checks if the value of the field is `REFBGOT_1`"]
     #[inline(always)]
     pub fn is_refbgot_1(&self) -> bool {
-        *self == REFBGOT_A::REFBGOT_1
+        **self == REFBGOT_A::REFBGOT_1
     }
 }
-#[doc = "Write proxy for field `REFBGOT`"]
+impl core::ops::Deref for REFBGOT_R {
+    type Target = crate::FieldReader<bool, REFBGOT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFBGOT` writer - Bandgap and bandgap buffer one-time trigger"]
 pub struct REFBGOT_W<'a> {
     w: &'a mut W,
 }
@@ -425,9 +506,7 @@ impl<'a> REFBGOT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REFBGOT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No trigger"]
     #[inline(always)]
@@ -452,7 +531,7 @@ impl<'a> REFBGOT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
@@ -470,9 +549,12 @@ impl From<REFGENACT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFGENACT`"]
-pub type REFGENACT_R = crate::R<bool, REFGENACT_A>;
+#[doc = "Field `REFGENACT` reader - Reference generator active"]
+pub struct REFGENACT_R(crate::FieldReader<bool, REFGENACT_A>);
 impl REFGENACT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFGENACT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFGENACT_A {
@@ -484,12 +566,19 @@ impl REFGENACT_R {
     #[doc = "Checks if the value of the field is `REFGENACT_0`"]
     #[inline(always)]
     pub fn is_refgenact_0(&self) -> bool {
-        *self == REFGENACT_A::REFGENACT_0
+        **self == REFGENACT_A::REFGENACT_0
     }
     #[doc = "Checks if the value of the field is `REFGENACT_1`"]
     #[inline(always)]
     pub fn is_refgenact_1(&self) -> bool {
-        *self == REFGENACT_A::REFGENACT_1
+        **self == REFGENACT_A::REFGENACT_1
+    }
+}
+impl core::ops::Deref for REFGENACT_R {
+    type Target = crate::FieldReader<bool, REFGENACT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Reference bandgap active"]
@@ -506,9 +595,12 @@ impl From<REFBGACT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFBGACT`"]
-pub type REFBGACT_R = crate::R<bool, REFBGACT_A>;
+#[doc = "Field `REFBGACT` reader - Reference bandgap active"]
+pub struct REFBGACT_R(crate::FieldReader<bool, REFBGACT_A>);
 impl REFBGACT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFBGACT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFBGACT_A {
@@ -520,12 +612,19 @@ impl REFBGACT_R {
     #[doc = "Checks if the value of the field is `REFBGACT_0`"]
     #[inline(always)]
     pub fn is_refbgact_0(&self) -> bool {
-        *self == REFBGACT_A::REFBGACT_0
+        **self == REFBGACT_A::REFBGACT_0
     }
     #[doc = "Checks if the value of the field is `REFBGACT_1`"]
     #[inline(always)]
     pub fn is_refbgact_1(&self) -> bool {
-        *self == REFBGACT_A::REFBGACT_1
+        **self == REFBGACT_A::REFBGACT_1
+    }
+}
+impl core::ops::Deref for REFBGACT_R {
+    type Target = crate::FieldReader<bool, REFBGACT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Reference generator busy"]
@@ -542,9 +641,12 @@ impl From<REFGENBUSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFGENBUSY`"]
-pub type REFGENBUSY_R = crate::R<bool, REFGENBUSY_A>;
+#[doc = "Field `REFGENBUSY` reader - Reference generator busy"]
+pub struct REFGENBUSY_R(crate::FieldReader<bool, REFGENBUSY_A>);
 impl REFGENBUSY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFGENBUSY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFGENBUSY_A {
@@ -556,12 +658,19 @@ impl REFGENBUSY_R {
     #[doc = "Checks if the value of the field is `REFGENBUSY_0`"]
     #[inline(always)]
     pub fn is_refgenbusy_0(&self) -> bool {
-        *self == REFGENBUSY_A::REFGENBUSY_0
+        **self == REFGENBUSY_A::REFGENBUSY_0
     }
     #[doc = "Checks if the value of the field is `REFGENBUSY_1`"]
     #[inline(always)]
     pub fn is_refgenbusy_1(&self) -> bool {
-        *self == REFGENBUSY_A::REFGENBUSY_1
+        **self == REFGENBUSY_A::REFGENBUSY_1
+    }
+}
+impl core::ops::Deref for REFGENBUSY_R {
+    type Target = crate::FieldReader<bool, REFGENBUSY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Bandgap mode"]
@@ -578,9 +687,12 @@ impl From<BGMODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BGMODE`"]
-pub type BGMODE_R = crate::R<bool, BGMODE_A>;
+#[doc = "Field `BGMODE` reader - Bandgap mode"]
+pub struct BGMODE_R(crate::FieldReader<bool, BGMODE_A>);
 impl BGMODE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BGMODE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BGMODE_A {
@@ -592,12 +704,19 @@ impl BGMODE_R {
     #[doc = "Checks if the value of the field is `BGMODE_0`"]
     #[inline(always)]
     pub fn is_bgmode_0(&self) -> bool {
-        *self == BGMODE_A::BGMODE_0
+        **self == BGMODE_A::BGMODE_0
     }
     #[doc = "Checks if the value of the field is `BGMODE_1`"]
     #[inline(always)]
     pub fn is_bgmode_1(&self) -> bool {
-        *self == BGMODE_A::BGMODE_1
+        **self == BGMODE_A::BGMODE_1
+    }
+}
+impl core::ops::Deref for BGMODE_R {
+    type Target = crate::FieldReader<bool, BGMODE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Variable reference voltage ready status"]
@@ -614,9 +733,12 @@ impl From<REFGENRDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFGENRDY`"]
-pub type REFGENRDY_R = crate::R<bool, REFGENRDY_A>;
+#[doc = "Field `REFGENRDY` reader - Variable reference voltage ready status"]
+pub struct REFGENRDY_R(crate::FieldReader<bool, REFGENRDY_A>);
 impl REFGENRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFGENRDY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFGENRDY_A {
@@ -628,12 +750,19 @@ impl REFGENRDY_R {
     #[doc = "Checks if the value of the field is `REFGENRDY_0`"]
     #[inline(always)]
     pub fn is_refgenrdy_0(&self) -> bool {
-        *self == REFGENRDY_A::REFGENRDY_0
+        **self == REFGENRDY_A::REFGENRDY_0
     }
     #[doc = "Checks if the value of the field is `REFGENRDY_1`"]
     #[inline(always)]
     pub fn is_refgenrdy_1(&self) -> bool {
-        *self == REFGENRDY_A::REFGENRDY_1
+        **self == REFGENRDY_A::REFGENRDY_1
+    }
+}
+impl core::ops::Deref for REFGENRDY_R {
+    type Target = crate::FieldReader<bool, REFGENRDY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Buffered bandgap voltage ready status"]
@@ -650,9 +779,12 @@ impl From<REFBGRDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFBGRDY`"]
-pub type REFBGRDY_R = crate::R<bool, REFBGRDY_A>;
+#[doc = "Field `REFBGRDY` reader - Buffered bandgap voltage ready status"]
+pub struct REFBGRDY_R(crate::FieldReader<bool, REFBGRDY_A>);
 impl REFBGRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFBGRDY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFBGRDY_A {
@@ -664,12 +796,19 @@ impl REFBGRDY_R {
     #[doc = "Checks if the value of the field is `REFBGRDY_0`"]
     #[inline(always)]
     pub fn is_refbgrdy_0(&self) -> bool {
-        *self == REFBGRDY_A::REFBGRDY_0
+        **self == REFBGRDY_A::REFBGRDY_0
     }
     #[doc = "Checks if the value of the field is `REFBGRDY_1`"]
     #[inline(always)]
     pub fn is_refbgrdy_1(&self) -> bool {
-        *self == REFBGRDY_A::REFBGRDY_1
+        **self == REFBGRDY_A::REFBGRDY_1
+    }
+}
+impl core::ops::Deref for REFBGRDY_R {
+    type Target = crate::FieldReader<bool, REFBGRDY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -765,4 +904,22 @@ impl W {
     pub fn refbgot(&mut self) -> REFBGOT_W {
         REFBGOT_W { w: self }
     }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "REF Control Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [refctl0](index.html) module"]
+pub struct REFCTL0_SPEC;
+impl crate::RegisterSpec for REFCTL0_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [refctl0::R](R) reader structure"]
+impl crate::Readable for REFCTL0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [refctl0::W](W) writer structure"]
+impl crate::Writable for REFCTL0_SPEC {
+    type Writer = W;
 }

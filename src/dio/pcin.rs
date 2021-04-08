@@ -1,9 +1,45 @@
-#[doc = "Reader of register PCIN"]
-pub type R = crate::R<u16, super::PCIN>;
-#[doc = "Reader of field `P5IN`"]
-pub type P5IN_R = crate::R<u8, u8>;
-#[doc = "Reader of field `P6IN`"]
-pub type P6IN_R = crate::R<u8, u8>;
+#[doc = "Register `PCIN` reader"]
+pub struct R(crate::R<PCIN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PCIN_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<PCIN_SPEC>> for R {
+    fn from(reader: crate::R<PCIN_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `P5IN` reader - Port 5 Input"]
+pub struct P5IN_R(crate::FieldReader<u8, u8>);
+impl P5IN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        P5IN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for P5IN_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P6IN` reader - Port 6 Input"]
+pub struct P6IN_R(crate::FieldReader<u8, u8>);
+impl P6IN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        P6IN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for P6IN_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:7 - Port 5 Input"]
     #[inline(always)]
@@ -14,5 +50,21 @@ impl R {
     #[inline(always)]
     pub fn p6in(&self) -> P6IN_R {
         P6IN_R::new(((self.bits >> 8) & 0xff) as u8)
+    }
+}
+#[doc = "Port C Input\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcin](index.html) module"]
+pub struct PCIN_SPEC;
+impl crate::RegisterSpec for PCIN_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [pcin::R](R) reader structure"]
+impl crate::Readable for PCIN_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets PCIN to value 0"]
+impl crate::Resettable for PCIN_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

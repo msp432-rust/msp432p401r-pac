@@ -1,18 +1,52 @@
-#[doc = "Reader of register PBIFG"]
-pub type R = crate::R<u16, super::PBIFG>;
-#[doc = "Writer for register PBIFG"]
-pub type W = crate::W<u16, super::PBIFG>;
-#[doc = "Register PBIFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::PBIFG {
-    type Type = u16;
+#[doc = "Register `PBIFG` reader"]
+pub struct R(crate::R<PBIFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PBIFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `P3IFG`"]
-pub type P3IFG_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `P3IFG`"]
+impl core::convert::From<crate::R<PBIFG_SPEC>> for R {
+    fn from(reader: crate::R<PBIFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PBIFG` writer"]
+pub struct W(crate::W<PBIFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PBIFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PBIFG_SPEC>> for W {
+    fn from(writer: crate::W<PBIFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `P3IFG` reader - Port 3 Interrupt Flag"]
+pub struct P3IFG_R(crate::FieldReader<u8, u8>);
+impl P3IFG_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        P3IFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for P3IFG_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P3IFG` writer - Port 3 Interrupt Flag"]
 pub struct P3IFG_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +54,25 @@ impl<'a> P3IFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u16) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
         self.w
     }
 }
-#[doc = "Reader of field `P4IFG`"]
-pub type P4IFG_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `P4IFG`"]
+#[doc = "Field `P4IFG` reader - Port 4 Interrupt Flag"]
+pub struct P4IFG_R(crate::FieldReader<u8, u8>);
+impl P4IFG_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        P4IFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for P4IFG_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `P4IFG` writer - Port 4 Interrupt Flag"]
 pub struct P4IFG_W<'a> {
     w: &'a mut W,
 }
@@ -34,7 +80,7 @@ impl<'a> P4IFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u16) & 0xff) << 8);
+        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
         self.w
     }
 }
@@ -60,5 +106,30 @@ impl W {
     #[inline(always)]
     pub fn p4ifg(&mut self) -> P4IFG_W {
         P4IFG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port B Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbifg](index.html) module"]
+pub struct PBIFG_SPEC;
+impl crate::RegisterSpec for PBIFG_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [pbifg::R](R) reader structure"]
+impl crate::Readable for PBIFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pbifg::W](W) writer structure"]
+impl crate::Writable for PBIFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PBIFG to value 0"]
+impl crate::Resettable for PBIFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

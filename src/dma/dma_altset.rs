@@ -1,13 +1,35 @@
-#[doc = "Reader of register DMA_ALTSET"]
-pub type R = crate::R<u32, super::DMA_ALTSET>;
-#[doc = "Writer for register DMA_ALTSET"]
-pub type W = crate::W<u32, super::DMA_ALTSET>;
-#[doc = "Register DMA_ALTSET `reset()`'s with value 0"]
-impl crate::ResetValue for super::DMA_ALTSET {
-    type Type = u32;
+#[doc = "Register `DMA_ALTSET` reader"]
+pub struct R(crate::R<DMA_ALTSET_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DMA_ALTSET_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<DMA_ALTSET_SPEC>> for R {
+    fn from(reader: crate::R<DMA_ALTSET_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DMA_ALTSET` writer"]
+pub struct W(crate::W<DMA_ALTSET_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DMA_ALTSET_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<DMA_ALTSET_SPEC>> for W {
+    fn from(writer: crate::W<DMA_ALTSET_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Channel Primary-Alternate Set Register\n\nValue on reset: 0"]
@@ -25,28 +47,37 @@ impl From<SET_A> for u32 {
         variant as _
     }
 }
-#[doc = "Reader of field `SET`"]
-pub type SET_R = crate::R<u32, SET_A>;
+#[doc = "Field `SET` reader - Channel Primary-Alternate Set Register"]
+pub struct SET_R(crate::FieldReader<u32, SET_A>);
 impl SET_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        SET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u32, SET_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SET_A> {
         match self.bits {
-            0 => Val(SET_A::SET_0_READ),
-            1 => Val(SET_A::SET_1_READ),
-            i => Res(i),
+            0 => Some(SET_A::SET_0_READ),
+            1 => Some(SET_A::SET_1_READ),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `SET_0_READ`"]
     #[inline(always)]
     pub fn is_set_0_read(&self) -> bool {
-        *self == SET_A::SET_0_READ
+        **self == SET_A::SET_0_READ
     }
     #[doc = "Checks if the value of the field is `SET_1_READ`"]
     #[inline(always)]
     pub fn is_set_1_read(&self) -> bool {
-        *self == SET_A::SET_1_READ
+        **self == SET_A::SET_1_READ
+    }
+}
+impl core::ops::Deref for SET_R {
+    type Target = crate::FieldReader<u32, SET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Channel Primary-Alternate Set Register\n\nValue on reset: 0"]
@@ -65,7 +96,7 @@ impl From<SET_AW> for u32 {
         variant as _
     }
 }
-#[doc = "Write proxy for field `SET`"]
+#[doc = "Field `SET` writer - Channel Primary-Alternate Set Register"]
 pub struct SET_W<'a> {
     w: &'a mut W,
 }
@@ -89,7 +120,7 @@ to 0."]
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
+        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
         self.w
     }
 }
@@ -105,5 +136,30 @@ impl W {
     #[inline(always)]
     pub fn set(&mut self) -> SET_W {
         SET_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Primary-Alternate Set Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_altset](index.html) module"]
+pub struct DMA_ALTSET_SPEC;
+impl crate::RegisterSpec for DMA_ALTSET_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dma_altset::R](R) reader structure"]
+impl crate::Readable for DMA_ALTSET_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dma_altset::W](W) writer structure"]
+impl crate::Writable for DMA_ALTSET_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DMA_ALTSET to value 0"]
+impl crate::Resettable for DMA_ALTSET_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,11 +1,21 @@
-#[doc = "Writer for register CSCLRIFG"]
-pub type W = crate::W<u32, super::CSCLRIFG>;
-#[doc = "Register CSCLRIFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::CSCLRIFG {
-    type Type = u32;
+#[doc = "Register `CSCLRIFG` writer"]
+pub struct W(crate::W<CSCLRIFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSCLRIFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CSCLRIFG_SPEC>> for W {
+    fn from(writer: crate::W<CSCLRIFG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Clear LFXT oscillator fault interrupt flag\n\nValue on reset: 0"]
@@ -22,7 +32,7 @@ impl From<CLR_LFXTIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_LFXTIFG`"]
+#[doc = "Field `CLR_LFXTIFG` writer - Clear LFXT oscillator fault interrupt flag"]
 pub struct CLR_LFXTIFG_W<'a> {
     w: &'a mut W,
 }
@@ -30,9 +40,7 @@ impl<'a> CLR_LFXTIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_LFXTIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -57,7 +65,7 @@ impl<'a> CLR_LFXTIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -75,7 +83,7 @@ impl From<CLR_HFXTIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_HFXTIFG`"]
+#[doc = "Field `CLR_HFXTIFG` writer - Clear HFXT oscillator fault interrupt flag"]
 pub struct CLR_HFXTIFG_W<'a> {
     w: &'a mut W,
 }
@@ -83,9 +91,7 @@ impl<'a> CLR_HFXTIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_HFXTIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -110,7 +116,7 @@ impl<'a> CLR_HFXTIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -128,7 +134,7 @@ impl From<CLR_HFXT2IFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_HFXT2IFG`"]
+#[doc = "Field `CLR_HFXT2IFG` writer - Clear HFXT2 oscillator fault interrupt flag"]
 pub struct CLR_HFXT2IFG_W<'a> {
     w: &'a mut W,
 }
@@ -136,9 +142,7 @@ impl<'a> CLR_HFXT2IFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_HFXT2IFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -163,7 +167,7 @@ impl<'a> CLR_HFXT2IFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -181,7 +185,7 @@ impl From<CLR_DCOR_OPNIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_DCOR_OPNIFG`"]
+#[doc = "Field `CLR_DCOR_OPNIFG` writer - Clear DCO external resistor open circuit fault interrupt flag."]
 pub struct CLR_DCOR_OPNIFG_W<'a> {
     w: &'a mut W,
 }
@@ -189,9 +193,7 @@ impl<'a> CLR_DCOR_OPNIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_DCOR_OPNIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -216,7 +218,7 @@ impl<'a> CLR_DCOR_OPNIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -234,7 +236,7 @@ impl From<CLR_CALIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_CALIFG`"]
+#[doc = "Field `CLR_CALIFG` writer - REFCNT period counter clear interrupt flag"]
 pub struct CLR_CALIFG_W<'a> {
     w: &'a mut W,
 }
@@ -242,9 +244,7 @@ impl<'a> CLR_CALIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_CALIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -269,7 +269,7 @@ impl<'a> CLR_CALIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -287,7 +287,7 @@ impl From<CLR_FCNTLFIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_FCNTLFIFG`"]
+#[doc = "Field `CLR_FCNTLFIFG` writer - Start fault counter clear interrupt flag LFXT"]
 pub struct CLR_FCNTLFIFG_W<'a> {
     w: &'a mut W,
 }
@@ -295,9 +295,7 @@ impl<'a> CLR_FCNTLFIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_FCNTLFIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -322,7 +320,7 @@ impl<'a> CLR_FCNTLFIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -340,7 +338,7 @@ impl From<CLR_FCNTHFIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_FCNTHFIFG`"]
+#[doc = "Field `CLR_FCNTHFIFG` writer - Start fault counter clear interrupt flag HFXT"]
 pub struct CLR_FCNTHFIFG_W<'a> {
     w: &'a mut W,
 }
@@ -348,9 +346,7 @@ impl<'a> CLR_FCNTHFIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_FCNTHFIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -375,7 +371,7 @@ impl<'a> CLR_FCNTHFIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -393,7 +389,7 @@ impl From<CLR_FCNTHF2IFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_FCNTHF2IFG`"]
+#[doc = "Field `CLR_FCNTHF2IFG` writer - Start fault counter clear interrupt flag HFXT2"]
 pub struct CLR_FCNTHF2IFG_W<'a> {
     w: &'a mut W,
 }
@@ -401,9 +397,7 @@ impl<'a> CLR_FCNTHF2IFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_FCNTHF2IFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -428,7 +422,7 @@ impl<'a> CLR_FCNTHF2IFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -446,7 +440,7 @@ impl From<CLR_PLLOOLIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_PLLOOLIFG`"]
+#[doc = "Field `CLR_PLLOOLIFG` writer - PLL out-of-lock clear interrupt flag"]
 pub struct CLR_PLLOOLIFG_W<'a> {
     w: &'a mut W,
 }
@@ -454,9 +448,7 @@ impl<'a> CLR_PLLOOLIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_PLLOOLIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -481,7 +473,7 @@ impl<'a> CLR_PLLOOLIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -499,7 +491,7 @@ impl From<CLR_PLLLOSIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_PLLLOSIFG`"]
+#[doc = "Field `CLR_PLLLOSIFG` writer - PLL loss-of-signal clear interrupt flag"]
 pub struct CLR_PLLLOSIFG_W<'a> {
     w: &'a mut W,
 }
@@ -507,9 +499,7 @@ impl<'a> CLR_PLLLOSIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_PLLLOSIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -534,7 +524,7 @@ impl<'a> CLR_PLLLOSIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -552,7 +542,7 @@ impl From<CLR_PLLOORIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLR_PLLOORIFG`"]
+#[doc = "Field `CLR_PLLOORIFG` writer - PLL out-of-range clear interrupt flag"]
 pub struct CLR_PLLOORIFG_W<'a> {
     w: &'a mut W,
 }
@@ -560,9 +550,7 @@ impl<'a> CLR_PLLOORIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLR_PLLOORIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect"]
     #[inline(always)]
@@ -587,7 +575,7 @@ impl<'a> CLR_PLLOORIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -646,5 +634,26 @@ impl W {
     #[inline(always)]
     pub fn clr_plloorifg(&mut self) -> CLR_PLLOORIFG_W {
         CLR_PLLOORIFG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clear Interrupt Flag Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csclrifg](index.html) module"]
+pub struct CSCLRIFG_SPEC;
+impl crate::RegisterSpec for CSCLRIFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [csclrifg::W](W) writer structure"]
+impl crate::Writable for CSCLRIFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSCLRIFG to value 0"]
+impl crate::Resettable for CSCLRIFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,3 +1,30 @@
-#[doc = "Reader of register FLASH_INFO_LEN"]
-pub type R = crate::R<u32, super::FLASH_INFO_LEN>;
-impl R {}
+#[doc = "Register `FLASH_INFO_LEN` reader"]
+pub struct R(crate::R<FLASH_INFO_LEN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FLASH_INFO_LEN_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<FLASH_INFO_LEN_SPEC>> for R {
+    fn from(reader: crate::R<FLASH_INFO_LEN_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Flash Info Length\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flash_info_len](index.html) module"]
+pub struct FLASH_INFO_LEN_SPEC;
+impl crate::RegisterSpec for FLASH_INFO_LEN_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [flash_info_len::R](R) reader structure"]
+impl crate::Readable for FLASH_INFO_LEN_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets FLASH_INFO_LEN to value 0"]
+impl crate::Resettable for FLASH_INFO_LEN_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
+}

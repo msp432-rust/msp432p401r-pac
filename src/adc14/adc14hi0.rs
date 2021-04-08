@@ -1,18 +1,52 @@
-#[doc = "Reader of register ADC14HI0"]
-pub type R = crate::R<u32, super::ADC14HI0>;
-#[doc = "Writer for register ADC14HI0"]
-pub type W = crate::W<u32, super::ADC14HI0>;
-#[doc = "Register ADC14HI0 `reset()`'s with value 0x3fff"]
-impl crate::ResetValue for super::ADC14HI0 {
-    type Type = u32;
+#[doc = "Register `ADC14HI0` reader"]
+pub struct R(crate::R<ADC14HI0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADC14HI0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x3fff
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ADC14HI0`"]
-pub type ADC14HI0_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `ADC14HI0`"]
+impl core::convert::From<crate::R<ADC14HI0_SPEC>> for R {
+    fn from(reader: crate::R<ADC14HI0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ADC14HI0` writer"]
+pub struct W(crate::W<ADC14HI0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADC14HI0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<ADC14HI0_SPEC>> for W {
+    fn from(writer: crate::W<ADC14HI0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADC14HI0` reader - High threshold 0"]
+pub struct ADC14HI0_R(crate::FieldReader<u16, u16>);
+impl ADC14HI0_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        ADC14HI0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADC14HI0_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADC14HI0` writer - High threshold 0"]
 pub struct ADC14HI0_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +54,7 @@ impl<'a> ADC14HI0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
@@ -36,5 +70,30 @@ impl W {
     #[inline(always)]
     pub fn adc14hi0(&mut self) -> ADC14HI0_W {
         ADC14HI0_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Window Comparator High Threshold 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc14hi0](index.html) module"]
+pub struct ADC14HI0_SPEC;
+impl crate::RegisterSpec for ADC14HI0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [adc14hi0::R](R) reader structure"]
+impl crate::Readable for ADC14HI0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [adc14hi0::W](W) writer structure"]
+impl crate::Writable for ADC14HI0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ADC14HI0 to value 0x3fff"]
+impl crate::Resettable for ADC14HI0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x3fff
     }
 }

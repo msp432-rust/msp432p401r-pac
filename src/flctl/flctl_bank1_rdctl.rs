@@ -1,13 +1,35 @@
-#[doc = "Reader of register FLCTL_BANK1_RDCTL"]
-pub type R = crate::R<u32, super::FLCTL_BANK1_RDCTL>;
-#[doc = "Writer for register FLCTL_BANK1_RDCTL"]
-pub type W = crate::W<u32, super::FLCTL_BANK1_RDCTL>;
-#[doc = "Register FLCTL_BANK1_RDCTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::FLCTL_BANK1_RDCTL {
-    type Type = u32;
+#[doc = "Register `FLCTL_BANK1_RDCTL` reader"]
+pub struct R(crate::R<FLCTL_BANK1_RDCTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FLCTL_BANK1_RDCTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<FLCTL_BANK1_RDCTL_SPEC>> for R {
+    fn from(reader: crate::R<FLCTL_BANK1_RDCTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FLCTL_BANK1_RDCTL` writer"]
+pub struct W(crate::W<FLCTL_BANK1_RDCTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FLCTL_BANK1_RDCTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<FLCTL_BANK1_RDCTL_SPEC>> for W {
+    fn from(writer: crate::W<FLCTL_BANK1_RDCTL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Flash read mode control setting for Bank 0\n\nValue on reset: 0"]
@@ -37,67 +59,76 @@ impl From<RD_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RD_MODE`"]
-pub type RD_MODE_R = crate::R<u8, RD_MODE_A>;
+#[doc = "Field `RD_MODE` reader - Flash read mode control setting for Bank 0"]
+pub struct RD_MODE_R(crate::FieldReader<u8, RD_MODE_A>);
 impl RD_MODE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RD_MODE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, RD_MODE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<RD_MODE_A> {
         match self.bits {
-            0 => Val(RD_MODE_A::RD_MODE_0),
-            1 => Val(RD_MODE_A::RD_MODE_1),
-            2 => Val(RD_MODE_A::RD_MODE_2),
-            3 => Val(RD_MODE_A::RD_MODE_3),
-            4 => Val(RD_MODE_A::RD_MODE_4),
-            5 => Val(RD_MODE_A::RD_MODE_5),
-            9 => Val(RD_MODE_A::RD_MODE_9),
-            10 => Val(RD_MODE_A::RD_MODE_10),
-            i => Res(i),
+            0 => Some(RD_MODE_A::RD_MODE_0),
+            1 => Some(RD_MODE_A::RD_MODE_1),
+            2 => Some(RD_MODE_A::RD_MODE_2),
+            3 => Some(RD_MODE_A::RD_MODE_3),
+            4 => Some(RD_MODE_A::RD_MODE_4),
+            5 => Some(RD_MODE_A::RD_MODE_5),
+            9 => Some(RD_MODE_A::RD_MODE_9),
+            10 => Some(RD_MODE_A::RD_MODE_10),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `RD_MODE_0`"]
     #[inline(always)]
     pub fn is_rd_mode_0(&self) -> bool {
-        *self == RD_MODE_A::RD_MODE_0
+        **self == RD_MODE_A::RD_MODE_0
     }
     #[doc = "Checks if the value of the field is `RD_MODE_1`"]
     #[inline(always)]
     pub fn is_rd_mode_1(&self) -> bool {
-        *self == RD_MODE_A::RD_MODE_1
+        **self == RD_MODE_A::RD_MODE_1
     }
     #[doc = "Checks if the value of the field is `RD_MODE_2`"]
     #[inline(always)]
     pub fn is_rd_mode_2(&self) -> bool {
-        *self == RD_MODE_A::RD_MODE_2
+        **self == RD_MODE_A::RD_MODE_2
     }
     #[doc = "Checks if the value of the field is `RD_MODE_3`"]
     #[inline(always)]
     pub fn is_rd_mode_3(&self) -> bool {
-        *self == RD_MODE_A::RD_MODE_3
+        **self == RD_MODE_A::RD_MODE_3
     }
     #[doc = "Checks if the value of the field is `RD_MODE_4`"]
     #[inline(always)]
     pub fn is_rd_mode_4(&self) -> bool {
-        *self == RD_MODE_A::RD_MODE_4
+        **self == RD_MODE_A::RD_MODE_4
     }
     #[doc = "Checks if the value of the field is `RD_MODE_5`"]
     #[inline(always)]
     pub fn is_rd_mode_5(&self) -> bool {
-        *self == RD_MODE_A::RD_MODE_5
+        **self == RD_MODE_A::RD_MODE_5
     }
     #[doc = "Checks if the value of the field is `RD_MODE_9`"]
     #[inline(always)]
     pub fn is_rd_mode_9(&self) -> bool {
-        *self == RD_MODE_A::RD_MODE_9
+        **self == RD_MODE_A::RD_MODE_9
     }
     #[doc = "Checks if the value of the field is `RD_MODE_10`"]
     #[inline(always)]
     pub fn is_rd_mode_10(&self) -> bool {
-        *self == RD_MODE_A::RD_MODE_10
+        **self == RD_MODE_A::RD_MODE_10
     }
 }
-#[doc = "Write proxy for field `RD_MODE`"]
+impl core::ops::Deref for RD_MODE_R {
+    type Target = crate::FieldReader<u8, RD_MODE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RD_MODE` writer - Flash read mode control setting for Bank 0"]
 pub struct RD_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +181,25 @@ impl<'a> RD_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
-#[doc = "Reader of field `BUFI`"]
-pub type BUFI_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BUFI`"]
+#[doc = "Field `BUFI` reader - Enables read buffering feature for instruction fetches to this Bank"]
+pub struct BUFI_R(crate::FieldReader<bool, bool>);
+impl BUFI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BUFI_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BUFI_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BUFI` writer - Enables read buffering feature for instruction fetches to this Bank"]
 pub struct BUFI_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +217,25 @@ impl<'a> BUFI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `BUFD`"]
-pub type BUFD_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BUFD`"]
+#[doc = "Field `BUFD` reader - Enables read buffering feature for data reads to this Bank"]
+pub struct BUFD_R(crate::FieldReader<bool, bool>);
+impl BUFD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BUFD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BUFD_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BUFD` writer - Enables read buffering feature for data reads to this Bank"]
 pub struct BUFD_W<'a> {
     w: &'a mut W,
 }
@@ -198,7 +253,7 @@ impl<'a> BUFD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -229,64 +284,73 @@ impl From<RD_MODE_STATUS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RD_MODE_STATUS`"]
-pub type RD_MODE_STATUS_R = crate::R<u8, RD_MODE_STATUS_A>;
+#[doc = "Field `RD_MODE_STATUS` reader - Read mode"]
+pub struct RD_MODE_STATUS_R(crate::FieldReader<u8, RD_MODE_STATUS_A>);
 impl RD_MODE_STATUS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RD_MODE_STATUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, RD_MODE_STATUS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<RD_MODE_STATUS_A> {
         match self.bits {
-            0 => Val(RD_MODE_STATUS_A::RD_MODE_STATUS_0),
-            1 => Val(RD_MODE_STATUS_A::RD_MODE_STATUS_1),
-            2 => Val(RD_MODE_STATUS_A::RD_MODE_STATUS_2),
-            3 => Val(RD_MODE_STATUS_A::RD_MODE_STATUS_3),
-            4 => Val(RD_MODE_STATUS_A::RD_MODE_STATUS_4),
-            5 => Val(RD_MODE_STATUS_A::RD_MODE_STATUS_5),
-            9 => Val(RD_MODE_STATUS_A::RD_MODE_STATUS_9),
-            10 => Val(RD_MODE_STATUS_A::RD_MODE_STATUS_10),
-            i => Res(i),
+            0 => Some(RD_MODE_STATUS_A::RD_MODE_STATUS_0),
+            1 => Some(RD_MODE_STATUS_A::RD_MODE_STATUS_1),
+            2 => Some(RD_MODE_STATUS_A::RD_MODE_STATUS_2),
+            3 => Some(RD_MODE_STATUS_A::RD_MODE_STATUS_3),
+            4 => Some(RD_MODE_STATUS_A::RD_MODE_STATUS_4),
+            5 => Some(RD_MODE_STATUS_A::RD_MODE_STATUS_5),
+            9 => Some(RD_MODE_STATUS_A::RD_MODE_STATUS_9),
+            10 => Some(RD_MODE_STATUS_A::RD_MODE_STATUS_10),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `RD_MODE_STATUS_0`"]
     #[inline(always)]
     pub fn is_rd_mode_status_0(&self) -> bool {
-        *self == RD_MODE_STATUS_A::RD_MODE_STATUS_0
+        **self == RD_MODE_STATUS_A::RD_MODE_STATUS_0
     }
     #[doc = "Checks if the value of the field is `RD_MODE_STATUS_1`"]
     #[inline(always)]
     pub fn is_rd_mode_status_1(&self) -> bool {
-        *self == RD_MODE_STATUS_A::RD_MODE_STATUS_1
+        **self == RD_MODE_STATUS_A::RD_MODE_STATUS_1
     }
     #[doc = "Checks if the value of the field is `RD_MODE_STATUS_2`"]
     #[inline(always)]
     pub fn is_rd_mode_status_2(&self) -> bool {
-        *self == RD_MODE_STATUS_A::RD_MODE_STATUS_2
+        **self == RD_MODE_STATUS_A::RD_MODE_STATUS_2
     }
     #[doc = "Checks if the value of the field is `RD_MODE_STATUS_3`"]
     #[inline(always)]
     pub fn is_rd_mode_status_3(&self) -> bool {
-        *self == RD_MODE_STATUS_A::RD_MODE_STATUS_3
+        **self == RD_MODE_STATUS_A::RD_MODE_STATUS_3
     }
     #[doc = "Checks if the value of the field is `RD_MODE_STATUS_4`"]
     #[inline(always)]
     pub fn is_rd_mode_status_4(&self) -> bool {
-        *self == RD_MODE_STATUS_A::RD_MODE_STATUS_4
+        **self == RD_MODE_STATUS_A::RD_MODE_STATUS_4
     }
     #[doc = "Checks if the value of the field is `RD_MODE_STATUS_5`"]
     #[inline(always)]
     pub fn is_rd_mode_status_5(&self) -> bool {
-        *self == RD_MODE_STATUS_A::RD_MODE_STATUS_5
+        **self == RD_MODE_STATUS_A::RD_MODE_STATUS_5
     }
     #[doc = "Checks if the value of the field is `RD_MODE_STATUS_9`"]
     #[inline(always)]
     pub fn is_rd_mode_status_9(&self) -> bool {
-        *self == RD_MODE_STATUS_A::RD_MODE_STATUS_9
+        **self == RD_MODE_STATUS_A::RD_MODE_STATUS_9
     }
     #[doc = "Checks if the value of the field is `RD_MODE_STATUS_10`"]
     #[inline(always)]
     pub fn is_rd_mode_status_10(&self) -> bool {
-        *self == RD_MODE_STATUS_A::RD_MODE_STATUS_10
+        **self == RD_MODE_STATUS_A::RD_MODE_STATUS_10
+    }
+}
+impl core::ops::Deref for RD_MODE_STATUS_R {
+    type Target = crate::FieldReader<u8, RD_MODE_STATUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Number of wait states for read\n\nValue on reset: 0"]
@@ -332,9 +396,12 @@ impl From<WAIT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `WAIT`"]
-pub type WAIT_R = crate::R<u8, WAIT_A>;
+#[doc = "Field `WAIT` reader - Number of wait states for read"]
+pub struct WAIT_R(crate::FieldReader<u8, WAIT_A>);
 impl WAIT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        WAIT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WAIT_A {
@@ -361,85 +428,92 @@ impl WAIT_R {
     #[doc = "Checks if the value of the field is `WAIT_0`"]
     #[inline(always)]
     pub fn is_wait_0(&self) -> bool {
-        *self == WAIT_A::WAIT_0
+        **self == WAIT_A::WAIT_0
     }
     #[doc = "Checks if the value of the field is `WAIT_1`"]
     #[inline(always)]
     pub fn is_wait_1(&self) -> bool {
-        *self == WAIT_A::WAIT_1
+        **self == WAIT_A::WAIT_1
     }
     #[doc = "Checks if the value of the field is `WAIT_2`"]
     #[inline(always)]
     pub fn is_wait_2(&self) -> bool {
-        *self == WAIT_A::WAIT_2
+        **self == WAIT_A::WAIT_2
     }
     #[doc = "Checks if the value of the field is `WAIT_3`"]
     #[inline(always)]
     pub fn is_wait_3(&self) -> bool {
-        *self == WAIT_A::WAIT_3
+        **self == WAIT_A::WAIT_3
     }
     #[doc = "Checks if the value of the field is `WAIT_4`"]
     #[inline(always)]
     pub fn is_wait_4(&self) -> bool {
-        *self == WAIT_A::WAIT_4
+        **self == WAIT_A::WAIT_4
     }
     #[doc = "Checks if the value of the field is `WAIT_5`"]
     #[inline(always)]
     pub fn is_wait_5(&self) -> bool {
-        *self == WAIT_A::WAIT_5
+        **self == WAIT_A::WAIT_5
     }
     #[doc = "Checks if the value of the field is `WAIT_6`"]
     #[inline(always)]
     pub fn is_wait_6(&self) -> bool {
-        *self == WAIT_A::WAIT_6
+        **self == WAIT_A::WAIT_6
     }
     #[doc = "Checks if the value of the field is `WAIT_7`"]
     #[inline(always)]
     pub fn is_wait_7(&self) -> bool {
-        *self == WAIT_A::WAIT_7
+        **self == WAIT_A::WAIT_7
     }
     #[doc = "Checks if the value of the field is `WAIT_8`"]
     #[inline(always)]
     pub fn is_wait_8(&self) -> bool {
-        *self == WAIT_A::WAIT_8
+        **self == WAIT_A::WAIT_8
     }
     #[doc = "Checks if the value of the field is `WAIT_9`"]
     #[inline(always)]
     pub fn is_wait_9(&self) -> bool {
-        *self == WAIT_A::WAIT_9
+        **self == WAIT_A::WAIT_9
     }
     #[doc = "Checks if the value of the field is `WAIT_10`"]
     #[inline(always)]
     pub fn is_wait_10(&self) -> bool {
-        *self == WAIT_A::WAIT_10
+        **self == WAIT_A::WAIT_10
     }
     #[doc = "Checks if the value of the field is `WAIT_11`"]
     #[inline(always)]
     pub fn is_wait_11(&self) -> bool {
-        *self == WAIT_A::WAIT_11
+        **self == WAIT_A::WAIT_11
     }
     #[doc = "Checks if the value of the field is `WAIT_12`"]
     #[inline(always)]
     pub fn is_wait_12(&self) -> bool {
-        *self == WAIT_A::WAIT_12
+        **self == WAIT_A::WAIT_12
     }
     #[doc = "Checks if the value of the field is `WAIT_13`"]
     #[inline(always)]
     pub fn is_wait_13(&self) -> bool {
-        *self == WAIT_A::WAIT_13
+        **self == WAIT_A::WAIT_13
     }
     #[doc = "Checks if the value of the field is `WAIT_14`"]
     #[inline(always)]
     pub fn is_wait_14(&self) -> bool {
-        *self == WAIT_A::WAIT_14
+        **self == WAIT_A::WAIT_14
     }
     #[doc = "Checks if the value of the field is `WAIT_15`"]
     #[inline(always)]
     pub fn is_wait_15(&self) -> bool {
-        *self == WAIT_A::WAIT_15
+        **self == WAIT_A::WAIT_15
     }
 }
-#[doc = "Write proxy for field `WAIT`"]
+impl core::ops::Deref for WAIT_R {
+    type Target = crate::FieldReader<u8, WAIT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WAIT` writer - Number of wait states for read"]
 pub struct WAIT_W<'a> {
     w: &'a mut W,
 }
@@ -447,9 +521,7 @@ impl<'a> WAIT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WAIT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "0 wait states"]
     #[inline(always)]
@@ -534,7 +606,7 @@ impl<'a> WAIT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
         self.w
     }
 }
@@ -585,5 +657,30 @@ impl W {
     #[inline(always)]
     pub fn wait(&mut self) -> WAIT_W {
         WAIT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Bank1 Read Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [flctl_bank1_rdctl](index.html) module"]
+pub struct FLCTL_BANK1_RDCTL_SPEC;
+impl crate::RegisterSpec for FLCTL_BANK1_RDCTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [flctl_bank1_rdctl::R](R) reader structure"]
+impl crate::Readable for FLCTL_BANK1_RDCTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [flctl_bank1_rdctl::W](W) writer structure"]
+impl crate::Writable for FLCTL_BANK1_RDCTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FLCTL_BANK1_RDCTL to value 0"]
+impl crate::Resettable for FLCTL_BANK1_RDCTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

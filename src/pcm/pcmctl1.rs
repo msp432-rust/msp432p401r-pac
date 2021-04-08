@@ -1,13 +1,35 @@
-#[doc = "Reader of register PCMCTL1"]
-pub type R = crate::R<u32, super::PCMCTL1>;
-#[doc = "Writer for register PCMCTL1"]
-pub type W = crate::W<u32, super::PCMCTL1>;
-#[doc = "Register PCMCTL1 `reset()`'s with value 0xa596_0000"]
-impl crate::ResetValue for super::PCMCTL1 {
-    type Type = u32;
+#[doc = "Register `PCMCTL1` reader"]
+pub struct R(crate::R<PCMCTL1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PCMCTL1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xa596_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<PCMCTL1_SPEC>> for R {
+    fn from(reader: crate::R<PCMCTL1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PCMCTL1` writer"]
+pub struct W(crate::W<PCMCTL1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PCMCTL1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PCMCTL1_SPEC>> for W {
+    fn from(writer: crate::W<PCMCTL1_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Lock LPM5\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<LOCKLPM5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LOCKLPM5`"]
-pub type LOCKLPM5_R = crate::R<bool, LOCKLPM5_A>;
+#[doc = "Field `LOCKLPM5` reader - Lock LPM5"]
+pub struct LOCKLPM5_R(crate::FieldReader<bool, LOCKLPM5_A>);
 impl LOCKLPM5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCKLPM5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LOCKLPM5_A {
@@ -38,15 +63,22 @@ impl LOCKLPM5_R {
     #[doc = "Checks if the value of the field is `LOCKLPM5_0`"]
     #[inline(always)]
     pub fn is_locklpm5_0(&self) -> bool {
-        *self == LOCKLPM5_A::LOCKLPM5_0
+        **self == LOCKLPM5_A::LOCKLPM5_0
     }
     #[doc = "Checks if the value of the field is `LOCKLPM5_1`"]
     #[inline(always)]
     pub fn is_locklpm5_1(&self) -> bool {
-        *self == LOCKLPM5_A::LOCKLPM5_1
+        **self == LOCKLPM5_A::LOCKLPM5_1
     }
 }
-#[doc = "Write proxy for field `LOCKLPM5`"]
+impl core::ops::Deref for LOCKLPM5_R {
+    type Target = crate::FieldReader<bool, LOCKLPM5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCKLPM5` writer - Lock LPM5"]
 pub struct LOCKLPM5_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> LOCKLPM5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LOCKLPM5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "LPMx.5 configuration defaults to reset condition"]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> LOCKLPM5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<LOCKBKUP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LOCKBKUP`"]
-pub type LOCKBKUP_R = crate::R<bool, LOCKBKUP_A>;
+#[doc = "Field `LOCKBKUP` reader - Lock Backup"]
+pub struct LOCKBKUP_R(crate::FieldReader<bool, LOCKBKUP_A>);
 impl LOCKBKUP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCKBKUP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LOCKBKUP_A {
@@ -113,15 +146,22 @@ impl LOCKBKUP_R {
     #[doc = "Checks if the value of the field is `LOCKBKUP_0`"]
     #[inline(always)]
     pub fn is_lockbkup_0(&self) -> bool {
-        *self == LOCKBKUP_A::LOCKBKUP_0
+        **self == LOCKBKUP_A::LOCKBKUP_0
     }
     #[doc = "Checks if the value of the field is `LOCKBKUP_1`"]
     #[inline(always)]
     pub fn is_lockbkup_1(&self) -> bool {
-        *self == LOCKBKUP_A::LOCKBKUP_1
+        **self == LOCKBKUP_A::LOCKBKUP_1
     }
 }
-#[doc = "Write proxy for field `LOCKBKUP`"]
+impl core::ops::Deref for LOCKBKUP_R {
+    type Target = crate::FieldReader<bool, LOCKBKUP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCKBKUP` writer - Lock Backup"]
 pub struct LOCKBKUP_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> LOCKBKUP_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LOCKBKUP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Backup domain configuration defaults to reset condition"]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> LOCKBKUP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<FORCE_LPM_ENTRY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FORCE_LPM_ENTRY`"]
-pub type FORCE_LPM_ENTRY_R = crate::R<bool, FORCE_LPM_ENTRY_A>;
+#[doc = "Field `FORCE_LPM_ENTRY` reader - Force LPM entry"]
+pub struct FORCE_LPM_ENTRY_R(crate::FieldReader<bool, FORCE_LPM_ENTRY_A>);
 impl FORCE_LPM_ENTRY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FORCE_LPM_ENTRY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FORCE_LPM_ENTRY_A {
@@ -188,15 +229,22 @@ impl FORCE_LPM_ENTRY_R {
     #[doc = "Checks if the value of the field is `FORCE_LPM_ENTRY_0`"]
     #[inline(always)]
     pub fn is_force_lpm_entry_0(&self) -> bool {
-        *self == FORCE_LPM_ENTRY_A::FORCE_LPM_ENTRY_0
+        **self == FORCE_LPM_ENTRY_A::FORCE_LPM_ENTRY_0
     }
     #[doc = "Checks if the value of the field is `FORCE_LPM_ENTRY_1`"]
     #[inline(always)]
     pub fn is_force_lpm_entry_1(&self) -> bool {
-        *self == FORCE_LPM_ENTRY_A::FORCE_LPM_ENTRY_1
+        **self == FORCE_LPM_ENTRY_A::FORCE_LPM_ENTRY_1
     }
 }
-#[doc = "Write proxy for field `FORCE_LPM_ENTRY`"]
+impl core::ops::Deref for FORCE_LPM_ENTRY_R {
+    type Target = crate::FieldReader<bool, FORCE_LPM_ENTRY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FORCE_LPM_ENTRY` writer - Force LPM entry"]
 pub struct FORCE_LPM_ENTRY_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> FORCE_LPM_ENTRY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FORCE_LPM_ENTRY_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PCM aborts LPM3/LPMx.5 transition if the active clock configuration does not meet the LPM3/LPMx.5 entry criteria. PCM generates the LPM_INVALID_CLK flag on abort to LPM3/LPMx.5 entry."]
     #[inline(always)]
@@ -231,13 +277,25 @@ impl<'a> FORCE_LPM_ENTRY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `PMR_BUSY`"]
-pub type PMR_BUSY_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PMR_BUSY`"]
+#[doc = "Field `PMR_BUSY` reader - Power mode request busy flag"]
+pub struct PMR_BUSY_R(crate::FieldReader<bool, bool>);
+impl PMR_BUSY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PMR_BUSY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PMR_BUSY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PMR_BUSY` writer - Power mode request busy flag"]
 pub struct PMR_BUSY_W<'a> {
     w: &'a mut W,
 }
@@ -255,13 +313,25 @@ impl<'a> PMR_BUSY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `PCMKEY`"]
-pub type PCMKEY_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `PCMKEY`"]
+#[doc = "Field `PCMKEY` reader - PCM key"]
+pub struct PCMKEY_R(crate::FieldReader<u16, u16>);
+impl PCMKEY_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        PCMKEY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PCMKEY_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PCMKEY` writer - PCM key"]
 pub struct PCMKEY_W<'a> {
     w: &'a mut W,
 }
@@ -269,7 +339,7 @@ impl<'a> PCMKEY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | (((value as u32) & 0xffff) << 16);
+        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
         self.w
     }
 }
@@ -325,5 +395,30 @@ impl W {
     #[inline(always)]
     pub fn pcmkey(&mut self) -> PCMKEY_W {
         PCMKEY_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Control 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcmctl1](index.html) module"]
+pub struct PCMCTL1_SPEC;
+impl crate::RegisterSpec for PCMCTL1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pcmctl1::R](R) reader structure"]
+impl crate::Readable for PCMCTL1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pcmctl1::W](W) writer structure"]
+impl crate::Writable for PCMCTL1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PCMCTL1 to value 0xa596_0000"]
+impl crate::Resettable for PCMCTL1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xa596_0000
     }
 }

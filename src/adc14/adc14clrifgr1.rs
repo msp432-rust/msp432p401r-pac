@@ -1,13 +1,35 @@
-#[doc = "Reader of register ADC14CLRIFGR1"]
-pub type R = crate::R<u32, super::ADC14CLRIFGR1>;
-#[doc = "Writer for register ADC14CLRIFGR1"]
-pub type W = crate::W<u32, super::ADC14CLRIFGR1>;
-#[doc = "Register ADC14CLRIFGR1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::ADC14CLRIFGR1 {
-    type Type = u32;
+#[doc = "Register `ADC14CLRIFGR1` reader"]
+pub struct R(crate::R<ADC14CLRIFGR1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADC14CLRIFGR1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<ADC14CLRIFGR1_SPEC>> for R {
+    fn from(reader: crate::R<ADC14CLRIFGR1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ADC14CLRIFGR1` writer"]
+pub struct W(crate::W<ADC14CLRIFGR1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADC14CLRIFGR1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<ADC14CLRIFGR1_SPEC>> for W {
+    fn from(writer: crate::W<ADC14CLRIFGR1_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "clear ADC14INIFG\n\nValue on reset: 0"]
@@ -24,7 +46,7 @@ impl From<CLRADC14INIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLRADC14INIFG`"]
+#[doc = "Field `CLRADC14INIFG` writer - clear ADC14INIFG"]
 pub struct CLRADC14INIFG_W<'a> {
     w: &'a mut W,
 }
@@ -32,9 +54,7 @@ impl<'a> CLRADC14INIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLRADC14INIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -59,7 +79,7 @@ impl<'a> CLRADC14INIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -77,7 +97,7 @@ impl From<CLRADC14LOIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLRADC14LOIFG`"]
+#[doc = "Field `CLRADC14LOIFG` writer - clear ADC14LOIFG"]
 pub struct CLRADC14LOIFG_W<'a> {
     w: &'a mut W,
 }
@@ -85,9 +105,7 @@ impl<'a> CLRADC14LOIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLRADC14LOIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -112,7 +130,7 @@ impl<'a> CLRADC14LOIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -130,7 +148,7 @@ impl From<CLRADC14HIIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLRADC14HIIFG`"]
+#[doc = "Field `CLRADC14HIIFG` writer - clear ADC14HIIFG"]
 pub struct CLRADC14HIIFG_W<'a> {
     w: &'a mut W,
 }
@@ -138,9 +156,7 @@ impl<'a> CLRADC14HIIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLRADC14HIIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -165,7 +181,7 @@ impl<'a> CLRADC14HIIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -183,7 +199,7 @@ impl From<CLRADC14OVIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLRADC14OVIFG`"]
+#[doc = "Field `CLRADC14OVIFG` writer - clear ADC14OVIFG"]
 pub struct CLRADC14OVIFG_W<'a> {
     w: &'a mut W,
 }
@@ -191,9 +207,7 @@ impl<'a> CLRADC14OVIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLRADC14OVIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -218,7 +232,7 @@ impl<'a> CLRADC14OVIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -236,7 +250,7 @@ impl From<CLRADC14TOVIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLRADC14TOVIFG`"]
+#[doc = "Field `CLRADC14TOVIFG` writer - clear ADC14TOVIFG"]
 pub struct CLRADC14TOVIFG_W<'a> {
     w: &'a mut W,
 }
@@ -244,9 +258,7 @@ impl<'a> CLRADC14TOVIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLRADC14TOVIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -271,7 +283,7 @@ impl<'a> CLRADC14TOVIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -289,7 +301,7 @@ impl From<CLRADC14RDYIFG_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `CLRADC14RDYIFG`"]
+#[doc = "Field `CLRADC14RDYIFG` writer - clear ADC14RDYIFG"]
 pub struct CLRADC14RDYIFG_W<'a> {
     w: &'a mut W,
 }
@@ -297,9 +309,7 @@ impl<'a> CLRADC14RDYIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLRADC14RDYIFG_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no effect"]
     #[inline(always)]
@@ -324,11 +334,10 @@ impl<'a> CLRADC14RDYIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-impl R {}
 impl W {
     #[doc = "Bit 1 - clear ADC14INIFG"]
     #[inline(always)]
@@ -359,5 +368,30 @@ impl W {
     #[inline(always)]
     pub fn clradc14rdyifg(&mut self) -> CLRADC14RDYIFG_W {
         CLRADC14RDYIFG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clear Interrupt Flag 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc14clrifgr1](index.html) module"]
+pub struct ADC14CLRIFGR1_SPEC;
+impl crate::RegisterSpec for ADC14CLRIFGR1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [adc14clrifgr1::R](R) reader structure"]
+impl crate::Readable for ADC14CLRIFGR1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [adc14clrifgr1::W](W) writer structure"]
+impl crate::Writable for ADC14CLRIFGR1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ADC14CLRIFGR1 to value 0"]
+impl crate::Resettable for ADC14CLRIFGR1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

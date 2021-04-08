@@ -1,13 +1,35 @@
-#[doc = "Reader of register AESACTL0"]
-pub type R = crate::R<u16, super::AESACTL0>;
-#[doc = "Writer for register AESACTL0"]
-pub type W = crate::W<u16, super::AESACTL0>;
-#[doc = "Register AESACTL0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::AESACTL0 {
-    type Type = u16;
+#[doc = "Register `AESACTL0` reader"]
+pub struct R(crate::R<AESACTL0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<AESACTL0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<AESACTL0_SPEC>> for R {
+    fn from(reader: crate::R<AESACTL0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `AESACTL0` writer"]
+pub struct W(crate::W<AESACTL0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<AESACTL0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<AESACTL0_SPEC>> for W {
+    fn from(writer: crate::W<AESACTL0_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "AES operation\n\nValue on reset: 0"]
@@ -29,9 +51,12 @@ impl From<AESOPX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `AESOPx`"]
-pub type AESOPX_R = crate::R<u8, AESOPX_A>;
+#[doc = "Field `AESOPx` reader - AES operation"]
+pub struct AESOPX_R(crate::FieldReader<u8, AESOPX_A>);
 impl AESOPX_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        AESOPX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AESOPX_A {
@@ -46,25 +71,32 @@ impl AESOPX_R {
     #[doc = "Checks if the value of the field is `AESOPX_0`"]
     #[inline(always)]
     pub fn is_aesopx_0(&self) -> bool {
-        *self == AESOPX_A::AESOPX_0
+        **self == AESOPX_A::AESOPX_0
     }
     #[doc = "Checks if the value of the field is `AESOPX_1`"]
     #[inline(always)]
     pub fn is_aesopx_1(&self) -> bool {
-        *self == AESOPX_A::AESOPX_1
+        **self == AESOPX_A::AESOPX_1
     }
     #[doc = "Checks if the value of the field is `AESOPX_2`"]
     #[inline(always)]
     pub fn is_aesopx_2(&self) -> bool {
-        *self == AESOPX_A::AESOPX_2
+        **self == AESOPX_A::AESOPX_2
     }
     #[doc = "Checks if the value of the field is `AESOPX_3`"]
     #[inline(always)]
     pub fn is_aesopx_3(&self) -> bool {
-        *self == AESOPX_A::AESOPX_3
+        **self == AESOPX_A::AESOPX_3
     }
 }
-#[doc = "Write proxy for field `AESOPx`"]
+impl core::ops::Deref for AESOPX_R {
+    type Target = crate::FieldReader<u8, AESOPX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESOPx` writer - AES operation"]
 pub struct AESOPX_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +104,7 @@ impl<'a> AESOPX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AESOPX_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Encryption"]
     #[inline(always)]
@@ -99,7 +129,7 @@ impl<'a> AESOPX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u16) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u16 & 0x03);
         self.w
     }
 }
@@ -120,37 +150,46 @@ impl From<AESKLX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `AESKLx`"]
-pub type AESKLX_R = crate::R<u8, AESKLX_A>;
+#[doc = "Field `AESKLx` reader - AES key length"]
+pub struct AESKLX_R(crate::FieldReader<u8, AESKLX_A>);
 impl AESKLX_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        AESKLX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, AESKLX_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<AESKLX_A> {
         match self.bits {
-            0 => Val(AESKLX_A::AESKLX_0),
-            1 => Val(AESKLX_A::AESKLX_1),
-            2 => Val(AESKLX_A::AESKLX_2),
-            i => Res(i),
+            0 => Some(AESKLX_A::AESKLX_0),
+            1 => Some(AESKLX_A::AESKLX_1),
+            2 => Some(AESKLX_A::AESKLX_2),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `AESKLX_0`"]
     #[inline(always)]
     pub fn is_aesklx_0(&self) -> bool {
-        *self == AESKLX_A::AESKLX_0
+        **self == AESKLX_A::AESKLX_0
     }
     #[doc = "Checks if the value of the field is `AESKLX_1`"]
     #[inline(always)]
     pub fn is_aesklx_1(&self) -> bool {
-        *self == AESKLX_A::AESKLX_1
+        **self == AESKLX_A::AESKLX_1
     }
     #[doc = "Checks if the value of the field is `AESKLX_2`"]
     #[inline(always)]
     pub fn is_aesklx_2(&self) -> bool {
-        *self == AESKLX_A::AESKLX_2
+        **self == AESKLX_A::AESKLX_2
     }
 }
-#[doc = "Write proxy for field `AESKLx`"]
+impl core::ops::Deref for AESKLX_R {
+    type Target = crate::FieldReader<u8, AESKLX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESKLx` writer - AES key length"]
 pub struct AESKLX_W<'a> {
     w: &'a mut W,
 }
@@ -178,7 +217,7 @@ impl<'a> AESKLX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u16) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u16 & 0x03) << 2);
         self.w
     }
 }
@@ -201,9 +240,12 @@ impl From<AESCMX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `AESCMx`"]
-pub type AESCMX_R = crate::R<u8, AESCMX_A>;
+#[doc = "Field `AESCMx` reader - AES cipher mode select"]
+pub struct AESCMX_R(crate::FieldReader<u8, AESCMX_A>);
 impl AESCMX_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        AESCMX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AESCMX_A {
@@ -218,25 +260,32 @@ impl AESCMX_R {
     #[doc = "Checks if the value of the field is `AESCMX_0`"]
     #[inline(always)]
     pub fn is_aescmx_0(&self) -> bool {
-        *self == AESCMX_A::AESCMX_0
+        **self == AESCMX_A::AESCMX_0
     }
     #[doc = "Checks if the value of the field is `AESCMX_1`"]
     #[inline(always)]
     pub fn is_aescmx_1(&self) -> bool {
-        *self == AESCMX_A::AESCMX_1
+        **self == AESCMX_A::AESCMX_1
     }
     #[doc = "Checks if the value of the field is `AESCMX_2`"]
     #[inline(always)]
     pub fn is_aescmx_2(&self) -> bool {
-        *self == AESCMX_A::AESCMX_2
+        **self == AESCMX_A::AESCMX_2
     }
     #[doc = "Checks if the value of the field is `AESCMX_3`"]
     #[inline(always)]
     pub fn is_aescmx_3(&self) -> bool {
-        *self == AESCMX_A::AESCMX_3
+        **self == AESCMX_A::AESCMX_3
     }
 }
-#[doc = "Write proxy for field `AESCMx`"]
+impl core::ops::Deref for AESCMX_R {
+    type Target = crate::FieldReader<u8, AESCMX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESCMx` writer - AES cipher mode select"]
 pub struct AESCMX_W<'a> {
     w: &'a mut W,
 }
@@ -244,9 +293,7 @@ impl<'a> AESCMX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AESCMX_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "ECB"]
     #[inline(always)]
@@ -271,7 +318,7 @@ impl<'a> AESCMX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 5)) | (((value as u16) & 0x03) << 5);
+        self.w.bits = (self.w.bits & !(0x03 << 5)) | ((value as u16 & 0x03) << 5);
         self.w
     }
 }
@@ -289,9 +336,12 @@ impl From<AESSWRST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AESSWRST`"]
-pub type AESSWRST_R = crate::R<bool, AESSWRST_A>;
+#[doc = "Field `AESSWRST` reader - AES software reset"]
+pub struct AESSWRST_R(crate::FieldReader<bool, AESSWRST_A>);
 impl AESSWRST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESSWRST_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AESSWRST_A {
@@ -303,15 +353,22 @@ impl AESSWRST_R {
     #[doc = "Checks if the value of the field is `AESSWRST_0`"]
     #[inline(always)]
     pub fn is_aesswrst_0(&self) -> bool {
-        *self == AESSWRST_A::AESSWRST_0
+        **self == AESSWRST_A::AESSWRST_0
     }
     #[doc = "Checks if the value of the field is `AESSWRST_1`"]
     #[inline(always)]
     pub fn is_aesswrst_1(&self) -> bool {
-        *self == AESSWRST_A::AESSWRST_1
+        **self == AESSWRST_A::AESSWRST_1
     }
 }
-#[doc = "Write proxy for field `AESSWRST`"]
+impl core::ops::Deref for AESSWRST_R {
+    type Target = crate::FieldReader<bool, AESSWRST_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESSWRST` writer - AES software reset"]
 pub struct AESSWRST_W<'a> {
     w: &'a mut W,
 }
@@ -319,9 +376,7 @@ impl<'a> AESSWRST_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AESSWRST_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No reset"]
     #[inline(always)]
@@ -346,7 +401,7 @@ impl<'a> AESSWRST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
@@ -364,9 +419,12 @@ impl From<AESRDYIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AESRDYIFG`"]
-pub type AESRDYIFG_R = crate::R<bool, AESRDYIFG_A>;
+#[doc = "Field `AESRDYIFG` reader - AES ready interrupt flag"]
+pub struct AESRDYIFG_R(crate::FieldReader<bool, AESRDYIFG_A>);
 impl AESRDYIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESRDYIFG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AESRDYIFG_A {
@@ -378,15 +436,22 @@ impl AESRDYIFG_R {
     #[doc = "Checks if the value of the field is `AESRDYIFG_0`"]
     #[inline(always)]
     pub fn is_aesrdyifg_0(&self) -> bool {
-        *self == AESRDYIFG_A::AESRDYIFG_0
+        **self == AESRDYIFG_A::AESRDYIFG_0
     }
     #[doc = "Checks if the value of the field is `AESRDYIFG_1`"]
     #[inline(always)]
     pub fn is_aesrdyifg_1(&self) -> bool {
-        *self == AESRDYIFG_A::AESRDYIFG_1
+        **self == AESRDYIFG_A::AESRDYIFG_1
     }
 }
-#[doc = "Write proxy for field `AESRDYIFG`"]
+impl core::ops::Deref for AESRDYIFG_R {
+    type Target = crate::FieldReader<bool, AESRDYIFG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESRDYIFG` writer - AES ready interrupt flag"]
 pub struct AESRDYIFG_W<'a> {
     w: &'a mut W,
 }
@@ -394,9 +459,7 @@ impl<'a> AESRDYIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AESRDYIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No interrupt pending"]
     #[inline(always)]
@@ -421,7 +484,7 @@ impl<'a> AESRDYIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
         self.w
     }
 }
@@ -439,9 +502,12 @@ impl From<AESERRFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AESERRFG`"]
-pub type AESERRFG_R = crate::R<bool, AESERRFG_A>;
+#[doc = "Field `AESERRFG` reader - AES error flag"]
+pub struct AESERRFG_R(crate::FieldReader<bool, AESERRFG_A>);
 impl AESERRFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESERRFG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AESERRFG_A {
@@ -453,15 +519,22 @@ impl AESERRFG_R {
     #[doc = "Checks if the value of the field is `AESERRFG_0`"]
     #[inline(always)]
     pub fn is_aeserrfg_0(&self) -> bool {
-        *self == AESERRFG_A::AESERRFG_0
+        **self == AESERRFG_A::AESERRFG_0
     }
     #[doc = "Checks if the value of the field is `AESERRFG_1`"]
     #[inline(always)]
     pub fn is_aeserrfg_1(&self) -> bool {
-        *self == AESERRFG_A::AESERRFG_1
+        **self == AESERRFG_A::AESERRFG_1
     }
 }
-#[doc = "Write proxy for field `AESERRFG`"]
+impl core::ops::Deref for AESERRFG_R {
+    type Target = crate::FieldReader<bool, AESERRFG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESERRFG` writer - AES error flag"]
 pub struct AESERRFG_W<'a> {
     w: &'a mut W,
 }
@@ -469,9 +542,7 @@ impl<'a> AESERRFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AESERRFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No error"]
     #[inline(always)]
@@ -496,7 +567,7 @@ impl<'a> AESERRFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u16) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u16 & 0x01) << 11);
         self.w
     }
 }
@@ -514,9 +585,12 @@ impl From<AESRDYIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AESRDYIE`"]
-pub type AESRDYIE_R = crate::R<bool, AESRDYIE_A>;
+#[doc = "Field `AESRDYIE` reader - AES ready interrupt enable"]
+pub struct AESRDYIE_R(crate::FieldReader<bool, AESRDYIE_A>);
 impl AESRDYIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESRDYIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AESRDYIE_A {
@@ -528,15 +602,22 @@ impl AESRDYIE_R {
     #[doc = "Checks if the value of the field is `AESRDYIE_0`"]
     #[inline(always)]
     pub fn is_aesrdyie_0(&self) -> bool {
-        *self == AESRDYIE_A::AESRDYIE_0
+        **self == AESRDYIE_A::AESRDYIE_0
     }
     #[doc = "Checks if the value of the field is `AESRDYIE_1`"]
     #[inline(always)]
     pub fn is_aesrdyie_1(&self) -> bool {
-        *self == AESRDYIE_A::AESRDYIE_1
+        **self == AESRDYIE_A::AESRDYIE_1
     }
 }
-#[doc = "Write proxy for field `AESRDYIE`"]
+impl core::ops::Deref for AESRDYIE_R {
+    type Target = crate::FieldReader<bool, AESRDYIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESRDYIE` writer - AES ready interrupt enable"]
 pub struct AESRDYIE_W<'a> {
     w: &'a mut W,
 }
@@ -544,9 +625,7 @@ impl<'a> AESRDYIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AESRDYIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt disabled"]
     #[inline(always)]
@@ -571,7 +650,7 @@ impl<'a> AESRDYIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u16) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u16 & 0x01) << 12);
         self.w
     }
 }
@@ -589,9 +668,12 @@ impl From<AESCMEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AESCMEN`"]
-pub type AESCMEN_R = crate::R<bool, AESCMEN_A>;
+#[doc = "Field `AESCMEN` reader - AES cipher mode enable"]
+pub struct AESCMEN_R(crate::FieldReader<bool, AESCMEN_A>);
 impl AESCMEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESCMEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AESCMEN_A {
@@ -603,15 +685,22 @@ impl AESCMEN_R {
     #[doc = "Checks if the value of the field is `AESCMEN_0`"]
     #[inline(always)]
     pub fn is_aescmen_0(&self) -> bool {
-        *self == AESCMEN_A::AESCMEN_0
+        **self == AESCMEN_A::AESCMEN_0
     }
     #[doc = "Checks if the value of the field is `AESCMEN_1`"]
     #[inline(always)]
     pub fn is_aescmen_1(&self) -> bool {
-        *self == AESCMEN_A::AESCMEN_1
+        **self == AESCMEN_A::AESCMEN_1
     }
 }
-#[doc = "Write proxy for field `AESCMEN`"]
+impl core::ops::Deref for AESCMEN_R {
+    type Target = crate::FieldReader<bool, AESCMEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESCMEN` writer - AES cipher mode enable"]
 pub struct AESCMEN_W<'a> {
     w: &'a mut W,
 }
@@ -619,9 +708,7 @@ impl<'a> AESCMEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AESCMEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No DMA triggers are generated"]
     #[inline(always)]
@@ -646,7 +733,7 @@ impl<'a> AESCMEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
         self.w
     }
 }
@@ -732,5 +819,30 @@ impl W {
     #[inline(always)]
     pub fn aescmen(&mut self) -> AESCMEN_W {
         AESCMEN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "AES Accelerator Control Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [aesactl0](index.html) module"]
+pub struct AESACTL0_SPEC;
+impl crate::RegisterSpec for AESACTL0_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [aesactl0::R](R) reader structure"]
+impl crate::Readable for AESACTL0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [aesactl0::W](W) writer structure"]
+impl crate::Writable for AESACTL0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets AESACTL0 to value 0"]
+impl crate::Resettable for AESACTL0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

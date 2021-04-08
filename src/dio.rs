@@ -2,927 +2,448 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Port A Input"]
-    pub pain: PAIN,
+    pub pain: crate::Reg<pain::PAIN_SPEC>,
     #[doc = "0x02 - Port A Output"]
-    pub paout: PAOUT,
+    pub paout: crate::Reg<paout::PAOUT_SPEC>,
     #[doc = "0x04 - Port A Direction"]
-    pub padir: PADIR,
+    pub padir: crate::Reg<padir::PADIR_SPEC>,
     #[doc = "0x06 - Port A Resistor Enable"]
-    pub paren: PAREN,
+    pub paren: crate::Reg<paren::PAREN_SPEC>,
     #[doc = "0x08 - Port A Drive Strength"]
-    pub pads: PADS,
+    pub pads: crate::Reg<pads::PADS_SPEC>,
     #[doc = "0x0a - Port A Select 0"]
-    pub pasel0: PASEL0,
+    pub pasel0: crate::Reg<pasel0::PASEL0_SPEC>,
     #[doc = "0x0c - Port A Select 1"]
-    pub pasel1: PASEL1,
+    pub pasel1: crate::Reg<pasel1::PASEL1_SPEC>,
     #[doc = "0x0e - Port 1 Interrupt Vector Register"]
-    pub p1iv: P1IV,
+    pub p1iv: crate::Reg<p1iv::P1IV_SPEC>,
     _reserved8: [u8; 6usize],
     #[doc = "0x16 - Port A Complement Select"]
-    pub paselc: PASELC,
+    pub paselc: crate::Reg<paselc::PASELC_SPEC>,
     #[doc = "0x18 - Port A Interrupt Edge Select"]
-    pub paies: PAIES,
+    pub paies: crate::Reg<paies::PAIES_SPEC>,
     #[doc = "0x1a - Port A Interrupt Enable"]
-    pub paie: PAIE,
+    pub paie: crate::Reg<paie::PAIE_SPEC>,
     #[doc = "0x1c - Port A Interrupt Flag"]
-    pub paifg: PAIFG,
+    pub paifg: crate::Reg<paifg::PAIFG_SPEC>,
     #[doc = "0x1e - Port 2 Interrupt Vector Register"]
-    pub p2iv: P2IV,
+    pub p2iv: crate::Reg<p2iv::P2IV_SPEC>,
     #[doc = "0x20 - Port B Input"]
-    pub pbin: PBIN,
+    pub pbin: crate::Reg<pbin::PBIN_SPEC>,
     #[doc = "0x22 - Port B Output"]
-    pub pbout: PBOUT,
+    pub pbout: crate::Reg<pbout::PBOUT_SPEC>,
     #[doc = "0x24 - Port B Direction"]
-    pub pbdir: PBDIR,
+    pub pbdir: crate::Reg<pbdir::PBDIR_SPEC>,
     #[doc = "0x26 - Port B Resistor Enable"]
-    pub pbren: PBREN,
+    pub pbren: crate::Reg<pbren::PBREN_SPEC>,
     #[doc = "0x28 - Port B Drive Strength"]
-    pub pbds: PBDS,
+    pub pbds: crate::Reg<pbds::PBDS_SPEC>,
     #[doc = "0x2a - Port B Select 0"]
-    pub pbsel0: PBSEL0,
+    pub pbsel0: crate::Reg<pbsel0::PBSEL0_SPEC>,
     #[doc = "0x2c - Port B Select 1"]
-    pub pbsel1: PBSEL1,
+    pub pbsel1: crate::Reg<pbsel1::PBSEL1_SPEC>,
     #[doc = "0x2e - Port 3 Interrupt Vector Register"]
-    pub p3iv: P3IV,
+    pub p3iv: crate::Reg<p3iv::P3IV_SPEC>,
     _reserved21: [u8; 6usize],
     #[doc = "0x36 - Port B Complement Select"]
-    pub pbselc: PBSELC,
+    pub pbselc: crate::Reg<pbselc::PBSELC_SPEC>,
     #[doc = "0x38 - Port B Interrupt Edge Select"]
-    pub pbies: PBIES,
+    pub pbies: crate::Reg<pbies::PBIES_SPEC>,
     #[doc = "0x3a - Port B Interrupt Enable"]
-    pub pbie: PBIE,
+    pub pbie: crate::Reg<pbie::PBIE_SPEC>,
     #[doc = "0x3c - Port B Interrupt Flag"]
-    pub pbifg: PBIFG,
+    pub pbifg: crate::Reg<pbifg::PBIFG_SPEC>,
     #[doc = "0x3e - Port 4 Interrupt Vector Register"]
-    pub p4iv: P4IV,
+    pub p4iv: crate::Reg<p4iv::P4IV_SPEC>,
     #[doc = "0x40 - Port C Input"]
-    pub pcin: PCIN,
+    pub pcin: crate::Reg<pcin::PCIN_SPEC>,
     #[doc = "0x42 - Port C Output"]
-    pub pcout: PCOUT,
+    pub pcout: crate::Reg<pcout::PCOUT_SPEC>,
     #[doc = "0x44 - Port C Direction"]
-    pub pcdir: PCDIR,
+    pub pcdir: crate::Reg<pcdir::PCDIR_SPEC>,
     #[doc = "0x46 - Port C Resistor Enable"]
-    pub pcren: PCREN,
+    pub pcren: crate::Reg<pcren::PCREN_SPEC>,
     #[doc = "0x48 - Port C Drive Strength"]
-    pub pcds: PCDS,
+    pub pcds: crate::Reg<pcds::PCDS_SPEC>,
     #[doc = "0x4a - Port C Select 0"]
-    pub pcsel0: PCSEL0,
+    pub pcsel0: crate::Reg<pcsel0::PCSEL0_SPEC>,
     #[doc = "0x4c - Port C Select 1"]
-    pub pcsel1: PCSEL1,
+    pub pcsel1: crate::Reg<pcsel1::PCSEL1_SPEC>,
     #[doc = "0x4e - Port 5 Interrupt Vector Register"]
-    pub p5iv: P5IV,
+    pub p5iv: crate::Reg<p5iv::P5IV_SPEC>,
     _reserved34: [u8; 6usize],
     #[doc = "0x56 - Port C Complement Select"]
-    pub pcselc: PCSELC,
+    pub pcselc: crate::Reg<pcselc::PCSELC_SPEC>,
     #[doc = "0x58 - Port C Interrupt Edge Select"]
-    pub pcies: PCIES,
+    pub pcies: crate::Reg<pcies::PCIES_SPEC>,
     #[doc = "0x5a - Port C Interrupt Enable"]
-    pub pcie: PCIE,
+    pub pcie: crate::Reg<pcie::PCIE_SPEC>,
     #[doc = "0x5c - Port C Interrupt Flag"]
-    pub pcifg: PCIFG,
+    pub pcifg: crate::Reg<pcifg::PCIFG_SPEC>,
     #[doc = "0x5e - Port 6 Interrupt Vector Register"]
-    pub p6iv: P6IV,
+    pub p6iv: crate::Reg<p6iv::P6IV_SPEC>,
     #[doc = "0x60 - Port D Input"]
-    pub pdin: PDIN,
+    pub pdin: crate::Reg<pdin::PDIN_SPEC>,
     #[doc = "0x62 - Port D Output"]
-    pub pdout: PDOUT,
+    pub pdout: crate::Reg<pdout::PDOUT_SPEC>,
     #[doc = "0x64 - Port D Direction"]
-    pub pddir: PDDIR,
+    pub pddir: crate::Reg<pddir::PDDIR_SPEC>,
     #[doc = "0x66 - Port D Resistor Enable"]
-    pub pdren: PDREN,
+    pub pdren: crate::Reg<pdren::PDREN_SPEC>,
     #[doc = "0x68 - Port D Drive Strength"]
-    pub pdds: PDDS,
+    pub pdds: crate::Reg<pdds::PDDS_SPEC>,
     #[doc = "0x6a - Port D Select 0"]
-    pub pdsel0: PDSEL0,
+    pub pdsel0: crate::Reg<pdsel0::PDSEL0_SPEC>,
     #[doc = "0x6c - Port D Select 1"]
-    pub pdsel1: PDSEL1,
+    pub pdsel1: crate::Reg<pdsel1::PDSEL1_SPEC>,
     #[doc = "0x6e - Port 7 Interrupt Vector Register"]
-    pub p7iv: P7IV,
+    pub p7iv: crate::Reg<p7iv::P7IV_SPEC>,
     _reserved47: [u8; 6usize],
     #[doc = "0x76 - Port D Complement Select"]
-    pub pdselc: PDSELC,
+    pub pdselc: crate::Reg<pdselc::PDSELC_SPEC>,
     #[doc = "0x78 - Port D Interrupt Edge Select"]
-    pub pdies: PDIES,
+    pub pdies: crate::Reg<pdies::PDIES_SPEC>,
     #[doc = "0x7a - Port D Interrupt Enable"]
-    pub pdie: PDIE,
+    pub pdie: crate::Reg<pdie::PDIE_SPEC>,
     #[doc = "0x7c - Port D Interrupt Flag"]
-    pub pdifg: PDIFG,
+    pub pdifg: crate::Reg<pdifg::PDIFG_SPEC>,
     #[doc = "0x7e - Port 8 Interrupt Vector Register"]
-    pub p8iv: P8IV,
+    pub p8iv: crate::Reg<p8iv::P8IV_SPEC>,
     #[doc = "0x80 - Port E Input"]
-    pub pein: PEIN,
+    pub pein: crate::Reg<pein::PEIN_SPEC>,
     #[doc = "0x82 - Port E Output"]
-    pub peout: PEOUT,
+    pub peout: crate::Reg<peout::PEOUT_SPEC>,
     #[doc = "0x84 - Port E Direction"]
-    pub pedir: PEDIR,
+    pub pedir: crate::Reg<pedir::PEDIR_SPEC>,
     #[doc = "0x86 - Port E Resistor Enable"]
-    pub peren: PEREN,
+    pub peren: crate::Reg<peren::PEREN_SPEC>,
     #[doc = "0x88 - Port E Drive Strength"]
-    pub peds: PEDS,
+    pub peds: crate::Reg<peds::PEDS_SPEC>,
     #[doc = "0x8a - Port E Select 0"]
-    pub pesel0: PESEL0,
+    pub pesel0: crate::Reg<pesel0::PESEL0_SPEC>,
     #[doc = "0x8c - Port E Select 1"]
-    pub pesel1: PESEL1,
+    pub pesel1: crate::Reg<pesel1::PESEL1_SPEC>,
     #[doc = "0x8e - Port 9 Interrupt Vector Register"]
-    pub p9iv: P9IV,
+    pub p9iv: crate::Reg<p9iv::P9IV_SPEC>,
     _reserved60: [u8; 6usize],
     #[doc = "0x96 - Port E Complement Select"]
-    pub peselc: PESELC,
+    pub peselc: crate::Reg<peselc::PESELC_SPEC>,
     #[doc = "0x98 - Port E Interrupt Edge Select"]
-    pub peies: PEIES,
+    pub peies: crate::Reg<peies::PEIES_SPEC>,
     #[doc = "0x9a - Port E Interrupt Enable"]
-    pub peie: PEIE,
+    pub peie: crate::Reg<peie::PEIE_SPEC>,
     #[doc = "0x9c - Port E Interrupt Flag"]
-    pub peifg: PEIFG,
+    pub peifg: crate::Reg<peifg::PEIFG_SPEC>,
     #[doc = "0x9e - Port 10 Interrupt Vector Register"]
-    pub p10iv: P10IV,
+    pub p10iv: crate::Reg<p10iv::P10IV_SPEC>,
     _reserved65: [u8; 128usize],
     #[doc = "0x120 - Port J Input"]
-    pub pjin: PJIN,
+    pub pjin: crate::Reg<pjin::PJIN_SPEC>,
     #[doc = "0x122 - Port J Output"]
-    pub pjout: PJOUT,
+    pub pjout: crate::Reg<pjout::PJOUT_SPEC>,
     #[doc = "0x124 - Port J Direction"]
-    pub pjdir: PJDIR,
+    pub pjdir: crate::Reg<pjdir::PJDIR_SPEC>,
     #[doc = "0x126 - Port J Resistor Enable"]
-    pub pjren: PJREN,
+    pub pjren: crate::Reg<pjren::PJREN_SPEC>,
     #[doc = "0x128 - Port J Drive Strength"]
-    pub pjds: PJDS,
+    pub pjds: crate::Reg<pjds::PJDS_SPEC>,
     #[doc = "0x12a - Port J Select 0"]
-    pub pjsel0: PJSEL0,
+    pub pjsel0: crate::Reg<pjsel0::PJSEL0_SPEC>,
     #[doc = "0x12c - Port J Select 1"]
-    pub pjsel1: PJSEL1,
+    pub pjsel1: crate::Reg<pjsel1::PJSEL1_SPEC>,
     _reserved72: [u8; 8usize],
     #[doc = "0x136 - Port J Complement Select"]
-    pub pjselc: PJSELC,
+    pub pjselc: crate::Reg<pjselc::PJSELC_SPEC>,
 }
-#[doc = "Port A Input\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pain](pain) module"]
-pub type PAIN = crate::Reg<u16, _PAIN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PAIN;
-#[doc = "`read()` method returns [pain::R](pain::R) reader structure"]
-impl crate::Readable for PAIN {}
+#[doc = "PAIN register accessor: an alias for `Reg<PAIN_SPEC>`"]
+pub type PAIN = crate::Reg<pain::PAIN_SPEC>;
 #[doc = "Port A Input"]
 pub mod pain;
-#[doc = "Port A Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [paout](paout) module"]
-pub type PAOUT = crate::Reg<u16, _PAOUT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PAOUT;
-#[doc = "`read()` method returns [paout::R](paout::R) reader structure"]
-impl crate::Readable for PAOUT {}
-#[doc = "`write(|w| ..)` method takes [paout::W](paout::W) writer structure"]
-impl crate::Writable for PAOUT {}
+#[doc = "PAOUT register accessor: an alias for `Reg<PAOUT_SPEC>`"]
+pub type PAOUT = crate::Reg<paout::PAOUT_SPEC>;
 #[doc = "Port A Output"]
 pub mod paout;
-#[doc = "Port A Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [padir](padir) module"]
-pub type PADIR = crate::Reg<u16, _PADIR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PADIR;
-#[doc = "`read()` method returns [padir::R](padir::R) reader structure"]
-impl crate::Readable for PADIR {}
-#[doc = "`write(|w| ..)` method takes [padir::W](padir::W) writer structure"]
-impl crate::Writable for PADIR {}
+#[doc = "PADIR register accessor: an alias for `Reg<PADIR_SPEC>`"]
+pub type PADIR = crate::Reg<padir::PADIR_SPEC>;
 #[doc = "Port A Direction"]
 pub mod padir;
-#[doc = "Port A Resistor Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [paren](paren) module"]
-pub type PAREN = crate::Reg<u16, _PAREN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PAREN;
-#[doc = "`read()` method returns [paren::R](paren::R) reader structure"]
-impl crate::Readable for PAREN {}
-#[doc = "`write(|w| ..)` method takes [paren::W](paren::W) writer structure"]
-impl crate::Writable for PAREN {}
+#[doc = "PAREN register accessor: an alias for `Reg<PAREN_SPEC>`"]
+pub type PAREN = crate::Reg<paren::PAREN_SPEC>;
 #[doc = "Port A Resistor Enable"]
 pub mod paren;
-#[doc = "Port A Drive Strength\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pads](pads) module"]
-pub type PADS = crate::Reg<u16, _PADS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PADS;
-#[doc = "`read()` method returns [pads::R](pads::R) reader structure"]
-impl crate::Readable for PADS {}
-#[doc = "`write(|w| ..)` method takes [pads::W](pads::W) writer structure"]
-impl crate::Writable for PADS {}
+#[doc = "PADS register accessor: an alias for `Reg<PADS_SPEC>`"]
+pub type PADS = crate::Reg<pads::PADS_SPEC>;
 #[doc = "Port A Drive Strength"]
 pub mod pads;
-#[doc = "Port A Select 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pasel0](pasel0) module"]
-pub type PASEL0 = crate::Reg<u16, _PASEL0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PASEL0;
-#[doc = "`read()` method returns [pasel0::R](pasel0::R) reader structure"]
-impl crate::Readable for PASEL0 {}
-#[doc = "`write(|w| ..)` method takes [pasel0::W](pasel0::W) writer structure"]
-impl crate::Writable for PASEL0 {}
+#[doc = "PASEL0 register accessor: an alias for `Reg<PASEL0_SPEC>`"]
+pub type PASEL0 = crate::Reg<pasel0::PASEL0_SPEC>;
 #[doc = "Port A Select 0"]
 pub mod pasel0;
-#[doc = "Port A Select 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pasel1](pasel1) module"]
-pub type PASEL1 = crate::Reg<u16, _PASEL1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PASEL1;
-#[doc = "`read()` method returns [pasel1::R](pasel1::R) reader structure"]
-impl crate::Readable for PASEL1 {}
-#[doc = "`write(|w| ..)` method takes [pasel1::W](pasel1::W) writer structure"]
-impl crate::Writable for PASEL1 {}
+#[doc = "PASEL1 register accessor: an alias for `Reg<PASEL1_SPEC>`"]
+pub type PASEL1 = crate::Reg<pasel1::PASEL1_SPEC>;
 #[doc = "Port A Select 1"]
 pub mod pasel1;
-#[doc = "Port 1 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p1iv](p1iv) module"]
-pub type P1IV = crate::Reg<u16, _P1IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P1IV;
-#[doc = "`read()` method returns [p1iv::R](p1iv::R) reader structure"]
-impl crate::Readable for P1IV {}
+#[doc = "P1IV register accessor: an alias for `Reg<P1IV_SPEC>`"]
+pub type P1IV = crate::Reg<p1iv::P1IV_SPEC>;
 #[doc = "Port 1 Interrupt Vector Register"]
 pub mod p1iv;
-#[doc = "Port A Complement Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [paselc](paselc) module"]
-pub type PASELC = crate::Reg<u16, _PASELC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PASELC;
-#[doc = "`read()` method returns [paselc::R](paselc::R) reader structure"]
-impl crate::Readable for PASELC {}
-#[doc = "`write(|w| ..)` method takes [paselc::W](paselc::W) writer structure"]
-impl crate::Writable for PASELC {}
+#[doc = "PASELC register accessor: an alias for `Reg<PASELC_SPEC>`"]
+pub type PASELC = crate::Reg<paselc::PASELC_SPEC>;
 #[doc = "Port A Complement Select"]
 pub mod paselc;
-#[doc = "Port A Interrupt Edge Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [paies](paies) module"]
-pub type PAIES = crate::Reg<u16, _PAIES>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PAIES;
-#[doc = "`read()` method returns [paies::R](paies::R) reader structure"]
-impl crate::Readable for PAIES {}
-#[doc = "`write(|w| ..)` method takes [paies::W](paies::W) writer structure"]
-impl crate::Writable for PAIES {}
+#[doc = "PAIES register accessor: an alias for `Reg<PAIES_SPEC>`"]
+pub type PAIES = crate::Reg<paies::PAIES_SPEC>;
 #[doc = "Port A Interrupt Edge Select"]
 pub mod paies;
-#[doc = "Port A Interrupt Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [paie](paie) module"]
-pub type PAIE = crate::Reg<u16, _PAIE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PAIE;
-#[doc = "`read()` method returns [paie::R](paie::R) reader structure"]
-impl crate::Readable for PAIE {}
-#[doc = "`write(|w| ..)` method takes [paie::W](paie::W) writer structure"]
-impl crate::Writable for PAIE {}
+#[doc = "PAIE register accessor: an alias for `Reg<PAIE_SPEC>`"]
+pub type PAIE = crate::Reg<paie::PAIE_SPEC>;
 #[doc = "Port A Interrupt Enable"]
 pub mod paie;
-#[doc = "Port A Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [paifg](paifg) module"]
-pub type PAIFG = crate::Reg<u16, _PAIFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PAIFG;
-#[doc = "`read()` method returns [paifg::R](paifg::R) reader structure"]
-impl crate::Readable for PAIFG {}
-#[doc = "`write(|w| ..)` method takes [paifg::W](paifg::W) writer structure"]
-impl crate::Writable for PAIFG {}
+#[doc = "PAIFG register accessor: an alias for `Reg<PAIFG_SPEC>`"]
+pub type PAIFG = crate::Reg<paifg::PAIFG_SPEC>;
 #[doc = "Port A Interrupt Flag"]
 pub mod paifg;
-#[doc = "Port 2 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p2iv](p2iv) module"]
-pub type P2IV = crate::Reg<u16, _P2IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P2IV;
-#[doc = "`read()` method returns [p2iv::R](p2iv::R) reader structure"]
-impl crate::Readable for P2IV {}
+#[doc = "P2IV register accessor: an alias for `Reg<P2IV_SPEC>`"]
+pub type P2IV = crate::Reg<p2iv::P2IV_SPEC>;
 #[doc = "Port 2 Interrupt Vector Register"]
 pub mod p2iv;
-#[doc = "Port B Input\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbin](pbin) module"]
-pub type PBIN = crate::Reg<u16, _PBIN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBIN;
-#[doc = "`read()` method returns [pbin::R](pbin::R) reader structure"]
-impl crate::Readable for PBIN {}
+#[doc = "PBIN register accessor: an alias for `Reg<PBIN_SPEC>`"]
+pub type PBIN = crate::Reg<pbin::PBIN_SPEC>;
 #[doc = "Port B Input"]
 pub mod pbin;
-#[doc = "Port B Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbout](pbout) module"]
-pub type PBOUT = crate::Reg<u16, _PBOUT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBOUT;
-#[doc = "`read()` method returns [pbout::R](pbout::R) reader structure"]
-impl crate::Readable for PBOUT {}
-#[doc = "`write(|w| ..)` method takes [pbout::W](pbout::W) writer structure"]
-impl crate::Writable for PBOUT {}
+#[doc = "PBOUT register accessor: an alias for `Reg<PBOUT_SPEC>`"]
+pub type PBOUT = crate::Reg<pbout::PBOUT_SPEC>;
 #[doc = "Port B Output"]
 pub mod pbout;
-#[doc = "Port B Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbdir](pbdir) module"]
-pub type PBDIR = crate::Reg<u16, _PBDIR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBDIR;
-#[doc = "`read()` method returns [pbdir::R](pbdir::R) reader structure"]
-impl crate::Readable for PBDIR {}
-#[doc = "`write(|w| ..)` method takes [pbdir::W](pbdir::W) writer structure"]
-impl crate::Writable for PBDIR {}
+#[doc = "PBDIR register accessor: an alias for `Reg<PBDIR_SPEC>`"]
+pub type PBDIR = crate::Reg<pbdir::PBDIR_SPEC>;
 #[doc = "Port B Direction"]
 pub mod pbdir;
-#[doc = "Port B Resistor Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbren](pbren) module"]
-pub type PBREN = crate::Reg<u16, _PBREN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBREN;
-#[doc = "`read()` method returns [pbren::R](pbren::R) reader structure"]
-impl crate::Readable for PBREN {}
-#[doc = "`write(|w| ..)` method takes [pbren::W](pbren::W) writer structure"]
-impl crate::Writable for PBREN {}
+#[doc = "PBREN register accessor: an alias for `Reg<PBREN_SPEC>`"]
+pub type PBREN = crate::Reg<pbren::PBREN_SPEC>;
 #[doc = "Port B Resistor Enable"]
 pub mod pbren;
-#[doc = "Port B Drive Strength\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbds](pbds) module"]
-pub type PBDS = crate::Reg<u16, _PBDS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBDS;
-#[doc = "`read()` method returns [pbds::R](pbds::R) reader structure"]
-impl crate::Readable for PBDS {}
-#[doc = "`write(|w| ..)` method takes [pbds::W](pbds::W) writer structure"]
-impl crate::Writable for PBDS {}
+#[doc = "PBDS register accessor: an alias for `Reg<PBDS_SPEC>`"]
+pub type PBDS = crate::Reg<pbds::PBDS_SPEC>;
 #[doc = "Port B Drive Strength"]
 pub mod pbds;
-#[doc = "Port B Select 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbsel0](pbsel0) module"]
-pub type PBSEL0 = crate::Reg<u16, _PBSEL0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBSEL0;
-#[doc = "`read()` method returns [pbsel0::R](pbsel0::R) reader structure"]
-impl crate::Readable for PBSEL0 {}
-#[doc = "`write(|w| ..)` method takes [pbsel0::W](pbsel0::W) writer structure"]
-impl crate::Writable for PBSEL0 {}
+#[doc = "PBSEL0 register accessor: an alias for `Reg<PBSEL0_SPEC>`"]
+pub type PBSEL0 = crate::Reg<pbsel0::PBSEL0_SPEC>;
 #[doc = "Port B Select 0"]
 pub mod pbsel0;
-#[doc = "Port B Select 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbsel1](pbsel1) module"]
-pub type PBSEL1 = crate::Reg<u16, _PBSEL1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBSEL1;
-#[doc = "`read()` method returns [pbsel1::R](pbsel1::R) reader structure"]
-impl crate::Readable for PBSEL1 {}
-#[doc = "`write(|w| ..)` method takes [pbsel1::W](pbsel1::W) writer structure"]
-impl crate::Writable for PBSEL1 {}
+#[doc = "PBSEL1 register accessor: an alias for `Reg<PBSEL1_SPEC>`"]
+pub type PBSEL1 = crate::Reg<pbsel1::PBSEL1_SPEC>;
 #[doc = "Port B Select 1"]
 pub mod pbsel1;
-#[doc = "Port 3 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p3iv](p3iv) module"]
-pub type P3IV = crate::Reg<u16, _P3IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P3IV;
-#[doc = "`read()` method returns [p3iv::R](p3iv::R) reader structure"]
-impl crate::Readable for P3IV {}
+#[doc = "P3IV register accessor: an alias for `Reg<P3IV_SPEC>`"]
+pub type P3IV = crate::Reg<p3iv::P3IV_SPEC>;
 #[doc = "Port 3 Interrupt Vector Register"]
 pub mod p3iv;
-#[doc = "Port B Complement Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbselc](pbselc) module"]
-pub type PBSELC = crate::Reg<u16, _PBSELC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBSELC;
-#[doc = "`read()` method returns [pbselc::R](pbselc::R) reader structure"]
-impl crate::Readable for PBSELC {}
-#[doc = "`write(|w| ..)` method takes [pbselc::W](pbselc::W) writer structure"]
-impl crate::Writable for PBSELC {}
+#[doc = "PBSELC register accessor: an alias for `Reg<PBSELC_SPEC>`"]
+pub type PBSELC = crate::Reg<pbselc::PBSELC_SPEC>;
 #[doc = "Port B Complement Select"]
 pub mod pbselc;
-#[doc = "Port B Interrupt Edge Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbies](pbies) module"]
-pub type PBIES = crate::Reg<u16, _PBIES>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBIES;
-#[doc = "`read()` method returns [pbies::R](pbies::R) reader structure"]
-impl crate::Readable for PBIES {}
-#[doc = "`write(|w| ..)` method takes [pbies::W](pbies::W) writer structure"]
-impl crate::Writable for PBIES {}
+#[doc = "PBIES register accessor: an alias for `Reg<PBIES_SPEC>`"]
+pub type PBIES = crate::Reg<pbies::PBIES_SPEC>;
 #[doc = "Port B Interrupt Edge Select"]
 pub mod pbies;
-#[doc = "Port B Interrupt Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbie](pbie) module"]
-pub type PBIE = crate::Reg<u16, _PBIE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBIE;
-#[doc = "`read()` method returns [pbie::R](pbie::R) reader structure"]
-impl crate::Readable for PBIE {}
-#[doc = "`write(|w| ..)` method takes [pbie::W](pbie::W) writer structure"]
-impl crate::Writable for PBIE {}
+#[doc = "PBIE register accessor: an alias for `Reg<PBIE_SPEC>`"]
+pub type PBIE = crate::Reg<pbie::PBIE_SPEC>;
 #[doc = "Port B Interrupt Enable"]
 pub mod pbie;
-#[doc = "Port B Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pbifg](pbifg) module"]
-pub type PBIFG = crate::Reg<u16, _PBIFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PBIFG;
-#[doc = "`read()` method returns [pbifg::R](pbifg::R) reader structure"]
-impl crate::Readable for PBIFG {}
-#[doc = "`write(|w| ..)` method takes [pbifg::W](pbifg::W) writer structure"]
-impl crate::Writable for PBIFG {}
+#[doc = "PBIFG register accessor: an alias for `Reg<PBIFG_SPEC>`"]
+pub type PBIFG = crate::Reg<pbifg::PBIFG_SPEC>;
 #[doc = "Port B Interrupt Flag"]
 pub mod pbifg;
-#[doc = "Port 4 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p4iv](p4iv) module"]
-pub type P4IV = crate::Reg<u16, _P4IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P4IV;
-#[doc = "`read()` method returns [p4iv::R](p4iv::R) reader structure"]
-impl crate::Readable for P4IV {}
+#[doc = "P4IV register accessor: an alias for `Reg<P4IV_SPEC>`"]
+pub type P4IV = crate::Reg<p4iv::P4IV_SPEC>;
 #[doc = "Port 4 Interrupt Vector Register"]
 pub mod p4iv;
-#[doc = "Port C Input\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcin](pcin) module"]
-pub type PCIN = crate::Reg<u16, _PCIN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCIN;
-#[doc = "`read()` method returns [pcin::R](pcin::R) reader structure"]
-impl crate::Readable for PCIN {}
+#[doc = "PCIN register accessor: an alias for `Reg<PCIN_SPEC>`"]
+pub type PCIN = crate::Reg<pcin::PCIN_SPEC>;
 #[doc = "Port C Input"]
 pub mod pcin;
-#[doc = "Port C Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcout](pcout) module"]
-pub type PCOUT = crate::Reg<u16, _PCOUT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCOUT;
-#[doc = "`read()` method returns [pcout::R](pcout::R) reader structure"]
-impl crate::Readable for PCOUT {}
-#[doc = "`write(|w| ..)` method takes [pcout::W](pcout::W) writer structure"]
-impl crate::Writable for PCOUT {}
+#[doc = "PCOUT register accessor: an alias for `Reg<PCOUT_SPEC>`"]
+pub type PCOUT = crate::Reg<pcout::PCOUT_SPEC>;
 #[doc = "Port C Output"]
 pub mod pcout;
-#[doc = "Port C Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcdir](pcdir) module"]
-pub type PCDIR = crate::Reg<u16, _PCDIR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCDIR;
-#[doc = "`read()` method returns [pcdir::R](pcdir::R) reader structure"]
-impl crate::Readable for PCDIR {}
-#[doc = "`write(|w| ..)` method takes [pcdir::W](pcdir::W) writer structure"]
-impl crate::Writable for PCDIR {}
+#[doc = "PCDIR register accessor: an alias for `Reg<PCDIR_SPEC>`"]
+pub type PCDIR = crate::Reg<pcdir::PCDIR_SPEC>;
 #[doc = "Port C Direction"]
 pub mod pcdir;
-#[doc = "Port C Resistor Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcren](pcren) module"]
-pub type PCREN = crate::Reg<u16, _PCREN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCREN;
-#[doc = "`read()` method returns [pcren::R](pcren::R) reader structure"]
-impl crate::Readable for PCREN {}
-#[doc = "`write(|w| ..)` method takes [pcren::W](pcren::W) writer structure"]
-impl crate::Writable for PCREN {}
+#[doc = "PCREN register accessor: an alias for `Reg<PCREN_SPEC>`"]
+pub type PCREN = crate::Reg<pcren::PCREN_SPEC>;
 #[doc = "Port C Resistor Enable"]
 pub mod pcren;
-#[doc = "Port C Drive Strength\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcds](pcds) module"]
-pub type PCDS = crate::Reg<u16, _PCDS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCDS;
-#[doc = "`read()` method returns [pcds::R](pcds::R) reader structure"]
-impl crate::Readable for PCDS {}
-#[doc = "`write(|w| ..)` method takes [pcds::W](pcds::W) writer structure"]
-impl crate::Writable for PCDS {}
+#[doc = "PCDS register accessor: an alias for `Reg<PCDS_SPEC>`"]
+pub type PCDS = crate::Reg<pcds::PCDS_SPEC>;
 #[doc = "Port C Drive Strength"]
 pub mod pcds;
-#[doc = "Port C Select 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcsel0](pcsel0) module"]
-pub type PCSEL0 = crate::Reg<u16, _PCSEL0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCSEL0;
-#[doc = "`read()` method returns [pcsel0::R](pcsel0::R) reader structure"]
-impl crate::Readable for PCSEL0 {}
-#[doc = "`write(|w| ..)` method takes [pcsel0::W](pcsel0::W) writer structure"]
-impl crate::Writable for PCSEL0 {}
+#[doc = "PCSEL0 register accessor: an alias for `Reg<PCSEL0_SPEC>`"]
+pub type PCSEL0 = crate::Reg<pcsel0::PCSEL0_SPEC>;
 #[doc = "Port C Select 0"]
 pub mod pcsel0;
-#[doc = "Port C Select 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcsel1](pcsel1) module"]
-pub type PCSEL1 = crate::Reg<u16, _PCSEL1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCSEL1;
-#[doc = "`read()` method returns [pcsel1::R](pcsel1::R) reader structure"]
-impl crate::Readable for PCSEL1 {}
-#[doc = "`write(|w| ..)` method takes [pcsel1::W](pcsel1::W) writer structure"]
-impl crate::Writable for PCSEL1 {}
+#[doc = "PCSEL1 register accessor: an alias for `Reg<PCSEL1_SPEC>`"]
+pub type PCSEL1 = crate::Reg<pcsel1::PCSEL1_SPEC>;
 #[doc = "Port C Select 1"]
 pub mod pcsel1;
-#[doc = "Port 5 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p5iv](p5iv) module"]
-pub type P5IV = crate::Reg<u16, _P5IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P5IV;
-#[doc = "`read()` method returns [p5iv::R](p5iv::R) reader structure"]
-impl crate::Readable for P5IV {}
+#[doc = "P5IV register accessor: an alias for `Reg<P5IV_SPEC>`"]
+pub type P5IV = crate::Reg<p5iv::P5IV_SPEC>;
 #[doc = "Port 5 Interrupt Vector Register"]
 pub mod p5iv;
-#[doc = "Port C Complement Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcselc](pcselc) module"]
-pub type PCSELC = crate::Reg<u16, _PCSELC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCSELC;
-#[doc = "`read()` method returns [pcselc::R](pcselc::R) reader structure"]
-impl crate::Readable for PCSELC {}
-#[doc = "`write(|w| ..)` method takes [pcselc::W](pcselc::W) writer structure"]
-impl crate::Writable for PCSELC {}
+#[doc = "PCSELC register accessor: an alias for `Reg<PCSELC_SPEC>`"]
+pub type PCSELC = crate::Reg<pcselc::PCSELC_SPEC>;
 #[doc = "Port C Complement Select"]
 pub mod pcselc;
-#[doc = "Port C Interrupt Edge Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcies](pcies) module"]
-pub type PCIES = crate::Reg<u16, _PCIES>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCIES;
-#[doc = "`read()` method returns [pcies::R](pcies::R) reader structure"]
-impl crate::Readable for PCIES {}
-#[doc = "`write(|w| ..)` method takes [pcies::W](pcies::W) writer structure"]
-impl crate::Writable for PCIES {}
+#[doc = "PCIES register accessor: an alias for `Reg<PCIES_SPEC>`"]
+pub type PCIES = crate::Reg<pcies::PCIES_SPEC>;
 #[doc = "Port C Interrupt Edge Select"]
 pub mod pcies;
-#[doc = "Port C Interrupt Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcie](pcie) module"]
-pub type PCIE = crate::Reg<u16, _PCIE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCIE;
-#[doc = "`read()` method returns [pcie::R](pcie::R) reader structure"]
-impl crate::Readable for PCIE {}
-#[doc = "`write(|w| ..)` method takes [pcie::W](pcie::W) writer structure"]
-impl crate::Writable for PCIE {}
+#[doc = "PCIE register accessor: an alias for `Reg<PCIE_SPEC>`"]
+pub type PCIE = crate::Reg<pcie::PCIE_SPEC>;
 #[doc = "Port C Interrupt Enable"]
 pub mod pcie;
-#[doc = "Port C Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcifg](pcifg) module"]
-pub type PCIFG = crate::Reg<u16, _PCIFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PCIFG;
-#[doc = "`read()` method returns [pcifg::R](pcifg::R) reader structure"]
-impl crate::Readable for PCIFG {}
-#[doc = "`write(|w| ..)` method takes [pcifg::W](pcifg::W) writer structure"]
-impl crate::Writable for PCIFG {}
+#[doc = "PCIFG register accessor: an alias for `Reg<PCIFG_SPEC>`"]
+pub type PCIFG = crate::Reg<pcifg::PCIFG_SPEC>;
 #[doc = "Port C Interrupt Flag"]
 pub mod pcifg;
-#[doc = "Port 6 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p6iv](p6iv) module"]
-pub type P6IV = crate::Reg<u16, _P6IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P6IV;
-#[doc = "`read()` method returns [p6iv::R](p6iv::R) reader structure"]
-impl crate::Readable for P6IV {}
+#[doc = "P6IV register accessor: an alias for `Reg<P6IV_SPEC>`"]
+pub type P6IV = crate::Reg<p6iv::P6IV_SPEC>;
 #[doc = "Port 6 Interrupt Vector Register"]
 pub mod p6iv;
-#[doc = "Port D Input\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdin](pdin) module"]
-pub type PDIN = crate::Reg<u16, _PDIN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDIN;
-#[doc = "`read()` method returns [pdin::R](pdin::R) reader structure"]
-impl crate::Readable for PDIN {}
+#[doc = "PDIN register accessor: an alias for `Reg<PDIN_SPEC>`"]
+pub type PDIN = crate::Reg<pdin::PDIN_SPEC>;
 #[doc = "Port D Input"]
 pub mod pdin;
-#[doc = "Port D Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdout](pdout) module"]
-pub type PDOUT = crate::Reg<u16, _PDOUT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDOUT;
-#[doc = "`read()` method returns [pdout::R](pdout::R) reader structure"]
-impl crate::Readable for PDOUT {}
-#[doc = "`write(|w| ..)` method takes [pdout::W](pdout::W) writer structure"]
-impl crate::Writable for PDOUT {}
+#[doc = "PDOUT register accessor: an alias for `Reg<PDOUT_SPEC>`"]
+pub type PDOUT = crate::Reg<pdout::PDOUT_SPEC>;
 #[doc = "Port D Output"]
 pub mod pdout;
-#[doc = "Port D Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pddir](pddir) module"]
-pub type PDDIR = crate::Reg<u16, _PDDIR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDDIR;
-#[doc = "`read()` method returns [pddir::R](pddir::R) reader structure"]
-impl crate::Readable for PDDIR {}
-#[doc = "`write(|w| ..)` method takes [pddir::W](pddir::W) writer structure"]
-impl crate::Writable for PDDIR {}
+#[doc = "PDDIR register accessor: an alias for `Reg<PDDIR_SPEC>`"]
+pub type PDDIR = crate::Reg<pddir::PDDIR_SPEC>;
 #[doc = "Port D Direction"]
 pub mod pddir;
-#[doc = "Port D Resistor Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdren](pdren) module"]
-pub type PDREN = crate::Reg<u16, _PDREN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDREN;
-#[doc = "`read()` method returns [pdren::R](pdren::R) reader structure"]
-impl crate::Readable for PDREN {}
-#[doc = "`write(|w| ..)` method takes [pdren::W](pdren::W) writer structure"]
-impl crate::Writable for PDREN {}
+#[doc = "PDREN register accessor: an alias for `Reg<PDREN_SPEC>`"]
+pub type PDREN = crate::Reg<pdren::PDREN_SPEC>;
 #[doc = "Port D Resistor Enable"]
 pub mod pdren;
-#[doc = "Port D Drive Strength\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdds](pdds) module"]
-pub type PDDS = crate::Reg<u16, _PDDS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDDS;
-#[doc = "`read()` method returns [pdds::R](pdds::R) reader structure"]
-impl crate::Readable for PDDS {}
-#[doc = "`write(|w| ..)` method takes [pdds::W](pdds::W) writer structure"]
-impl crate::Writable for PDDS {}
+#[doc = "PDDS register accessor: an alias for `Reg<PDDS_SPEC>`"]
+pub type PDDS = crate::Reg<pdds::PDDS_SPEC>;
 #[doc = "Port D Drive Strength"]
 pub mod pdds;
-#[doc = "Port D Select 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdsel0](pdsel0) module"]
-pub type PDSEL0 = crate::Reg<u16, _PDSEL0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDSEL0;
-#[doc = "`read()` method returns [pdsel0::R](pdsel0::R) reader structure"]
-impl crate::Readable for PDSEL0 {}
-#[doc = "`write(|w| ..)` method takes [pdsel0::W](pdsel0::W) writer structure"]
-impl crate::Writable for PDSEL0 {}
+#[doc = "PDSEL0 register accessor: an alias for `Reg<PDSEL0_SPEC>`"]
+pub type PDSEL0 = crate::Reg<pdsel0::PDSEL0_SPEC>;
 #[doc = "Port D Select 0"]
 pub mod pdsel0;
-#[doc = "Port D Select 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdsel1](pdsel1) module"]
-pub type PDSEL1 = crate::Reg<u16, _PDSEL1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDSEL1;
-#[doc = "`read()` method returns [pdsel1::R](pdsel1::R) reader structure"]
-impl crate::Readable for PDSEL1 {}
-#[doc = "`write(|w| ..)` method takes [pdsel1::W](pdsel1::W) writer structure"]
-impl crate::Writable for PDSEL1 {}
+#[doc = "PDSEL1 register accessor: an alias for `Reg<PDSEL1_SPEC>`"]
+pub type PDSEL1 = crate::Reg<pdsel1::PDSEL1_SPEC>;
 #[doc = "Port D Select 1"]
 pub mod pdsel1;
-#[doc = "Port 7 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p7iv](p7iv) module"]
-pub type P7IV = crate::Reg<u16, _P7IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P7IV;
-#[doc = "`read()` method returns [p7iv::R](p7iv::R) reader structure"]
-impl crate::Readable for P7IV {}
+#[doc = "P7IV register accessor: an alias for `Reg<P7IV_SPEC>`"]
+pub type P7IV = crate::Reg<p7iv::P7IV_SPEC>;
 #[doc = "Port 7 Interrupt Vector Register"]
 pub mod p7iv;
-#[doc = "Port D Complement Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdselc](pdselc) module"]
-pub type PDSELC = crate::Reg<u16, _PDSELC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDSELC;
-#[doc = "`read()` method returns [pdselc::R](pdselc::R) reader structure"]
-impl crate::Readable for PDSELC {}
-#[doc = "`write(|w| ..)` method takes [pdselc::W](pdselc::W) writer structure"]
-impl crate::Writable for PDSELC {}
+#[doc = "PDSELC register accessor: an alias for `Reg<PDSELC_SPEC>`"]
+pub type PDSELC = crate::Reg<pdselc::PDSELC_SPEC>;
 #[doc = "Port D Complement Select"]
 pub mod pdselc;
-#[doc = "Port D Interrupt Edge Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdies](pdies) module"]
-pub type PDIES = crate::Reg<u16, _PDIES>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDIES;
-#[doc = "`read()` method returns [pdies::R](pdies::R) reader structure"]
-impl crate::Readable for PDIES {}
-#[doc = "`write(|w| ..)` method takes [pdies::W](pdies::W) writer structure"]
-impl crate::Writable for PDIES {}
+#[doc = "PDIES register accessor: an alias for `Reg<PDIES_SPEC>`"]
+pub type PDIES = crate::Reg<pdies::PDIES_SPEC>;
 #[doc = "Port D Interrupt Edge Select"]
 pub mod pdies;
-#[doc = "Port D Interrupt Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdie](pdie) module"]
-pub type PDIE = crate::Reg<u16, _PDIE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDIE;
-#[doc = "`read()` method returns [pdie::R](pdie::R) reader structure"]
-impl crate::Readable for PDIE {}
-#[doc = "`write(|w| ..)` method takes [pdie::W](pdie::W) writer structure"]
-impl crate::Writable for PDIE {}
+#[doc = "PDIE register accessor: an alias for `Reg<PDIE_SPEC>`"]
+pub type PDIE = crate::Reg<pdie::PDIE_SPEC>;
 #[doc = "Port D Interrupt Enable"]
 pub mod pdie;
-#[doc = "Port D Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdifg](pdifg) module"]
-pub type PDIFG = crate::Reg<u16, _PDIFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDIFG;
-#[doc = "`read()` method returns [pdifg::R](pdifg::R) reader structure"]
-impl crate::Readable for PDIFG {}
-#[doc = "`write(|w| ..)` method takes [pdifg::W](pdifg::W) writer structure"]
-impl crate::Writable for PDIFG {}
+#[doc = "PDIFG register accessor: an alias for `Reg<PDIFG_SPEC>`"]
+pub type PDIFG = crate::Reg<pdifg::PDIFG_SPEC>;
 #[doc = "Port D Interrupt Flag"]
 pub mod pdifg;
-#[doc = "Port 8 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p8iv](p8iv) module"]
-pub type P8IV = crate::Reg<u16, _P8IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P8IV;
-#[doc = "`read()` method returns [p8iv::R](p8iv::R) reader structure"]
-impl crate::Readable for P8IV {}
+#[doc = "P8IV register accessor: an alias for `Reg<P8IV_SPEC>`"]
+pub type P8IV = crate::Reg<p8iv::P8IV_SPEC>;
 #[doc = "Port 8 Interrupt Vector Register"]
 pub mod p8iv;
-#[doc = "Port E Input\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pein](pein) module"]
-pub type PEIN = crate::Reg<u16, _PEIN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PEIN;
-#[doc = "`read()` method returns [pein::R](pein::R) reader structure"]
-impl crate::Readable for PEIN {}
+#[doc = "PEIN register accessor: an alias for `Reg<PEIN_SPEC>`"]
+pub type PEIN = crate::Reg<pein::PEIN_SPEC>;
 #[doc = "Port E Input"]
 pub mod pein;
-#[doc = "Port E Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peout](peout) module"]
-pub type PEOUT = crate::Reg<u16, _PEOUT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PEOUT;
-#[doc = "`read()` method returns [peout::R](peout::R) reader structure"]
-impl crate::Readable for PEOUT {}
-#[doc = "`write(|w| ..)` method takes [peout::W](peout::W) writer structure"]
-impl crate::Writable for PEOUT {}
+#[doc = "PEOUT register accessor: an alias for `Reg<PEOUT_SPEC>`"]
+pub type PEOUT = crate::Reg<peout::PEOUT_SPEC>;
 #[doc = "Port E Output"]
 pub mod peout;
-#[doc = "Port E Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pedir](pedir) module"]
-pub type PEDIR = crate::Reg<u16, _PEDIR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PEDIR;
-#[doc = "`read()` method returns [pedir::R](pedir::R) reader structure"]
-impl crate::Readable for PEDIR {}
-#[doc = "`write(|w| ..)` method takes [pedir::W](pedir::W) writer structure"]
-impl crate::Writable for PEDIR {}
+#[doc = "PEDIR register accessor: an alias for `Reg<PEDIR_SPEC>`"]
+pub type PEDIR = crate::Reg<pedir::PEDIR_SPEC>;
 #[doc = "Port E Direction"]
 pub mod pedir;
-#[doc = "Port E Resistor Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peren](peren) module"]
-pub type PEREN = crate::Reg<u16, _PEREN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PEREN;
-#[doc = "`read()` method returns [peren::R](peren::R) reader structure"]
-impl crate::Readable for PEREN {}
-#[doc = "`write(|w| ..)` method takes [peren::W](peren::W) writer structure"]
-impl crate::Writable for PEREN {}
+#[doc = "PEREN register accessor: an alias for `Reg<PEREN_SPEC>`"]
+pub type PEREN = crate::Reg<peren::PEREN_SPEC>;
 #[doc = "Port E Resistor Enable"]
 pub mod peren;
-#[doc = "Port E Drive Strength\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peds](peds) module"]
-pub type PEDS = crate::Reg<u16, _PEDS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PEDS;
-#[doc = "`read()` method returns [peds::R](peds::R) reader structure"]
-impl crate::Readable for PEDS {}
-#[doc = "`write(|w| ..)` method takes [peds::W](peds::W) writer structure"]
-impl crate::Writable for PEDS {}
+#[doc = "PEDS register accessor: an alias for `Reg<PEDS_SPEC>`"]
+pub type PEDS = crate::Reg<peds::PEDS_SPEC>;
 #[doc = "Port E Drive Strength"]
 pub mod peds;
-#[doc = "Port E Select 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pesel0](pesel0) module"]
-pub type PESEL0 = crate::Reg<u16, _PESEL0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PESEL0;
-#[doc = "`read()` method returns [pesel0::R](pesel0::R) reader structure"]
-impl crate::Readable for PESEL0 {}
-#[doc = "`write(|w| ..)` method takes [pesel0::W](pesel0::W) writer structure"]
-impl crate::Writable for PESEL0 {}
+#[doc = "PESEL0 register accessor: an alias for `Reg<PESEL0_SPEC>`"]
+pub type PESEL0 = crate::Reg<pesel0::PESEL0_SPEC>;
 #[doc = "Port E Select 0"]
 pub mod pesel0;
-#[doc = "Port E Select 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pesel1](pesel1) module"]
-pub type PESEL1 = crate::Reg<u16, _PESEL1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PESEL1;
-#[doc = "`read()` method returns [pesel1::R](pesel1::R) reader structure"]
-impl crate::Readable for PESEL1 {}
-#[doc = "`write(|w| ..)` method takes [pesel1::W](pesel1::W) writer structure"]
-impl crate::Writable for PESEL1 {}
+#[doc = "PESEL1 register accessor: an alias for `Reg<PESEL1_SPEC>`"]
+pub type PESEL1 = crate::Reg<pesel1::PESEL1_SPEC>;
 #[doc = "Port E Select 1"]
 pub mod pesel1;
-#[doc = "Port 9 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p9iv](p9iv) module"]
-pub type P9IV = crate::Reg<u16, _P9IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P9IV;
-#[doc = "`read()` method returns [p9iv::R](p9iv::R) reader structure"]
-impl crate::Readable for P9IV {}
+#[doc = "P9IV register accessor: an alias for `Reg<P9IV_SPEC>`"]
+pub type P9IV = crate::Reg<p9iv::P9IV_SPEC>;
 #[doc = "Port 9 Interrupt Vector Register"]
 pub mod p9iv;
-#[doc = "Port E Complement Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peselc](peselc) module"]
-pub type PESELC = crate::Reg<u16, _PESELC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PESELC;
-#[doc = "`read()` method returns [peselc::R](peselc::R) reader structure"]
-impl crate::Readable for PESELC {}
-#[doc = "`write(|w| ..)` method takes [peselc::W](peselc::W) writer structure"]
-impl crate::Writable for PESELC {}
+#[doc = "PESELC register accessor: an alias for `Reg<PESELC_SPEC>`"]
+pub type PESELC = crate::Reg<peselc::PESELC_SPEC>;
 #[doc = "Port E Complement Select"]
 pub mod peselc;
-#[doc = "Port E Interrupt Edge Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peies](peies) module"]
-pub type PEIES = crate::Reg<u16, _PEIES>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PEIES;
-#[doc = "`read()` method returns [peies::R](peies::R) reader structure"]
-impl crate::Readable for PEIES {}
-#[doc = "`write(|w| ..)` method takes [peies::W](peies::W) writer structure"]
-impl crate::Writable for PEIES {}
+#[doc = "PEIES register accessor: an alias for `Reg<PEIES_SPEC>`"]
+pub type PEIES = crate::Reg<peies::PEIES_SPEC>;
 #[doc = "Port E Interrupt Edge Select"]
 pub mod peies;
-#[doc = "Port E Interrupt Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peie](peie) module"]
-pub type PEIE = crate::Reg<u16, _PEIE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PEIE;
-#[doc = "`read()` method returns [peie::R](peie::R) reader structure"]
-impl crate::Readable for PEIE {}
-#[doc = "`write(|w| ..)` method takes [peie::W](peie::W) writer structure"]
-impl crate::Writable for PEIE {}
+#[doc = "PEIE register accessor: an alias for `Reg<PEIE_SPEC>`"]
+pub type PEIE = crate::Reg<peie::PEIE_SPEC>;
 #[doc = "Port E Interrupt Enable"]
 pub mod peie;
-#[doc = "Port E Interrupt Flag\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [peifg](peifg) module"]
-pub type PEIFG = crate::Reg<u16, _PEIFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PEIFG;
-#[doc = "`read()` method returns [peifg::R](peifg::R) reader structure"]
-impl crate::Readable for PEIFG {}
-#[doc = "`write(|w| ..)` method takes [peifg::W](peifg::W) writer structure"]
-impl crate::Writable for PEIFG {}
+#[doc = "PEIFG register accessor: an alias for `Reg<PEIFG_SPEC>`"]
+pub type PEIFG = crate::Reg<peifg::PEIFG_SPEC>;
 #[doc = "Port E Interrupt Flag"]
 pub mod peifg;
-#[doc = "Port 10 Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [p10iv](p10iv) module"]
-pub type P10IV = crate::Reg<u16, _P10IV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _P10IV;
-#[doc = "`read()` method returns [p10iv::R](p10iv::R) reader structure"]
-impl crate::Readable for P10IV {}
+#[doc = "P10IV register accessor: an alias for `Reg<P10IV_SPEC>`"]
+pub type P10IV = crate::Reg<p10iv::P10IV_SPEC>;
 #[doc = "Port 10 Interrupt Vector Register"]
 pub mod p10iv;
-#[doc = "Port J Input\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjin](pjin) module"]
-pub type PJIN = crate::Reg<u16, _PJIN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJIN;
-#[doc = "`read()` method returns [pjin::R](pjin::R) reader structure"]
-impl crate::Readable for PJIN {}
+#[doc = "PJIN register accessor: an alias for `Reg<PJIN_SPEC>`"]
+pub type PJIN = crate::Reg<pjin::PJIN_SPEC>;
 #[doc = "Port J Input"]
 pub mod pjin;
-#[doc = "Port J Output\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjout](pjout) module"]
-pub type PJOUT = crate::Reg<u16, _PJOUT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJOUT;
-#[doc = "`read()` method returns [pjout::R](pjout::R) reader structure"]
-impl crate::Readable for PJOUT {}
-#[doc = "`write(|w| ..)` method takes [pjout::W](pjout::W) writer structure"]
-impl crate::Writable for PJOUT {}
+#[doc = "PJOUT register accessor: an alias for `Reg<PJOUT_SPEC>`"]
+pub type PJOUT = crate::Reg<pjout::PJOUT_SPEC>;
 #[doc = "Port J Output"]
 pub mod pjout;
-#[doc = "Port J Direction\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjdir](pjdir) module"]
-pub type PJDIR = crate::Reg<u16, _PJDIR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJDIR;
-#[doc = "`read()` method returns [pjdir::R](pjdir::R) reader structure"]
-impl crate::Readable for PJDIR {}
-#[doc = "`write(|w| ..)` method takes [pjdir::W](pjdir::W) writer structure"]
-impl crate::Writable for PJDIR {}
+#[doc = "PJDIR register accessor: an alias for `Reg<PJDIR_SPEC>`"]
+pub type PJDIR = crate::Reg<pjdir::PJDIR_SPEC>;
 #[doc = "Port J Direction"]
 pub mod pjdir;
-#[doc = "Port J Resistor Enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjren](pjren) module"]
-pub type PJREN = crate::Reg<u16, _PJREN>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJREN;
-#[doc = "`read()` method returns [pjren::R](pjren::R) reader structure"]
-impl crate::Readable for PJREN {}
-#[doc = "`write(|w| ..)` method takes [pjren::W](pjren::W) writer structure"]
-impl crate::Writable for PJREN {}
+#[doc = "PJREN register accessor: an alias for `Reg<PJREN_SPEC>`"]
+pub type PJREN = crate::Reg<pjren::PJREN_SPEC>;
 #[doc = "Port J Resistor Enable"]
 pub mod pjren;
-#[doc = "Port J Drive Strength\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjds](pjds) module"]
-pub type PJDS = crate::Reg<u16, _PJDS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJDS;
-#[doc = "`read()` method returns [pjds::R](pjds::R) reader structure"]
-impl crate::Readable for PJDS {}
-#[doc = "`write(|w| ..)` method takes [pjds::W](pjds::W) writer structure"]
-impl crate::Writable for PJDS {}
+#[doc = "PJDS register accessor: an alias for `Reg<PJDS_SPEC>`"]
+pub type PJDS = crate::Reg<pjds::PJDS_SPEC>;
 #[doc = "Port J Drive Strength"]
 pub mod pjds;
-#[doc = "Port J Select 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjsel0](pjsel0) module"]
-pub type PJSEL0 = crate::Reg<u16, _PJSEL0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJSEL0;
-#[doc = "`read()` method returns [pjsel0::R](pjsel0::R) reader structure"]
-impl crate::Readable for PJSEL0 {}
-#[doc = "`write(|w| ..)` method takes [pjsel0::W](pjsel0::W) writer structure"]
-impl crate::Writable for PJSEL0 {}
+#[doc = "PJSEL0 register accessor: an alias for `Reg<PJSEL0_SPEC>`"]
+pub type PJSEL0 = crate::Reg<pjsel0::PJSEL0_SPEC>;
 #[doc = "Port J Select 0"]
 pub mod pjsel0;
-#[doc = "Port J Select 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjsel1](pjsel1) module"]
-pub type PJSEL1 = crate::Reg<u16, _PJSEL1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJSEL1;
-#[doc = "`read()` method returns [pjsel1::R](pjsel1::R) reader structure"]
-impl crate::Readable for PJSEL1 {}
-#[doc = "`write(|w| ..)` method takes [pjsel1::W](pjsel1::W) writer structure"]
-impl crate::Writable for PJSEL1 {}
+#[doc = "PJSEL1 register accessor: an alias for `Reg<PJSEL1_SPEC>`"]
+pub type PJSEL1 = crate::Reg<pjsel1::PJSEL1_SPEC>;
 #[doc = "Port J Select 1"]
 pub mod pjsel1;
-#[doc = "Port J Complement Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pjselc](pjselc) module"]
-pub type PJSELC = crate::Reg<u16, _PJSELC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PJSELC;
-#[doc = "`read()` method returns [pjselc::R](pjselc::R) reader structure"]
-impl crate::Readable for PJSELC {}
-#[doc = "`write(|w| ..)` method takes [pjselc::W](pjselc::W) writer structure"]
-impl crate::Writable for PJSELC {}
+#[doc = "PJSELC register accessor: an alias for `Reg<PJSELC_SPEC>`"]
+pub type PJSELC = crate::Reg<pjselc::PJSELC_SPEC>;
 #[doc = "Port J Complement Select"]
 pub mod pjselc;

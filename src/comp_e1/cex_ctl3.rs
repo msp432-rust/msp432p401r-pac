@@ -1,13 +1,35 @@
-#[doc = "Reader of register CExCTL3"]
-pub type R = crate::R<u16, super::CEXCTL3>;
-#[doc = "Writer for register CExCTL3"]
-pub type W = crate::W<u16, super::CEXCTL3>;
-#[doc = "Register CExCTL3 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CEXCTL3 {
-    type Type = u16;
+#[doc = "Register `CExCTL3` reader"]
+pub struct R(crate::R<CEXCTL3_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CEXCTL3_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<CEXCTL3_SPEC>> for R {
+    fn from(reader: crate::R<CEXCTL3_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CExCTL3` writer"]
+pub struct W(crate::W<CEXCTL3_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CEXCTL3_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CEXCTL3_SPEC>> for W {
+    fn from(writer: crate::W<CEXCTL3_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Port disable\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<CEPD0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD0`"]
-pub type CEPD0_R = crate::R<bool, CEPD0_A>;
+#[doc = "Field `CEPD0` reader - Port disable"]
+pub struct CEPD0_R(crate::FieldReader<bool, CEPD0_A>);
 impl CEPD0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD0_A {
@@ -38,15 +63,22 @@ impl CEPD0_R {
     #[doc = "Checks if the value of the field is `CEPD0_0`"]
     #[inline(always)]
     pub fn is_cepd0_0(&self) -> bool {
-        *self == CEPD0_A::CEPD0_0
+        **self == CEPD0_A::CEPD0_0
     }
     #[doc = "Checks if the value of the field is `CEPD0_1`"]
     #[inline(always)]
     pub fn is_cepd0_1(&self) -> bool {
-        *self == CEPD0_A::CEPD0_1
+        **self == CEPD0_A::CEPD0_1
     }
 }
-#[doc = "Write proxy for field `CEPD0`"]
+impl core::ops::Deref for CEPD0_R {
+    type Target = crate::FieldReader<bool, CEPD0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD0` writer - Port disable"]
 pub struct CEPD0_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> CEPD0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> CEPD0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<CEPD1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD1`"]
-pub type CEPD1_R = crate::R<bool, CEPD1_A>;
+#[doc = "Field `CEPD1` reader - Port disable"]
+pub struct CEPD1_R(crate::FieldReader<bool, CEPD1_A>);
 impl CEPD1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD1_A {
@@ -113,15 +146,22 @@ impl CEPD1_R {
     #[doc = "Checks if the value of the field is `CEPD1_0`"]
     #[inline(always)]
     pub fn is_cepd1_0(&self) -> bool {
-        *self == CEPD1_A::CEPD1_0
+        **self == CEPD1_A::CEPD1_0
     }
     #[doc = "Checks if the value of the field is `CEPD1_1`"]
     #[inline(always)]
     pub fn is_cepd1_1(&self) -> bool {
-        *self == CEPD1_A::CEPD1_1
+        **self == CEPD1_A::CEPD1_1
     }
 }
-#[doc = "Write proxy for field `CEPD1`"]
+impl core::ops::Deref for CEPD1_R {
+    type Target = crate::FieldReader<bool, CEPD1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD1` writer - Port disable"]
 pub struct CEPD1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> CEPD1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> CEPD1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<CEPD2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD2`"]
-pub type CEPD2_R = crate::R<bool, CEPD2_A>;
+#[doc = "Field `CEPD2` reader - Port disable"]
+pub struct CEPD2_R(crate::FieldReader<bool, CEPD2_A>);
 impl CEPD2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD2_A {
@@ -188,15 +229,22 @@ impl CEPD2_R {
     #[doc = "Checks if the value of the field is `CEPD2_0`"]
     #[inline(always)]
     pub fn is_cepd2_0(&self) -> bool {
-        *self == CEPD2_A::CEPD2_0
+        **self == CEPD2_A::CEPD2_0
     }
     #[doc = "Checks if the value of the field is `CEPD2_1`"]
     #[inline(always)]
     pub fn is_cepd2_1(&self) -> bool {
-        *self == CEPD2_A::CEPD2_1
+        **self == CEPD2_A::CEPD2_1
     }
 }
-#[doc = "Write proxy for field `CEPD2`"]
+impl core::ops::Deref for CEPD2_R {
+    type Target = crate::FieldReader<bool, CEPD2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD2` writer - Port disable"]
 pub struct CEPD2_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> CEPD2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> CEPD2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<CEPD3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD3`"]
-pub type CEPD3_R = crate::R<bool, CEPD3_A>;
+#[doc = "Field `CEPD3` reader - Port disable"]
+pub struct CEPD3_R(crate::FieldReader<bool, CEPD3_A>);
 impl CEPD3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD3_A {
@@ -263,15 +312,22 @@ impl CEPD3_R {
     #[doc = "Checks if the value of the field is `CEPD3_0`"]
     #[inline(always)]
     pub fn is_cepd3_0(&self) -> bool {
-        *self == CEPD3_A::CEPD3_0
+        **self == CEPD3_A::CEPD3_0
     }
     #[doc = "Checks if the value of the field is `CEPD3_1`"]
     #[inline(always)]
     pub fn is_cepd3_1(&self) -> bool {
-        *self == CEPD3_A::CEPD3_1
+        **self == CEPD3_A::CEPD3_1
     }
 }
-#[doc = "Write proxy for field `CEPD3`"]
+impl core::ops::Deref for CEPD3_R {
+    type Target = crate::FieldReader<bool, CEPD3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD3` writer - Port disable"]
 pub struct CEPD3_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> CEPD3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> CEPD3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<CEPD4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD4`"]
-pub type CEPD4_R = crate::R<bool, CEPD4_A>;
+#[doc = "Field `CEPD4` reader - Port disable"]
+pub struct CEPD4_R(crate::FieldReader<bool, CEPD4_A>);
 impl CEPD4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD4_A {
@@ -338,15 +395,22 @@ impl CEPD4_R {
     #[doc = "Checks if the value of the field is `CEPD4_0`"]
     #[inline(always)]
     pub fn is_cepd4_0(&self) -> bool {
-        *self == CEPD4_A::CEPD4_0
+        **self == CEPD4_A::CEPD4_0
     }
     #[doc = "Checks if the value of the field is `CEPD4_1`"]
     #[inline(always)]
     pub fn is_cepd4_1(&self) -> bool {
-        *self == CEPD4_A::CEPD4_1
+        **self == CEPD4_A::CEPD4_1
     }
 }
-#[doc = "Write proxy for field `CEPD4`"]
+impl core::ops::Deref for CEPD4_R {
+    type Target = crate::FieldReader<bool, CEPD4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD4` writer - Port disable"]
 pub struct CEPD4_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> CEPD4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> CEPD4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<CEPD5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD5`"]
-pub type CEPD5_R = crate::R<bool, CEPD5_A>;
+#[doc = "Field `CEPD5` reader - Port disable"]
+pub struct CEPD5_R(crate::FieldReader<bool, CEPD5_A>);
 impl CEPD5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD5_A {
@@ -413,15 +478,22 @@ impl CEPD5_R {
     #[doc = "Checks if the value of the field is `CEPD5_0`"]
     #[inline(always)]
     pub fn is_cepd5_0(&self) -> bool {
-        *self == CEPD5_A::CEPD5_0
+        **self == CEPD5_A::CEPD5_0
     }
     #[doc = "Checks if the value of the field is `CEPD5_1`"]
     #[inline(always)]
     pub fn is_cepd5_1(&self) -> bool {
-        *self == CEPD5_A::CEPD5_1
+        **self == CEPD5_A::CEPD5_1
     }
 }
-#[doc = "Write proxy for field `CEPD5`"]
+impl core::ops::Deref for CEPD5_R {
+    type Target = crate::FieldReader<bool, CEPD5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD5` writer - Port disable"]
 pub struct CEPD5_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> CEPD5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> CEPD5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<CEPD6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD6`"]
-pub type CEPD6_R = crate::R<bool, CEPD6_A>;
+#[doc = "Field `CEPD6` reader - Port disable"]
+pub struct CEPD6_R(crate::FieldReader<bool, CEPD6_A>);
 impl CEPD6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD6_A {
@@ -488,15 +561,22 @@ impl CEPD6_R {
     #[doc = "Checks if the value of the field is `CEPD6_0`"]
     #[inline(always)]
     pub fn is_cepd6_0(&self) -> bool {
-        *self == CEPD6_A::CEPD6_0
+        **self == CEPD6_A::CEPD6_0
     }
     #[doc = "Checks if the value of the field is `CEPD6_1`"]
     #[inline(always)]
     pub fn is_cepd6_1(&self) -> bool {
-        *self == CEPD6_A::CEPD6_1
+        **self == CEPD6_A::CEPD6_1
     }
 }
-#[doc = "Write proxy for field `CEPD6`"]
+impl core::ops::Deref for CEPD6_R {
+    type Target = crate::FieldReader<bool, CEPD6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD6` writer - Port disable"]
 pub struct CEPD6_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> CEPD6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> CEPD6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<CEPD7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD7`"]
-pub type CEPD7_R = crate::R<bool, CEPD7_A>;
+#[doc = "Field `CEPD7` reader - Port disable"]
+pub struct CEPD7_R(crate::FieldReader<bool, CEPD7_A>);
 impl CEPD7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD7_A {
@@ -563,15 +644,22 @@ impl CEPD7_R {
     #[doc = "Checks if the value of the field is `CEPD7_0`"]
     #[inline(always)]
     pub fn is_cepd7_0(&self) -> bool {
-        *self == CEPD7_A::CEPD7_0
+        **self == CEPD7_A::CEPD7_0
     }
     #[doc = "Checks if the value of the field is `CEPD7_1`"]
     #[inline(always)]
     pub fn is_cepd7_1(&self) -> bool {
-        *self == CEPD7_A::CEPD7_1
+        **self == CEPD7_A::CEPD7_1
     }
 }
-#[doc = "Write proxy for field `CEPD7`"]
+impl core::ops::Deref for CEPD7_R {
+    type Target = crate::FieldReader<bool, CEPD7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD7` writer - Port disable"]
 pub struct CEPD7_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> CEPD7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> CEPD7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +710,12 @@ impl From<CEPD8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD8`"]
-pub type CEPD8_R = crate::R<bool, CEPD8_A>;
+#[doc = "Field `CEPD8` reader - Port disable"]
+pub struct CEPD8_R(crate::FieldReader<bool, CEPD8_A>);
 impl CEPD8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD8_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD8_A {
@@ -638,15 +727,22 @@ impl CEPD8_R {
     #[doc = "Checks if the value of the field is `CEPD8_0`"]
     #[inline(always)]
     pub fn is_cepd8_0(&self) -> bool {
-        *self == CEPD8_A::CEPD8_0
+        **self == CEPD8_A::CEPD8_0
     }
     #[doc = "Checks if the value of the field is `CEPD8_1`"]
     #[inline(always)]
     pub fn is_cepd8_1(&self) -> bool {
-        *self == CEPD8_A::CEPD8_1
+        **self == CEPD8_A::CEPD8_1
     }
 }
-#[doc = "Write proxy for field `CEPD8`"]
+impl core::ops::Deref for CEPD8_R {
+    type Target = crate::FieldReader<bool, CEPD8_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD8` writer - Port disable"]
 pub struct CEPD8_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +750,7 @@ impl<'a> CEPD8_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD8_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -681,7 +775,7 @@ impl<'a> CEPD8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u16) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +793,12 @@ impl From<CEPD9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD9`"]
-pub type CEPD9_R = crate::R<bool, CEPD9_A>;
+#[doc = "Field `CEPD9` reader - Port disable"]
+pub struct CEPD9_R(crate::FieldReader<bool, CEPD9_A>);
 impl CEPD9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD9_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD9_A {
@@ -713,15 +810,22 @@ impl CEPD9_R {
     #[doc = "Checks if the value of the field is `CEPD9_0`"]
     #[inline(always)]
     pub fn is_cepd9_0(&self) -> bool {
-        *self == CEPD9_A::CEPD9_0
+        **self == CEPD9_A::CEPD9_0
     }
     #[doc = "Checks if the value of the field is `CEPD9_1`"]
     #[inline(always)]
     pub fn is_cepd9_1(&self) -> bool {
-        *self == CEPD9_A::CEPD9_1
+        **self == CEPD9_A::CEPD9_1
     }
 }
-#[doc = "Write proxy for field `CEPD9`"]
+impl core::ops::Deref for CEPD9_R {
+    type Target = crate::FieldReader<bool, CEPD9_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD9` writer - Port disable"]
 pub struct CEPD9_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +833,7 @@ impl<'a> CEPD9_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD9_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -756,7 +858,7 @@ impl<'a> CEPD9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u16) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u16 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +876,12 @@ impl From<CEPD10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD10`"]
-pub type CEPD10_R = crate::R<bool, CEPD10_A>;
+#[doc = "Field `CEPD10` reader - Port disable"]
+pub struct CEPD10_R(crate::FieldReader<bool, CEPD10_A>);
 impl CEPD10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD10_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD10_A {
@@ -788,15 +893,22 @@ impl CEPD10_R {
     #[doc = "Checks if the value of the field is `CEPD10_0`"]
     #[inline(always)]
     pub fn is_cepd10_0(&self) -> bool {
-        *self == CEPD10_A::CEPD10_0
+        **self == CEPD10_A::CEPD10_0
     }
     #[doc = "Checks if the value of the field is `CEPD10_1`"]
     #[inline(always)]
     pub fn is_cepd10_1(&self) -> bool {
-        *self == CEPD10_A::CEPD10_1
+        **self == CEPD10_A::CEPD10_1
     }
 }
-#[doc = "Write proxy for field `CEPD10`"]
+impl core::ops::Deref for CEPD10_R {
+    type Target = crate::FieldReader<bool, CEPD10_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD10` writer - Port disable"]
 pub struct CEPD10_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +916,7 @@ impl<'a> CEPD10_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD10_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -831,7 +941,7 @@ impl<'a> CEPD10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u16) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u16 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +959,12 @@ impl From<CEPD11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD11`"]
-pub type CEPD11_R = crate::R<bool, CEPD11_A>;
+#[doc = "Field `CEPD11` reader - Port disable"]
+pub struct CEPD11_R(crate::FieldReader<bool, CEPD11_A>);
 impl CEPD11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD11_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD11_A {
@@ -863,15 +976,22 @@ impl CEPD11_R {
     #[doc = "Checks if the value of the field is `CEPD11_0`"]
     #[inline(always)]
     pub fn is_cepd11_0(&self) -> bool {
-        *self == CEPD11_A::CEPD11_0
+        **self == CEPD11_A::CEPD11_0
     }
     #[doc = "Checks if the value of the field is `CEPD11_1`"]
     #[inline(always)]
     pub fn is_cepd11_1(&self) -> bool {
-        *self == CEPD11_A::CEPD11_1
+        **self == CEPD11_A::CEPD11_1
     }
 }
-#[doc = "Write proxy for field `CEPD11`"]
+impl core::ops::Deref for CEPD11_R {
+    type Target = crate::FieldReader<bool, CEPD11_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD11` writer - Port disable"]
 pub struct CEPD11_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +999,7 @@ impl<'a> CEPD11_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD11_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -906,7 +1024,7 @@ impl<'a> CEPD11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u16) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u16 & 0x01) << 11);
         self.w
     }
 }
@@ -924,9 +1042,12 @@ impl From<CEPD12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD12`"]
-pub type CEPD12_R = crate::R<bool, CEPD12_A>;
+#[doc = "Field `CEPD12` reader - Port disable"]
+pub struct CEPD12_R(crate::FieldReader<bool, CEPD12_A>);
 impl CEPD12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD12_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD12_A {
@@ -938,15 +1059,22 @@ impl CEPD12_R {
     #[doc = "Checks if the value of the field is `CEPD12_0`"]
     #[inline(always)]
     pub fn is_cepd12_0(&self) -> bool {
-        *self == CEPD12_A::CEPD12_0
+        **self == CEPD12_A::CEPD12_0
     }
     #[doc = "Checks if the value of the field is `CEPD12_1`"]
     #[inline(always)]
     pub fn is_cepd12_1(&self) -> bool {
-        *self == CEPD12_A::CEPD12_1
+        **self == CEPD12_A::CEPD12_1
     }
 }
-#[doc = "Write proxy for field `CEPD12`"]
+impl core::ops::Deref for CEPD12_R {
+    type Target = crate::FieldReader<bool, CEPD12_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD12` writer - Port disable"]
 pub struct CEPD12_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1082,7 @@ impl<'a> CEPD12_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD12_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -981,7 +1107,7 @@ impl<'a> CEPD12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u16) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u16 & 0x01) << 12);
         self.w
     }
 }
@@ -999,9 +1125,12 @@ impl From<CEPD13_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD13`"]
-pub type CEPD13_R = crate::R<bool, CEPD13_A>;
+#[doc = "Field `CEPD13` reader - Port disable"]
+pub struct CEPD13_R(crate::FieldReader<bool, CEPD13_A>);
 impl CEPD13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD13_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD13_A {
@@ -1013,15 +1142,22 @@ impl CEPD13_R {
     #[doc = "Checks if the value of the field is `CEPD13_0`"]
     #[inline(always)]
     pub fn is_cepd13_0(&self) -> bool {
-        *self == CEPD13_A::CEPD13_0
+        **self == CEPD13_A::CEPD13_0
     }
     #[doc = "Checks if the value of the field is `CEPD13_1`"]
     #[inline(always)]
     pub fn is_cepd13_1(&self) -> bool {
-        *self == CEPD13_A::CEPD13_1
+        **self == CEPD13_A::CEPD13_1
     }
 }
-#[doc = "Write proxy for field `CEPD13`"]
+impl core::ops::Deref for CEPD13_R {
+    type Target = crate::FieldReader<bool, CEPD13_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD13` writer - Port disable"]
 pub struct CEPD13_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1165,7 @@ impl<'a> CEPD13_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD13_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -1056,7 +1190,7 @@ impl<'a> CEPD13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u16) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u16 & 0x01) << 13);
         self.w
     }
 }
@@ -1074,9 +1208,12 @@ impl From<CEPD14_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD14`"]
-pub type CEPD14_R = crate::R<bool, CEPD14_A>;
+#[doc = "Field `CEPD14` reader - Port disable"]
+pub struct CEPD14_R(crate::FieldReader<bool, CEPD14_A>);
 impl CEPD14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD14_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD14_A {
@@ -1088,15 +1225,22 @@ impl CEPD14_R {
     #[doc = "Checks if the value of the field is `CEPD14_0`"]
     #[inline(always)]
     pub fn is_cepd14_0(&self) -> bool {
-        *self == CEPD14_A::CEPD14_0
+        **self == CEPD14_A::CEPD14_0
     }
     #[doc = "Checks if the value of the field is `CEPD14_1`"]
     #[inline(always)]
     pub fn is_cepd14_1(&self) -> bool {
-        *self == CEPD14_A::CEPD14_1
+        **self == CEPD14_A::CEPD14_1
     }
 }
-#[doc = "Write proxy for field `CEPD14`"]
+impl core::ops::Deref for CEPD14_R {
+    type Target = crate::FieldReader<bool, CEPD14_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD14` writer - Port disable"]
 pub struct CEPD14_W<'a> {
     w: &'a mut W,
 }
@@ -1104,9 +1248,7 @@ impl<'a> CEPD14_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD14_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -1131,7 +1273,7 @@ impl<'a> CEPD14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u16) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u16 & 0x01) << 14);
         self.w
     }
 }
@@ -1149,9 +1291,12 @@ impl From<CEPD15_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEPD15`"]
-pub type CEPD15_R = crate::R<bool, CEPD15_A>;
+#[doc = "Field `CEPD15` reader - Port disable"]
+pub struct CEPD15_R(crate::FieldReader<bool, CEPD15_A>);
 impl CEPD15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEPD15_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEPD15_A {
@@ -1163,15 +1308,22 @@ impl CEPD15_R {
     #[doc = "Checks if the value of the field is `CEPD15_0`"]
     #[inline(always)]
     pub fn is_cepd15_0(&self) -> bool {
-        *self == CEPD15_A::CEPD15_0
+        **self == CEPD15_A::CEPD15_0
     }
     #[doc = "Checks if the value of the field is `CEPD15_1`"]
     #[inline(always)]
     pub fn is_cepd15_1(&self) -> bool {
-        *self == CEPD15_A::CEPD15_1
+        **self == CEPD15_A::CEPD15_1
     }
 }
-#[doc = "Write proxy for field `CEPD15`"]
+impl core::ops::Deref for CEPD15_R {
+    type Target = crate::FieldReader<bool, CEPD15_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEPD15` writer - Port disable"]
 pub struct CEPD15_W<'a> {
     w: &'a mut W,
 }
@@ -1179,9 +1331,7 @@ impl<'a> CEPD15_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEPD15_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The input buffer is enabled"]
     #[inline(always)]
@@ -1206,7 +1356,7 @@ impl<'a> CEPD15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u16) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
         self.w
     }
 }
@@ -1372,5 +1522,30 @@ impl W {
     #[inline(always)]
     pub fn cepd15(&mut self) -> CEPD15_W {
         CEPD15_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Comparator Control Register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cex_ctl3](index.html) module"]
+pub struct CEXCTL3_SPEC;
+impl crate::RegisterSpec for CEXCTL3_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [cex_ctl3::R](R) reader structure"]
+impl crate::Readable for CEXCTL3_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cex_ctl3::W](W) writer structure"]
+impl crate::Writable for CEXCTL3_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CExCTL3 to value 0"]
+impl crate::Resettable for CEXCTL3_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

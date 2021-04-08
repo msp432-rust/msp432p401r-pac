@@ -1,13 +1,35 @@
-#[doc = "Reader of register PMAPCTL"]
-pub type R = crate::R<u16, super::PMAPCTL>;
-#[doc = "Writer for register PMAPCTL"]
-pub type W = crate::W<u16, super::PMAPCTL>;
-#[doc = "Register PMAPCTL `reset()`'s with value 0x01"]
-impl crate::ResetValue for super::PMAPCTL {
-    type Type = u16;
+#[doc = "Register `PMAPCTL` reader"]
+pub struct R(crate::R<PMAPCTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PMAPCTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x01
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<PMAPCTL_SPEC>> for R {
+    fn from(reader: crate::R<PMAPCTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PMAPCTL` writer"]
+pub struct W(crate::W<PMAPCTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PMAPCTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PMAPCTL_SPEC>> for W {
+    fn from(writer: crate::W<PMAPCTL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Port mapping lock bit\n\nValue on reset: 1"]
@@ -24,9 +46,12 @@ impl From<PMAPLOCKED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PMAPLOCKED`"]
-pub type PMAPLOCKED_R = crate::R<bool, PMAPLOCKED_A>;
+#[doc = "Field `PMAPLOCKED` reader - Port mapping lock bit"]
+pub struct PMAPLOCKED_R(crate::FieldReader<bool, PMAPLOCKED_A>);
 impl PMAPLOCKED_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PMAPLOCKED_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PMAPLOCKED_A {
@@ -38,12 +63,19 @@ impl PMAPLOCKED_R {
     #[doc = "Checks if the value of the field is `PMAPLOCKED_0`"]
     #[inline(always)]
     pub fn is_pmaplocked_0(&self) -> bool {
-        *self == PMAPLOCKED_A::PMAPLOCKED_0
+        **self == PMAPLOCKED_A::PMAPLOCKED_0
     }
     #[doc = "Checks if the value of the field is `PMAPLOCKED_1`"]
     #[inline(always)]
     pub fn is_pmaplocked_1(&self) -> bool {
-        *self == PMAPLOCKED_A::PMAPLOCKED_1
+        **self == PMAPLOCKED_A::PMAPLOCKED_1
+    }
+}
+impl core::ops::Deref for PMAPLOCKED_R {
+    type Target = crate::FieldReader<bool, PMAPLOCKED_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Port mapping reconfiguration control bit\n\nValue on reset: 0"]
@@ -60,9 +92,12 @@ impl From<PMAPRECFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PMAPRECFG`"]
-pub type PMAPRECFG_R = crate::R<bool, PMAPRECFG_A>;
+#[doc = "Field `PMAPRECFG` reader - Port mapping reconfiguration control bit"]
+pub struct PMAPRECFG_R(crate::FieldReader<bool, PMAPRECFG_A>);
 impl PMAPRECFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PMAPRECFG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PMAPRECFG_A {
@@ -74,15 +109,22 @@ impl PMAPRECFG_R {
     #[doc = "Checks if the value of the field is `PMAPRECFG_0`"]
     #[inline(always)]
     pub fn is_pmaprecfg_0(&self) -> bool {
-        *self == PMAPRECFG_A::PMAPRECFG_0
+        **self == PMAPRECFG_A::PMAPRECFG_0
     }
     #[doc = "Checks if the value of the field is `PMAPRECFG_1`"]
     #[inline(always)]
     pub fn is_pmaprecfg_1(&self) -> bool {
-        *self == PMAPRECFG_A::PMAPRECFG_1
+        **self == PMAPRECFG_A::PMAPRECFG_1
     }
 }
-#[doc = "Write proxy for field `PMAPRECFG`"]
+impl core::ops::Deref for PMAPRECFG_R {
+    type Target = crate::FieldReader<bool, PMAPRECFG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PMAPRECFG` writer - Port mapping reconfiguration control bit"]
 pub struct PMAPRECFG_W<'a> {
     w: &'a mut W,
 }
@@ -90,9 +132,7 @@ impl<'a> PMAPRECFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PMAPRECFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Configuration allowed only once"]
     #[inline(always)]
@@ -117,7 +157,7 @@ impl<'a> PMAPRECFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
@@ -138,5 +178,30 @@ impl W {
     #[inline(always)]
     pub fn pmaprecfg(&mut self) -> PMAPRECFG_W {
         PMAPRECFG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port Mapping Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmapctl](index.html) module"]
+pub struct PMAPCTL_SPEC;
+impl crate::RegisterSpec for PMAPCTL_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [pmapctl::R](R) reader structure"]
+impl crate::Readable for PMAPCTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pmapctl::W](W) writer structure"]
+impl crate::Writable for PMAPCTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PMAPCTL to value 0x01"]
+impl crate::Resettable for PMAPCTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x01
     }
 }

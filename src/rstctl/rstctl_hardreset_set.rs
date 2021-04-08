@@ -1,16 +1,38 @@
-#[doc = "Reader of register RSTCTL_HARDRESET_SET"]
-pub type R = crate::R<u32, super::RSTCTL_HARDRESET_SET>;
-#[doc = "Writer for register RSTCTL_HARDRESET_SET"]
-pub type W = crate::W<u32, super::RSTCTL_HARDRESET_SET>;
-#[doc = "Register RSTCTL_HARDRESET_SET `reset()`'s with value 0"]
-impl crate::ResetValue for super::RSTCTL_HARDRESET_SET {
-    type Type = u32;
+#[doc = "Register `RSTCTL_HARDRESET_SET` reader"]
+pub struct R(crate::R<RSTCTL_HARDRESET_SET_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RSTCTL_HARDRESET_SET_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `SRC0`"]
+impl core::convert::From<crate::R<RSTCTL_HARDRESET_SET_SPEC>> for R {
+    fn from(reader: crate::R<RSTCTL_HARDRESET_SET_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RSTCTL_HARDRESET_SET` writer"]
+pub struct W(crate::W<RSTCTL_HARDRESET_SET_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RSTCTL_HARDRESET_SET_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<RSTCTL_HARDRESET_SET_SPEC>> for W {
+    fn from(writer: crate::W<RSTCTL_HARDRESET_SET_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SRC0` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC0_W<'a> {
     w: &'a mut W,
 }
@@ -28,11 +50,11 @@ impl<'a> SRC0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC1`"]
+#[doc = "Field `SRC1` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC1_W<'a> {
     w: &'a mut W,
 }
@@ -50,11 +72,11 @@ impl<'a> SRC1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC2`"]
+#[doc = "Field `SRC2` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC2_W<'a> {
     w: &'a mut W,
 }
@@ -72,11 +94,11 @@ impl<'a> SRC2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC3`"]
+#[doc = "Field `SRC3` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC3_W<'a> {
     w: &'a mut W,
 }
@@ -94,11 +116,11 @@ impl<'a> SRC3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC4`"]
+#[doc = "Field `SRC4` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC4_W<'a> {
     w: &'a mut W,
 }
@@ -116,11 +138,11 @@ impl<'a> SRC4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC5`"]
+#[doc = "Field `SRC5` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC5_W<'a> {
     w: &'a mut W,
 }
@@ -138,11 +160,11 @@ impl<'a> SRC5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC6`"]
+#[doc = "Field `SRC6` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC6_W<'a> {
     w: &'a mut W,
 }
@@ -160,11 +182,11 @@ impl<'a> SRC6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC7`"]
+#[doc = "Field `SRC7` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC7_W<'a> {
     w: &'a mut W,
 }
@@ -182,11 +204,11 @@ impl<'a> SRC7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC8`"]
+#[doc = "Field `SRC8` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC8_W<'a> {
     w: &'a mut W,
 }
@@ -204,11 +226,11 @@ impl<'a> SRC8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC9`"]
+#[doc = "Field `SRC9` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC9_W<'a> {
     w: &'a mut W,
 }
@@ -226,11 +248,11 @@ impl<'a> SRC9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC10`"]
+#[doc = "Field `SRC10` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC10_W<'a> {
     w: &'a mut W,
 }
@@ -248,11 +270,11 @@ impl<'a> SRC10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC11`"]
+#[doc = "Field `SRC11` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC11_W<'a> {
     w: &'a mut W,
 }
@@ -270,11 +292,11 @@ impl<'a> SRC11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC12`"]
+#[doc = "Field `SRC12` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC12_W<'a> {
     w: &'a mut W,
 }
@@ -292,11 +314,11 @@ impl<'a> SRC12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC13`"]
+#[doc = "Field `SRC13` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC13_W<'a> {
     w: &'a mut W,
 }
@@ -314,11 +336,11 @@ impl<'a> SRC13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC14`"]
+#[doc = "Field `SRC14` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC14_W<'a> {
     w: &'a mut W,
 }
@@ -336,11 +358,11 @@ impl<'a> SRC14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Write proxy for field `SRC15`"]
+#[doc = "Field `SRC15` writer - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
 pub struct SRC15_W<'a> {
     w: &'a mut W,
 }
@@ -358,11 +380,10 @@ impl<'a> SRC15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
-impl R {}
 impl W {
     #[doc = "Bit 0 - Write 1 sets the corresponding bit in the RSTCTL_HARDRESET_STAT (and initiates a Hard Reset)"]
     #[inline(always)]
@@ -443,5 +464,30 @@ impl W {
     #[inline(always)]
     pub fn src15(&mut self) -> SRC15_W {
         SRC15_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Hard Reset Status Set Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rstctl_hardreset_set](index.html) module"]
+pub struct RSTCTL_HARDRESET_SET_SPEC;
+impl crate::RegisterSpec for RSTCTL_HARDRESET_SET_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [rstctl_hardreset_set::R](R) reader structure"]
+impl crate::Readable for RSTCTL_HARDRESET_SET_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [rstctl_hardreset_set::W](W) writer structure"]
+impl crate::Writable for RSTCTL_HARDRESET_SET_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RSTCTL_HARDRESET_SET to value 0"]
+impl crate::Resettable for RSTCTL_HARDRESET_SET_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

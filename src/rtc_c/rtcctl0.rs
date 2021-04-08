@@ -1,13 +1,35 @@
-#[doc = "Reader of register RTCCTL0"]
-pub type R = crate::R<u16, super::RTCCTL0>;
-#[doc = "Writer for register RTCCTL0"]
-pub type W = crate::W<u16, super::RTCCTL0>;
-#[doc = "Register RTCCTL0 `reset()`'s with value 0x9608"]
-impl crate::ResetValue for super::RTCCTL0 {
-    type Type = u16;
+#[doc = "Register `RTCCTL0` reader"]
+pub struct R(crate::R<RTCCTL0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RTCCTL0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x9608
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<RTCCTL0_SPEC>> for R {
+    fn from(reader: crate::R<RTCCTL0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RTCCTL0` writer"]
+pub struct W(crate::W<RTCCTL0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RTCCTL0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<RTCCTL0_SPEC>> for W {
+    fn from(writer: crate::W<RTCCTL0_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Real-time clock ready interrupt flag\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<RTCRDYIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCRDYIFG`"]
-pub type RTCRDYIFG_R = crate::R<bool, RTCRDYIFG_A>;
+#[doc = "Field `RTCRDYIFG` reader - Real-time clock ready interrupt flag"]
+pub struct RTCRDYIFG_R(crate::FieldReader<bool, RTCRDYIFG_A>);
 impl RTCRDYIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCRDYIFG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCRDYIFG_A {
@@ -38,15 +63,22 @@ impl RTCRDYIFG_R {
     #[doc = "Checks if the value of the field is `RTCRDYIFG_0`"]
     #[inline(always)]
     pub fn is_rtcrdyifg_0(&self) -> bool {
-        *self == RTCRDYIFG_A::RTCRDYIFG_0
+        **self == RTCRDYIFG_A::RTCRDYIFG_0
     }
     #[doc = "Checks if the value of the field is `RTCRDYIFG_1`"]
     #[inline(always)]
     pub fn is_rtcrdyifg_1(&self) -> bool {
-        *self == RTCRDYIFG_A::RTCRDYIFG_1
+        **self == RTCRDYIFG_A::RTCRDYIFG_1
     }
 }
-#[doc = "Write proxy for field `RTCRDYIFG`"]
+impl core::ops::Deref for RTCRDYIFG_R {
+    type Target = crate::FieldReader<bool, RTCRDYIFG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCRDYIFG` writer - Real-time clock ready interrupt flag"]
 pub struct RTCRDYIFG_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> RTCRDYIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCRDYIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "RTC cannot be read safely"]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> RTCRDYIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u16) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<RTCAIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCAIFG`"]
-pub type RTCAIFG_R = crate::R<bool, RTCAIFG_A>;
+#[doc = "Field `RTCAIFG` reader - Real-time clock alarm interrupt flag"]
+pub struct RTCAIFG_R(crate::FieldReader<bool, RTCAIFG_A>);
 impl RTCAIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCAIFG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCAIFG_A {
@@ -113,15 +146,22 @@ impl RTCAIFG_R {
     #[doc = "Checks if the value of the field is `RTCAIFG_0`"]
     #[inline(always)]
     pub fn is_rtcaifg_0(&self) -> bool {
-        *self == RTCAIFG_A::RTCAIFG_0
+        **self == RTCAIFG_A::RTCAIFG_0
     }
     #[doc = "Checks if the value of the field is `RTCAIFG_1`"]
     #[inline(always)]
     pub fn is_rtcaifg_1(&self) -> bool {
-        *self == RTCAIFG_A::RTCAIFG_1
+        **self == RTCAIFG_A::RTCAIFG_1
     }
 }
-#[doc = "Write proxy for field `RTCAIFG`"]
+impl core::ops::Deref for RTCAIFG_R {
+    type Target = crate::FieldReader<bool, RTCAIFG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCAIFG` writer - Real-time clock alarm interrupt flag"]
 pub struct RTCAIFG_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> RTCAIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCAIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No time event occurred"]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> RTCAIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u16) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<RTCTEVIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCTEVIFG`"]
-pub type RTCTEVIFG_R = crate::R<bool, RTCTEVIFG_A>;
+#[doc = "Field `RTCTEVIFG` reader - Real-time clock time event interrupt flag"]
+pub struct RTCTEVIFG_R(crate::FieldReader<bool, RTCTEVIFG_A>);
 impl RTCTEVIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCTEVIFG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCTEVIFG_A {
@@ -188,15 +229,22 @@ impl RTCTEVIFG_R {
     #[doc = "Checks if the value of the field is `RTCTEVIFG_0`"]
     #[inline(always)]
     pub fn is_rtctevifg_0(&self) -> bool {
-        *self == RTCTEVIFG_A::RTCTEVIFG_0
+        **self == RTCTEVIFG_A::RTCTEVIFG_0
     }
     #[doc = "Checks if the value of the field is `RTCTEVIFG_1`"]
     #[inline(always)]
     pub fn is_rtctevifg_1(&self) -> bool {
-        *self == RTCTEVIFG_A::RTCTEVIFG_1
+        **self == RTCTEVIFG_A::RTCTEVIFG_1
     }
 }
-#[doc = "Write proxy for field `RTCTEVIFG`"]
+impl core::ops::Deref for RTCTEVIFG_R {
+    type Target = crate::FieldReader<bool, RTCTEVIFG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCTEVIFG` writer - Real-time clock time event interrupt flag"]
 pub struct RTCTEVIFG_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> RTCTEVIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCTEVIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No time event occurred"]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> RTCTEVIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u16) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<RTCOFIFG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCOFIFG`"]
-pub type RTCOFIFG_R = crate::R<bool, RTCOFIFG_A>;
+#[doc = "Field `RTCOFIFG` reader - 32-kHz crystal oscillator fault interrupt flag"]
+pub struct RTCOFIFG_R(crate::FieldReader<bool, RTCOFIFG_A>);
 impl RTCOFIFG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOFIFG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCOFIFG_A {
@@ -263,15 +312,22 @@ impl RTCOFIFG_R {
     #[doc = "Checks if the value of the field is `RTCOFIFG_0`"]
     #[inline(always)]
     pub fn is_rtcofifg_0(&self) -> bool {
-        *self == RTCOFIFG_A::RTCOFIFG_0
+        **self == RTCOFIFG_A::RTCOFIFG_0
     }
     #[doc = "Checks if the value of the field is `RTCOFIFG_1`"]
     #[inline(always)]
     pub fn is_rtcofifg_1(&self) -> bool {
-        *self == RTCOFIFG_A::RTCOFIFG_1
+        **self == RTCOFIFG_A::RTCOFIFG_1
     }
 }
-#[doc = "Write proxy for field `RTCOFIFG`"]
+impl core::ops::Deref for RTCOFIFG_R {
+    type Target = crate::FieldReader<bool, RTCOFIFG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOFIFG` writer - 32-kHz crystal oscillator fault interrupt flag"]
 pub struct RTCOFIFG_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> RTCOFIFG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCOFIFG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No interrupt pending"]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> RTCOFIFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u16) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<RTCRDYIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCRDYIE`"]
-pub type RTCRDYIE_R = crate::R<bool, RTCRDYIE_A>;
+#[doc = "Field `RTCRDYIE` reader - Real-time clock ready interrupt enable"]
+pub struct RTCRDYIE_R(crate::FieldReader<bool, RTCRDYIE_A>);
 impl RTCRDYIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCRDYIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCRDYIE_A {
@@ -338,15 +395,22 @@ impl RTCRDYIE_R {
     #[doc = "Checks if the value of the field is `RTCRDYIE_0`"]
     #[inline(always)]
     pub fn is_rtcrdyie_0(&self) -> bool {
-        *self == RTCRDYIE_A::RTCRDYIE_0
+        **self == RTCRDYIE_A::RTCRDYIE_0
     }
     #[doc = "Checks if the value of the field is `RTCRDYIE_1`"]
     #[inline(always)]
     pub fn is_rtcrdyie_1(&self) -> bool {
-        *self == RTCRDYIE_A::RTCRDYIE_1
+        **self == RTCRDYIE_A::RTCRDYIE_1
     }
 }
-#[doc = "Write proxy for field `RTCRDYIE`"]
+impl core::ops::Deref for RTCRDYIE_R {
+    type Target = crate::FieldReader<bool, RTCRDYIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCRDYIE` writer - Real-time clock ready interrupt enable"]
 pub struct RTCRDYIE_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> RTCRDYIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCRDYIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> RTCRDYIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u16) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u16 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<RTCAIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCAIE`"]
-pub type RTCAIE_R = crate::R<bool, RTCAIE_A>;
+#[doc = "Field `RTCAIE` reader - Real-time clock alarm interrupt enable"]
+pub struct RTCAIE_R(crate::FieldReader<bool, RTCAIE_A>);
 impl RTCAIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCAIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCAIE_A {
@@ -413,15 +478,22 @@ impl RTCAIE_R {
     #[doc = "Checks if the value of the field is `RTCAIE_0`"]
     #[inline(always)]
     pub fn is_rtcaie_0(&self) -> bool {
-        *self == RTCAIE_A::RTCAIE_0
+        **self == RTCAIE_A::RTCAIE_0
     }
     #[doc = "Checks if the value of the field is `RTCAIE_1`"]
     #[inline(always)]
     pub fn is_rtcaie_1(&self) -> bool {
-        *self == RTCAIE_A::RTCAIE_1
+        **self == RTCAIE_A::RTCAIE_1
     }
 }
-#[doc = "Write proxy for field `RTCAIE`"]
+impl core::ops::Deref for RTCAIE_R {
+    type Target = crate::FieldReader<bool, RTCAIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCAIE` writer - Real-time clock alarm interrupt enable"]
 pub struct RTCAIE_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> RTCAIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCAIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> RTCAIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u16) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<RTCTEVIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCTEVIE`"]
-pub type RTCTEVIE_R = crate::R<bool, RTCTEVIE_A>;
+#[doc = "Field `RTCTEVIE` reader - Real-time clock time event interrupt enable"]
+pub struct RTCTEVIE_R(crate::FieldReader<bool, RTCTEVIE_A>);
 impl RTCTEVIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCTEVIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCTEVIE_A {
@@ -488,15 +561,22 @@ impl RTCTEVIE_R {
     #[doc = "Checks if the value of the field is `RTCTEVIE_0`"]
     #[inline(always)]
     pub fn is_rtctevie_0(&self) -> bool {
-        *self == RTCTEVIE_A::RTCTEVIE_0
+        **self == RTCTEVIE_A::RTCTEVIE_0
     }
     #[doc = "Checks if the value of the field is `RTCTEVIE_1`"]
     #[inline(always)]
     pub fn is_rtctevie_1(&self) -> bool {
-        *self == RTCTEVIE_A::RTCTEVIE_1
+        **self == RTCTEVIE_A::RTCTEVIE_1
     }
 }
-#[doc = "Write proxy for field `RTCTEVIE`"]
+impl core::ops::Deref for RTCTEVIE_R {
+    type Target = crate::FieldReader<bool, RTCTEVIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCTEVIE` writer - Real-time clock time event interrupt enable"]
 pub struct RTCTEVIE_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> RTCTEVIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCTEVIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> RTCTEVIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u16) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u16 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<RTCOFIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RTCOFIE`"]
-pub type RTCOFIE_R = crate::R<bool, RTCOFIE_A>;
+#[doc = "Field `RTCOFIE` reader - 32-kHz crystal oscillator fault interrupt enable"]
+pub struct RTCOFIE_R(crate::FieldReader<bool, RTCOFIE_A>);
 impl RTCOFIE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RTCOFIE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCOFIE_A {
@@ -563,15 +644,22 @@ impl RTCOFIE_R {
     #[doc = "Checks if the value of the field is `RTCOFIE_0`"]
     #[inline(always)]
     pub fn is_rtcofie_0(&self) -> bool {
-        *self == RTCOFIE_A::RTCOFIE_0
+        **self == RTCOFIE_A::RTCOFIE_0
     }
     #[doc = "Checks if the value of the field is `RTCOFIE_1`"]
     #[inline(always)]
     pub fn is_rtcofie_1(&self) -> bool {
-        *self == RTCOFIE_A::RTCOFIE_1
+        **self == RTCOFIE_A::RTCOFIE_1
     }
 }
-#[doc = "Write proxy for field `RTCOFIE`"]
+impl core::ops::Deref for RTCOFIE_R {
+    type Target = crate::FieldReader<bool, RTCOFIE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCOFIE` writer - 32-kHz crystal oscillator fault interrupt enable"]
 pub struct RTCOFIE_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> RTCOFIE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RTCOFIE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
@@ -606,13 +692,25 @@ impl<'a> RTCOFIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u16) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `RTCKEY`"]
-pub type RTCKEY_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `RTCKEY`"]
+#[doc = "Field `RTCKEY` reader - Real-time clock key"]
+pub struct RTCKEY_R(crate::FieldReader<u8, u8>);
+impl RTCKEY_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RTCKEY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTCKEY_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTCKEY` writer - Real-time clock key"]
 pub struct RTCKEY_W<'a> {
     w: &'a mut W,
 }
@@ -620,7 +718,7 @@ impl<'a> RTCKEY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u16) & 0xff) << 8);
+        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
         self.w
     }
 }
@@ -716,5 +814,30 @@ impl W {
     #[inline(always)]
     pub fn rtckey(&mut self) -> RTCKEY_W {
         RTCKEY_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "RTCCTL0 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtcctl0](index.html) module"]
+pub struct RTCCTL0_SPEC;
+impl crate::RegisterSpec for RTCCTL0_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [rtcctl0::R](R) reader structure"]
+impl crate::Readable for RTCCTL0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [rtcctl0::W](W) writer structure"]
+impl crate::Writable for RTCCTL0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RTCCTL0 to value 0x9608"]
+impl crate::Resettable for RTCCTL0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x9608
     }
 }
