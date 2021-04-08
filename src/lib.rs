@@ -21,7 +21,6 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 #![no_std]
-extern crate bare_metal;
 extern crate cortex_m;
 #[cfg(feature = "rt")]
 extern crate cortex_m_rt;
@@ -285,7 +284,7 @@ pub enum Interrupt {
     #[doc = "40 - Port6 Interrupt"]
     PORT6_IRQ = 40,
 }
-unsafe impl bare_metal::Nr for Interrupt {
+unsafe impl cortex_m::interrupt::Nr for Interrupt {
     #[inline(always)]
     fn nr(&self) -> u8 {
         *self as u8
