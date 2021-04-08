@@ -8,13 +8,12 @@ repository = "https://github.com/msp432-rust/msp432p401r-pac"
 license-file = "LICENSE"
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 cortex-m = "0.7.2"
 cortex-m-rt = "0.6.13"
 bare-metal = "1.0.0"
 vcell = "0.1.x"
+
 
 [lib]
 name = "msp432p401r"
