@@ -14,7 +14,6 @@ cortex-m-rt = "0.6.13"
 bare-metal = "1.0.0"
 vcell = "0.1.x"
 
-
 [lib]
 name = "msp432p401r"
 path = "src/lib.rs"
