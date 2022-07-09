@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PCMCTL0_SPEC>> for R {
+impl From<crate::R<PCMCTL0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PCMCTL0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PCMCTL0_SPEC>> for W {
+impl From<crate::W<PCMCTL0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PCMCTL0_SPEC>) -> Self {
         W(writer)
     }
@@ -56,12 +58,9 @@ impl From<AMR_A> for u8 {
     }
 }
 #[doc = "Field `AMR` reader - Active Mode Request"]
-pub struct AMR_R(crate::FieldReader<u8, AMR_A>);
+pub type AMR_R = crate::FieldReader<u8, AMR_A>;
 impl AMR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        AMR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<AMR_A> {
         match self.bits {
@@ -77,51 +76,37 @@ impl AMR_R {
     #[doc = "Checks if the value of the field is `AMR_0`"]
     #[inline(always)]
     pub fn is_amr_0(&self) -> bool {
-        **self == AMR_A::AMR_0
+        *self == AMR_A::AMR_0
     }
     #[doc = "Checks if the value of the field is `AMR_1`"]
     #[inline(always)]
     pub fn is_amr_1(&self) -> bool {
-        **self == AMR_A::AMR_1
+        *self == AMR_A::AMR_1
     }
     #[doc = "Checks if the value of the field is `AMR_4`"]
     #[inline(always)]
     pub fn is_amr_4(&self) -> bool {
-        **self == AMR_A::AMR_4
+        *self == AMR_A::AMR_4
     }
     #[doc = "Checks if the value of the field is `AMR_5`"]
     #[inline(always)]
     pub fn is_amr_5(&self) -> bool {
-        **self == AMR_A::AMR_5
+        *self == AMR_A::AMR_5
     }
     #[doc = "Checks if the value of the field is `AMR_8`"]
     #[inline(always)]
     pub fn is_amr_8(&self) -> bool {
-        **self == AMR_A::AMR_8
+        *self == AMR_A::AMR_8
     }
     #[doc = "Checks if the value of the field is `AMR_9`"]
     #[inline(always)]
     pub fn is_amr_9(&self) -> bool {
-        **self == AMR_A::AMR_9
-    }
-}
-impl core::ops::Deref for AMR_R {
-    type Target = crate::FieldReader<u8, AMR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AMR_A::AMR_9
     }
 }
 #[doc = "Field `AMR` writer - Active Mode Request"]
-pub struct AMR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AMR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AMR_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type AMR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCMCTL0_SPEC, u8, AMR_A, 4, O>;
+impl<'a, const O: u8> AMR_W<'a, O> {
     #[doc = "LDO based Active Mode at Core voltage setting 0."]
     #[inline(always)]
     pub fn amr_0(self) -> &'a mut W {
@@ -152,12 +137,6 @@ impl<'a> AMR_W<'a> {
     pub fn amr_9(self) -> &'a mut W {
         self.variant(AMR_A::AMR_9)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
 #[doc = "Low Power Mode Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -177,12 +156,9 @@ impl From<LPMR_A> for u8 {
     }
 }
 #[doc = "Field `LPMR` reader - Low Power Mode Request"]
-pub struct LPMR_R(crate::FieldReader<u8, LPMR_A>);
+pub type LPMR_R = crate::FieldReader<u8, LPMR_A>;
 impl LPMR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LPMR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LPMR_A> {
         match self.bits {
@@ -195,36 +171,22 @@ impl LPMR_R {
     #[doc = "Checks if the value of the field is `LPMR_0`"]
     #[inline(always)]
     pub fn is_lpmr_0(&self) -> bool {
-        **self == LPMR_A::LPMR_0
+        *self == LPMR_A::LPMR_0
     }
     #[doc = "Checks if the value of the field is `LPMR_10`"]
     #[inline(always)]
     pub fn is_lpmr_10(&self) -> bool {
-        **self == LPMR_A::LPMR_10
+        *self == LPMR_A::LPMR_10
     }
     #[doc = "Checks if the value of the field is `LPMR_12`"]
     #[inline(always)]
     pub fn is_lpmr_12(&self) -> bool {
-        **self == LPMR_A::LPMR_12
-    }
-}
-impl core::ops::Deref for LPMR_R {
-    type Target = crate::FieldReader<u8, LPMR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LPMR_A::LPMR_12
     }
 }
 #[doc = "Field `LPMR` writer - Low Power Mode Request"]
-pub struct LPMR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPMR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LPMR_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type LPMR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCMCTL0_SPEC, u8, LPMR_A, 4, O>;
+impl<'a, const O: u8> LPMR_W<'a, O> {
     #[doc = "LPM3. Core voltage setting is similar to the mode from which LPM3 is entered."]
     #[inline(always)]
     pub fn lpmr_0(self) -> &'a mut W {
@@ -239,12 +201,6 @@ impl<'a> LPMR_W<'a> {
     #[inline(always)]
     pub fn lpmr_12(self) -> &'a mut W {
         self.variant(LPMR_A::LPMR_12)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
     }
 }
 #[doc = "Current Power Mode\n\nValue on reset: 0"]
@@ -285,12 +241,9 @@ impl From<CPM_A> for u8 {
     }
 }
 #[doc = "Field `CPM` reader - Current Power Mode"]
-pub struct CPM_R(crate::FieldReader<u8, CPM_A>);
+pub type CPM_R = crate::FieldReader<u8, CPM_A>;
 impl CPM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CPM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CPM_A> {
         match self.bits {
@@ -313,102 +266,73 @@ impl CPM_R {
     #[doc = "Checks if the value of the field is `CPM_0`"]
     #[inline(always)]
     pub fn is_cpm_0(&self) -> bool {
-        **self == CPM_A::CPM_0
+        *self == CPM_A::CPM_0
     }
     #[doc = "Checks if the value of the field is `CPM_1`"]
     #[inline(always)]
     pub fn is_cpm_1(&self) -> bool {
-        **self == CPM_A::CPM_1
+        *self == CPM_A::CPM_1
     }
     #[doc = "Checks if the value of the field is `CPM_4`"]
     #[inline(always)]
     pub fn is_cpm_4(&self) -> bool {
-        **self == CPM_A::CPM_4
+        *self == CPM_A::CPM_4
     }
     #[doc = "Checks if the value of the field is `CPM_5`"]
     #[inline(always)]
     pub fn is_cpm_5(&self) -> bool {
-        **self == CPM_A::CPM_5
+        *self == CPM_A::CPM_5
     }
     #[doc = "Checks if the value of the field is `CPM_8`"]
     #[inline(always)]
     pub fn is_cpm_8(&self) -> bool {
-        **self == CPM_A::CPM_8
+        *self == CPM_A::CPM_8
     }
     #[doc = "Checks if the value of the field is `CPM_9`"]
     #[inline(always)]
     pub fn is_cpm_9(&self) -> bool {
-        **self == CPM_A::CPM_9
+        *self == CPM_A::CPM_9
     }
     #[doc = "Checks if the value of the field is `CPM_16`"]
     #[inline(always)]
     pub fn is_cpm_16(&self) -> bool {
-        **self == CPM_A::CPM_16
+        *self == CPM_A::CPM_16
     }
     #[doc = "Checks if the value of the field is `CPM_17`"]
     #[inline(always)]
     pub fn is_cpm_17(&self) -> bool {
-        **self == CPM_A::CPM_17
+        *self == CPM_A::CPM_17
     }
     #[doc = "Checks if the value of the field is `CPM_20`"]
     #[inline(always)]
     pub fn is_cpm_20(&self) -> bool {
-        **self == CPM_A::CPM_20
+        *self == CPM_A::CPM_20
     }
     #[doc = "Checks if the value of the field is `CPM_21`"]
     #[inline(always)]
     pub fn is_cpm_21(&self) -> bool {
-        **self == CPM_A::CPM_21
+        *self == CPM_A::CPM_21
     }
     #[doc = "Checks if the value of the field is `CPM_24`"]
     #[inline(always)]
     pub fn is_cpm_24(&self) -> bool {
-        **self == CPM_A::CPM_24
+        *self == CPM_A::CPM_24
     }
     #[doc = "Checks if the value of the field is `CPM_25`"]
     #[inline(always)]
     pub fn is_cpm_25(&self) -> bool {
-        **self == CPM_A::CPM_25
+        *self == CPM_A::CPM_25
     }
     #[doc = "Checks if the value of the field is `CPM_32`"]
     #[inline(always)]
     pub fn is_cpm_32(&self) -> bool {
-        **self == CPM_A::CPM_32
-    }
-}
-impl core::ops::Deref for CPM_R {
-    type Target = crate::FieldReader<u8, CPM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CPM_A::CPM_32
     }
 }
 #[doc = "Field `PCMKEY` reader - PCM key"]
-pub struct PCMKEY_R(crate::FieldReader<u16, u16>);
-impl PCMKEY_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PCMKEY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PCMKEY_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PCMKEY_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PCMKEY` writer - PCM key"]
-pub struct PCMKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCMKEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type PCMKEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCMCTL0_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:3 - Active Mode Request"]
     #[inline(always)]
@@ -434,20 +358,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Active Mode Request"]
     #[inline(always)]
-    pub fn amr(&mut self) -> AMR_W {
-        AMR_W { w: self }
+    pub fn amr(&mut self) -> AMR_W<0> {
+        AMR_W::new(self)
     }
     #[doc = "Bits 4:7 - Low Power Mode Request"]
     #[inline(always)]
-    pub fn lpmr(&mut self) -> LPMR_W {
-        LPMR_W { w: self }
+    pub fn lpmr(&mut self) -> LPMR_W<4> {
+        LPMR_W::new(self)
     }
     #[doc = "Bits 16:31 - PCM key"]
     #[inline(always)]
-    pub fn pcmkey(&mut self) -> PCMKEY_W {
-        PCMKEY_W { w: self }
+    pub fn pcmkey(&mut self) -> PCMKEY_W<16> {
+        PCMKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCBXADDMASK_SPEC>> for R {
+impl From<crate::R<UCBXADDMASK_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCBXADDMASK_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,17 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCBXADDMASK_SPEC>> for W {
+impl From<crate::W<UCBXADDMASK_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCBXADDMASK_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `ADDMASK` reader - Address Mask Register. By clearing the corresponding bit of the own address, this bit is a don't care when comparing the address on the bus to the own address. Using this method, it is possible to react on more than one slave address. When all bits of ADDMASKx are set, the address mask feature is deactivated. Modify only when UCSWRST = 1."]
-pub struct ADDMASK_R(crate::FieldReader<u16, u16>);
-impl ADDMASK_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        ADDMASK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDMASK_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDMASK_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ADDMASK` writer - Address Mask Register. By clearing the corresponding bit of the own address, this bit is a don't care when comparing the address on the bus to the own address. Using this method, it is possible to react on more than one slave address. When all bits of ADDMASKx are set, the address mask feature is deactivated. Modify only when UCSWRST = 1."]
-pub struct ADDMASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDMASK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u16 & 0x03ff);
-        self.w
-    }
-}
+pub type ADDMASK_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u16, UCBXADDMASK_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:9 - Address Mask Register. By clearing the corresponding bit of the own address, this bit is a don't care when comparing the address on the bus to the own address. Using this method, it is possible to react on more than one slave address. When all bits of ADDMASKx are set, the address mask feature is deactivated. Modify only when UCSWRST = 1."]
     #[inline(always)]
@@ -68,10 +49,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Address Mask Register. By clearing the corresponding bit of the own address, this bit is a don't care when comparing the address on the bus to the own address. Using this method, it is possible to react on more than one slave address. When all bits of ADDMASKx are set, the address mask feature is deactivated. Modify only when UCSWRST = 1."]
     #[inline(always)]
-    pub fn addmask(&mut self) -> ADDMASK_W {
-        ADDMASK_W { w: self }
+    pub fn addmask(&mut self) -> ADDMASK_W<0> {
+        ADDMASK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

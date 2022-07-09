@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PSSKEY_SPEC>> for R {
+impl From<crate::R<PSSKEY_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PSSKEY_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,16 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PSSKEY_SPEC>> for W {
+impl From<crate::W<PSSKEY_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PSSKEY_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `PSSKEY` reader - PSS control key"]
-pub struct PSSKEY_R(crate::FieldReader<u16, u16>);
-impl PSSKEY_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PSSKEY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PSSKEY_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PSSKEY_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PSSKEY` writer - PSS control key"]
-pub struct PSSKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSSKEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type PSSKEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PSSKEY_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - PSS control key"]
     #[inline(always)]
@@ -68,10 +48,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - PSS control key"]
     #[inline(always)]
-    pub fn psskey(&mut self) -> PSSKEY_W {
-        PSSKEY_W { w: self }
+    pub fn psskey(&mut self) -> PSSKEY_W<0> {
+        PSSKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

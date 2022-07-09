@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PEREN_SPEC>> for R {
+impl From<crate::R<PEREN_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PEREN_SPEC>) -> Self {
         R(reader)
     }
@@ -27,63 +28,20 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PEREN_SPEC>> for W {
+impl From<crate::W<PEREN_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PEREN_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `P9REN` reader - Port 9 Resistor Enable"]
-pub struct P9REN_R(crate::FieldReader<u8, u8>);
-impl P9REN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P9REN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P9REN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P9REN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P9REN` writer - Port 9 Resistor Enable"]
-pub struct P9REN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P9REN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
-        self.w
-    }
-}
+pub type P9REN_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PEREN_SPEC, u8, u8, 8, O>;
 #[doc = "Field `P10REN` reader - Port 10 Resistor Enable"]
-pub struct P10REN_R(crate::FieldReader<u8, u8>);
-impl P10REN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P10REN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P10REN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P10REN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P10REN` writer - Port 10 Resistor Enable"]
-pub struct P10REN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P10REN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
-        self.w
-    }
-}
+pub type P10REN_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PEREN_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Port 9 Resistor Enable"]
     #[inline(always)]
@@ -99,15 +57,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Port 9 Resistor Enable"]
     #[inline(always)]
-    pub fn p9ren(&mut self) -> P9REN_W {
-        P9REN_W { w: self }
+    pub fn p9ren(&mut self) -> P9REN_W<0> {
+        P9REN_W::new(self)
     }
     #[doc = "Bits 8:15 - Port 10 Resistor Enable"]
     #[inline(always)]
-    pub fn p10ren(&mut self) -> P10REN_W {
-        P10REN_W { w: self }
+    pub fn p10ren(&mut self) -> P10REN_W<8> {
+        P10REN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

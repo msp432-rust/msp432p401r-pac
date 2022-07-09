@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCAXBRW_SPEC>> for R {
+impl From<crate::R<UCAXBRW_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCAXBRW_SPEC>) -> Self {
         R(reader)
     }
@@ -27,51 +28,31 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCAXBRW_SPEC>> for W {
+impl From<crate::W<UCAXBRW_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCAXBRW_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `UCBR` reader - Clock prescaler setting of the Baud rate generator"]
-pub struct UCBR_R(crate::FieldReader<u16, u16>);
-impl UCBR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        UCBR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCBR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCBR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `UCBR` writer - Clock prescaler setting of the Baud rate generator"]
-pub struct UCBR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCBR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
-        self.w
-    }
-}
+pub type UCBR_W<'a, const O: u8> = crate::FieldWriter<'a, u16, UCAXBRW_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Clock prescaler setting of the Baud rate generator"]
     #[inline(always)]
     pub fn ucbr(&self) -> UCBR_R {
-        UCBR_R::new((self.bits & 0xffff) as u16)
+        UCBR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Clock prescaler setting of the Baud rate generator"]
     #[inline(always)]
-    pub fn ucbr(&mut self) -> UCBR_W {
-        UCBR_W { w: self }
+    pub fn ucbr(&mut self) -> UCBR_W<0> {
+        UCBR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

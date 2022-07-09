@@ -7,39 +7,16 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_MASSERASE_TIMCTL_SPEC>> for R {
+impl From<crate::R<FLCTL_MASSERASE_TIMCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_MASSERASE_TIMCTL_SPEC>) -> Self {
         R(reader)
     }
 }
 #[doc = "Field `BOOST_ACTIVE` reader - Length of the time for which LDO Boost Signal is kept active"]
-pub struct BOOST_ACTIVE_R(crate::FieldReader<u8, u8>);
-impl BOOST_ACTIVE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BOOST_ACTIVE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BOOST_ACTIVE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BOOST_ACTIVE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BOOST_HOLD` reader - Length for which Flash deactivates the LDO Boost signal before processing any new commands"]
-pub struct BOOST_HOLD_R(crate::FieldReader<u8, u8>);
-impl BOOST_HOLD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BOOST_HOLD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BOOST_HOLD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BOOST_HOLD_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Length of the time for which LDO Boost Signal is kept active"]
     #[inline(always)]

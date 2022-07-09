@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RSTCTL_RESET_REQ_SPEC>> for R {
+impl From<crate::R<RSTCTL_RESET_REQ_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RSTCTL_RESET_REQ_SPEC>) -> Self {
         R(reader)
     }
@@ -27,84 +28,37 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RSTCTL_RESET_REQ_SPEC>> for W {
+impl From<crate::W<RSTCTL_RESET_REQ_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RSTCTL_RESET_REQ_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `SOFT_REQ` writer - Soft Reset request"]
-pub struct SOFT_REQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOFT_REQ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SOFT_REQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_RESET_REQ_SPEC, bool, O>;
 #[doc = "Field `HARD_REQ` writer - Hard Reset request"]
-pub struct HARD_REQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HARD_REQ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type HARD_REQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_RESET_REQ_SPEC, bool, O>;
 #[doc = "Field `RSTKEY` writer - Write key to unlock reset request bits"]
-pub struct RSTKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSTKEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type RSTKEY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RSTCTL_RESET_REQ_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bit 0 - Soft Reset request"]
     #[inline(always)]
-    pub fn soft_req(&mut self) -> SOFT_REQ_W {
-        SOFT_REQ_W { w: self }
+    pub fn soft_req(&mut self) -> SOFT_REQ_W<0> {
+        SOFT_REQ_W::new(self)
     }
     #[doc = "Bit 1 - Hard Reset request"]
     #[inline(always)]
-    pub fn hard_req(&mut self) -> HARD_REQ_W {
-        HARD_REQ_W { w: self }
+    pub fn hard_req(&mut self) -> HARD_REQ_W<1> {
+        HARD_REQ_W::new(self)
     }
     #[doc = "Bits 8:15 - Write key to unlock reset request bits"]
     #[inline(always)]
-    pub fn rstkey(&mut self) -> RSTKEY_W {
-        RSTKEY_W { w: self }
+    pub fn rstkey(&mut self) -> RSTKEY_W<8> {
+        RSTKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

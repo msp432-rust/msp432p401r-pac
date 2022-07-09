@@ -7,25 +7,14 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_BURSTPRG_TIMCTL_SPEC>> for R {
+impl From<crate::R<FLCTL_BURSTPRG_TIMCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_BURSTPRG_TIMCTL_SPEC>) -> Self {
         R(reader)
     }
 }
 #[doc = "Field `ACTIVE` reader - Length of the Active phase for this operation"]
-pub struct ACTIVE_R(crate::FieldReader<u32, u32>);
-impl ACTIVE_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        ACTIVE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTIVE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTIVE_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 8:27 - Length of the Active phase for this operation"]
     #[inline(always)]

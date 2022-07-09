@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_PRGBRST_STARTADDR_SPEC>> for R {
+impl From<crate::R<FLCTL_PRGBRST_STARTADDR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_PRGBRST_STARTADDR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,17 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FLCTL_PRGBRST_STARTADDR_SPEC>> for W {
+impl From<crate::W<FLCTL_PRGBRST_STARTADDR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FLCTL_PRGBRST_STARTADDR_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `START_ADDRESS` reader - Start Address of Program Burst Operation"]
-pub struct START_ADDRESS_R(crate::FieldReader<u32, u32>);
-impl START_ADDRESS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        START_ADDRESS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for START_ADDRESS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type START_ADDRESS_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `START_ADDRESS` writer - Start Address of Program Burst Operation"]
-pub struct START_ADDRESS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_ADDRESS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x003f_ffff) | (value as u32 & 0x003f_ffff);
-        self.w
-    }
-}
+pub type START_ADDRESS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FLCTL_PRGBRST_STARTADDR_SPEC, u32, u32, 22, O>;
 impl R {
     #[doc = "Bits 0:21 - Start Address of Program Burst Operation"]
     #[inline(always)]
@@ -68,10 +49,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:21 - Start Address of Program Burst Operation"]
     #[inline(always)]
-    pub fn start_address(&mut self) -> START_ADDRESS_W {
-        START_ADDRESS_W { w: self }
+    pub fn start_address(&mut self) -> START_ADDRESS_W<0> {
+        START_ADDRESS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

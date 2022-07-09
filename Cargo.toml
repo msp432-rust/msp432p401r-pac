@@ -1,6 +1,6 @@
 [package]
 name = "msp432p401r-pac"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Caio Tavares <caio.tavares11@gmail.com>", "José Cláudio S. Jr. <joseclaudio.silvajr@gmail.com>"]
 description = "MSP432P401R Peripheral Access API (PAC)"
 keywords = ["msp432p401r", "arm", "pac", "cortex-m4"]
@@ -9,8 +9,8 @@ license-file = "LICENSE"
 edition = "2018"
 
 [dependencies]
-cortex-m = "0.7.2"
-cortex-m-rt = "0.6.13"
+cortex-m = "0.7.5"
+cortex-m-rt = "0.7.1"
 bare-metal = "1.0.0"
 vcell = "0.1.x"
 

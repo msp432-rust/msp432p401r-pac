@@ -5,7 +5,7 @@ pub struct RegisterBlock {
     pub ucax_ctlw0: crate::Reg<ucax_ctlw0::UCAXCTLW0_SPEC>,
     #[doc = "0x02 - eUSCI_Ax Control Word Register 1"]
     pub ucax_ctlw1: crate::Reg<ucax_ctlw1::UCAXCTLW1_SPEC>,
-    _reserved2: [u8; 2usize],
+    _reserved2: [u8; 0x02],
     #[doc = "0x06 - eUSCI_Ax Baud Rate Control Word Register"]
     pub ucax_brw: crate::Reg<ucax_brw::UCAXBRW_SPEC>,
     #[doc = "0x08 - eUSCI_Ax Modulation Control Word Register"]
@@ -20,7 +20,7 @@ pub struct RegisterBlock {
     pub ucax_abctl: crate::Reg<ucax_abctl::UCAXABCTL_SPEC>,
     #[doc = "0x12 - eUSCI_Ax IrDA Control Word Register"]
     pub ucax_irctl: crate::Reg<ucax_irctl::UCAXIRCTL_SPEC>,
-    _reserved9: [u8; 6usize],
+    _reserved9: [u8; 0x06],
     #[doc = "0x1a - eUSCI_Ax Interrupt Enable Register"]
     pub ucax_ie: crate::Reg<ucax_ie::UCAXIE_SPEC>,
     #[doc = "0x1c - eUSCI_Ax Interrupt Flag Register"]

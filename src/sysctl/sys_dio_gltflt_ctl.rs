@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SYS_DIO_GLTFLT_CTL_SPEC>> for R {
+impl From<crate::R<SYS_DIO_GLTFLT_CTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SYS_DIO_GLTFLT_CTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SYS_DIO_GLTFLT_CTL_SPEC>> for W {
+impl From<crate::W<SYS_DIO_GLTFLT_CTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SYS_DIO_GLTFLT_CTL_SPEC>) -> Self {
         W(writer)
     }
@@ -47,12 +49,9 @@ impl From<GLTCH_EN_A> for bool {
     }
 }
 #[doc = "Field `GLTCH_EN` reader - Glitch filter enable"]
-pub struct GLTCH_EN_R(crate::FieldReader<bool, GLTCH_EN_A>);
+pub type GLTCH_EN_R = crate::BitReader<GLTCH_EN_A>;
 impl GLTCH_EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GLTCH_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GLTCH_EN_A {
         match self.bits {
@@ -63,31 +62,18 @@ impl GLTCH_EN_R {
     #[doc = "Checks if the value of the field is `GLTCH_EN_0`"]
     #[inline(always)]
     pub fn is_gltch_en_0(&self) -> bool {
-        **self == GLTCH_EN_A::GLTCH_EN_0
+        *self == GLTCH_EN_A::GLTCH_EN_0
     }
     #[doc = "Checks if the value of the field is `GLTCH_EN_1`"]
     #[inline(always)]
     pub fn is_gltch_en_1(&self) -> bool {
-        **self == GLTCH_EN_A::GLTCH_EN_1
-    }
-}
-impl core::ops::Deref for GLTCH_EN_R {
-    type Target = crate::FieldReader<bool, GLTCH_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GLTCH_EN_A::GLTCH_EN_1
     }
 }
 #[doc = "Field `GLTCH_EN` writer - Glitch filter enable"]
-pub struct GLTCH_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GLTCH_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GLTCH_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type GLTCH_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SYS_DIO_GLTFLT_CTL_SPEC, GLTCH_EN_A, O>;
+impl<'a, const O: u8> GLTCH_EN_W<'a, O> {
     #[doc = "Disables glitch filter on the digital I/Os"]
     #[inline(always)]
     pub fn gltch_en_0(self) -> &'a mut W {
@@ -98,37 +84,22 @@ impl<'a> GLTCH_EN_W<'a> {
     pub fn gltch_en_1(self) -> &'a mut W {
         self.variant(GLTCH_EN_A::GLTCH_EN_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Glitch filter enable"]
     #[inline(always)]
     pub fn gltch_en(&self) -> GLTCH_EN_R {
-        GLTCH_EN_R::new((self.bits & 0x01) != 0)
+        GLTCH_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Glitch filter enable"]
     #[inline(always)]
-    pub fn gltch_en(&mut self) -> GLTCH_EN_W {
-        GLTCH_EN_W { w: self }
+    pub fn gltch_en(&mut self) -> GLTCH_EN_W<0> {
+        GLTCH_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RSTCTL_SOFTRESET_CLR_SPEC>> for R {
+impl From<crate::R<RSTCTL_SOFTRESET_CLR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RSTCTL_SOFTRESET_CLR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,445 +28,127 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RSTCTL_SOFTRESET_CLR_SPEC>> for W {
+impl From<crate::W<RSTCTL_SOFTRESET_CLR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RSTCTL_SOFTRESET_CLR_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `SRC0` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SRC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC1` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type SRC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC2` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SRC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC3` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type SRC3_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC4` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type SRC4_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC5` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type SRC5_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC6` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type SRC6_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC7` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type SRC7_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC8` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC8_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type SRC8_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC9` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC9_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type SRC9_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC10` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC10_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type SRC10_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC11` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC11_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type SRC11_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC12` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC12_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type SRC12_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC13` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC13_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type SRC13_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC14` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC14_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type SRC14_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 #[doc = "Field `SRC15` writer - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
-pub struct SRC15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRC15_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type SRC15_W<'a, const O: u8> = crate::BitWriter<'a, u32, RSTCTL_SOFTRESET_CLR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src0(&mut self) -> SRC0_W {
-        SRC0_W { w: self }
+    pub fn src0(&mut self) -> SRC0_W<0> {
+        SRC0_W::new(self)
     }
     #[doc = "Bit 1 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src1(&mut self) -> SRC1_W {
-        SRC1_W { w: self }
+    pub fn src1(&mut self) -> SRC1_W<1> {
+        SRC1_W::new(self)
     }
     #[doc = "Bit 2 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src2(&mut self) -> SRC2_W {
-        SRC2_W { w: self }
+    pub fn src2(&mut self) -> SRC2_W<2> {
+        SRC2_W::new(self)
     }
     #[doc = "Bit 3 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src3(&mut self) -> SRC3_W {
-        SRC3_W { w: self }
+    pub fn src3(&mut self) -> SRC3_W<3> {
+        SRC3_W::new(self)
     }
     #[doc = "Bit 4 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src4(&mut self) -> SRC4_W {
-        SRC4_W { w: self }
+    pub fn src4(&mut self) -> SRC4_W<4> {
+        SRC4_W::new(self)
     }
     #[doc = "Bit 5 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src5(&mut self) -> SRC5_W {
-        SRC5_W { w: self }
+    pub fn src5(&mut self) -> SRC5_W<5> {
+        SRC5_W::new(self)
     }
     #[doc = "Bit 6 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src6(&mut self) -> SRC6_W {
-        SRC6_W { w: self }
+    pub fn src6(&mut self) -> SRC6_W<6> {
+        SRC6_W::new(self)
     }
     #[doc = "Bit 7 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src7(&mut self) -> SRC7_W {
-        SRC7_W { w: self }
+    pub fn src7(&mut self) -> SRC7_W<7> {
+        SRC7_W::new(self)
     }
     #[doc = "Bit 8 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src8(&mut self) -> SRC8_W {
-        SRC8_W { w: self }
+    pub fn src8(&mut self) -> SRC8_W<8> {
+        SRC8_W::new(self)
     }
     #[doc = "Bit 9 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src9(&mut self) -> SRC9_W {
-        SRC9_W { w: self }
+    pub fn src9(&mut self) -> SRC9_W<9> {
+        SRC9_W::new(self)
     }
     #[doc = "Bit 10 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src10(&mut self) -> SRC10_W {
-        SRC10_W { w: self }
+    pub fn src10(&mut self) -> SRC10_W<10> {
+        SRC10_W::new(self)
     }
     #[doc = "Bit 11 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src11(&mut self) -> SRC11_W {
-        SRC11_W { w: self }
+    pub fn src11(&mut self) -> SRC11_W<11> {
+        SRC11_W::new(self)
     }
     #[doc = "Bit 12 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src12(&mut self) -> SRC12_W {
-        SRC12_W { w: self }
+    pub fn src12(&mut self) -> SRC12_W<12> {
+        SRC12_W::new(self)
     }
     #[doc = "Bit 13 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src13(&mut self) -> SRC13_W {
-        SRC13_W { w: self }
+    pub fn src13(&mut self) -> SRC13_W<13> {
+        SRC13_W::new(self)
     }
     #[doc = "Bit 14 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src14(&mut self) -> SRC14_W {
-        SRC14_W { w: self }
+    pub fn src14(&mut self) -> SRC14_W<14> {
+        SRC14_W::new(self)
     }
     #[doc = "Bit 15 - Write 1 clears the corresponding bit in the RSTCTL_SOFTRESET_STAT"]
     #[inline(always)]
-    pub fn src15(&mut self) -> SRC15_W {
-        SRC15_W { w: self }
+    pub fn src15(&mut self) -> SRC15_W<15> {
+        SRC15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PDSELC_SPEC>> for R {
+impl From<crate::R<PDSELC_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PDSELC_SPEC>) -> Self {
         R(reader)
     }
@@ -27,63 +28,20 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PDSELC_SPEC>> for W {
+impl From<crate::W<PDSELC_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PDSELC_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `P7SELC` reader - Port 7 Complement Select"]
-pub struct P7SELC_R(crate::FieldReader<u8, u8>);
-impl P7SELC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P7SELC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P7SELC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P7SELC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P7SELC` writer - Port 7 Complement Select"]
-pub struct P7SELC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P7SELC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
-        self.w
-    }
-}
+pub type P7SELC_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PDSELC_SPEC, u8, u8, 8, O>;
 #[doc = "Field `P8SELC` reader - Port 8 Complement Select"]
-pub struct P8SELC_R(crate::FieldReader<u8, u8>);
-impl P8SELC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P8SELC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P8SELC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P8SELC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P8SELC` writer - Port 8 Complement Select"]
-pub struct P8SELC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P8SELC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
-        self.w
-    }
-}
+pub type P8SELC_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PDSELC_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Port 7 Complement Select"]
     #[inline(always)]
@@ -99,15 +57,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Port 7 Complement Select"]
     #[inline(always)]
-    pub fn p7selc(&mut self) -> P7SELC_W {
-        P7SELC_W { w: self }
+    pub fn p7selc(&mut self) -> P7SELC_W<0> {
+        P7SELC_W::new(self)
     }
     #[doc = "Bits 8:15 - Port 8 Complement Select"]
     #[inline(always)]
-    pub fn p8selc(&mut self) -> P8SELC_W {
-        P8SELC_W { w: self }
+    pub fn p8selc(&mut self) -> P8SELC_W<8> {
+        P8SELC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

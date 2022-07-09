@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RTCDATE_SPEC>> for R {
+impl From<crate::R<RTCDATE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RTCDATE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,63 +28,20 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RTCDATE_SPEC>> for W {
+impl From<crate::W<RTCDATE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RTCDATE_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `Day` reader - Day of month (1 to 28, 29, 30, 31)"]
-pub struct DAY_R(crate::FieldReader<u8, u8>);
-impl DAY_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DAY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Day` writer - Day of month (1 to 28, 29, 30, 31)"]
-pub struct DAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u16 & 0x1f);
-        self.w
-    }
-}
+pub type DAY_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCDATE_SPEC, u8, u8, 5, O>;
 #[doc = "Field `Month` reader - Month (1 to 12)"]
-pub struct MONTH_R(crate::FieldReader<u8, u8>);
-impl MONTH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MONTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MONTH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MONTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Month` writer - Month (1 to 12)"]
-pub struct MONTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MONTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u16 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type MONTH_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCDATE_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:4 - Day of month (1 to 28, 29, 30, 31)"]
     #[inline(always)]
@@ -99,15 +57,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Day of month (1 to 28, 29, 30, 31)"]
     #[inline(always)]
-    pub fn day(&mut self) -> DAY_W {
-        DAY_W { w: self }
+    pub fn day(&mut self) -> DAY_W<0> {
+        DAY_W::new(self)
     }
     #[doc = "Bits 8:11 - Month (1 to 12)"]
     #[inline(always)]
-    pub fn month(&mut self) -> MONTH_W {
-        MONTH_W { w: self }
+    pub fn month(&mut self) -> MONTH_W<8> {
+        MONTH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

@@ -13,229 +13,71 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FLCTL_CLRIFG_SPEC>> for W {
+impl From<crate::W<FLCTL_CLRIFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FLCTL_CLRIFG_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `RDBRST` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
-pub struct RDBRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RDBRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RDBRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_CLRIFG_SPEC, bool, O>;
 #[doc = "Field `AVPRE` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
-pub struct AVPRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AVPRE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type AVPRE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_CLRIFG_SPEC, bool, O>;
 #[doc = "Field `AVPST` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
-pub struct AVPST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AVPST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type AVPST_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_CLRIFG_SPEC, bool, O>;
 #[doc = "Field `PRG` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
-pub struct PRG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type PRG_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_CLRIFG_SPEC, bool, O>;
 #[doc = "Field `PRGB` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
-pub struct PRGB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRGB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type PRGB_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_CLRIFG_SPEC, bool, O>;
 #[doc = "Field `ERASE` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
-pub struct ERASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_CLRIFG_SPEC, bool, O>;
 #[doc = "Field `BMRK` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
-pub struct BMRK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BMRK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type BMRK_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_CLRIFG_SPEC, bool, O>;
 #[doc = "Field `PRG_ERR` writer - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
-pub struct PRG_ERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRG_ERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type PRG_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_CLRIFG_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn rdbrst(&mut self) -> RDBRST_W {
-        RDBRST_W { w: self }
+    pub fn rdbrst(&mut self) -> RDBRST_W<0> {
+        RDBRST_W::new(self)
     }
     #[doc = "Bit 1 - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn avpre(&mut self) -> AVPRE_W {
-        AVPRE_W { w: self }
+    pub fn avpre(&mut self) -> AVPRE_W<1> {
+        AVPRE_W::new(self)
     }
     #[doc = "Bit 2 - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn avpst(&mut self) -> AVPST_W {
-        AVPST_W { w: self }
+    pub fn avpst(&mut self) -> AVPST_W<2> {
+        AVPST_W::new(self)
     }
     #[doc = "Bit 3 - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn prg(&mut self) -> PRG_W {
-        PRG_W { w: self }
+    pub fn prg(&mut self) -> PRG_W<3> {
+        PRG_W::new(self)
     }
     #[doc = "Bit 4 - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn prgb(&mut self) -> PRGB_W {
-        PRGB_W { w: self }
+    pub fn prgb(&mut self) -> PRGB_W<4> {
+        PRGB_W::new(self)
     }
     #[doc = "Bit 5 - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
-        ERASE_W { w: self }
+    pub fn erase(&mut self) -> ERASE_W<5> {
+        ERASE_W::new(self)
     }
     #[doc = "Bit 8 - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn bmrk(&mut self) -> BMRK_W {
-        BMRK_W { w: self }
+    pub fn bmrk(&mut self) -> BMRK_W<8> {
+        BMRK_W::new(self)
     }
     #[doc = "Bit 9 - Write 1 clears the corresponding interrupt flag bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn prg_err(&mut self) -> PRG_ERR_W {
-        PRG_ERR_W { w: self }
+    pub fn prg_err(&mut self) -> PRG_ERR_W<9> {
+        PRG_ERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

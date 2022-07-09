@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ADC14MCTL_SPEC>> for R {
+impl From<crate::R<ADC14MCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ADC14MCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ADC14MCTL_SPEC>> for W {
+impl From<crate::W<ADC14MCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ADC14MCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -108,12 +110,9 @@ impl From<ADC14INCH_A> for u8 {
     }
 }
 #[doc = "Field `ADC14INCH` reader - Input channel select"]
-pub struct ADC14INCH_R(crate::FieldReader<u8, ADC14INCH_A>);
+pub type ADC14INCH_R = crate::FieldReader<u8, ADC14INCH_A>;
 impl ADC14INCH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ADC14INCH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14INCH_A {
         match self.bits {
@@ -155,181 +154,168 @@ impl ADC14INCH_R {
     #[doc = "Checks if the value of the field is `ADC14INCH_0`"]
     #[inline(always)]
     pub fn is_adc14inch_0(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_0
+        *self == ADC14INCH_A::ADC14INCH_0
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_1`"]
     #[inline(always)]
     pub fn is_adc14inch_1(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_1
+        *self == ADC14INCH_A::ADC14INCH_1
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_2`"]
     #[inline(always)]
     pub fn is_adc14inch_2(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_2
+        *self == ADC14INCH_A::ADC14INCH_2
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_3`"]
     #[inline(always)]
     pub fn is_adc14inch_3(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_3
+        *self == ADC14INCH_A::ADC14INCH_3
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_4`"]
     #[inline(always)]
     pub fn is_adc14inch_4(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_4
+        *self == ADC14INCH_A::ADC14INCH_4
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_5`"]
     #[inline(always)]
     pub fn is_adc14inch_5(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_5
+        *self == ADC14INCH_A::ADC14INCH_5
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_6`"]
     #[inline(always)]
     pub fn is_adc14inch_6(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_6
+        *self == ADC14INCH_A::ADC14INCH_6
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_7`"]
     #[inline(always)]
     pub fn is_adc14inch_7(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_7
+        *self == ADC14INCH_A::ADC14INCH_7
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_8`"]
     #[inline(always)]
     pub fn is_adc14inch_8(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_8
+        *self == ADC14INCH_A::ADC14INCH_8
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_9`"]
     #[inline(always)]
     pub fn is_adc14inch_9(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_9
+        *self == ADC14INCH_A::ADC14INCH_9
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_10`"]
     #[inline(always)]
     pub fn is_adc14inch_10(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_10
+        *self == ADC14INCH_A::ADC14INCH_10
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_11`"]
     #[inline(always)]
     pub fn is_adc14inch_11(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_11
+        *self == ADC14INCH_A::ADC14INCH_11
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_12`"]
     #[inline(always)]
     pub fn is_adc14inch_12(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_12
+        *self == ADC14INCH_A::ADC14INCH_12
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_13`"]
     #[inline(always)]
     pub fn is_adc14inch_13(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_13
+        *self == ADC14INCH_A::ADC14INCH_13
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_14`"]
     #[inline(always)]
     pub fn is_adc14inch_14(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_14
+        *self == ADC14INCH_A::ADC14INCH_14
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_15`"]
     #[inline(always)]
     pub fn is_adc14inch_15(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_15
+        *self == ADC14INCH_A::ADC14INCH_15
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_16`"]
     #[inline(always)]
     pub fn is_adc14inch_16(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_16
+        *self == ADC14INCH_A::ADC14INCH_16
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_17`"]
     #[inline(always)]
     pub fn is_adc14inch_17(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_17
+        *self == ADC14INCH_A::ADC14INCH_17
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_18`"]
     #[inline(always)]
     pub fn is_adc14inch_18(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_18
+        *self == ADC14INCH_A::ADC14INCH_18
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_19`"]
     #[inline(always)]
     pub fn is_adc14inch_19(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_19
+        *self == ADC14INCH_A::ADC14INCH_19
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_20`"]
     #[inline(always)]
     pub fn is_adc14inch_20(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_20
+        *self == ADC14INCH_A::ADC14INCH_20
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_21`"]
     #[inline(always)]
     pub fn is_adc14inch_21(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_21
+        *self == ADC14INCH_A::ADC14INCH_21
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_22`"]
     #[inline(always)]
     pub fn is_adc14inch_22(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_22
+        *self == ADC14INCH_A::ADC14INCH_22
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_23`"]
     #[inline(always)]
     pub fn is_adc14inch_23(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_23
+        *self == ADC14INCH_A::ADC14INCH_23
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_24`"]
     #[inline(always)]
     pub fn is_adc14inch_24(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_24
+        *self == ADC14INCH_A::ADC14INCH_24
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_25`"]
     #[inline(always)]
     pub fn is_adc14inch_25(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_25
+        *self == ADC14INCH_A::ADC14INCH_25
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_26`"]
     #[inline(always)]
     pub fn is_adc14inch_26(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_26
+        *self == ADC14INCH_A::ADC14INCH_26
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_27`"]
     #[inline(always)]
     pub fn is_adc14inch_27(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_27
+        *self == ADC14INCH_A::ADC14INCH_27
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_28`"]
     #[inline(always)]
     pub fn is_adc14inch_28(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_28
+        *self == ADC14INCH_A::ADC14INCH_28
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_29`"]
     #[inline(always)]
     pub fn is_adc14inch_29(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_29
+        *self == ADC14INCH_A::ADC14INCH_29
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_30`"]
     #[inline(always)]
     pub fn is_adc14inch_30(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_30
+        *self == ADC14INCH_A::ADC14INCH_30
     }
     #[doc = "Checks if the value of the field is `ADC14INCH_31`"]
     #[inline(always)]
     pub fn is_adc14inch_31(&self) -> bool {
-        **self == ADC14INCH_A::ADC14INCH_31
-    }
-}
-impl core::ops::Deref for ADC14INCH_R {
-    type Target = crate::FieldReader<u8, ADC14INCH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14INCH_A::ADC14INCH_31
     }
 }
 #[doc = "Field `ADC14INCH` writer - Input channel select"]
-pub struct ADC14INCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14INCH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14INCH_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ADC14INCH_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, ADC14MCTL_SPEC, u8, ADC14INCH_A, 5, O>;
+impl<'a, const O: u8> ADC14INCH_W<'a, O> {
     #[doc = "If ADC14DIF = 0: A0; If ADC14DIF = 1: Ain+ = A0, Ain- = A1"]
     #[inline(always)]
     pub fn adc14inch_0(self) -> &'a mut W {
@@ -490,12 +476,6 @@ impl<'a> ADC14INCH_W<'a> {
     pub fn adc14inch_31(self) -> &'a mut W {
         self.variant(ADC14INCH_A::ADC14INCH_31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
 }
 #[doc = "End of sequence\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -512,12 +492,9 @@ impl From<ADC14EOS_A> for bool {
     }
 }
 #[doc = "Field `ADC14EOS` reader - End of sequence"]
-pub struct ADC14EOS_R(crate::FieldReader<bool, ADC14EOS_A>);
+pub type ADC14EOS_R = crate::BitReader<ADC14EOS_A>;
 impl ADC14EOS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC14EOS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14EOS_A {
         match self.bits {
@@ -528,31 +505,17 @@ impl ADC14EOS_R {
     #[doc = "Checks if the value of the field is `ADC14EOS_0`"]
     #[inline(always)]
     pub fn is_adc14eos_0(&self) -> bool {
-        **self == ADC14EOS_A::ADC14EOS_0
+        *self == ADC14EOS_A::ADC14EOS_0
     }
     #[doc = "Checks if the value of the field is `ADC14EOS_1`"]
     #[inline(always)]
     pub fn is_adc14eos_1(&self) -> bool {
-        **self == ADC14EOS_A::ADC14EOS_1
-    }
-}
-impl core::ops::Deref for ADC14EOS_R {
-    type Target = crate::FieldReader<bool, ADC14EOS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14EOS_A::ADC14EOS_1
     }
 }
 #[doc = "Field `ADC14EOS` writer - End of sequence"]
-pub struct ADC14EOS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14EOS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14EOS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADC14EOS_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC14MCTL_SPEC, ADC14EOS_A, O>;
+impl<'a, const O: u8> ADC14EOS_W<'a, O> {
     #[doc = "Not end of sequence"]
     #[inline(always)]
     pub fn adc14eos_0(self) -> &'a mut W {
@@ -562,22 +525,6 @@ impl<'a> ADC14EOS_W<'a> {
     #[inline(always)]
     pub fn adc14eos_1(self) -> &'a mut W {
         self.variant(ADC14EOS_A::ADC14EOS_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
     }
 }
 #[doc = "Selects combinations of V(R+) and V(R-) sources\n\nValue on reset: 0"]
@@ -600,12 +547,9 @@ impl From<ADC14VRSEL_A> for u8 {
     }
 }
 #[doc = "Field `ADC14VRSEL` reader - Selects combinations of V(R+) and V(R-) sources"]
-pub struct ADC14VRSEL_R(crate::FieldReader<u8, ADC14VRSEL_A>);
+pub type ADC14VRSEL_R = crate::FieldReader<u8, ADC14VRSEL_A>;
 impl ADC14VRSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ADC14VRSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ADC14VRSEL_A> {
         match self.bits {
@@ -619,41 +563,28 @@ impl ADC14VRSEL_R {
     #[doc = "Checks if the value of the field is `ADC14VRSEL_0`"]
     #[inline(always)]
     pub fn is_adc14vrsel_0(&self) -> bool {
-        **self == ADC14VRSEL_A::ADC14VRSEL_0
+        *self == ADC14VRSEL_A::ADC14VRSEL_0
     }
     #[doc = "Checks if the value of the field is `ADC14VRSEL_1`"]
     #[inline(always)]
     pub fn is_adc14vrsel_1(&self) -> bool {
-        **self == ADC14VRSEL_A::ADC14VRSEL_1
+        *self == ADC14VRSEL_A::ADC14VRSEL_1
     }
     #[doc = "Checks if the value of the field is `ADC14VRSEL_14`"]
     #[inline(always)]
     pub fn is_adc14vrsel_14(&self) -> bool {
-        **self == ADC14VRSEL_A::ADC14VRSEL_14
+        *self == ADC14VRSEL_A::ADC14VRSEL_14
     }
     #[doc = "Checks if the value of the field is `ADC14VRSEL_15`"]
     #[inline(always)]
     pub fn is_adc14vrsel_15(&self) -> bool {
-        **self == ADC14VRSEL_A::ADC14VRSEL_15
-    }
-}
-impl core::ops::Deref for ADC14VRSEL_R {
-    type Target = crate::FieldReader<u8, ADC14VRSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14VRSEL_A::ADC14VRSEL_15
     }
 }
 #[doc = "Field `ADC14VRSEL` writer - Selects combinations of V(R+) and V(R-) sources"]
-pub struct ADC14VRSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14VRSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14VRSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type ADC14VRSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ADC14MCTL_SPEC, u8, ADC14VRSEL_A, 4, O>;
+impl<'a, const O: u8> ADC14VRSEL_W<'a, O> {
     #[doc = "V(R+) = AVCC, V(R-) = AVSS"]
     #[inline(always)]
     pub fn adc14vrsel_0(self) -> &'a mut W {
@@ -674,12 +605,6 @@ impl<'a> ADC14VRSEL_W<'a> {
     pub fn adc14vrsel_15(self) -> &'a mut W {
         self.variant(ADC14VRSEL_A::ADC14VRSEL_15)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
 }
 #[doc = "Differential mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -696,12 +621,9 @@ impl From<ADC14DIF_A> for bool {
     }
 }
 #[doc = "Field `ADC14DIF` reader - Differential mode"]
-pub struct ADC14DIF_R(crate::FieldReader<bool, ADC14DIF_A>);
+pub type ADC14DIF_R = crate::BitReader<ADC14DIF_A>;
 impl ADC14DIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC14DIF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14DIF_A {
         match self.bits {
@@ -712,31 +634,17 @@ impl ADC14DIF_R {
     #[doc = "Checks if the value of the field is `ADC14DIF_0`"]
     #[inline(always)]
     pub fn is_adc14dif_0(&self) -> bool {
-        **self == ADC14DIF_A::ADC14DIF_0
+        *self == ADC14DIF_A::ADC14DIF_0
     }
     #[doc = "Checks if the value of the field is `ADC14DIF_1`"]
     #[inline(always)]
     pub fn is_adc14dif_1(&self) -> bool {
-        **self == ADC14DIF_A::ADC14DIF_1
-    }
-}
-impl core::ops::Deref for ADC14DIF_R {
-    type Target = crate::FieldReader<bool, ADC14DIF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14DIF_A::ADC14DIF_1
     }
 }
 #[doc = "Field `ADC14DIF` writer - Differential mode"]
-pub struct ADC14DIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14DIF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14DIF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADC14DIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC14MCTL_SPEC, ADC14DIF_A, O>;
+impl<'a, const O: u8> ADC14DIF_W<'a, O> {
     #[doc = "Single-ended mode enabled"]
     #[inline(always)]
     pub fn adc14dif_0(self) -> &'a mut W {
@@ -746,22 +654,6 @@ impl<'a> ADC14DIF_W<'a> {
     #[inline(always)]
     pub fn adc14dif_1(self) -> &'a mut W {
         self.variant(ADC14DIF_A::ADC14DIF_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
     }
 }
 #[doc = "Comparator window enable\n\nValue on reset: 0"]
@@ -779,12 +671,9 @@ impl From<ADC14WINC_A> for bool {
     }
 }
 #[doc = "Field `ADC14WINC` reader - Comparator window enable"]
-pub struct ADC14WINC_R(crate::FieldReader<bool, ADC14WINC_A>);
+pub type ADC14WINC_R = crate::BitReader<ADC14WINC_A>;
 impl ADC14WINC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC14WINC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14WINC_A {
         match self.bits {
@@ -795,31 +684,17 @@ impl ADC14WINC_R {
     #[doc = "Checks if the value of the field is `ADC14WINC_0`"]
     #[inline(always)]
     pub fn is_adc14winc_0(&self) -> bool {
-        **self == ADC14WINC_A::ADC14WINC_0
+        *self == ADC14WINC_A::ADC14WINC_0
     }
     #[doc = "Checks if the value of the field is `ADC14WINC_1`"]
     #[inline(always)]
     pub fn is_adc14winc_1(&self) -> bool {
-        **self == ADC14WINC_A::ADC14WINC_1
-    }
-}
-impl core::ops::Deref for ADC14WINC_R {
-    type Target = crate::FieldReader<bool, ADC14WINC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14WINC_A::ADC14WINC_1
     }
 }
 #[doc = "Field `ADC14WINC` writer - Comparator window enable"]
-pub struct ADC14WINC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14WINC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14WINC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADC14WINC_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC14MCTL_SPEC, ADC14WINC_A, O>;
+impl<'a, const O: u8> ADC14WINC_W<'a, O> {
     #[doc = "Comparator window disabled"]
     #[inline(always)]
     pub fn adc14winc_0(self) -> &'a mut W {
@@ -829,22 +704,6 @@ impl<'a> ADC14WINC_W<'a> {
     #[inline(always)]
     pub fn adc14winc_1(self) -> &'a mut W {
         self.variant(ADC14WINC_A::ADC14WINC_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
     }
 }
 #[doc = "Window comparator threshold register selection\n\nValue on reset: 0"]
@@ -862,12 +721,9 @@ impl From<ADC14WINCTH_A> for bool {
     }
 }
 #[doc = "Field `ADC14WINCTH` reader - Window comparator threshold register selection"]
-pub struct ADC14WINCTH_R(crate::FieldReader<bool, ADC14WINCTH_A>);
+pub type ADC14WINCTH_R = crate::BitReader<ADC14WINCTH_A>;
 impl ADC14WINCTH_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC14WINCTH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14WINCTH_A {
         match self.bits {
@@ -878,31 +734,18 @@ impl ADC14WINCTH_R {
     #[doc = "Checks if the value of the field is `ADC14WINCTH_0`"]
     #[inline(always)]
     pub fn is_adc14wincth_0(&self) -> bool {
-        **self == ADC14WINCTH_A::ADC14WINCTH_0
+        *self == ADC14WINCTH_A::ADC14WINCTH_0
     }
     #[doc = "Checks if the value of the field is `ADC14WINCTH_1`"]
     #[inline(always)]
     pub fn is_adc14wincth_1(&self) -> bool {
-        **self == ADC14WINCTH_A::ADC14WINCTH_1
-    }
-}
-impl core::ops::Deref for ADC14WINCTH_R {
-    type Target = crate::FieldReader<bool, ADC14WINCTH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14WINCTH_A::ADC14WINCTH_1
     }
 }
 #[doc = "Field `ADC14WINCTH` writer - Window comparator threshold register selection"]
-pub struct ADC14WINCTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14WINCTH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14WINCTH_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADC14WINCTH_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ADC14MCTL_SPEC, ADC14WINCTH_A, O>;
+impl<'a, const O: u8> ADC14WINCTH_W<'a, O> {
     #[doc = "Use window comparator thresholds 0, ADC14LO0 and ADC14HI0"]
     #[inline(always)]
     pub fn adc14wincth_0(self) -> &'a mut W {
@@ -912,22 +755,6 @@ impl<'a> ADC14WINCTH_W<'a> {
     #[inline(always)]
     pub fn adc14wincth_1(self) -> &'a mut W {
         self.variant(ADC14WINCTH_A::ADC14WINCTH_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
     }
 }
 impl R {
@@ -939,7 +766,7 @@ impl R {
     #[doc = "Bit 7 - End of sequence"]
     #[inline(always)]
     pub fn adc14eos(&self) -> ADC14EOS_R {
-        ADC14EOS_R::new(((self.bits >> 7) & 0x01) != 0)
+        ADC14EOS_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:11 - Selects combinations of V(R+) and V(R-) sources"]
     #[inline(always)]
@@ -949,51 +776,52 @@ impl R {
     #[doc = "Bit 13 - Differential mode"]
     #[inline(always)]
     pub fn adc14dif(&self) -> ADC14DIF_R {
-        ADC14DIF_R::new(((self.bits >> 13) & 0x01) != 0)
+        ADC14DIF_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Comparator window enable"]
     #[inline(always)]
     pub fn adc14winc(&self) -> ADC14WINC_R {
-        ADC14WINC_R::new(((self.bits >> 14) & 0x01) != 0)
+        ADC14WINC_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Window comparator threshold register selection"]
     #[inline(always)]
     pub fn adc14wincth(&self) -> ADC14WINCTH_R {
-        ADC14WINCTH_R::new(((self.bits >> 15) & 0x01) != 0)
+        ADC14WINCTH_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Input channel select"]
     #[inline(always)]
-    pub fn adc14inch(&mut self) -> ADC14INCH_W {
-        ADC14INCH_W { w: self }
+    pub fn adc14inch(&mut self) -> ADC14INCH_W<0> {
+        ADC14INCH_W::new(self)
     }
     #[doc = "Bit 7 - End of sequence"]
     #[inline(always)]
-    pub fn adc14eos(&mut self) -> ADC14EOS_W {
-        ADC14EOS_W { w: self }
+    pub fn adc14eos(&mut self) -> ADC14EOS_W<7> {
+        ADC14EOS_W::new(self)
     }
     #[doc = "Bits 8:11 - Selects combinations of V(R+) and V(R-) sources"]
     #[inline(always)]
-    pub fn adc14vrsel(&mut self) -> ADC14VRSEL_W {
-        ADC14VRSEL_W { w: self }
+    pub fn adc14vrsel(&mut self) -> ADC14VRSEL_W<8> {
+        ADC14VRSEL_W::new(self)
     }
     #[doc = "Bit 13 - Differential mode"]
     #[inline(always)]
-    pub fn adc14dif(&mut self) -> ADC14DIF_W {
-        ADC14DIF_W { w: self }
+    pub fn adc14dif(&mut self) -> ADC14DIF_W<13> {
+        ADC14DIF_W::new(self)
     }
     #[doc = "Bit 14 - Comparator window enable"]
     #[inline(always)]
-    pub fn adc14winc(&mut self) -> ADC14WINC_W {
-        ADC14WINC_W { w: self }
+    pub fn adc14winc(&mut self) -> ADC14WINC_W<14> {
+        ADC14WINC_W::new(self)
     }
     #[doc = "Bit 15 - Window comparator threshold register selection"]
     #[inline(always)]
-    pub fn adc14wincth(&mut self) -> ADC14WINCTH_W {
-        ADC14WINCTH_W { w: self }
+    pub fn adc14wincth(&mut self) -> ADC14WINCTH_W<15> {
+        ADC14WINCTH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

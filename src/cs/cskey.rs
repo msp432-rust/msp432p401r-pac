@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CSKEY_SPEC>> for R {
+impl From<crate::R<CSKEY_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CSKEY_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,16 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CSKEY_SPEC>> for W {
+impl From<crate::W<CSKEY_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CSKEY_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `CSKEY` reader - Write xxxx_695Ah to unlock"]
-pub struct CSKEY_R(crate::FieldReader<u16, u16>);
-impl CSKEY_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CSKEY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSKEY_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSKEY_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CSKEY` writer - Write xxxx_695Ah to unlock"]
-pub struct CSKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSKEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type CSKEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSKEY_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Write xxxx_695Ah to unlock"]
     #[inline(always)]
@@ -68,10 +48,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Write xxxx_695Ah to unlock"]
     #[inline(always)]
-    pub fn cskey(&mut self) -> CSKEY_W {
-        CSKEY_W { w: self }
+    pub fn cskey(&mut self) -> CSKEY_W<0> {
+        CSKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

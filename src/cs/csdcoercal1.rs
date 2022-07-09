@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CSDCOERCAL1_SPEC>> for R {
+impl From<crate::R<CSDCOERCAL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CSDCOERCAL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,17 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CSDCOERCAL1_SPEC>> for W {
+impl From<crate::W<CSDCOERCAL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CSDCOERCAL1_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `DCO_FCAL_RSEL5` reader - DCO frequency calibration for DCO frequency range (DCORSEL) 5."]
-pub struct DCO_FCAL_RSEL5_R(crate::FieldReader<u16, u16>);
-impl DCO_FCAL_RSEL5_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        DCO_FCAL_RSEL5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DCO_FCAL_RSEL5_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DCO_FCAL_RSEL5_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DCO_FCAL_RSEL5` writer - DCO frequency calibration for DCO frequency range (DCORSEL) 5."]
-pub struct DCO_FCAL_RSEL5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCO_FCAL_RSEL5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+pub type DCO_FCAL_RSEL5_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSDCOERCAL1_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:9 - DCO frequency calibration for DCO frequency range (DCORSEL) 5."]
     #[inline(always)]
@@ -68,10 +49,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - DCO frequency calibration for DCO frequency range (DCORSEL) 5."]
     #[inline(always)]
-    pub fn dco_fcal_rsel5(&mut self) -> DCO_FCAL_RSEL5_W {
-        DCO_FCAL_RSEL5_W { w: self }
+    pub fn dco_fcal_rsel5(&mut self) -> DCO_FCAL_RSEL5_W<0> {
+        DCO_FCAL_RSEL5_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

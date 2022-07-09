@@ -5,7 +5,7 @@ pub struct RegisterBlock {
     pub psskey: crate::Reg<psskey::PSSKEY_SPEC>,
     #[doc = "0x04 - Control 0 Register"]
     pub pssctl0: crate::Reg<pssctl0::PSSCTL0_SPEC>,
-    _reserved2: [u8; 44usize],
+    _reserved2: [u8; 0x2c],
     #[doc = "0x34 - Interrupt Enable Register"]
     pub pssie: crate::Reg<pssie::PSSIE_SPEC>,
     #[doc = "0x38 - Interrupt Flag Register"]

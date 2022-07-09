@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SYS_RESET_STATOVER_SPEC>> for R {
+impl From<crate::R<SYS_RESET_STATOVER_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SYS_RESET_STATOVER_SPEC>) -> Self {
         R(reader)
     }
@@ -27,210 +28,80 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SYS_RESET_STATOVER_SPEC>> for W {
+impl From<crate::W<SYS_RESET_STATOVER_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SYS_RESET_STATOVER_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `SOFT` reader - Indicates if SOFT Reset is active"]
-pub struct SOFT_R(crate::FieldReader<bool, bool>);
-impl SOFT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SOFT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SOFT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SOFT_R = crate::BitReader<bool>;
 #[doc = "Field `HARD` reader - Indicates if HARD Reset is active"]
-pub struct HARD_R(crate::FieldReader<bool, bool>);
-impl HARD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HARD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HARD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HARD_R = crate::BitReader<bool>;
 #[doc = "Field `REBOOT` reader - Indicates if Reboot Reset is active"]
-pub struct REBOOT_R(crate::FieldReader<bool, bool>);
-impl REBOOT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        REBOOT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REBOOT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REBOOT_R = crate::BitReader<bool>;
 #[doc = "Field `SOFT_OVER` reader - SOFT_Reset overwrite request"]
-pub struct SOFT_OVER_R(crate::FieldReader<bool, bool>);
-impl SOFT_OVER_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SOFT_OVER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SOFT_OVER_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SOFT_OVER_R = crate::BitReader<bool>;
 #[doc = "Field `SOFT_OVER` writer - SOFT_Reset overwrite request"]
-pub struct SOFT_OVER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOFT_OVER_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type SOFT_OVER_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYS_RESET_STATOVER_SPEC, bool, O>;
 #[doc = "Field `HARD_OVER` reader - HARD_Reset overwrite request"]
-pub struct HARD_OVER_R(crate::FieldReader<bool, bool>);
-impl HARD_OVER_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HARD_OVER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HARD_OVER_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HARD_OVER_R = crate::BitReader<bool>;
 #[doc = "Field `HARD_OVER` writer - HARD_Reset overwrite request"]
-pub struct HARD_OVER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HARD_OVER_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type HARD_OVER_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYS_RESET_STATOVER_SPEC, bool, O>;
 #[doc = "Field `RBT_OVER` reader - Reboot Reset overwrite request"]
-pub struct RBT_OVER_R(crate::FieldReader<bool, bool>);
-impl RBT_OVER_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RBT_OVER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RBT_OVER_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RBT_OVER_R = crate::BitReader<bool>;
 #[doc = "Field `RBT_OVER` writer - Reboot Reset overwrite request"]
-pub struct RBT_OVER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RBT_OVER_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type RBT_OVER_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYS_RESET_STATOVER_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Indicates if SOFT Reset is active"]
     #[inline(always)]
     pub fn soft(&self) -> SOFT_R {
-        SOFT_R::new((self.bits & 0x01) != 0)
+        SOFT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Indicates if HARD Reset is active"]
     #[inline(always)]
     pub fn hard(&self) -> HARD_R {
-        HARD_R::new(((self.bits >> 1) & 0x01) != 0)
+        HARD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Indicates if Reboot Reset is active"]
     #[inline(always)]
     pub fn reboot(&self) -> REBOOT_R {
-        REBOOT_R::new(((self.bits >> 2) & 0x01) != 0)
+        REBOOT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 8 - SOFT_Reset overwrite request"]
     #[inline(always)]
     pub fn soft_over(&self) -> SOFT_OVER_R {
-        SOFT_OVER_R::new(((self.bits >> 8) & 0x01) != 0)
+        SOFT_OVER_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - HARD_Reset overwrite request"]
     #[inline(always)]
     pub fn hard_over(&self) -> HARD_OVER_R {
-        HARD_OVER_R::new(((self.bits >> 9) & 0x01) != 0)
+        HARD_OVER_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Reboot Reset overwrite request"]
     #[inline(always)]
     pub fn rbt_over(&self) -> RBT_OVER_R {
-        RBT_OVER_R::new(((self.bits >> 10) & 0x01) != 0)
+        RBT_OVER_R::new(((self.bits >> 10) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 8 - SOFT_Reset overwrite request"]
     #[inline(always)]
-    pub fn soft_over(&mut self) -> SOFT_OVER_W {
-        SOFT_OVER_W { w: self }
+    pub fn soft_over(&mut self) -> SOFT_OVER_W<8> {
+        SOFT_OVER_W::new(self)
     }
     #[doc = "Bit 9 - HARD_Reset overwrite request"]
     #[inline(always)]
-    pub fn hard_over(&mut self) -> HARD_OVER_W {
-        HARD_OVER_W { w: self }
+    pub fn hard_over(&mut self) -> HARD_OVER_W<9> {
+        HARD_OVER_W::new(self)
     }
     #[doc = "Bit 10 - Reboot Reset overwrite request"]
     #[inline(always)]
-    pub fn rbt_over(&mut self) -> RBT_OVER_W {
-        RBT_OVER_W { w: self }
+    pub fn rbt_over(&mut self) -> RBT_OVER_W<10> {
+        RBT_OVER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

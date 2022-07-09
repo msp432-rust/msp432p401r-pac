@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SYS_MASTER_UNLOCK_SPEC>> for R {
+impl From<crate::R<SYS_MASTER_UNLOCK_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SYS_MASTER_UNLOCK_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,17 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SYS_MASTER_UNLOCK_SPEC>> for W {
+impl From<crate::W<SYS_MASTER_UNLOCK_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SYS_MASTER_UNLOCK_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `UNLKEY` reader - Unlock Key"]
-pub struct UNLKEY_R(crate::FieldReader<u16, u16>);
-impl UNLKEY_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        UNLKEY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UNLKEY_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UNLKEY_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `UNLKEY` writer - Unlock Key"]
-pub struct UNLKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNLKEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type UNLKEY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SYS_MASTER_UNLOCK_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Unlock Key"]
     #[inline(always)]
@@ -68,10 +49,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Unlock Key"]
     #[inline(always)]
-    pub fn unlkey(&mut self) -> UNLKEY_W {
-        UNLKEY_W { w: self }
+    pub fn unlkey(&mut self) -> UNLKEY_W<0> {
+        UNLKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

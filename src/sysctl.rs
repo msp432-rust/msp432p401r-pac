@@ -15,19 +15,19 @@ pub struct RegisterBlock {
     pub sys_sram_banken: crate::Reg<sys_sram_banken::SYS_SRAM_BANKEN_SPEC>,
     #[doc = "0x18 - SRAM Bank Retention Control Register"]
     pub sys_sram_bankret: crate::Reg<sys_sram_bankret::SYS_SRAM_BANKRET_SPEC>,
-    _reserved7: [u8; 4usize],
+    _reserved7: [u8; 0x04],
     #[doc = "0x20 - Flash Size Register"]
     pub sys_flash_size: crate::Reg<sys_flash_size::SYS_FLASH_SIZE_SPEC>,
-    _reserved8: [u8; 12usize],
+    _reserved8: [u8; 0x0c],
     #[doc = "0x30 - Digital I/O Glitch Filter Control Register"]
     pub sys_dio_gltflt_ctl: crate::Reg<sys_dio_gltflt_ctl::SYS_DIO_GLTFLT_CTL_SPEC>,
-    _reserved9: [u8; 12usize],
+    _reserved9: [u8; 0x0c],
     #[doc = "0x40 - IP Protected Secure Zone Data Access Unlock Register"]
     pub sys_secdata_unlock: crate::Reg<sys_secdata_unlock::SYS_SECDATA_UNLOCK_SPEC>,
-    _reserved10: [u8; 4028usize],
+    _reserved10: [u8; 0x0fbc],
     #[doc = "0x1000 - Master Unlock Register"]
     pub sys_master_unlock: crate::Reg<sys_master_unlock::SYS_MASTER_UNLOCK_SPEC>,
-    #[doc = "0x1004 - Boot Override Request Register"]
+    #[doc = "0x1004..0x100c - Boot Override Request Register"]
     pub sys_bootover_req: [crate::Reg<sys_bootover_req::SYS_BOOTOVER_REQ_SPEC>; 2],
     #[doc = "0x100c - Boot Override Acknowledge Register"]
     pub sys_bootover_ack: crate::Reg<sys_bootover_ack::SYS_BOOTOVER_ACK_SPEC>,
@@ -35,7 +35,7 @@ pub struct RegisterBlock {
     pub sys_reset_req: crate::Reg<sys_reset_req::SYS_RESET_REQ_SPEC>,
     #[doc = "0x1014 - Reset Status and Override Register"]
     pub sys_reset_statover: crate::Reg<sys_reset_statover::SYS_RESET_STATOVER_SPEC>,
-    _reserved15: [u8; 8usize],
+    _reserved15: [u8; 0x08],
     #[doc = "0x1020 - System Status Register"]
     pub sys_system_stat: crate::Reg<sys_system_stat::SYS_SYSTEM_STAT_SPEC>,
 }

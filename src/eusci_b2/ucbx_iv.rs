@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCBXIV_SPEC>> for R {
+impl From<crate::R<UCBXIV_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCBXIV_SPEC>) -> Self {
         R(reader)
     }
@@ -56,12 +57,9 @@ impl From<UCIV_A> for u16 {
     }
 }
 #[doc = "Field `UCIV` reader - eUSCI_B interrupt vector value"]
-pub struct UCIV_R(crate::FieldReader<u16, UCIV_A>);
+pub type UCIV_R = crate::FieldReader<u16, UCIV_A>;
 impl UCIV_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        UCIV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<UCIV_A> {
         match self.bits {
@@ -87,96 +85,89 @@ impl UCIV_R {
     #[doc = "Checks if the value of the field is `UCIV_0`"]
     #[inline(always)]
     pub fn is_uciv_0(&self) -> bool {
-        **self == UCIV_A::UCIV_0
+        *self == UCIV_A::UCIV_0
     }
     #[doc = "Checks if the value of the field is `UCIV_2`"]
     #[inline(always)]
     pub fn is_uciv_2(&self) -> bool {
-        **self == UCIV_A::UCIV_2
+        *self == UCIV_A::UCIV_2
     }
     #[doc = "Checks if the value of the field is `UCIV_4`"]
     #[inline(always)]
     pub fn is_uciv_4(&self) -> bool {
-        **self == UCIV_A::UCIV_4
+        *self == UCIV_A::UCIV_4
     }
     #[doc = "Checks if the value of the field is `UCIV_6`"]
     #[inline(always)]
     pub fn is_uciv_6(&self) -> bool {
-        **self == UCIV_A::UCIV_6
+        *self == UCIV_A::UCIV_6
     }
     #[doc = "Checks if the value of the field is `UCIV_8`"]
     #[inline(always)]
     pub fn is_uciv_8(&self) -> bool {
-        **self == UCIV_A::UCIV_8
+        *self == UCIV_A::UCIV_8
     }
     #[doc = "Checks if the value of the field is `UCIV_10`"]
     #[inline(always)]
     pub fn is_uciv_10(&self) -> bool {
-        **self == UCIV_A::UCIV_10
+        *self == UCIV_A::UCIV_10
     }
     #[doc = "Checks if the value of the field is `UCIV_12`"]
     #[inline(always)]
     pub fn is_uciv_12(&self) -> bool {
-        **self == UCIV_A::UCIV_12
+        *self == UCIV_A::UCIV_12
     }
     #[doc = "Checks if the value of the field is `UCIV_14`"]
     #[inline(always)]
     pub fn is_uciv_14(&self) -> bool {
-        **self == UCIV_A::UCIV_14
+        *self == UCIV_A::UCIV_14
     }
     #[doc = "Checks if the value of the field is `UCIV_16`"]
     #[inline(always)]
     pub fn is_uciv_16(&self) -> bool {
-        **self == UCIV_A::UCIV_16
+        *self == UCIV_A::UCIV_16
     }
     #[doc = "Checks if the value of the field is `UCIV_18`"]
     #[inline(always)]
     pub fn is_uciv_18(&self) -> bool {
-        **self == UCIV_A::UCIV_18
+        *self == UCIV_A::UCIV_18
     }
     #[doc = "Checks if the value of the field is `UCIV_20`"]
     #[inline(always)]
     pub fn is_uciv_20(&self) -> bool {
-        **self == UCIV_A::UCIV_20
+        *self == UCIV_A::UCIV_20
     }
     #[doc = "Checks if the value of the field is `UCIV_22`"]
     #[inline(always)]
     pub fn is_uciv_22(&self) -> bool {
-        **self == UCIV_A::UCIV_22
+        *self == UCIV_A::UCIV_22
     }
     #[doc = "Checks if the value of the field is `UCIV_24`"]
     #[inline(always)]
     pub fn is_uciv_24(&self) -> bool {
-        **self == UCIV_A::UCIV_24
+        *self == UCIV_A::UCIV_24
     }
     #[doc = "Checks if the value of the field is `UCIV_26`"]
     #[inline(always)]
     pub fn is_uciv_26(&self) -> bool {
-        **self == UCIV_A::UCIV_26
+        *self == UCIV_A::UCIV_26
     }
     #[doc = "Checks if the value of the field is `UCIV_28`"]
     #[inline(always)]
     pub fn is_uciv_28(&self) -> bool {
-        **self == UCIV_A::UCIV_28
+        *self == UCIV_A::UCIV_28
     }
     #[doc = "Checks if the value of the field is `UCIV_30`"]
     #[inline(always)]
     pub fn is_uciv_30(&self) -> bool {
-        **self == UCIV_A::UCIV_30
-    }
-}
-impl core::ops::Deref for UCIV_R {
-    type Target = crate::FieldReader<u16, UCIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCIV_A::UCIV_30
     }
 }
 impl R {
     #[doc = "Bits 0:15 - eUSCI_B interrupt vector value"]
     #[inline(always)]
     pub fn uciv(&self) -> UCIV_R {
-        UCIV_R::new((self.bits & 0xffff) as u16)
+        UCIV_R::new(self.bits)
     }
 }
 #[doc = "eUSCI_Bx Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ucbx_iv](index.html) module"]

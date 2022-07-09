@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<T32CONTROL2_SPEC>> for R {
+impl From<crate::R<T32CONTROL2_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<T32CONTROL2_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<T32CONTROL2_SPEC>> for W {
+impl From<crate::W<T32CONTROL2_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<T32CONTROL2_SPEC>) -> Self {
         W(writer)
     }
@@ -47,12 +49,9 @@ impl From<ONESHOT_A> for bool {
     }
 }
 #[doc = "Field `ONESHOT` reader - Selects one-shot or wrapping counter mode"]
-pub struct ONESHOT_R(crate::FieldReader<bool, ONESHOT_A>);
+pub type ONESHOT_R = crate::BitReader<ONESHOT_A>;
 impl ONESHOT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ONESHOT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ONESHOT_A {
         match self.bits {
@@ -63,31 +62,17 @@ impl ONESHOT_R {
     #[doc = "Checks if the value of the field is `ONESHOT_0`"]
     #[inline(always)]
     pub fn is_oneshot_0(&self) -> bool {
-        **self == ONESHOT_A::ONESHOT_0
+        *self == ONESHOT_A::ONESHOT_0
     }
     #[doc = "Checks if the value of the field is `ONESHOT_1`"]
     #[inline(always)]
     pub fn is_oneshot_1(&self) -> bool {
-        **self == ONESHOT_A::ONESHOT_1
-    }
-}
-impl core::ops::Deref for ONESHOT_R {
-    type Target = crate::FieldReader<bool, ONESHOT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ONESHOT_A::ONESHOT_1
     }
 }
 #[doc = "Field `ONESHOT` writer - Selects one-shot or wrapping counter mode"]
-pub struct ONESHOT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ONESHOT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ONESHOT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ONESHOT_W<'a, const O: u8> = crate::BitWriter<'a, u32, T32CONTROL2_SPEC, ONESHOT_A, O>;
+impl<'a, const O: u8> ONESHOT_W<'a, O> {
     #[doc = "wrapping mode"]
     #[inline(always)]
     pub fn oneshot_0(self) -> &'a mut W {
@@ -97,22 +82,6 @@ impl<'a> ONESHOT_W<'a> {
     #[inline(always)]
     pub fn oneshot_1(self) -> &'a mut W {
         self.variant(ONESHOT_A::ONESHOT_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 #[doc = "Selects 16 or 32 bit counter operation\n\nValue on reset: 0"]
@@ -130,12 +99,9 @@ impl From<SIZE_A> for bool {
     }
 }
 #[doc = "Field `SIZE` reader - Selects 16 or 32 bit counter operation"]
-pub struct SIZE_R(crate::FieldReader<bool, SIZE_A>);
+pub type SIZE_R = crate::BitReader<SIZE_A>;
 impl SIZE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SIZE_A {
         match self.bits {
@@ -146,31 +112,17 @@ impl SIZE_R {
     #[doc = "Checks if the value of the field is `SIZE_0`"]
     #[inline(always)]
     pub fn is_size_0(&self) -> bool {
-        **self == SIZE_A::SIZE_0
+        *self == SIZE_A::SIZE_0
     }
     #[doc = "Checks if the value of the field is `SIZE_1`"]
     #[inline(always)]
     pub fn is_size_1(&self) -> bool {
-        **self == SIZE_A::SIZE_1
-    }
-}
-impl core::ops::Deref for SIZE_R {
-    type Target = crate::FieldReader<bool, SIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SIZE_A::SIZE_1
     }
 }
 #[doc = "Field `SIZE` writer - Selects 16 or 32 bit counter operation"]
-pub struct SIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIZE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SIZE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SIZE_W<'a, const O: u8> = crate::BitWriter<'a, u32, T32CONTROL2_SPEC, SIZE_A, O>;
+impl<'a, const O: u8> SIZE_W<'a, O> {
     #[doc = "16-bit counter"]
     #[inline(always)]
     pub fn size_0(self) -> &'a mut W {
@@ -180,22 +132,6 @@ impl<'a> SIZE_W<'a> {
     #[inline(always)]
     pub fn size_1(self) -> &'a mut W {
         self.variant(SIZE_A::SIZE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
     }
 }
 #[doc = "Prescale bits\n\nValue on reset: 0"]
@@ -216,12 +152,9 @@ impl From<PRESCALE_A> for u8 {
     }
 }
 #[doc = "Field `PRESCALE` reader - Prescale bits"]
-pub struct PRESCALE_R(crate::FieldReader<u8, PRESCALE_A>);
+pub type PRESCALE_R = crate::FieldReader<u8, PRESCALE_A>;
 impl PRESCALE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRESCALE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PRESCALE_A> {
         match self.bits {
@@ -234,36 +167,23 @@ impl PRESCALE_R {
     #[doc = "Checks if the value of the field is `PRESCALE_0`"]
     #[inline(always)]
     pub fn is_prescale_0(&self) -> bool {
-        **self == PRESCALE_A::PRESCALE_0
+        *self == PRESCALE_A::PRESCALE_0
     }
     #[doc = "Checks if the value of the field is `PRESCALE_1`"]
     #[inline(always)]
     pub fn is_prescale_1(&self) -> bool {
-        **self == PRESCALE_A::PRESCALE_1
+        *self == PRESCALE_A::PRESCALE_1
     }
     #[doc = "Checks if the value of the field is `PRESCALE_2`"]
     #[inline(always)]
     pub fn is_prescale_2(&self) -> bool {
-        **self == PRESCALE_A::PRESCALE_2
-    }
-}
-impl core::ops::Deref for PRESCALE_R {
-    type Target = crate::FieldReader<u8, PRESCALE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PRESCALE_A::PRESCALE_2
     }
 }
 #[doc = "Field `PRESCALE` writer - Prescale bits"]
-pub struct PRESCALE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRESCALE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRESCALE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PRESCALE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, T32CONTROL2_SPEC, u8, PRESCALE_A, 2, O>;
+impl<'a, const O: u8> PRESCALE_W<'a, O> {
     #[doc = "0 stages of prescale, clock is divided by 1"]
     #[inline(always)]
     pub fn prescale_0(self) -> &'a mut W {
@@ -278,12 +198,6 @@ impl<'a> PRESCALE_W<'a> {
     #[inline(always)]
     pub fn prescale_2(self) -> &'a mut W {
         self.variant(PRESCALE_A::PRESCALE_2)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
     }
 }
 #[doc = "Interrupt enable bit\n\nValue on reset: 1"]
@@ -301,12 +215,9 @@ impl From<IE_A> for bool {
     }
 }
 #[doc = "Field `IE` reader - Interrupt enable bit"]
-pub struct IE_R(crate::FieldReader<bool, IE_A>);
+pub type IE_R = crate::BitReader<IE_A>;
 impl IE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IE_A {
         match self.bits {
@@ -317,31 +228,17 @@ impl IE_R {
     #[doc = "Checks if the value of the field is `IE_0`"]
     #[inline(always)]
     pub fn is_ie_0(&self) -> bool {
-        **self == IE_A::IE_0
+        *self == IE_A::IE_0
     }
     #[doc = "Checks if the value of the field is `IE_1`"]
     #[inline(always)]
     pub fn is_ie_1(&self) -> bool {
-        **self == IE_A::IE_1
-    }
-}
-impl core::ops::Deref for IE_R {
-    type Target = crate::FieldReader<bool, IE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IE_A::IE_1
     }
 }
 #[doc = "Field `IE` writer - Interrupt enable bit"]
-pub struct IE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IE_W<'a, const O: u8> = crate::BitWriter<'a, u32, T32CONTROL2_SPEC, IE_A, O>;
+impl<'a, const O: u8> IE_W<'a, O> {
     #[doc = "Timer interrupt disabled"]
     #[inline(always)]
     pub fn ie_0(self) -> &'a mut W {
@@ -351,22 +248,6 @@ impl<'a> IE_W<'a> {
     #[inline(always)]
     pub fn ie_1(self) -> &'a mut W {
         self.variant(IE_A::IE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
     }
 }
 #[doc = "Mode bit\n\nValue on reset: 0"]
@@ -384,12 +265,9 @@ impl From<MODE_A> for bool {
     }
 }
 #[doc = "Field `MODE` reader - Mode bit"]
-pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
+pub type MODE_R = crate::BitReader<MODE_A>;
 impl MODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE_A {
         match self.bits {
@@ -400,31 +278,17 @@ impl MODE_R {
     #[doc = "Checks if the value of the field is `MODE_0`"]
     #[inline(always)]
     pub fn is_mode_0(&self) -> bool {
-        **self == MODE_A::MODE_0
+        *self == MODE_A::MODE_0
     }
     #[doc = "Checks if the value of the field is `MODE_1`"]
     #[inline(always)]
     pub fn is_mode_1(&self) -> bool {
-        **self == MODE_A::MODE_1
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<bool, MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE_A::MODE_1
     }
 }
 #[doc = "Field `MODE` writer - Mode bit"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, T32CONTROL2_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Timer is in free-running mode"]
     #[inline(always)]
     pub fn mode_0(self) -> &'a mut W {
@@ -434,22 +298,6 @@ impl<'a> MODE_W<'a> {
     #[inline(always)]
     pub fn mode_1(self) -> &'a mut W {
         self.variant(MODE_A::MODE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
     }
 }
 #[doc = "Enable bit\n\nValue on reset: 0"]
@@ -467,12 +315,9 @@ impl From<ENABLE_A> for bool {
     }
 }
 #[doc = "Field `ENABLE` reader - Enable bit"]
-pub struct ENABLE_R(crate::FieldReader<bool, ENABLE_A>);
+pub type ENABLE_R = crate::BitReader<ENABLE_A>;
 impl ENABLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENABLE_A {
         match self.bits {
@@ -483,31 +328,17 @@ impl ENABLE_R {
     #[doc = "Checks if the value of the field is `ENABLE_0`"]
     #[inline(always)]
     pub fn is_enable_0(&self) -> bool {
-        **self == ENABLE_A::ENABLE_0
+        *self == ENABLE_A::ENABLE_0
     }
     #[doc = "Checks if the value of the field is `ENABLE_1`"]
     #[inline(always)]
     pub fn is_enable_1(&self) -> bool {
-        **self == ENABLE_A::ENABLE_1
-    }
-}
-impl core::ops::Deref for ENABLE_R {
-    type Target = crate::FieldReader<bool, ENABLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENABLE_A::ENABLE_1
     }
 }
 #[doc = "Field `ENABLE` writer - Enable bit"]
-pub struct ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ENABLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, T32CONTROL2_SPEC, ENABLE_A, O>;
+impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "Timer disabled"]
     #[inline(always)]
     pub fn enable_0(self) -> &'a mut W {
@@ -518,87 +349,72 @@ impl<'a> ENABLE_W<'a> {
     pub fn enable_1(self) -> &'a mut W {
         self.variant(ENABLE_A::ENABLE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Selects one-shot or wrapping counter mode"]
     #[inline(always)]
     pub fn oneshot(&self) -> ONESHOT_R {
-        ONESHOT_R::new((self.bits & 0x01) != 0)
+        ONESHOT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Selects 16 or 32 bit counter operation"]
     #[inline(always)]
     pub fn size(&self) -> SIZE_R {
-        SIZE_R::new(((self.bits >> 1) & 0x01) != 0)
+        SIZE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:3 - Prescale bits"]
     #[inline(always)]
     pub fn prescale(&self) -> PRESCALE_R {
-        PRESCALE_R::new(((self.bits >> 2) & 0x03) as u8)
+        PRESCALE_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bit 5 - Interrupt enable bit"]
     #[inline(always)]
     pub fn ie(&self) -> IE_R {
-        IE_R::new(((self.bits >> 5) & 0x01) != 0)
+        IE_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Mode bit"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 6) & 0x01) != 0)
+        MODE_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable bit"]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new(((self.bits >> 7) & 0x01) != 0)
+        ENABLE_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Selects one-shot or wrapping counter mode"]
     #[inline(always)]
-    pub fn oneshot(&mut self) -> ONESHOT_W {
-        ONESHOT_W { w: self }
+    pub fn oneshot(&mut self) -> ONESHOT_W<0> {
+        ONESHOT_W::new(self)
     }
     #[doc = "Bit 1 - Selects 16 or 32 bit counter operation"]
     #[inline(always)]
-    pub fn size(&mut self) -> SIZE_W {
-        SIZE_W { w: self }
+    pub fn size(&mut self) -> SIZE_W<1> {
+        SIZE_W::new(self)
     }
     #[doc = "Bits 2:3 - Prescale bits"]
     #[inline(always)]
-    pub fn prescale(&mut self) -> PRESCALE_W {
-        PRESCALE_W { w: self }
+    pub fn prescale(&mut self) -> PRESCALE_W<2> {
+        PRESCALE_W::new(self)
     }
     #[doc = "Bit 5 - Interrupt enable bit"]
     #[inline(always)]
-    pub fn ie(&mut self) -> IE_W {
-        IE_W { w: self }
+    pub fn ie(&mut self) -> IE_W<5> {
+        IE_W::new(self)
     }
     #[doc = "Bit 6 - Mode bit"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    pub fn mode(&mut self) -> MODE_W<6> {
+        MODE_W::new(self)
     }
     #[doc = "Bit 7 - Enable bit"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
-        ENABLE_W { w: self }
+    pub fn enable(&mut self) -> ENABLE_W<7> {
+        ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

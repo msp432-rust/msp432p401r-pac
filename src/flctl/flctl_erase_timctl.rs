@@ -7,53 +7,18 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_ERASE_TIMCTL_SPEC>> for R {
+impl From<crate::R<FLCTL_ERASE_TIMCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_ERASE_TIMCTL_SPEC>) -> Self {
         R(reader)
     }
 }
 #[doc = "Field `SETUP` reader - Length of the Setup phase for this operation"]
-pub struct SETUP_R(crate::FieldReader<u8, u8>);
-impl SETUP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SETUP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SETUP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SETUP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ACTIVE` reader - Length of the Active phase for this operation"]
-pub struct ACTIVE_R(crate::FieldReader<u32, u32>);
-impl ACTIVE_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        ACTIVE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTIVE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTIVE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `HOLD` reader - Length of the Hold phase for this operation"]
-pub struct HOLD_R(crate::FieldReader<u8, u8>);
-impl HOLD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HOLD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HOLD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HOLD_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Length of the Setup phase for this operation"]
     #[inline(always)]

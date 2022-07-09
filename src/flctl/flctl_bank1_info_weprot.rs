@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_BANK1_INFO_WEPROT_SPEC>> for R {
+impl From<crate::R<FLCTL_BANK1_INFO_WEPROT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_BANK1_INFO_WEPROT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,107 +28,47 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FLCTL_BANK1_INFO_WEPROT_SPEC>> for W {
+impl From<crate::W<FLCTL_BANK1_INFO_WEPROT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FLCTL_BANK1_INFO_WEPROT_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `PROT0` reader - Protects Sector 0 from program or erase operations"]
-pub struct PROT0_R(crate::FieldReader<bool, bool>);
-impl PROT0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PROT0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PROT0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PROT0_R = crate::BitReader<bool>;
 #[doc = "Field `PROT0` writer - Protects Sector 0 from program or erase operations"]
-pub struct PROT0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PROT0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PROT0_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FLCTL_BANK1_INFO_WEPROT_SPEC, bool, O>;
 #[doc = "Field `PROT1` reader - Protects Sector 1 from program or erase operations"]
-pub struct PROT1_R(crate::FieldReader<bool, bool>);
-impl PROT1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PROT1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PROT1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PROT1_R = crate::BitReader<bool>;
 #[doc = "Field `PROT1` writer - Protects Sector 1 from program or erase operations"]
-pub struct PROT1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PROT1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type PROT1_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FLCTL_BANK1_INFO_WEPROT_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Protects Sector 0 from program or erase operations"]
     #[inline(always)]
     pub fn prot0(&self) -> PROT0_R {
-        PROT0_R::new((self.bits & 0x01) != 0)
+        PROT0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Protects Sector 1 from program or erase operations"]
     #[inline(always)]
     pub fn prot1(&self) -> PROT1_R {
-        PROT1_R::new(((self.bits >> 1) & 0x01) != 0)
+        PROT1_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Protects Sector 0 from program or erase operations"]
     #[inline(always)]
-    pub fn prot0(&mut self) -> PROT0_W {
-        PROT0_W { w: self }
+    pub fn prot0(&mut self) -> PROT0_W<0> {
+        PROT0_W::new(self)
     }
     #[doc = "Bit 1 - Protects Sector 1 from program or erase operations"]
     #[inline(always)]
-    pub fn prot1(&mut self) -> PROT1_W {
-        PROT1_W { w: self }
+    pub fn prot1(&mut self) -> PROT1_W<1> {
+        PROT1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

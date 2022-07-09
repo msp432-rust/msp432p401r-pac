@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CSDCOERCAL0_SPEC>> for R {
+impl From<crate::R<CSDCOERCAL0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CSDCOERCAL0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,68 +28,26 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CSDCOERCAL0_SPEC>> for W {
+impl From<crate::W<CSDCOERCAL0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CSDCOERCAL0_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `DCO_TCCAL` reader - DCO Temperature compensation calibration"]
-pub struct DCO_TCCAL_R(crate::FieldReader<u8, u8>);
-impl DCO_TCCAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DCO_TCCAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DCO_TCCAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DCO_TCCAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DCO_TCCAL` writer - DCO Temperature compensation calibration"]
-pub struct DCO_TCCAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCO_TCCAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type DCO_TCCAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSDCOERCAL0_SPEC, u8, u8, 2, O>;
 #[doc = "Field `DCO_FCAL_RSEL04` reader - DCO frequency calibration for DCO frequency range (DCORSEL) 0 to 4."]
-pub struct DCO_FCAL_RSEL04_R(crate::FieldReader<u16, u16>);
-impl DCO_FCAL_RSEL04_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        DCO_FCAL_RSEL04_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DCO_FCAL_RSEL04_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DCO_FCAL_RSEL04_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DCO_FCAL_RSEL04` writer - DCO frequency calibration for DCO frequency range (DCORSEL) 0 to 4."]
-pub struct DCO_FCAL_RSEL04_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCO_FCAL_RSEL04_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03ff << 16)) | ((value as u32 & 0x03ff) << 16);
-        self.w
-    }
-}
+pub type DCO_FCAL_RSEL04_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSDCOERCAL0_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:1 - DCO Temperature compensation calibration"]
     #[inline(always)]
     pub fn dco_tccal(&self) -> DCO_TCCAL_R {
-        DCO_TCCAL_R::new((self.bits & 0x03) as u8)
+        DCO_TCCAL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 16:25 - DCO frequency calibration for DCO frequency range (DCORSEL) 0 to 4."]
     #[inline(always)]
@@ -99,15 +58,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - DCO Temperature compensation calibration"]
     #[inline(always)]
-    pub fn dco_tccal(&mut self) -> DCO_TCCAL_W {
-        DCO_TCCAL_W { w: self }
+    pub fn dco_tccal(&mut self) -> DCO_TCCAL_W<0> {
+        DCO_TCCAL_W::new(self)
     }
     #[doc = "Bits 16:25 - DCO frequency calibration for DCO frequency range (DCORSEL) 0 to 4."]
     #[inline(always)]
-    pub fn dco_fcal_rsel04(&mut self) -> DCO_FCAL_RSEL04_W {
-        DCO_FCAL_RSEL04_W { w: self }
+    pub fn dco_fcal_rsel04(&mut self) -> DCO_FCAL_RSEL04_W<16> {
+        DCO_FCAL_RSEL04_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

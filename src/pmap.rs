@@ -5,7 +5,7 @@ pub struct RegisterBlock {
     pub pmapkeyid: crate::Reg<pmapkeyid::PMAPKEYID_SPEC>,
     #[doc = "0x02 - Port Mapping Control Register"]
     pub pmapctl: crate::Reg<pmapctl::PMAPCTL_SPEC>,
-    _reserved2: [u8; 4usize],
+    _reserved2: [u8; 0x04],
     #[doc = "0x08 - Port mapping register, P1.0 and P1.1"]
     pub p1map01: crate::Reg<p1map01::P1MAP01_SPEC>,
     #[doc = "0x0a - Port mapping register, P1.2 and P1.3"]

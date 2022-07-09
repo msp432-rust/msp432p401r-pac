@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RTCPS_SPEC>> for R {
+impl From<crate::R<RTCPS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RTCPS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,63 +28,20 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RTCPS_SPEC>> for W {
+impl From<crate::W<RTCPS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RTCPS_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `RT0PS` reader - Prescale timer 0 counter value"]
-pub struct RT0PS_R(crate::FieldReader<u8, u8>);
-impl RT0PS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RT0PS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RT0PS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RT0PS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RT0PS` writer - Prescale timer 0 counter value"]
-pub struct RT0PS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RT0PS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
-        self.w
-    }
-}
+pub type RT0PS_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCPS_SPEC, u8, u8, 8, O>;
 #[doc = "Field `RT1PS` reader - Prescale timer 1 counter value"]
-pub struct RT1PS_R(crate::FieldReader<u8, u8>);
-impl RT1PS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RT1PS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RT1PS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RT1PS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RT1PS` writer - Prescale timer 1 counter value"]
-pub struct RT1PS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RT1PS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
-        self.w
-    }
-}
+pub type RT1PS_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCPS_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Prescale timer 0 counter value"]
     #[inline(always)]
@@ -99,15 +57,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Prescale timer 0 counter value"]
     #[inline(always)]
-    pub fn rt0ps(&mut self) -> RT0PS_W {
-        RT0PS_W { w: self }
+    pub fn rt0ps(&mut self) -> RT0PS_W<0> {
+        RT0PS_W::new(self)
     }
     #[doc = "Bits 8:15 - Prescale timer 1 counter value"]
     #[inline(always)]
-    pub fn rt1ps(&mut self) -> RT1PS_W {
-        RT1PS_W { w: self }
+    pub fn rt1ps(&mut self) -> RT1PS_W<8> {
+        RT1PS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<P4MAP45_SPEC>> for R {
+impl From<crate::R<P4MAP45_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<P4MAP45_SPEC>) -> Self {
         R(reader)
     }
@@ -27,51 +28,31 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<P4MAP45_SPEC>> for W {
+impl From<crate::W<P4MAP45_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<P4MAP45_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `PMAPx` reader - Selects secondary port function"]
-pub struct PMAPX_R(crate::FieldReader<u16, u16>);
-impl PMAPX_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PMAPX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PMAPX_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PMAPX_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PMAPx` writer - Selects secondary port function"]
-pub struct PMAPX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PMAPX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
-        self.w
-    }
-}
+pub type PMAPX_W<'a, const O: u8> = crate::FieldWriter<'a, u16, P4MAP45_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Selects secondary port function"]
     #[inline(always)]
     pub fn pmapx(&self) -> PMAPX_R {
-        PMAPX_R::new((self.bits & 0xffff) as u16)
+        PMAPX_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Selects secondary port function"]
     #[inline(always)]
-    pub fn pmapx(&mut self) -> PMAPX_W {
-        PMAPX_W { w: self }
+    pub fn pmapx(&mut self) -> PMAPX_W<0> {
+        PMAPX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

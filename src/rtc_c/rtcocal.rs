@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RTCOCAL_SPEC>> for R {
+impl From<crate::R<RTCOCAL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RTCOCAL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,16 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RTCOCAL_SPEC>> for W {
+impl From<crate::W<RTCOCAL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RTCOCAL_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `RTCOCAL` reader - Real-time clock offset error calibration"]
-pub struct RTCOCAL_R(crate::FieldReader<u8, u8>);
-impl RTCOCAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RTCOCAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTCOCAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTCOCAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RTCOCAL` writer - Real-time clock offset error calibration"]
-pub struct RTCOCAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCOCAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
-        self.w
-    }
-}
+pub type RTCOCAL_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCOCAL_SPEC, u8, u8, 8, O>;
 #[doc = "Real-time clock offset error calibration sign\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCOCALS_A {
@@ -73,12 +53,9 @@ impl From<RTCOCALS_A> for bool {
     }
 }
 #[doc = "Field `RTCOCALS` reader - Real-time clock offset error calibration sign"]
-pub struct RTCOCALS_R(crate::FieldReader<bool, RTCOCALS_A>);
+pub type RTCOCALS_R = crate::BitReader<RTCOCALS_A>;
 impl RTCOCALS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCOCALS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCOCALS_A {
         match self.bits {
@@ -89,31 +66,17 @@ impl RTCOCALS_R {
     #[doc = "Checks if the value of the field is `RTCOCALS_0`"]
     #[inline(always)]
     pub fn is_rtcocals_0(&self) -> bool {
-        **self == RTCOCALS_A::RTCOCALS_0
+        *self == RTCOCALS_A::RTCOCALS_0
     }
     #[doc = "Checks if the value of the field is `RTCOCALS_1`"]
     #[inline(always)]
     pub fn is_rtcocals_1(&self) -> bool {
-        **self == RTCOCALS_A::RTCOCALS_1
-    }
-}
-impl core::ops::Deref for RTCOCALS_R {
-    type Target = crate::FieldReader<bool, RTCOCALS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RTCOCALS_A::RTCOCALS_1
     }
 }
 #[doc = "Field `RTCOCALS` writer - Real-time clock offset error calibration sign"]
-pub struct RTCOCALS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCOCALS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RTCOCALS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RTCOCALS_W<'a, const O: u8> = crate::BitWriter<'a, u16, RTCOCAL_SPEC, RTCOCALS_A, O>;
+impl<'a, const O: u8> RTCOCALS_W<'a, O> {
     #[doc = "Down calibration. Frequency adjusted down."]
     #[inline(always)]
     pub fn rtcocals_0(self) -> &'a mut W {
@@ -123,22 +86,6 @@ impl<'a> RTCOCALS_W<'a> {
     #[inline(always)]
     pub fn rtcocals_1(self) -> &'a mut W {
         self.variant(RTCOCALS_A::RTCOCALS_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
-        self.w
     }
 }
 impl R {
@@ -150,21 +97,22 @@ impl R {
     #[doc = "Bit 15 - Real-time clock offset error calibration sign"]
     #[inline(always)]
     pub fn rtcocals(&self) -> RTCOCALS_R {
-        RTCOCALS_R::new(((self.bits >> 15) & 0x01) != 0)
+        RTCOCALS_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Real-time clock offset error calibration"]
     #[inline(always)]
-    pub fn rtcocal(&mut self) -> RTCOCAL_W {
-        RTCOCAL_W { w: self }
+    pub fn rtcocal(&mut self) -> RTCOCAL_W<0> {
+        RTCOCAL_W::new(self)
     }
     #[doc = "Bit 15 - Real-time clock offset error calibration sign"]
     #[inline(always)]
-    pub fn rtcocals(&mut self) -> RTCOCALS_W {
-        RTCOCALS_W { w: self }
+    pub fn rtcocals(&mut self) -> RTCOCALS_W<15> {
+        RTCOCALS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

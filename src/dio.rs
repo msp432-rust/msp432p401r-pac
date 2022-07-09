@@ -17,7 +17,7 @@ pub struct RegisterBlock {
     pub pasel1: crate::Reg<pasel1::PASEL1_SPEC>,
     #[doc = "0x0e - Port 1 Interrupt Vector Register"]
     pub p1iv: crate::Reg<p1iv::P1IV_SPEC>,
-    _reserved8: [u8; 6usize],
+    _reserved8: [u8; 0x06],
     #[doc = "0x16 - Port A Complement Select"]
     pub paselc: crate::Reg<paselc::PASELC_SPEC>,
     #[doc = "0x18 - Port A Interrupt Edge Select"]
@@ -44,7 +44,7 @@ pub struct RegisterBlock {
     pub pbsel1: crate::Reg<pbsel1::PBSEL1_SPEC>,
     #[doc = "0x2e - Port 3 Interrupt Vector Register"]
     pub p3iv: crate::Reg<p3iv::P3IV_SPEC>,
-    _reserved21: [u8; 6usize],
+    _reserved21: [u8; 0x06],
     #[doc = "0x36 - Port B Complement Select"]
     pub pbselc: crate::Reg<pbselc::PBSELC_SPEC>,
     #[doc = "0x38 - Port B Interrupt Edge Select"]
@@ -71,7 +71,7 @@ pub struct RegisterBlock {
     pub pcsel1: crate::Reg<pcsel1::PCSEL1_SPEC>,
     #[doc = "0x4e - Port 5 Interrupt Vector Register"]
     pub p5iv: crate::Reg<p5iv::P5IV_SPEC>,
-    _reserved34: [u8; 6usize],
+    _reserved34: [u8; 0x06],
     #[doc = "0x56 - Port C Complement Select"]
     pub pcselc: crate::Reg<pcselc::PCSELC_SPEC>,
     #[doc = "0x58 - Port C Interrupt Edge Select"]
@@ -98,7 +98,7 @@ pub struct RegisterBlock {
     pub pdsel1: crate::Reg<pdsel1::PDSEL1_SPEC>,
     #[doc = "0x6e - Port 7 Interrupt Vector Register"]
     pub p7iv: crate::Reg<p7iv::P7IV_SPEC>,
-    _reserved47: [u8; 6usize],
+    _reserved47: [u8; 0x06],
     #[doc = "0x76 - Port D Complement Select"]
     pub pdselc: crate::Reg<pdselc::PDSELC_SPEC>,
     #[doc = "0x78 - Port D Interrupt Edge Select"]
@@ -125,7 +125,7 @@ pub struct RegisterBlock {
     pub pesel1: crate::Reg<pesel1::PESEL1_SPEC>,
     #[doc = "0x8e - Port 9 Interrupt Vector Register"]
     pub p9iv: crate::Reg<p9iv::P9IV_SPEC>,
-    _reserved60: [u8; 6usize],
+    _reserved60: [u8; 0x06],
     #[doc = "0x96 - Port E Complement Select"]
     pub peselc: crate::Reg<peselc::PESELC_SPEC>,
     #[doc = "0x98 - Port E Interrupt Edge Select"]
@@ -136,7 +136,7 @@ pub struct RegisterBlock {
     pub peifg: crate::Reg<peifg::PEIFG_SPEC>,
     #[doc = "0x9e - Port 10 Interrupt Vector Register"]
     pub p10iv: crate::Reg<p10iv::P10IV_SPEC>,
-    _reserved65: [u8; 128usize],
+    _reserved65: [u8; 0x80],
     #[doc = "0x120 - Port J Input"]
     pub pjin: crate::Reg<pjin::PJIN_SPEC>,
     #[doc = "0x122 - Port J Output"]
@@ -151,7 +151,7 @@ pub struct RegisterBlock {
     pub pjsel0: crate::Reg<pjsel0::PJSEL0_SPEC>,
     #[doc = "0x12c - Port J Select 1"]
     pub pjsel1: crate::Reg<pjsel1::PJSEL1_SPEC>,
-    _reserved72: [u8; 8usize],
+    _reserved72: [u8; 0x08],
     #[doc = "0x136 - Port J Complement Select"]
     pub pjselc: crate::Reg<pjselc::PJSELC_SPEC>,
 }

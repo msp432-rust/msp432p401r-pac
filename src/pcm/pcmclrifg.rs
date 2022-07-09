@@ -13,121 +13,46 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PCMCLRIFG_SPEC>> for W {
+impl From<crate::W<PCMCLRIFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PCMCLRIFG_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `CLR_LPM_INVALID_TR_IFG` writer - Clear LPM invalid transition flag"]
-pub struct CLR_LPM_INVALID_TR_IFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLR_LPM_INVALID_TR_IFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CLR_LPM_INVALID_TR_IFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PCMCLRIFG_SPEC, bool, O>;
 #[doc = "Field `CLR_LPM_INVALID_CLK_IFG` writer - Clear LPM invalid clock flag"]
-pub struct CLR_LPM_INVALID_CLK_IFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLR_LPM_INVALID_CLK_IFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CLR_LPM_INVALID_CLK_IFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PCMCLRIFG_SPEC, bool, O>;
 #[doc = "Field `CLR_AM_INVALID_TR_IFG` writer - Clear active mode invalid transition flag"]
-pub struct CLR_AM_INVALID_TR_IFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLR_AM_INVALID_TR_IFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CLR_AM_INVALID_TR_IFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PCMCLRIFG_SPEC, bool, O>;
 #[doc = "Field `CLR_DCDC_ERROR_IFG` writer - Clear DC-DC error flag"]
-pub struct CLR_DCDC_ERROR_IFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLR_DCDC_ERROR_IFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type CLR_DCDC_ERROR_IFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCMCLRIFG_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clear LPM invalid transition flag"]
     #[inline(always)]
-    pub fn clr_lpm_invalid_tr_ifg(&mut self) -> CLR_LPM_INVALID_TR_IFG_W {
-        CLR_LPM_INVALID_TR_IFG_W { w: self }
+    pub fn clr_lpm_invalid_tr_ifg(&mut self) -> CLR_LPM_INVALID_TR_IFG_W<0> {
+        CLR_LPM_INVALID_TR_IFG_W::new(self)
     }
     #[doc = "Bit 1 - Clear LPM invalid clock flag"]
     #[inline(always)]
-    pub fn clr_lpm_invalid_clk_ifg(&mut self) -> CLR_LPM_INVALID_CLK_IFG_W {
-        CLR_LPM_INVALID_CLK_IFG_W { w: self }
+    pub fn clr_lpm_invalid_clk_ifg(&mut self) -> CLR_LPM_INVALID_CLK_IFG_W<1> {
+        CLR_LPM_INVALID_CLK_IFG_W::new(self)
     }
     #[doc = "Bit 2 - Clear active mode invalid transition flag"]
     #[inline(always)]
-    pub fn clr_am_invalid_tr_ifg(&mut self) -> CLR_AM_INVALID_TR_IFG_W {
-        CLR_AM_INVALID_TR_IFG_W { w: self }
+    pub fn clr_am_invalid_tr_ifg(&mut self) -> CLR_AM_INVALID_TR_IFG_W<2> {
+        CLR_AM_INVALID_TR_IFG_W::new(self)
     }
     #[doc = "Bit 6 - Clear DC-DC error flag"]
     #[inline(always)]
-    pub fn clr_dcdc_error_ifg(&mut self) -> CLR_DCDC_ERROR_IFG_W {
-        CLR_DCDC_ERROR_IFG_W { w: self }
+    pub fn clr_dcdc_error_ifg(&mut self) -> CLR_DCDC_ERROR_IFG_W<6> {
+        CLR_DCDC_ERROR_IFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

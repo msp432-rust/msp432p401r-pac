@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PJDIR_SPEC>> for R {
+impl From<crate::R<PJDIR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PJDIR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,51 +28,31 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PJDIR_SPEC>> for W {
+impl From<crate::W<PJDIR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PJDIR_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `PJDIR` reader - Port J Direction"]
-pub struct PJDIR_R(crate::FieldReader<u16, u16>);
-impl PJDIR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PJDIR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PJDIR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PJDIR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PJDIR` writer - Port J Direction"]
-pub struct PJDIR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PJDIR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
-        self.w
-    }
-}
+pub type PJDIR_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PJDIR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Port J Direction"]
     #[inline(always)]
     pub fn pjdir(&self) -> PJDIR_R {
-        PJDIR_R::new((self.bits & 0xffff) as u16)
+        PJDIR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Port J Direction"]
     #[inline(always)]
-    pub fn pjdir(&mut self) -> PJDIR_W {
-        PJDIR_W { w: self }
+    pub fn pjdir(&mut self) -> PJDIR_W<0> {
+        PJDIR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RTCADOWDAY_SPEC>> for R {
+impl From<crate::R<RTCADOWDAY_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RTCADOWDAY_SPEC>) -> Self {
         R(reader)
     }
@@ -27,145 +28,38 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RTCADOWDAY_SPEC>> for W {
+impl From<crate::W<RTCADOWDAY_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RTCADOWDAY_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `DayofWeek` reader - Day of week (0 to 6)"]
-pub struct DAYOFWEEK_R(crate::FieldReader<u8, u8>);
-impl DAYOFWEEK_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DAYOFWEEK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAYOFWEEK_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAYOFWEEK_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DayofWeek` writer - Day of week (0 to 6)"]
-pub struct DAYOFWEEK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAYOFWEEK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u16 & 0x07);
-        self.w
-    }
-}
+pub type DAYOFWEEK_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCADOWDAY_SPEC, u8, u8, 3, O>;
 #[doc = "Field `DOWAE` reader - Alarm enable"]
-pub struct DOWAE_R(crate::FieldReader<bool, bool>);
-impl DOWAE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DOWAE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DOWAE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DOWAE_R = crate::BitReader<bool>;
 #[doc = "Field `DOWAE` writer - Alarm enable"]
-pub struct DOWAE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DOWAE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u16 & 0x01) << 7);
-        self.w
-    }
-}
+pub type DOWAE_W<'a, const O: u8> = crate::BitWriter<'a, u16, RTCADOWDAY_SPEC, bool, O>;
 #[doc = "Field `DayofMonth` reader - Day of month (1 to 28, 29, 30, 31)"]
-pub struct DAYOFMONTH_R(crate::FieldReader<u8, u8>);
-impl DAYOFMONTH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DAYOFMONTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAYOFMONTH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAYOFMONTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DayofMonth` writer - Day of month (1 to 28, 29, 30, 31)"]
-pub struct DAYOFMONTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAYOFMONTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | ((value as u16 & 0x1f) << 8);
-        self.w
-    }
-}
+pub type DAYOFMONTH_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCADOWDAY_SPEC, u8, u8, 5, O>;
 #[doc = "Field `DAYAE` reader - Alarm enable"]
-pub struct DAYAE_R(crate::FieldReader<bool, bool>);
-impl DAYAE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DAYAE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAYAE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAYAE_R = crate::BitReader<bool>;
 #[doc = "Field `DAYAE` writer - Alarm enable"]
-pub struct DAYAE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAYAE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
-        self.w
-    }
-}
+pub type DAYAE_W<'a, const O: u8> = crate::BitWriter<'a, u16, RTCADOWDAY_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Day of week (0 to 6)"]
     #[inline(always)]
     pub fn dayof_week(&self) -> DAYOFWEEK_R {
-        DAYOFWEEK_R::new((self.bits & 0x07) as u8)
+        DAYOFWEEK_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 7 - Alarm enable"]
     #[inline(always)]
     pub fn dowae(&self) -> DOWAE_R {
-        DOWAE_R::new(((self.bits >> 7) & 0x01) != 0)
+        DOWAE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:12 - Day of month (1 to 28, 29, 30, 31)"]
     #[inline(always)]
@@ -175,31 +69,32 @@ impl R {
     #[doc = "Bit 15 - Alarm enable"]
     #[inline(always)]
     pub fn dayae(&self) -> DAYAE_R {
-        DAYAE_R::new(((self.bits >> 15) & 0x01) != 0)
+        DAYAE_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Day of week (0 to 6)"]
     #[inline(always)]
-    pub fn dayof_week(&mut self) -> DAYOFWEEK_W {
-        DAYOFWEEK_W { w: self }
+    pub fn dayof_week(&mut self) -> DAYOFWEEK_W<0> {
+        DAYOFWEEK_W::new(self)
     }
     #[doc = "Bit 7 - Alarm enable"]
     #[inline(always)]
-    pub fn dowae(&mut self) -> DOWAE_W {
-        DOWAE_W { w: self }
+    pub fn dowae(&mut self) -> DOWAE_W<7> {
+        DOWAE_W::new(self)
     }
     #[doc = "Bits 8:12 - Day of month (1 to 28, 29, 30, 31)"]
     #[inline(always)]
-    pub fn dayof_month(&mut self) -> DAYOFMONTH_W {
-        DAYOFMONTH_W { w: self }
+    pub fn dayof_month(&mut self) -> DAYOFMONTH_W<8> {
+        DAYOFMONTH_W::new(self)
     }
     #[doc = "Bit 15 - Alarm enable"]
     #[inline(always)]
-    pub fn dayae(&mut self) -> DAYAE_W {
-        DAYAE_W { w: self }
+    pub fn dayae(&mut self) -> DAYAE_W<15> {
+        DAYAE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

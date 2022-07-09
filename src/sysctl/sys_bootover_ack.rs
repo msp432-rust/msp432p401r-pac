@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SYS_BOOTOVER_ACK_SPEC>> for R {
+impl From<crate::R<SYS_BOOTOVER_ACK_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SYS_BOOTOVER_ACK_SPEC>) -> Self {
         R(reader)
     }
@@ -27,51 +28,32 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SYS_BOOTOVER_ACK_SPEC>> for W {
+impl From<crate::W<SYS_BOOTOVER_ACK_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SYS_BOOTOVER_ACK_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `REGVAL` reader - Value set by CPU, read/clear by the debugger"]
-pub struct REGVAL_R(crate::FieldReader<u32, u32>);
-impl REGVAL_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        REGVAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REGVAL_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REGVAL_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `REGVAL` writer - Value set by CPU, read/clear by the debugger"]
-pub struct REGVAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REGVAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type REGVAL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SYS_BOOTOVER_ACK_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Value set by CPU, read/clear by the debugger"]
     #[inline(always)]
     pub fn regval(&self) -> REGVAL_R {
-        REGVAL_R::new((self.bits & 0xffff_ffff) as u32)
+        REGVAL_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Value set by CPU, read/clear by the debugger"]
     #[inline(always)]
-    pub fn regval(&mut self) -> REGVAL_W {
-        REGVAL_W { w: self }
+    pub fn regval(&mut self) -> REGVAL_W<0> {
+        REGVAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

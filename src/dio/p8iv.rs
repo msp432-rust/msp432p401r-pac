@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<P8IV_SPEC>> for R {
+impl From<crate::R<P8IV_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<P8IV_SPEC>) -> Self {
         R(reader)
     }
@@ -42,12 +43,9 @@ impl From<P8IV_A> for u8 {
     }
 }
 #[doc = "Field `P8IV` reader - Port 8 interrupt vector value"]
-pub struct P8IV_R(crate::FieldReader<u8, P8IV_A>);
+pub type P8IV_R = crate::FieldReader<u8, P8IV_A>;
 impl P8IV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P8IV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<P8IV_A> {
         match self.bits {
@@ -66,54 +64,47 @@ impl P8IV_R {
     #[doc = "Checks if the value of the field is `P8IV_0`"]
     #[inline(always)]
     pub fn is_p8iv_0(&self) -> bool {
-        **self == P8IV_A::P8IV_0
+        *self == P8IV_A::P8IV_0
     }
     #[doc = "Checks if the value of the field is `P8IV_2`"]
     #[inline(always)]
     pub fn is_p8iv_2(&self) -> bool {
-        **self == P8IV_A::P8IV_2
+        *self == P8IV_A::P8IV_2
     }
     #[doc = "Checks if the value of the field is `P8IV_4`"]
     #[inline(always)]
     pub fn is_p8iv_4(&self) -> bool {
-        **self == P8IV_A::P8IV_4
+        *self == P8IV_A::P8IV_4
     }
     #[doc = "Checks if the value of the field is `P8IV_6`"]
     #[inline(always)]
     pub fn is_p8iv_6(&self) -> bool {
-        **self == P8IV_A::P8IV_6
+        *self == P8IV_A::P8IV_6
     }
     #[doc = "Checks if the value of the field is `P8IV_8`"]
     #[inline(always)]
     pub fn is_p8iv_8(&self) -> bool {
-        **self == P8IV_A::P8IV_8
+        *self == P8IV_A::P8IV_8
     }
     #[doc = "Checks if the value of the field is `P8IV_10`"]
     #[inline(always)]
     pub fn is_p8iv_10(&self) -> bool {
-        **self == P8IV_A::P8IV_10
+        *self == P8IV_A::P8IV_10
     }
     #[doc = "Checks if the value of the field is `P8IV_12`"]
     #[inline(always)]
     pub fn is_p8iv_12(&self) -> bool {
-        **self == P8IV_A::P8IV_12
+        *self == P8IV_A::P8IV_12
     }
     #[doc = "Checks if the value of the field is `P8IV_14`"]
     #[inline(always)]
     pub fn is_p8iv_14(&self) -> bool {
-        **self == P8IV_A::P8IV_14
+        *self == P8IV_A::P8IV_14
     }
     #[doc = "Checks if the value of the field is `P8IV_16`"]
     #[inline(always)]
     pub fn is_p8iv_16(&self) -> bool {
-        **self == P8IV_A::P8IV_16
-    }
-}
-impl core::ops::Deref for P8IV_R {
-    type Target = crate::FieldReader<u8, P8IV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == P8IV_A::P8IV_16
     }
 }
 impl R {

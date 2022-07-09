@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PSSCLRIFG_SPEC>> for R {
+impl From<crate::R<PSSCLRIFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PSSCLRIFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PSSCLRIFG_SPEC>> for W {
+impl From<crate::W<PSSCLRIFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PSSCLRIFG_SPEC>) -> Self {
         W(writer)
     }
@@ -47,15 +49,9 @@ impl From<CLRSVSMHIFG_AW> for bool {
     }
 }
 #[doc = "Field `CLRSVSMHIFG` writer - SVSMH clear interrupt flag"]
-pub struct CLRSVSMHIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLRSVSMHIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLRSVSMHIFG_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLRSVSMHIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PSSCLRIFG_SPEC, CLRSVSMHIFG_AW, O>;
+impl<'a, const O: u8> CLRSVSMHIFG_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn clrsvsmhifg_0(self) -> &'a mut W {
@@ -66,30 +62,15 @@ impl<'a> CLRSVSMHIFG_W<'a> {
     pub fn clrsvsmhifg_1(self) -> &'a mut W {
         self.variant(CLRSVSMHIFG_AW::CLRSVSMHIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 1 - SVSMH clear interrupt flag"]
     #[inline(always)]
-    pub fn clrsvsmhifg(&mut self) -> CLRSVSMHIFG_W {
-        CLRSVSMHIFG_W { w: self }
+    pub fn clrsvsmhifg(&mut self) -> CLRSVSMHIFG_W<1> {
+        CLRSVSMHIFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

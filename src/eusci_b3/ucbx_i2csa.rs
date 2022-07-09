@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCBXI2CSA_SPEC>> for R {
+impl From<crate::R<UCBXI2CSA_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCBXI2CSA_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,16 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCBXI2CSA_SPEC>> for W {
+impl From<crate::W<UCBXI2CSA_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCBXI2CSA_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `I2CSA` reader - I2C slave address"]
-pub struct I2CSA_R(crate::FieldReader<u16, u16>);
-impl I2CSA_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        I2CSA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for I2CSA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type I2CSA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `I2CSA` writer - I2C slave address"]
-pub struct I2CSA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> I2CSA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u16 & 0x03ff);
-        self.w
-    }
-}
+pub type I2CSA_W<'a, const O: u8> = crate::FieldWriter<'a, u16, UCBXI2CSA_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:9 - I2C slave address"]
     #[inline(always)]
@@ -68,10 +48,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - I2C slave address"]
     #[inline(always)]
-    pub fn i2csa(&mut self) -> I2CSA_W {
-        I2CSA_W { w: self }
+    pub fn i2csa(&mut self) -> I2CSA_W<0> {
+        I2CSA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

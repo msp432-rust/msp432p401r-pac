@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PSSIE_SPEC>> for R {
+impl From<crate::R<PSSIE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PSSIE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PSSIE_SPEC>> for W {
+impl From<crate::W<PSSIE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PSSIE_SPEC>) -> Self {
         W(writer)
     }
@@ -47,12 +49,9 @@ impl From<SVSMHIE_A> for bool {
     }
 }
 #[doc = "Field `SVSMHIE` reader - High-side SVSM interrupt enable"]
-pub struct SVSMHIE_R(crate::FieldReader<bool, SVSMHIE_A>);
+pub type SVSMHIE_R = crate::BitReader<SVSMHIE_A>;
 impl SVSMHIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SVSMHIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SVSMHIE_A {
         match self.bits {
@@ -63,31 +62,17 @@ impl SVSMHIE_R {
     #[doc = "Checks if the value of the field is `SVSMHIE_0`"]
     #[inline(always)]
     pub fn is_svsmhie_0(&self) -> bool {
-        **self == SVSMHIE_A::SVSMHIE_0
+        *self == SVSMHIE_A::SVSMHIE_0
     }
     #[doc = "Checks if the value of the field is `SVSMHIE_1`"]
     #[inline(always)]
     pub fn is_svsmhie_1(&self) -> bool {
-        **self == SVSMHIE_A::SVSMHIE_1
-    }
-}
-impl core::ops::Deref for SVSMHIE_R {
-    type Target = crate::FieldReader<bool, SVSMHIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SVSMHIE_A::SVSMHIE_1
     }
 }
 #[doc = "Field `SVSMHIE` writer - High-side SVSM interrupt enable"]
-pub struct SVSMHIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SVSMHIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SVSMHIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SVSMHIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PSSIE_SPEC, SVSMHIE_A, O>;
+impl<'a, const O: u8> SVSMHIE_W<'a, O> {
     #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn svsmhie_0(self) -> &'a mut W {
@@ -98,37 +83,22 @@ impl<'a> SVSMHIE_W<'a> {
     pub fn svsmhie_1(self) -> &'a mut W {
         self.variant(SVSMHIE_A::SVSMHIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 1 - High-side SVSM interrupt enable"]
     #[inline(always)]
     pub fn svsmhie(&self) -> SVSMHIE_R {
-        SVSMHIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        SVSMHIE_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 1 - High-side SVSM interrupt enable"]
     #[inline(always)]
-    pub fn svsmhie(&mut self) -> SVSMHIE_W {
-        SVSMHIE_W { w: self }
+    pub fn svsmhie(&mut self) -> SVSMHIE_W<1> {
+        SVSMHIE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

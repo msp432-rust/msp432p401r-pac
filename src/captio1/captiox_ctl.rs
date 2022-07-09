@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CAPTIOXCTL_SPEC>> for R {
+impl From<crate::R<CAPTIOXCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CAPTIOXCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CAPTIOXCTL_SPEC>> for W {
+impl From<crate::W<CAPTIOXCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CAPTIOXCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -60,12 +62,9 @@ impl From<CAPTIOPISELX_A> for u8 {
     }
 }
 #[doc = "Field `CAPTIOPISELx` reader - Capacitive Touch IO pin select"]
-pub struct CAPTIOPISELX_R(crate::FieldReader<u8, CAPTIOPISELX_A>);
+pub type CAPTIOPISELX_R = crate::FieldReader<u8, CAPTIOPISELX_A>;
 impl CAPTIOPISELX_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CAPTIOPISELX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAPTIOPISELX_A {
         match self.bits {
@@ -83,61 +82,48 @@ impl CAPTIOPISELX_R {
     #[doc = "Checks if the value of the field is `CAPTIOPISELX_0`"]
     #[inline(always)]
     pub fn is_captiopiselx_0(&self) -> bool {
-        **self == CAPTIOPISELX_A::CAPTIOPISELX_0
+        *self == CAPTIOPISELX_A::CAPTIOPISELX_0
     }
     #[doc = "Checks if the value of the field is `CAPTIOPISELX_1`"]
     #[inline(always)]
     pub fn is_captiopiselx_1(&self) -> bool {
-        **self == CAPTIOPISELX_A::CAPTIOPISELX_1
+        *self == CAPTIOPISELX_A::CAPTIOPISELX_1
     }
     #[doc = "Checks if the value of the field is `CAPTIOPISELX_2`"]
     #[inline(always)]
     pub fn is_captiopiselx_2(&self) -> bool {
-        **self == CAPTIOPISELX_A::CAPTIOPISELX_2
+        *self == CAPTIOPISELX_A::CAPTIOPISELX_2
     }
     #[doc = "Checks if the value of the field is `CAPTIOPISELX_3`"]
     #[inline(always)]
     pub fn is_captiopiselx_3(&self) -> bool {
-        **self == CAPTIOPISELX_A::CAPTIOPISELX_3
+        *self == CAPTIOPISELX_A::CAPTIOPISELX_3
     }
     #[doc = "Checks if the value of the field is `CAPTIOPISELX_4`"]
     #[inline(always)]
     pub fn is_captiopiselx_4(&self) -> bool {
-        **self == CAPTIOPISELX_A::CAPTIOPISELX_4
+        *self == CAPTIOPISELX_A::CAPTIOPISELX_4
     }
     #[doc = "Checks if the value of the field is `CAPTIOPISELX_5`"]
     #[inline(always)]
     pub fn is_captiopiselx_5(&self) -> bool {
-        **self == CAPTIOPISELX_A::CAPTIOPISELX_5
+        *self == CAPTIOPISELX_A::CAPTIOPISELX_5
     }
     #[doc = "Checks if the value of the field is `CAPTIOPISELX_6`"]
     #[inline(always)]
     pub fn is_captiopiselx_6(&self) -> bool {
-        **self == CAPTIOPISELX_A::CAPTIOPISELX_6
+        *self == CAPTIOPISELX_A::CAPTIOPISELX_6
     }
     #[doc = "Checks if the value of the field is `CAPTIOPISELX_7`"]
     #[inline(always)]
     pub fn is_captiopiselx_7(&self) -> bool {
-        **self == CAPTIOPISELX_A::CAPTIOPISELX_7
-    }
-}
-impl core::ops::Deref for CAPTIOPISELX_R {
-    type Target = crate::FieldReader<u8, CAPTIOPISELX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CAPTIOPISELX_A::CAPTIOPISELX_7
     }
 }
 #[doc = "Field `CAPTIOPISELx` writer - Capacitive Touch IO pin select"]
-pub struct CAPTIOPISELX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPTIOPISELX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAPTIOPISELX_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CAPTIOPISELX_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CAPTIOXCTL_SPEC, u8, CAPTIOPISELX_A, 3, O>;
+impl<'a, const O: u8> CAPTIOPISELX_W<'a, O> {
     #[doc = "Px.0"]
     #[inline(always)]
     pub fn captiopiselx_0(self) -> &'a mut W {
@@ -177,12 +163,6 @@ impl<'a> CAPTIOPISELX_W<'a> {
     #[inline(always)]
     pub fn captiopiselx_7(self) -> &'a mut W {
         self.variant(CAPTIOPISELX_A::CAPTIOPISELX_7)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 1)) | ((value as u16 & 0x07) << 1);
-        self.w
     }
 }
 #[doc = "Capacitive Touch IO port select\n\nValue on reset: 0"]
@@ -229,12 +209,9 @@ impl From<CAPTIOPOSELX_A> for u8 {
     }
 }
 #[doc = "Field `CAPTIOPOSELx` reader - Capacitive Touch IO port select"]
-pub struct CAPTIOPOSELX_R(crate::FieldReader<u8, CAPTIOPOSELX_A>);
+pub type CAPTIOPOSELX_R = crate::FieldReader<u8, CAPTIOPOSELX_A>;
 impl CAPTIOPOSELX_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CAPTIOPOSELX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAPTIOPOSELX_A {
         match self.bits {
@@ -260,101 +237,88 @@ impl CAPTIOPOSELX_R {
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_0`"]
     #[inline(always)]
     pub fn is_captioposelx_0(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_0
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_0
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_1`"]
     #[inline(always)]
     pub fn is_captioposelx_1(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_1
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_1
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_2`"]
     #[inline(always)]
     pub fn is_captioposelx_2(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_2
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_2
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_3`"]
     #[inline(always)]
     pub fn is_captioposelx_3(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_3
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_3
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_4`"]
     #[inline(always)]
     pub fn is_captioposelx_4(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_4
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_4
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_5`"]
     #[inline(always)]
     pub fn is_captioposelx_5(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_5
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_5
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_6`"]
     #[inline(always)]
     pub fn is_captioposelx_6(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_6
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_6
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_7`"]
     #[inline(always)]
     pub fn is_captioposelx_7(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_7
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_7
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_8`"]
     #[inline(always)]
     pub fn is_captioposelx_8(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_8
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_8
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_9`"]
     #[inline(always)]
     pub fn is_captioposelx_9(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_9
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_9
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_10`"]
     #[inline(always)]
     pub fn is_captioposelx_10(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_10
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_10
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_11`"]
     #[inline(always)]
     pub fn is_captioposelx_11(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_11
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_11
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_12`"]
     #[inline(always)]
     pub fn is_captioposelx_12(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_12
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_12
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_13`"]
     #[inline(always)]
     pub fn is_captioposelx_13(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_13
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_13
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_14`"]
     #[inline(always)]
     pub fn is_captioposelx_14(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_14
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_14
     }
     #[doc = "Checks if the value of the field is `CAPTIOPOSELX_15`"]
     #[inline(always)]
     pub fn is_captioposelx_15(&self) -> bool {
-        **self == CAPTIOPOSELX_A::CAPTIOPOSELX_15
-    }
-}
-impl core::ops::Deref for CAPTIOPOSELX_R {
-    type Target = crate::FieldReader<u8, CAPTIOPOSELX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CAPTIOPOSELX_A::CAPTIOPOSELX_15
     }
 }
 #[doc = "Field `CAPTIOPOSELx` writer - Capacitive Touch IO port select"]
-pub struct CAPTIOPOSELX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPTIOPOSELX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAPTIOPOSELX_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CAPTIOPOSELX_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CAPTIOXCTL_SPEC, u8, CAPTIOPOSELX_A, 4, O>;
+impl<'a, const O: u8> CAPTIOPOSELX_W<'a, O> {
     #[doc = "Px = PJ"]
     #[inline(always)]
     pub fn captioposelx_0(self) -> &'a mut W {
@@ -435,12 +399,6 @@ impl<'a> CAPTIOPOSELX_W<'a> {
     pub fn captioposelx_15(self) -> &'a mut W {
         self.variant(CAPTIOPOSELX_A::CAPTIOPOSELX_15)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u16 & 0x0f) << 4);
-        self.w
-    }
 }
 #[doc = "Capacitive Touch IO enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -457,12 +415,9 @@ impl From<CAPTIOEN_A> for bool {
     }
 }
 #[doc = "Field `CAPTIOEN` reader - Capacitive Touch IO enable"]
-pub struct CAPTIOEN_R(crate::FieldReader<bool, CAPTIOEN_A>);
+pub type CAPTIOEN_R = crate::BitReader<CAPTIOEN_A>;
 impl CAPTIOEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CAPTIOEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAPTIOEN_A {
         match self.bits {
@@ -473,31 +428,17 @@ impl CAPTIOEN_R {
     #[doc = "Checks if the value of the field is `CAPTIOEN_0`"]
     #[inline(always)]
     pub fn is_captioen_0(&self) -> bool {
-        **self == CAPTIOEN_A::CAPTIOEN_0
+        *self == CAPTIOEN_A::CAPTIOEN_0
     }
     #[doc = "Checks if the value of the field is `CAPTIOEN_1`"]
     #[inline(always)]
     pub fn is_captioen_1(&self) -> bool {
-        **self == CAPTIOEN_A::CAPTIOEN_1
-    }
-}
-impl core::ops::Deref for CAPTIOEN_R {
-    type Target = crate::FieldReader<bool, CAPTIOEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CAPTIOEN_A::CAPTIOEN_1
     }
 }
 #[doc = "Field `CAPTIOEN` writer - Capacitive Touch IO enable"]
-pub struct CAPTIOEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPTIOEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAPTIOEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CAPTIOEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, CAPTIOXCTL_SPEC, CAPTIOEN_A, O>;
+impl<'a, const O: u8> CAPTIOEN_W<'a, O> {
     #[doc = "All Capacitive Touch IOs are disabled. Signal towards timers is 0."]
     #[inline(always)]
     pub fn captioen_0(self) -> &'a mut W {
@@ -507,22 +448,6 @@ impl<'a> CAPTIOEN_W<'a> {
     #[inline(always)]
     pub fn captioen_1(self) -> &'a mut W {
         self.variant(CAPTIOEN_A::CAPTIOEN_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u16 & 0x01) << 8);
-        self.w
     }
 }
 #[doc = "Capacitive Touch IO state\n\nValue on reset: 0"]
@@ -540,12 +465,9 @@ impl From<CAPTIOSTATE_A> for bool {
     }
 }
 #[doc = "Field `CAPTIOSTATE` reader - Capacitive Touch IO state"]
-pub struct CAPTIOSTATE_R(crate::FieldReader<bool, CAPTIOSTATE_A>);
+pub type CAPTIOSTATE_R = crate::BitReader<CAPTIOSTATE_A>;
 impl CAPTIOSTATE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CAPTIOSTATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAPTIOSTATE_A {
         match self.bits {
@@ -556,26 +478,19 @@ impl CAPTIOSTATE_R {
     #[doc = "Checks if the value of the field is `CAPTIOSTATE_0`"]
     #[inline(always)]
     pub fn is_captiostate_0(&self) -> bool {
-        **self == CAPTIOSTATE_A::CAPTIOSTATE_0
+        *self == CAPTIOSTATE_A::CAPTIOSTATE_0
     }
     #[doc = "Checks if the value of the field is `CAPTIOSTATE_1`"]
     #[inline(always)]
     pub fn is_captiostate_1(&self) -> bool {
-        **self == CAPTIOSTATE_A::CAPTIOSTATE_1
-    }
-}
-impl core::ops::Deref for CAPTIOSTATE_R {
-    type Target = crate::FieldReader<bool, CAPTIOSTATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CAPTIOSTATE_A::CAPTIOSTATE_1
     }
 }
 impl R {
     #[doc = "Bits 1:3 - Capacitive Touch IO pin select"]
     #[inline(always)]
     pub fn captiopiselx(&self) -> CAPTIOPISELX_R {
-        CAPTIOPISELX_R::new(((self.bits >> 1) & 0x07) as u8)
+        CAPTIOPISELX_R::new(((self.bits >> 1) & 7) as u8)
     }
     #[doc = "Bits 4:7 - Capacitive Touch IO port select"]
     #[inline(always)]
@@ -585,31 +500,32 @@ impl R {
     #[doc = "Bit 8 - Capacitive Touch IO enable"]
     #[inline(always)]
     pub fn captioen(&self) -> CAPTIOEN_R {
-        CAPTIOEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        CAPTIOEN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Capacitive Touch IO state"]
     #[inline(always)]
     pub fn captiostate(&self) -> CAPTIOSTATE_R {
-        CAPTIOSTATE_R::new(((self.bits >> 9) & 0x01) != 0)
+        CAPTIOSTATE_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 1:3 - Capacitive Touch IO pin select"]
     #[inline(always)]
-    pub fn captiopiselx(&mut self) -> CAPTIOPISELX_W {
-        CAPTIOPISELX_W { w: self }
+    pub fn captiopiselx(&mut self) -> CAPTIOPISELX_W<1> {
+        CAPTIOPISELX_W::new(self)
     }
     #[doc = "Bits 4:7 - Capacitive Touch IO port select"]
     #[inline(always)]
-    pub fn captioposelx(&mut self) -> CAPTIOPOSELX_W {
-        CAPTIOPOSELX_W { w: self }
+    pub fn captioposelx(&mut self) -> CAPTIOPOSELX_W<4> {
+        CAPTIOPOSELX_W::new(self)
     }
     #[doc = "Bit 8 - Capacitive Touch IO enable"]
     #[inline(always)]
-    pub fn captioen(&mut self) -> CAPTIOEN_W {
-        CAPTIOEN_W { w: self }
+    pub fn captioen(&mut self) -> CAPTIOEN_W<8> {
+        CAPTIOEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

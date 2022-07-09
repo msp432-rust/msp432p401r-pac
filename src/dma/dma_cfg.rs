@@ -13,7 +13,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DMA_CFG_SPEC>> for W {
+impl From<crate::W<DMA_CFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DMA_CFG_SPEC>) -> Self {
         W(writer)
     }
@@ -33,15 +34,8 @@ impl From<MASTEN_AW> for bool {
     }
 }
 #[doc = "Field `MASTEN` writer - Enable status of the controller"]
-pub struct MASTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MASTEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MASTEN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MASTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_CFG_SPEC, MASTEN_AW, O>;
+impl<'a, const O: u8> MASTEN_W<'a, O> {
     #[doc = "Controller disabled"]
     #[inline(always)]
     pub fn masten_0(self) -> &'a mut W {
@@ -51,22 +45,6 @@ impl<'a> MASTEN_W<'a> {
     #[inline(always)]
     pub fn masten_1(self) -> &'a mut W {
         self.variant(MASTEN_AW::MASTEN_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 #[doc = "Field `CHPROTCTRL` writer - Sets the AHB-Lite protection by controlling the HPROT\\[3:1\\]
@@ -79,22 +57,12 @@ Controls HPROT\\[1\\]
 to indicate if a privileged access is occurring. Note: When bit \\[n\\]
 = 1 then the corresponding HPROT is HIGH. When bit \\[n\\]
 = 0 then the corresponding HPROT is LOW."]
-pub struct CHPROTCTRL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHPROTCTRL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 5)) | ((value as u32 & 0x07) << 5);
-        self.w
-    }
-}
+pub type CHPROTCTRL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DMA_CFG_SPEC, u8, u8, 3, O>;
 impl W {
     #[doc = "Bit 0 - Enable status of the controller"]
     #[inline(always)]
-    pub fn masten(&mut self) -> MASTEN_W {
-        MASTEN_W { w: self }
+    pub fn masten(&mut self) -> MASTEN_W<0> {
+        MASTEN_W::new(self)
     }
     #[doc = "Bits 5:7 - Sets the AHB-Lite protection by controlling the HPROT\\[3:1\\]
 signal levels as follows: Bit \\[7\\]
@@ -107,10 +75,11 @@ to indicate if a privileged access is occurring. Note: When bit \\[n\\]
 = 1 then the corresponding HPROT is HIGH. When bit \\[n\\]
 = 0 then the corresponding HPROT is LOW."]
     #[inline(always)]
-    pub fn chprotctrl(&mut self) -> CHPROTCTRL_W {
-        CHPROTCTRL_W { w: self }
+    pub fn chprotctrl(&mut self) -> CHPROTCTRL_W<5> {
+        CHPROTCTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

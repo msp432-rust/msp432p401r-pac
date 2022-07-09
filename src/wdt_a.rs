@@ -1,7 +1,7 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    _reserved0: [u8; 12usize],
+    _reserved0: [u8; 0x0c],
     #[doc = "0x0c - Watchdog Timer Control Register"]
     pub wdtctl: crate::Reg<wdtctl::WDTCTL_SPEC>,
 }

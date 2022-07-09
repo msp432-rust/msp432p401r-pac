@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RTCPS1CTL_SPEC>> for R {
+impl From<crate::R<RTCPS1CTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RTCPS1CTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RTCPS1CTL_SPEC>> for W {
+impl From<crate::W<RTCPS1CTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RTCPS1CTL_SPEC>) -> Self {
         W(writer)
     }
@@ -47,12 +49,9 @@ impl From<RT1PSIFG_A> for bool {
     }
 }
 #[doc = "Field `RT1PSIFG` reader - Prescale timer 1 interrupt flag"]
-pub struct RT1PSIFG_R(crate::FieldReader<bool, RT1PSIFG_A>);
+pub type RT1PSIFG_R = crate::BitReader<RT1PSIFG_A>;
 impl RT1PSIFG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RT1PSIFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RT1PSIFG_A {
         match self.bits {
@@ -63,31 +62,17 @@ impl RT1PSIFG_R {
     #[doc = "Checks if the value of the field is `RT1PSIFG_0`"]
     #[inline(always)]
     pub fn is_rt1psifg_0(&self) -> bool {
-        **self == RT1PSIFG_A::RT1PSIFG_0
+        *self == RT1PSIFG_A::RT1PSIFG_0
     }
     #[doc = "Checks if the value of the field is `RT1PSIFG_1`"]
     #[inline(always)]
     pub fn is_rt1psifg_1(&self) -> bool {
-        **self == RT1PSIFG_A::RT1PSIFG_1
-    }
-}
-impl core::ops::Deref for RT1PSIFG_R {
-    type Target = crate::FieldReader<bool, RT1PSIFG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RT1PSIFG_A::RT1PSIFG_1
     }
 }
 #[doc = "Field `RT1PSIFG` writer - Prescale timer 1 interrupt flag"]
-pub struct RT1PSIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RT1PSIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RT1PSIFG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RT1PSIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, RTCPS1CTL_SPEC, RT1PSIFG_A, O>;
+impl<'a, const O: u8> RT1PSIFG_W<'a, O> {
     #[doc = "No time event occurred"]
     #[inline(always)]
     pub fn rt1psifg_0(self) -> &'a mut W {
@@ -97,22 +82,6 @@ impl<'a> RT1PSIFG_W<'a> {
     #[inline(always)]
     pub fn rt1psifg_1(self) -> &'a mut W {
         self.variant(RT1PSIFG_A::RT1PSIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
-        self.w
     }
 }
 #[doc = "Prescale timer 1 interrupt enable\n\nValue on reset: 0"]
@@ -130,12 +99,9 @@ impl From<RT1PSIE_A> for bool {
     }
 }
 #[doc = "Field `RT1PSIE` reader - Prescale timer 1 interrupt enable"]
-pub struct RT1PSIE_R(crate::FieldReader<bool, RT1PSIE_A>);
+pub type RT1PSIE_R = crate::BitReader<RT1PSIE_A>;
 impl RT1PSIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RT1PSIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RT1PSIE_A {
         match self.bits {
@@ -146,31 +112,17 @@ impl RT1PSIE_R {
     #[doc = "Checks if the value of the field is `RT1PSIE_0`"]
     #[inline(always)]
     pub fn is_rt1psie_0(&self) -> bool {
-        **self == RT1PSIE_A::RT1PSIE_0
+        *self == RT1PSIE_A::RT1PSIE_0
     }
     #[doc = "Checks if the value of the field is `RT1PSIE_1`"]
     #[inline(always)]
     pub fn is_rt1psie_1(&self) -> bool {
-        **self == RT1PSIE_A::RT1PSIE_1
-    }
-}
-impl core::ops::Deref for RT1PSIE_R {
-    type Target = crate::FieldReader<bool, RT1PSIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RT1PSIE_A::RT1PSIE_1
     }
 }
 #[doc = "Field `RT1PSIE` writer - Prescale timer 1 interrupt enable"]
-pub struct RT1PSIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RT1PSIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RT1PSIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RT1PSIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, RTCPS1CTL_SPEC, RT1PSIE_A, O>;
+impl<'a, const O: u8> RT1PSIE_W<'a, O> {
     #[doc = "Interrupt not enabled"]
     #[inline(always)]
     pub fn rt1psie_0(self) -> &'a mut W {
@@ -180,22 +132,6 @@ impl<'a> RT1PSIE_W<'a> {
     #[inline(always)]
     pub fn rt1psie_1(self) -> &'a mut W {
         self.variant(RT1PSIE_A::RT1PSIE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
-        self.w
     }
 }
 #[doc = "Prescale timer 1 interrupt interval\n\nValue on reset: 0"]
@@ -226,12 +162,9 @@ impl From<RT1IP_A> for u8 {
     }
 }
 #[doc = "Field `RT1IP` reader - Prescale timer 1 interrupt interval"]
-pub struct RT1IP_R(crate::FieldReader<u8, RT1IP_A>);
+pub type RT1IP_R = crate::FieldReader<u8, RT1IP_A>;
 impl RT1IP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RT1IP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RT1IP_A {
         match self.bits {
@@ -249,61 +182,48 @@ impl RT1IP_R {
     #[doc = "Checks if the value of the field is `RT1IP_0`"]
     #[inline(always)]
     pub fn is_rt1ip_0(&self) -> bool {
-        **self == RT1IP_A::RT1IP_0
+        *self == RT1IP_A::RT1IP_0
     }
     #[doc = "Checks if the value of the field is `RT1IP_1`"]
     #[inline(always)]
     pub fn is_rt1ip_1(&self) -> bool {
-        **self == RT1IP_A::RT1IP_1
+        *self == RT1IP_A::RT1IP_1
     }
     #[doc = "Checks if the value of the field is `RT1IP_2`"]
     #[inline(always)]
     pub fn is_rt1ip_2(&self) -> bool {
-        **self == RT1IP_A::RT1IP_2
+        *self == RT1IP_A::RT1IP_2
     }
     #[doc = "Checks if the value of the field is `RT1IP_3`"]
     #[inline(always)]
     pub fn is_rt1ip_3(&self) -> bool {
-        **self == RT1IP_A::RT1IP_3
+        *self == RT1IP_A::RT1IP_3
     }
     #[doc = "Checks if the value of the field is `RT1IP_4`"]
     #[inline(always)]
     pub fn is_rt1ip_4(&self) -> bool {
-        **self == RT1IP_A::RT1IP_4
+        *self == RT1IP_A::RT1IP_4
     }
     #[doc = "Checks if the value of the field is `RT1IP_5`"]
     #[inline(always)]
     pub fn is_rt1ip_5(&self) -> bool {
-        **self == RT1IP_A::RT1IP_5
+        *self == RT1IP_A::RT1IP_5
     }
     #[doc = "Checks if the value of the field is `RT1IP_6`"]
     #[inline(always)]
     pub fn is_rt1ip_6(&self) -> bool {
-        **self == RT1IP_A::RT1IP_6
+        *self == RT1IP_A::RT1IP_6
     }
     #[doc = "Checks if the value of the field is `RT1IP_7`"]
     #[inline(always)]
     pub fn is_rt1ip_7(&self) -> bool {
-        **self == RT1IP_A::RT1IP_7
-    }
-}
-impl core::ops::Deref for RT1IP_R {
-    type Target = crate::FieldReader<u8, RT1IP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RT1IP_A::RT1IP_7
     }
 }
 #[doc = "Field `RT1IP` writer - Prescale timer 1 interrupt interval"]
-pub struct RT1IP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RT1IP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RT1IP_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RT1IP_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, RTCPS1CTL_SPEC, u8, RT1IP_A, 3, O>;
+impl<'a, const O: u8> RT1IP_W<'a, O> {
     #[doc = "Divide by 2"]
     #[inline(always)]
     pub fn rt1ip_0(self) -> &'a mut W {
@@ -344,47 +264,42 @@ impl<'a> RT1IP_W<'a> {
     pub fn rt1ip_7(self) -> &'a mut W {
         self.variant(RT1IP_A::RT1IP_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 2)) | ((value as u16 & 0x07) << 2);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Prescale timer 1 interrupt flag"]
     #[inline(always)]
     pub fn rt1psifg(&self) -> RT1PSIFG_R {
-        RT1PSIFG_R::new((self.bits & 0x01) != 0)
+        RT1PSIFG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Prescale timer 1 interrupt enable"]
     #[inline(always)]
     pub fn rt1psie(&self) -> RT1PSIE_R {
-        RT1PSIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        RT1PSIE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 2:4 - Prescale timer 1 interrupt interval"]
     #[inline(always)]
     pub fn rt1ip(&self) -> RT1IP_R {
-        RT1IP_R::new(((self.bits >> 2) & 0x07) as u8)
+        RT1IP_R::new(((self.bits >> 2) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Prescale timer 1 interrupt flag"]
     #[inline(always)]
-    pub fn rt1psifg(&mut self) -> RT1PSIFG_W {
-        RT1PSIFG_W { w: self }
+    pub fn rt1psifg(&mut self) -> RT1PSIFG_W<0> {
+        RT1PSIFG_W::new(self)
     }
     #[doc = "Bit 1 - Prescale timer 1 interrupt enable"]
     #[inline(always)]
-    pub fn rt1psie(&mut self) -> RT1PSIE_W {
-        RT1PSIE_W { w: self }
+    pub fn rt1psie(&mut self) -> RT1PSIE_W<1> {
+        RT1PSIE_W::new(self)
     }
     #[doc = "Bits 2:4 - Prescale timer 1 interrupt interval"]
     #[inline(always)]
-    pub fn rt1ip(&mut self) -> RT1IP_W {
-        RT1IP_W { w: self }
+    pub fn rt1ip(&mut self) -> RT1IP_W<2> {
+        RT1IP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

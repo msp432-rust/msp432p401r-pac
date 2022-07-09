@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PJSEL1_SPEC>> for R {
+impl From<crate::R<PJSEL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PJSEL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,51 +28,31 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PJSEL1_SPEC>> for W {
+impl From<crate::W<PJSEL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PJSEL1_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `PJSEL1` reader - Port J Select 1"]
-pub struct PJSEL1_R(crate::FieldReader<u16, u16>);
-impl PJSEL1_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PJSEL1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PJSEL1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PJSEL1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PJSEL1` writer - Port J Select 1"]
-pub struct PJSEL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PJSEL1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
-        self.w
-    }
-}
+pub type PJSEL1_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PJSEL1_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Port J Select 1"]
     #[inline(always)]
     pub fn pjsel1(&self) -> PJSEL1_R {
-        PJSEL1_R::new((self.bits & 0xffff) as u16)
+        PJSEL1_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Port J Select 1"]
     #[inline(always)]
-    pub fn pjsel1(&mut self) -> PJSEL1_W {
-        PJSEL1_W { w: self }
+    pub fn pjsel1(&mut self) -> PJSEL1_W<0> {
+        PJSEL1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self
