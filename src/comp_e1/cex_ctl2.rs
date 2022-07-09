@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CEXCTL2_SPEC>> for R {
+impl From<crate::R<CEXCTL2_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CEXCTL2_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CEXCTL2_SPEC>> for W {
+impl From<crate::W<CEXCTL2_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CEXCTL2_SPEC>) -> Self {
         W(writer)
     }
@@ -108,12 +110,9 @@ impl From<CEREF0_A> for u8 {
     }
 }
 #[doc = "Field `CEREF0` reader - Reference resistor tap 0"]
-pub struct CEREF0_R(crate::FieldReader<u8, CEREF0_A>);
+pub type CEREF0_R = crate::FieldReader<u8, CEREF0_A>;
 impl CEREF0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CEREF0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEREF0_A {
         match self.bits {
@@ -155,181 +154,168 @@ impl CEREF0_R {
     #[doc = "Checks if the value of the field is `CEREF0_0`"]
     #[inline(always)]
     pub fn is_ceref0_0(&self) -> bool {
-        **self == CEREF0_A::CEREF0_0
+        *self == CEREF0_A::CEREF0_0
     }
     #[doc = "Checks if the value of the field is `CEREF0_1`"]
     #[inline(always)]
     pub fn is_ceref0_1(&self) -> bool {
-        **self == CEREF0_A::CEREF0_1
+        *self == CEREF0_A::CEREF0_1
     }
     #[doc = "Checks if the value of the field is `CEREF0_2`"]
     #[inline(always)]
     pub fn is_ceref0_2(&self) -> bool {
-        **self == CEREF0_A::CEREF0_2
+        *self == CEREF0_A::CEREF0_2
     }
     #[doc = "Checks if the value of the field is `CEREF0_3`"]
     #[inline(always)]
     pub fn is_ceref0_3(&self) -> bool {
-        **self == CEREF0_A::CEREF0_3
+        *self == CEREF0_A::CEREF0_3
     }
     #[doc = "Checks if the value of the field is `CEREF0_4`"]
     #[inline(always)]
     pub fn is_ceref0_4(&self) -> bool {
-        **self == CEREF0_A::CEREF0_4
+        *self == CEREF0_A::CEREF0_4
     }
     #[doc = "Checks if the value of the field is `CEREF0_5`"]
     #[inline(always)]
     pub fn is_ceref0_5(&self) -> bool {
-        **self == CEREF0_A::CEREF0_5
+        *self == CEREF0_A::CEREF0_5
     }
     #[doc = "Checks if the value of the field is `CEREF0_6`"]
     #[inline(always)]
     pub fn is_ceref0_6(&self) -> bool {
-        **self == CEREF0_A::CEREF0_6
+        *self == CEREF0_A::CEREF0_6
     }
     #[doc = "Checks if the value of the field is `CEREF0_7`"]
     #[inline(always)]
     pub fn is_ceref0_7(&self) -> bool {
-        **self == CEREF0_A::CEREF0_7
+        *self == CEREF0_A::CEREF0_7
     }
     #[doc = "Checks if the value of the field is `CEREF0_8`"]
     #[inline(always)]
     pub fn is_ceref0_8(&self) -> bool {
-        **self == CEREF0_A::CEREF0_8
+        *self == CEREF0_A::CEREF0_8
     }
     #[doc = "Checks if the value of the field is `CEREF0_9`"]
     #[inline(always)]
     pub fn is_ceref0_9(&self) -> bool {
-        **self == CEREF0_A::CEREF0_9
+        *self == CEREF0_A::CEREF0_9
     }
     #[doc = "Checks if the value of the field is `CEREF0_10`"]
     #[inline(always)]
     pub fn is_ceref0_10(&self) -> bool {
-        **self == CEREF0_A::CEREF0_10
+        *self == CEREF0_A::CEREF0_10
     }
     #[doc = "Checks if the value of the field is `CEREF0_11`"]
     #[inline(always)]
     pub fn is_ceref0_11(&self) -> bool {
-        **self == CEREF0_A::CEREF0_11
+        *self == CEREF0_A::CEREF0_11
     }
     #[doc = "Checks if the value of the field is `CEREF0_12`"]
     #[inline(always)]
     pub fn is_ceref0_12(&self) -> bool {
-        **self == CEREF0_A::CEREF0_12
+        *self == CEREF0_A::CEREF0_12
     }
     #[doc = "Checks if the value of the field is `CEREF0_13`"]
     #[inline(always)]
     pub fn is_ceref0_13(&self) -> bool {
-        **self == CEREF0_A::CEREF0_13
+        *self == CEREF0_A::CEREF0_13
     }
     #[doc = "Checks if the value of the field is `CEREF0_14`"]
     #[inline(always)]
     pub fn is_ceref0_14(&self) -> bool {
-        **self == CEREF0_A::CEREF0_14
+        *self == CEREF0_A::CEREF0_14
     }
     #[doc = "Checks if the value of the field is `CEREF0_15`"]
     #[inline(always)]
     pub fn is_ceref0_15(&self) -> bool {
-        **self == CEREF0_A::CEREF0_15
+        *self == CEREF0_A::CEREF0_15
     }
     #[doc = "Checks if the value of the field is `CEREF0_16`"]
     #[inline(always)]
     pub fn is_ceref0_16(&self) -> bool {
-        **self == CEREF0_A::CEREF0_16
+        *self == CEREF0_A::CEREF0_16
     }
     #[doc = "Checks if the value of the field is `CEREF0_17`"]
     #[inline(always)]
     pub fn is_ceref0_17(&self) -> bool {
-        **self == CEREF0_A::CEREF0_17
+        *self == CEREF0_A::CEREF0_17
     }
     #[doc = "Checks if the value of the field is `CEREF0_18`"]
     #[inline(always)]
     pub fn is_ceref0_18(&self) -> bool {
-        **self == CEREF0_A::CEREF0_18
+        *self == CEREF0_A::CEREF0_18
     }
     #[doc = "Checks if the value of the field is `CEREF0_19`"]
     #[inline(always)]
     pub fn is_ceref0_19(&self) -> bool {
-        **self == CEREF0_A::CEREF0_19
+        *self == CEREF0_A::CEREF0_19
     }
     #[doc = "Checks if the value of the field is `CEREF0_20`"]
     #[inline(always)]
     pub fn is_ceref0_20(&self) -> bool {
-        **self == CEREF0_A::CEREF0_20
+        *self == CEREF0_A::CEREF0_20
     }
     #[doc = "Checks if the value of the field is `CEREF0_21`"]
     #[inline(always)]
     pub fn is_ceref0_21(&self) -> bool {
-        **self == CEREF0_A::CEREF0_21
+        *self == CEREF0_A::CEREF0_21
     }
     #[doc = "Checks if the value of the field is `CEREF0_22`"]
     #[inline(always)]
     pub fn is_ceref0_22(&self) -> bool {
-        **self == CEREF0_A::CEREF0_22
+        *self == CEREF0_A::CEREF0_22
     }
     #[doc = "Checks if the value of the field is `CEREF0_23`"]
     #[inline(always)]
     pub fn is_ceref0_23(&self) -> bool {
-        **self == CEREF0_A::CEREF0_23
+        *self == CEREF0_A::CEREF0_23
     }
     #[doc = "Checks if the value of the field is `CEREF0_24`"]
     #[inline(always)]
     pub fn is_ceref0_24(&self) -> bool {
-        **self == CEREF0_A::CEREF0_24
+        *self == CEREF0_A::CEREF0_24
     }
     #[doc = "Checks if the value of the field is `CEREF0_25`"]
     #[inline(always)]
     pub fn is_ceref0_25(&self) -> bool {
-        **self == CEREF0_A::CEREF0_25
+        *self == CEREF0_A::CEREF0_25
     }
     #[doc = "Checks if the value of the field is `CEREF0_26`"]
     #[inline(always)]
     pub fn is_ceref0_26(&self) -> bool {
-        **self == CEREF0_A::CEREF0_26
+        *self == CEREF0_A::CEREF0_26
     }
     #[doc = "Checks if the value of the field is `CEREF0_27`"]
     #[inline(always)]
     pub fn is_ceref0_27(&self) -> bool {
-        **self == CEREF0_A::CEREF0_27
+        *self == CEREF0_A::CEREF0_27
     }
     #[doc = "Checks if the value of the field is `CEREF0_28`"]
     #[inline(always)]
     pub fn is_ceref0_28(&self) -> bool {
-        **self == CEREF0_A::CEREF0_28
+        *self == CEREF0_A::CEREF0_28
     }
     #[doc = "Checks if the value of the field is `CEREF0_29`"]
     #[inline(always)]
     pub fn is_ceref0_29(&self) -> bool {
-        **self == CEREF0_A::CEREF0_29
+        *self == CEREF0_A::CEREF0_29
     }
     #[doc = "Checks if the value of the field is `CEREF0_30`"]
     #[inline(always)]
     pub fn is_ceref0_30(&self) -> bool {
-        **self == CEREF0_A::CEREF0_30
+        *self == CEREF0_A::CEREF0_30
     }
     #[doc = "Checks if the value of the field is `CEREF0_31`"]
     #[inline(always)]
     pub fn is_ceref0_31(&self) -> bool {
-        **self == CEREF0_A::CEREF0_31
-    }
-}
-impl core::ops::Deref for CEREF0_R {
-    type Target = crate::FieldReader<u8, CEREF0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CEREF0_A::CEREF0_31
     }
 }
 #[doc = "Field `CEREF0` writer - Reference resistor tap 0"]
-pub struct CEREF0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEREF0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEREF0_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CEREF0_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CEXCTL2_SPEC, u8, CEREF0_A, 5, O>;
+impl<'a, const O: u8> CEREF0_W<'a, O> {
     #[doc = "Reference resistor tap for setting 0."]
     #[inline(always)]
     pub fn ceref0_0(self) -> &'a mut W {
@@ -490,12 +476,6 @@ impl<'a> CEREF0_W<'a> {
     pub fn ceref0_31(self) -> &'a mut W {
         self.variant(CEREF0_A::CEREF0_31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u16 & 0x1f);
-        self.w
-    }
 }
 #[doc = "Reference select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -512,12 +492,9 @@ impl From<CERSEL_A> for bool {
     }
 }
 #[doc = "Field `CERSEL` reader - Reference select"]
-pub struct CERSEL_R(crate::FieldReader<bool, CERSEL_A>);
+pub type CERSEL_R = crate::BitReader<CERSEL_A>;
 impl CERSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CERSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CERSEL_A {
         match self.bits {
@@ -528,31 +505,17 @@ impl CERSEL_R {
     #[doc = "Checks if the value of the field is `CERSEL_0`"]
     #[inline(always)]
     pub fn is_cersel_0(&self) -> bool {
-        **self == CERSEL_A::CERSEL_0
+        *self == CERSEL_A::CERSEL_0
     }
     #[doc = "Checks if the value of the field is `CERSEL_1`"]
     #[inline(always)]
     pub fn is_cersel_1(&self) -> bool {
-        **self == CERSEL_A::CERSEL_1
-    }
-}
-impl core::ops::Deref for CERSEL_R {
-    type Target = crate::FieldReader<bool, CERSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CERSEL_A::CERSEL_1
     }
 }
 #[doc = "Field `CERSEL` writer - Reference select"]
-pub struct CERSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CERSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CERSEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CERSEL_W<'a, const O: u8> = crate::BitWriter<'a, u16, CEXCTL2_SPEC, CERSEL_A, O>;
+impl<'a, const O: u8> CERSEL_W<'a, O> {
     #[doc = "When CEEX = 0, VREF is applied to the V+ terminal; When CEEX = 1, VREF is applied to the V- terminal"]
     #[inline(always)]
     pub fn cersel_0(self) -> &'a mut W {
@@ -562,22 +525,6 @@ impl<'a> CERSEL_W<'a> {
     #[inline(always)]
     pub fn cersel_1(self) -> &'a mut W {
         self.variant(CERSEL_A::CERSEL_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u16 & 0x01) << 5);
-        self.w
     }
 }
 #[doc = "Reference source\n\nValue on reset: 0"]
@@ -600,12 +547,9 @@ impl From<CERS_A> for u8 {
     }
 }
 #[doc = "Field `CERS` reader - Reference source"]
-pub struct CERS_R(crate::FieldReader<u8, CERS_A>);
+pub type CERS_R = crate::FieldReader<u8, CERS_A>;
 impl CERS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CERS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CERS_A {
         match self.bits {
@@ -619,41 +563,27 @@ impl CERS_R {
     #[doc = "Checks if the value of the field is `CERS_0`"]
     #[inline(always)]
     pub fn is_cers_0(&self) -> bool {
-        **self == CERS_A::CERS_0
+        *self == CERS_A::CERS_0
     }
     #[doc = "Checks if the value of the field is `CERS_1`"]
     #[inline(always)]
     pub fn is_cers_1(&self) -> bool {
-        **self == CERS_A::CERS_1
+        *self == CERS_A::CERS_1
     }
     #[doc = "Checks if the value of the field is `CERS_2`"]
     #[inline(always)]
     pub fn is_cers_2(&self) -> bool {
-        **self == CERS_A::CERS_2
+        *self == CERS_A::CERS_2
     }
     #[doc = "Checks if the value of the field is `CERS_3`"]
     #[inline(always)]
     pub fn is_cers_3(&self) -> bool {
-        **self == CERS_A::CERS_3
-    }
-}
-impl core::ops::Deref for CERS_R {
-    type Target = crate::FieldReader<u8, CERS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CERS_A::CERS_3
     }
 }
 #[doc = "Field `CERS` writer - Reference source"]
-pub struct CERS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CERS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CERS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CERS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, CEXCTL2_SPEC, u8, CERS_A, 2, O>;
+impl<'a, const O: u8> CERS_W<'a, O> {
     #[doc = "No current is drawn by the reference circuitry"]
     #[inline(always)]
     pub fn cers_0(self) -> &'a mut W {
@@ -673,12 +603,6 @@ impl<'a> CERS_W<'a> {
     #[inline(always)]
     pub fn cers_3(self) -> &'a mut W {
         self.variant(CERS_A::CERS_3)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u16 & 0x03) << 6);
-        self.w
     }
 }
 #[doc = "Reference resistor tap 1\n\nValue on reset: 0"]
@@ -757,12 +681,9 @@ impl From<CEREF1_A> for u8 {
     }
 }
 #[doc = "Field `CEREF1` reader - Reference resistor tap 1"]
-pub struct CEREF1_R(crate::FieldReader<u8, CEREF1_A>);
+pub type CEREF1_R = crate::FieldReader<u8, CEREF1_A>;
 impl CEREF1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CEREF1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEREF1_A {
         match self.bits {
@@ -804,181 +725,168 @@ impl CEREF1_R {
     #[doc = "Checks if the value of the field is `CEREF1_0`"]
     #[inline(always)]
     pub fn is_ceref1_0(&self) -> bool {
-        **self == CEREF1_A::CEREF1_0
+        *self == CEREF1_A::CEREF1_0
     }
     #[doc = "Checks if the value of the field is `CEREF1_1`"]
     #[inline(always)]
     pub fn is_ceref1_1(&self) -> bool {
-        **self == CEREF1_A::CEREF1_1
+        *self == CEREF1_A::CEREF1_1
     }
     #[doc = "Checks if the value of the field is `CEREF1_2`"]
     #[inline(always)]
     pub fn is_ceref1_2(&self) -> bool {
-        **self == CEREF1_A::CEREF1_2
+        *self == CEREF1_A::CEREF1_2
     }
     #[doc = "Checks if the value of the field is `CEREF1_3`"]
     #[inline(always)]
     pub fn is_ceref1_3(&self) -> bool {
-        **self == CEREF1_A::CEREF1_3
+        *self == CEREF1_A::CEREF1_3
     }
     #[doc = "Checks if the value of the field is `CEREF1_4`"]
     #[inline(always)]
     pub fn is_ceref1_4(&self) -> bool {
-        **self == CEREF1_A::CEREF1_4
+        *self == CEREF1_A::CEREF1_4
     }
     #[doc = "Checks if the value of the field is `CEREF1_5`"]
     #[inline(always)]
     pub fn is_ceref1_5(&self) -> bool {
-        **self == CEREF1_A::CEREF1_5
+        *self == CEREF1_A::CEREF1_5
     }
     #[doc = "Checks if the value of the field is `CEREF1_6`"]
     #[inline(always)]
     pub fn is_ceref1_6(&self) -> bool {
-        **self == CEREF1_A::CEREF1_6
+        *self == CEREF1_A::CEREF1_6
     }
     #[doc = "Checks if the value of the field is `CEREF1_7`"]
     #[inline(always)]
     pub fn is_ceref1_7(&self) -> bool {
-        **self == CEREF1_A::CEREF1_7
+        *self == CEREF1_A::CEREF1_7
     }
     #[doc = "Checks if the value of the field is `CEREF1_8`"]
     #[inline(always)]
     pub fn is_ceref1_8(&self) -> bool {
-        **self == CEREF1_A::CEREF1_8
+        *self == CEREF1_A::CEREF1_8
     }
     #[doc = "Checks if the value of the field is `CEREF1_9`"]
     #[inline(always)]
     pub fn is_ceref1_9(&self) -> bool {
-        **self == CEREF1_A::CEREF1_9
+        *self == CEREF1_A::CEREF1_9
     }
     #[doc = "Checks if the value of the field is `CEREF1_10`"]
     #[inline(always)]
     pub fn is_ceref1_10(&self) -> bool {
-        **self == CEREF1_A::CEREF1_10
+        *self == CEREF1_A::CEREF1_10
     }
     #[doc = "Checks if the value of the field is `CEREF1_11`"]
     #[inline(always)]
     pub fn is_ceref1_11(&self) -> bool {
-        **self == CEREF1_A::CEREF1_11
+        *self == CEREF1_A::CEREF1_11
     }
     #[doc = "Checks if the value of the field is `CEREF1_12`"]
     #[inline(always)]
     pub fn is_ceref1_12(&self) -> bool {
-        **self == CEREF1_A::CEREF1_12
+        *self == CEREF1_A::CEREF1_12
     }
     #[doc = "Checks if the value of the field is `CEREF1_13`"]
     #[inline(always)]
     pub fn is_ceref1_13(&self) -> bool {
-        **self == CEREF1_A::CEREF1_13
+        *self == CEREF1_A::CEREF1_13
     }
     #[doc = "Checks if the value of the field is `CEREF1_14`"]
     #[inline(always)]
     pub fn is_ceref1_14(&self) -> bool {
-        **self == CEREF1_A::CEREF1_14
+        *self == CEREF1_A::CEREF1_14
     }
     #[doc = "Checks if the value of the field is `CEREF1_15`"]
     #[inline(always)]
     pub fn is_ceref1_15(&self) -> bool {
-        **self == CEREF1_A::CEREF1_15
+        *self == CEREF1_A::CEREF1_15
     }
     #[doc = "Checks if the value of the field is `CEREF1_16`"]
     #[inline(always)]
     pub fn is_ceref1_16(&self) -> bool {
-        **self == CEREF1_A::CEREF1_16
+        *self == CEREF1_A::CEREF1_16
     }
     #[doc = "Checks if the value of the field is `CEREF1_17`"]
     #[inline(always)]
     pub fn is_ceref1_17(&self) -> bool {
-        **self == CEREF1_A::CEREF1_17
+        *self == CEREF1_A::CEREF1_17
     }
     #[doc = "Checks if the value of the field is `CEREF1_18`"]
     #[inline(always)]
     pub fn is_ceref1_18(&self) -> bool {
-        **self == CEREF1_A::CEREF1_18
+        *self == CEREF1_A::CEREF1_18
     }
     #[doc = "Checks if the value of the field is `CEREF1_19`"]
     #[inline(always)]
     pub fn is_ceref1_19(&self) -> bool {
-        **self == CEREF1_A::CEREF1_19
+        *self == CEREF1_A::CEREF1_19
     }
     #[doc = "Checks if the value of the field is `CEREF1_20`"]
     #[inline(always)]
     pub fn is_ceref1_20(&self) -> bool {
-        **self == CEREF1_A::CEREF1_20
+        *self == CEREF1_A::CEREF1_20
     }
     #[doc = "Checks if the value of the field is `CEREF1_21`"]
     #[inline(always)]
     pub fn is_ceref1_21(&self) -> bool {
-        **self == CEREF1_A::CEREF1_21
+        *self == CEREF1_A::CEREF1_21
     }
     #[doc = "Checks if the value of the field is `CEREF1_22`"]
     #[inline(always)]
     pub fn is_ceref1_22(&self) -> bool {
-        **self == CEREF1_A::CEREF1_22
+        *self == CEREF1_A::CEREF1_22
     }
     #[doc = "Checks if the value of the field is `CEREF1_23`"]
     #[inline(always)]
     pub fn is_ceref1_23(&self) -> bool {
-        **self == CEREF1_A::CEREF1_23
+        *self == CEREF1_A::CEREF1_23
     }
     #[doc = "Checks if the value of the field is `CEREF1_24`"]
     #[inline(always)]
     pub fn is_ceref1_24(&self) -> bool {
-        **self == CEREF1_A::CEREF1_24
+        *self == CEREF1_A::CEREF1_24
     }
     #[doc = "Checks if the value of the field is `CEREF1_25`"]
     #[inline(always)]
     pub fn is_ceref1_25(&self) -> bool {
-        **self == CEREF1_A::CEREF1_25
+        *self == CEREF1_A::CEREF1_25
     }
     #[doc = "Checks if the value of the field is `CEREF1_26`"]
     #[inline(always)]
     pub fn is_ceref1_26(&self) -> bool {
-        **self == CEREF1_A::CEREF1_26
+        *self == CEREF1_A::CEREF1_26
     }
     #[doc = "Checks if the value of the field is `CEREF1_27`"]
     #[inline(always)]
     pub fn is_ceref1_27(&self) -> bool {
-        **self == CEREF1_A::CEREF1_27
+        *self == CEREF1_A::CEREF1_27
     }
     #[doc = "Checks if the value of the field is `CEREF1_28`"]
     #[inline(always)]
     pub fn is_ceref1_28(&self) -> bool {
-        **self == CEREF1_A::CEREF1_28
+        *self == CEREF1_A::CEREF1_28
     }
     #[doc = "Checks if the value of the field is `CEREF1_29`"]
     #[inline(always)]
     pub fn is_ceref1_29(&self) -> bool {
-        **self == CEREF1_A::CEREF1_29
+        *self == CEREF1_A::CEREF1_29
     }
     #[doc = "Checks if the value of the field is `CEREF1_30`"]
     #[inline(always)]
     pub fn is_ceref1_30(&self) -> bool {
-        **self == CEREF1_A::CEREF1_30
+        *self == CEREF1_A::CEREF1_30
     }
     #[doc = "Checks if the value of the field is `CEREF1_31`"]
     #[inline(always)]
     pub fn is_ceref1_31(&self) -> bool {
-        **self == CEREF1_A::CEREF1_31
-    }
-}
-impl core::ops::Deref for CEREF1_R {
-    type Target = crate::FieldReader<u8, CEREF1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CEREF1_A::CEREF1_31
     }
 }
 #[doc = "Field `CEREF1` writer - Reference resistor tap 1"]
-pub struct CEREF1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEREF1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEREF1_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CEREF1_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CEXCTL2_SPEC, u8, CEREF1_A, 5, O>;
+impl<'a, const O: u8> CEREF1_W<'a, O> {
     #[doc = "Reference resistor tap for setting 0."]
     #[inline(always)]
     pub fn ceref1_0(self) -> &'a mut W {
@@ -1139,12 +1047,6 @@ impl<'a> CEREF1_W<'a> {
     pub fn ceref1_31(self) -> &'a mut W {
         self.variant(CEREF1_A::CEREF1_31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | ((value as u16 & 0x1f) << 8);
-        self.w
-    }
 }
 #[doc = "Reference voltage level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -1166,12 +1068,9 @@ impl From<CEREFL_A> for u8 {
     }
 }
 #[doc = "Field `CEREFL` reader - Reference voltage level"]
-pub struct CEREFL_R(crate::FieldReader<u8, CEREFL_A>);
+pub type CEREFL_R = crate::FieldReader<u8, CEREFL_A>;
 impl CEREFL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CEREFL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEREFL_A {
         match self.bits {
@@ -1185,41 +1084,28 @@ impl CEREFL_R {
     #[doc = "Checks if the value of the field is `CEREFL_0`"]
     #[inline(always)]
     pub fn is_cerefl_0(&self) -> bool {
-        **self == CEREFL_A::CEREFL_0
+        *self == CEREFL_A::CEREFL_0
     }
     #[doc = "Checks if the value of the field is `CEREFL_1`"]
     #[inline(always)]
     pub fn is_cerefl_1(&self) -> bool {
-        **self == CEREFL_A::CEREFL_1
+        *self == CEREFL_A::CEREFL_1
     }
     #[doc = "Checks if the value of the field is `CEREFL_2`"]
     #[inline(always)]
     pub fn is_cerefl_2(&self) -> bool {
-        **self == CEREFL_A::CEREFL_2
+        *self == CEREFL_A::CEREFL_2
     }
     #[doc = "Checks if the value of the field is `CEREFL_3`"]
     #[inline(always)]
     pub fn is_cerefl_3(&self) -> bool {
-        **self == CEREFL_A::CEREFL_3
-    }
-}
-impl core::ops::Deref for CEREFL_R {
-    type Target = crate::FieldReader<u8, CEREFL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CEREFL_A::CEREFL_3
     }
 }
 #[doc = "Field `CEREFL` writer - Reference voltage level"]
-pub struct CEREFL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEREFL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEREFL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CEREFL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, CEXCTL2_SPEC, u8, CEREFL_A, 2, O>;
+impl<'a, const O: u8> CEREFL_W<'a, O> {
     #[doc = "Reference amplifier is disabled. No reference voltage is requested"]
     #[inline(always)]
     pub fn cerefl_0(self) -> &'a mut W {
@@ -1240,12 +1126,6 @@ impl<'a> CEREFL_W<'a> {
     pub fn cerefl_3(self) -> &'a mut W {
         self.variant(CEREFL_A::CEREFL_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 13)) | ((value as u16 & 0x03) << 13);
-        self.w
-    }
 }
 #[doc = "Reference accuracy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -1262,12 +1142,9 @@ impl From<CEREFACC_A> for bool {
     }
 }
 #[doc = "Field `CEREFACC` reader - Reference accuracy"]
-pub struct CEREFACC_R(crate::FieldReader<bool, CEREFACC_A>);
+pub type CEREFACC_R = crate::BitReader<CEREFACC_A>;
 impl CEREFACC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CEREFACC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEREFACC_A {
         match self.bits {
@@ -1278,31 +1155,17 @@ impl CEREFACC_R {
     #[doc = "Checks if the value of the field is `CEREFACC_0`"]
     #[inline(always)]
     pub fn is_cerefacc_0(&self) -> bool {
-        **self == CEREFACC_A::CEREFACC_0
+        *self == CEREFACC_A::CEREFACC_0
     }
     #[doc = "Checks if the value of the field is `CEREFACC_1`"]
     #[inline(always)]
     pub fn is_cerefacc_1(&self) -> bool {
-        **self == CEREFACC_A::CEREFACC_1
-    }
-}
-impl core::ops::Deref for CEREFACC_R {
-    type Target = crate::FieldReader<bool, CEREFACC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CEREFACC_A::CEREFACC_1
     }
 }
 #[doc = "Field `CEREFACC` writer - Reference accuracy"]
-pub struct CEREFACC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEREFACC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEREFACC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEREFACC_W<'a, const O: u8> = crate::BitWriter<'a, u16, CEXCTL2_SPEC, CEREFACC_A, O>;
+impl<'a, const O: u8> CEREFACC_W<'a, O> {
     #[doc = "Static mode"]
     #[inline(always)]
     pub fn cerefacc_0(self) -> &'a mut W {
@@ -1312,22 +1175,6 @@ impl<'a> CEREFACC_W<'a> {
     #[inline(always)]
     pub fn cerefacc_1(self) -> &'a mut W {
         self.variant(CEREFACC_A::CEREFACC_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
-        self.w
     }
 }
 impl R {
@@ -1339,12 +1186,12 @@ impl R {
     #[doc = "Bit 5 - Reference select"]
     #[inline(always)]
     pub fn cersel(&self) -> CERSEL_R {
-        CERSEL_R::new(((self.bits >> 5) & 0x01) != 0)
+        CERSEL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:7 - Reference source"]
     #[inline(always)]
     pub fn cers(&self) -> CERS_R {
-        CERS_R::new(((self.bits >> 6) & 0x03) as u8)
+        CERS_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:12 - Reference resistor tap 1"]
     #[inline(always)]
@@ -1354,46 +1201,47 @@ impl R {
     #[doc = "Bits 13:14 - Reference voltage level"]
     #[inline(always)]
     pub fn cerefl(&self) -> CEREFL_R {
-        CEREFL_R::new(((self.bits >> 13) & 0x03) as u8)
+        CEREFL_R::new(((self.bits >> 13) & 3) as u8)
     }
     #[doc = "Bit 15 - Reference accuracy"]
     #[inline(always)]
     pub fn cerefacc(&self) -> CEREFACC_R {
-        CEREFACC_R::new(((self.bits >> 15) & 0x01) != 0)
+        CEREFACC_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Reference resistor tap 0"]
     #[inline(always)]
-    pub fn ceref0(&mut self) -> CEREF0_W {
-        CEREF0_W { w: self }
+    pub fn ceref0(&mut self) -> CEREF0_W<0> {
+        CEREF0_W::new(self)
     }
     #[doc = "Bit 5 - Reference select"]
     #[inline(always)]
-    pub fn cersel(&mut self) -> CERSEL_W {
-        CERSEL_W { w: self }
+    pub fn cersel(&mut self) -> CERSEL_W<5> {
+        CERSEL_W::new(self)
     }
     #[doc = "Bits 6:7 - Reference source"]
     #[inline(always)]
-    pub fn cers(&mut self) -> CERS_W {
-        CERS_W { w: self }
+    pub fn cers(&mut self) -> CERS_W<6> {
+        CERS_W::new(self)
     }
     #[doc = "Bits 8:12 - Reference resistor tap 1"]
     #[inline(always)]
-    pub fn ceref1(&mut self) -> CEREF1_W {
-        CEREF1_W { w: self }
+    pub fn ceref1(&mut self) -> CEREF1_W<8> {
+        CEREF1_W::new(self)
     }
     #[doc = "Bits 13:14 - Reference voltage level"]
     #[inline(always)]
-    pub fn cerefl(&mut self) -> CEREFL_W {
-        CEREFL_W { w: self }
+    pub fn cerefl(&mut self) -> CEREFL_W<13> {
+        CEREFL_W::new(self)
     }
     #[doc = "Bit 15 - Reference accuracy"]
     #[inline(always)]
-    pub fn cerefacc(&mut self) -> CEREFACC_W {
-        CEREFACC_W { w: self }
+    pub fn cerefacc(&mut self) -> CEREFACC_W<15> {
+        CEREFACC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

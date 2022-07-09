@@ -13,11 +13,11 @@ pub struct RegisterBlock {
     pub adc14lo1: crate::Reg<adc14lo1::ADC14LO1_SPEC>,
     #[doc = "0x14 - Window Comparator High Threshold 1 Register"]
     pub adc14hi1: crate::Reg<adc14hi1::ADC14HI1_SPEC>,
-    #[doc = "0x18 - Conversion Memory Control Register"]
+    #[doc = "0x18..0x98 - Conversion Memory Control Register"]
     pub adc14mctl: [crate::Reg<adc14mctl::ADC14MCTL_SPEC>; 32],
-    #[doc = "0x98 - Conversion Memory Register"]
+    #[doc = "0x98..0x118 - Conversion Memory Register"]
     pub adc14mem: [crate::Reg<adc14mem::ADC14MEM_SPEC>; 32],
-    _reserved8: [u8; 36usize],
+    _reserved8: [u8; 0x24],
     #[doc = "0x13c - Interrupt Enable 0 Register"]
     pub adc14ier0: crate::Reg<adc14ier0::ADC14IER0_SPEC>,
     #[doc = "0x140 - Interrupt Enable 1 Register"]

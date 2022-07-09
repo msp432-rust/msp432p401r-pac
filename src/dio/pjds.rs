@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PJDS_SPEC>> for R {
+impl From<crate::R<PJDS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PJDS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,51 +28,31 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PJDS_SPEC>> for W {
+impl From<crate::W<PJDS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PJDS_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `PJDS` reader - Port J Drive Strength"]
-pub struct PJDS_R(crate::FieldReader<u16, u16>);
-impl PJDS_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PJDS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PJDS_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PJDS_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PJDS` writer - Port J Drive Strength"]
-pub struct PJDS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PJDS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
-        self.w
-    }
-}
+pub type PJDS_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PJDS_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Port J Drive Strength"]
     #[inline(always)]
     pub fn pjds(&self) -> PJDS_R {
-        PJDS_R::new((self.bits & 0xffff) as u16)
+        PJDS_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Port J Drive Strength"]
     #[inline(always)]
-    pub fn pjds(&mut self) -> PJDS_W {
-        PJDS_W { w: self }
+    pub fn pjds(&mut self) -> PJDS_W<0> {
+        PJDS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

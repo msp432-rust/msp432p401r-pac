@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PSSIFG_SPEC>> for R {
+impl From<crate::R<PSSIFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PSSIFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,12 +28,9 @@ impl From<SVSMHIFG_A> for bool {
     }
 }
 #[doc = "Field `SVSMHIFG` reader - High-side SVSM interrupt flag"]
-pub struct SVSMHIFG_R(crate::FieldReader<bool, SVSMHIFG_A>);
+pub type SVSMHIFG_R = crate::BitReader<SVSMHIFG_A>;
 impl SVSMHIFG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SVSMHIFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SVSMHIFG_A {
         match self.bits {
@@ -43,26 +41,19 @@ impl SVSMHIFG_R {
     #[doc = "Checks if the value of the field is `SVSMHIFG_0`"]
     #[inline(always)]
     pub fn is_svsmhifg_0(&self) -> bool {
-        **self == SVSMHIFG_A::SVSMHIFG_0
+        *self == SVSMHIFG_A::SVSMHIFG_0
     }
     #[doc = "Checks if the value of the field is `SVSMHIFG_1`"]
     #[inline(always)]
     pub fn is_svsmhifg_1(&self) -> bool {
-        **self == SVSMHIFG_A::SVSMHIFG_1
-    }
-}
-impl core::ops::Deref for SVSMHIFG_R {
-    type Target = crate::FieldReader<bool, SVSMHIFG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SVSMHIFG_A::SVSMHIFG_1
     }
 }
 impl R {
     #[doc = "Bit 1 - High-side SVSM interrupt flag"]
     #[inline(always)]
     pub fn svsmhifg(&self) -> SVSMHIFG_R {
-        SVSMHIFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        SVSMHIFG_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "Interrupt Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pssifg](index.html) module"]

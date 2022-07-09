@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCBXSTATW_SPEC>> for R {
+impl From<crate::R<UCBXSTATW_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCBXSTATW_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCBXSTATW_SPEC>> for W {
+impl From<crate::W<UCBXSTATW_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCBXSTATW_SPEC>) -> Self {
         W(writer)
     }
@@ -47,12 +49,9 @@ impl From<UCBBUSY_A> for bool {
     }
 }
 #[doc = "Field `UCBBUSY` reader - Bus busy"]
-pub struct UCBBUSY_R(crate::FieldReader<bool, UCBBUSY_A>);
+pub type UCBBUSY_R = crate::BitReader<UCBBUSY_A>;
 impl UCBBUSY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UCBBUSY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCBBUSY_A {
         match self.bits {
@@ -63,19 +62,12 @@ impl UCBBUSY_R {
     #[doc = "Checks if the value of the field is `UCBBUSY_0`"]
     #[inline(always)]
     pub fn is_ucbbusy_0(&self) -> bool {
-        **self == UCBBUSY_A::UCBBUSY_0
+        *self == UCBBUSY_A::UCBBUSY_0
     }
     #[doc = "Checks if the value of the field is `UCBBUSY_1`"]
     #[inline(always)]
     pub fn is_ucbbusy_1(&self) -> bool {
-        **self == UCBBUSY_A::UCBBUSY_1
-    }
-}
-impl core::ops::Deref for UCBBUSY_R {
-    type Target = crate::FieldReader<bool, UCBBUSY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCBBUSY_A::UCBBUSY_1
     }
 }
 #[doc = "General call address received\n\nValue on reset: 0"]
@@ -93,12 +85,9 @@ impl From<UCGC_A> for bool {
     }
 }
 #[doc = "Field `UCGC` reader - General call address received"]
-pub struct UCGC_R(crate::FieldReader<bool, UCGC_A>);
+pub type UCGC_R = crate::BitReader<UCGC_A>;
 impl UCGC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UCGC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCGC_A {
         match self.bits {
@@ -109,19 +98,12 @@ impl UCGC_R {
     #[doc = "Checks if the value of the field is `UCGC_0`"]
     #[inline(always)]
     pub fn is_ucgc_0(&self) -> bool {
-        **self == UCGC_A::UCGC_0
+        *self == UCGC_A::UCGC_0
     }
     #[doc = "Checks if the value of the field is `UCGC_1`"]
     #[inline(always)]
     pub fn is_ucgc_1(&self) -> bool {
-        **self == UCGC_A::UCGC_1
-    }
-}
-impl core::ops::Deref for UCGC_R {
-    type Target = crate::FieldReader<bool, UCGC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCGC_A::UCGC_1
     }
 }
 #[doc = "SCL low\n\nValue on reset: 0"]
@@ -139,12 +121,9 @@ impl From<UCSCLLOW_A> for bool {
     }
 }
 #[doc = "Field `UCSCLLOW` reader - SCL low"]
-pub struct UCSCLLOW_R(crate::FieldReader<bool, UCSCLLOW_A>);
+pub type UCSCLLOW_R = crate::BitReader<UCSCLLOW_A>;
 impl UCSCLLOW_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UCSCLLOW_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCSCLLOW_A {
         match self.bits {
@@ -155,50 +134,31 @@ impl UCSCLLOW_R {
     #[doc = "Checks if the value of the field is `UCSCLLOW_0`"]
     #[inline(always)]
     pub fn is_ucscllow_0(&self) -> bool {
-        **self == UCSCLLOW_A::UCSCLLOW_0
+        *self == UCSCLLOW_A::UCSCLLOW_0
     }
     #[doc = "Checks if the value of the field is `UCSCLLOW_1`"]
     #[inline(always)]
     pub fn is_ucscllow_1(&self) -> bool {
-        **self == UCSCLLOW_A::UCSCLLOW_1
-    }
-}
-impl core::ops::Deref for UCSCLLOW_R {
-    type Target = crate::FieldReader<bool, UCSCLLOW_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCSCLLOW_A::UCSCLLOW_1
     }
 }
 #[doc = "Field `UCBCNT` reader - Hardware byte counter value"]
-pub struct UCBCNT_R(crate::FieldReader<u8, u8>);
-impl UCBCNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        UCBCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCBCNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCBCNT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 4 - Bus busy"]
     #[inline(always)]
     pub fn ucbbusy(&self) -> UCBBUSY_R {
-        UCBBUSY_R::new(((self.bits >> 4) & 0x01) != 0)
+        UCBBUSY_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - General call address received"]
     #[inline(always)]
     pub fn ucgc(&self) -> UCGC_R {
-        UCGC_R::new(((self.bits >> 5) & 0x01) != 0)
+        UCGC_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - SCL low"]
     #[inline(always)]
     pub fn ucscllow(&self) -> UCSCLLOW_R {
-        UCSCLLOW_R::new(((self.bits >> 6) & 0x01) != 0)
+        UCSCLLOW_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 8:15 - Hardware byte counter value"]
     #[inline(always)]
@@ -208,6 +168,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

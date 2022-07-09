@@ -5,22 +5,22 @@ pub struct RegisterBlock {
     pub dma_device_cfg: crate::Reg<dma_device_cfg::DMA_DEVICE_CFG_SPEC>,
     #[doc = "0x04 - Software Channel Trigger Register"]
     pub dma_sw_chtrig: crate::Reg<dma_sw_chtrig::DMA_SW_CHTRIG_SPEC>,
-    _reserved2: [u8; 8usize],
-    #[doc = "0x10 - Channel n Source Configuration Register"]
+    _reserved2: [u8; 0x08],
+    #[doc = "0x10..0x90 - Channel n Source Configuration Register"]
     pub dma_ch_srccfg: [crate::Reg<dma_ch_srccfg::DMA_CH_SRCCFG_SPEC>; 32],
-    _reserved3: [u8; 112usize],
+    _reserved3: [u8; 0x70],
     #[doc = "0x100 - Interrupt 1 Source Channel Configuration"]
     pub dma_int1_srccfg: crate::Reg<dma_int1_srccfg::DMA_INT1_SRCCFG_SPEC>,
     #[doc = "0x104 - Interrupt 2 Source Channel Configuration Register"]
     pub dma_int2_srccfg: crate::Reg<dma_int2_srccfg::DMA_INT2_SRCCFG_SPEC>,
     #[doc = "0x108 - Interrupt 3 Source Channel Configuration Register"]
     pub dma_int3_srccfg: crate::Reg<dma_int3_srccfg::DMA_INT3_SRCCFG_SPEC>,
-    _reserved6: [u8; 4usize],
+    _reserved6: [u8; 0x04],
     #[doc = "0x110 - Interrupt 0 Source Channel Flag Register"]
     pub dma_int0_srcflg: crate::Reg<dma_int0_srcflg::DMA_INT0_SRCFLG_SPEC>,
     #[doc = "0x114 - Interrupt 0 Source Channel Clear Flag Register"]
     pub dma_int0_clrflg: crate::Reg<dma_int0_clrflg::DMA_INT0_CLRFLG_SPEC>,
-    _reserved8: [u8; 3816usize],
+    _reserved8: [u8; 0x0ee8],
     #[doc = "0x1000 - Status Register"]
     pub dma_stat: crate::Reg<dma_stat::DMA_STAT_SPEC>,
     #[doc = "0x1004 - Configuration Register"]
@@ -53,7 +53,7 @@ pub struct RegisterBlock {
     pub dma_prioset: crate::Reg<dma_prioset::DMA_PRIOSET_SPEC>,
     #[doc = "0x103c - Channel Priority Clear Register"]
     pub dma_prioclr: crate::Reg<dma_prioclr::DMA_PRIOCLR_SPEC>,
-    _reserved24: [u8; 12usize],
+    _reserved24: [u8; 0x0c],
     #[doc = "0x104c - Bus Error Clear Register"]
     pub dma_errclr: crate::Reg<dma_errclr::DMA_ERRCLR_SPEC>,
 }

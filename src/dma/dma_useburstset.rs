@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DMA_USEBURSTSET_SPEC>> for R {
+impl From<crate::R<DMA_USEBURSTSET_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DMA_USEBURSTSET_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DMA_USEBURSTSET_SPEC>> for W {
+impl From<crate::W<DMA_USEBURSTSET_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DMA_USEBURSTSET_SPEC>) -> Self {
         W(writer)
     }
@@ -37,9 +39,9 @@ impl core::convert::From<crate::W<DMA_USEBURSTSET_SPEC>> for W {
 #[repr(u32)]
 pub enum SET_A {
     #[doc = "0: DMA channel C responds to requests that it receives on dma_req\\[C\\]
-or dma_sreq\\[C\\].\r\r\nThe controller performs 2R, or single, bus transfers."]
+or dma_sreq\\[C\\]. The controller performs 2R, or single, bus transfers."]
     SET_0_READ = 0,
-    #[doc = "1: DMA channel C does not respond to requests that it receives on dma_sreq\\[C\\].\r\r\nThe controller only responds to dma_req\\[C\\]
+    #[doc = "1: DMA channel C does not respond to requests that it receives on dma_sreq\\[C\\]. The controller only responds to dma_req\\[C\\]
 requests and performs 2R transfers."]
     SET_1_READ = 1,
 }
@@ -50,12 +52,9 @@ impl From<SET_A> for u32 {
     }
 }
 #[doc = "Field `SET` reader - Returns the useburst status, or disables dma_sreq from generating DMA requests."]
-pub struct SET_R(crate::FieldReader<u32, SET_A>);
+pub type SET_R = crate::FieldReader<u32, SET_A>;
 impl SET_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        SET_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SET_A> {
         match self.bits {
@@ -67,19 +66,12 @@ impl SET_R {
     #[doc = "Checks if the value of the field is `SET_0_READ`"]
     #[inline(always)]
     pub fn is_set_0_read(&self) -> bool {
-        **self == SET_A::SET_0_READ
+        *self == SET_A::SET_0_READ
     }
     #[doc = "Checks if the value of the field is `SET_1_READ`"]
     #[inline(always)]
     pub fn is_set_1_read(&self) -> bool {
-        **self == SET_A::SET_1_READ
-    }
-}
-impl core::ops::Deref for SET_R {
-    type Target = crate::FieldReader<u32, SET_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SET_A::SET_1_READ
     }
 }
 #[doc = "Returns the useburst status, or disables dma_sreq from generating DMA requests.\n\nValue on reset: 0"]
@@ -90,7 +82,7 @@ pub enum SET_AW {
 to 0."]
     SET_0_WRITE = 0,
     #[doc = "1: Disables dma_sreq\\[C\\]
-from generating DMA requests.\r\r\nThe controller performs 2R transfers.\r\r\nWriting to a bit where a DMA channel is not implemented has no effect."]
+from generating DMA requests. The controller performs 2R transfers. Writing to a bit where a DMA channel is not implemented has no effect."]
     SET_1_WRITE = 1,
 }
 impl From<SET_AW> for u32 {
@@ -100,15 +92,9 @@ impl From<SET_AW> for u32 {
     }
 }
 #[doc = "Field `SET` writer - Returns the useburst status, or disables dma_sreq from generating DMA requests."]
-pub struct SET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SET_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SET_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SET_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DMA_USEBURSTSET_SPEC, u32, SET_AW, 32, O>;
+impl<'a, const O: u8> SET_W<'a, O> {
     #[doc = "No effect. Use the DMA_USEBURST_CLR Register to set bit \\[C\\]
 to 0."]
     #[inline(always)]
@@ -121,27 +107,22 @@ from generating DMA requests. The controller performs 2R transfers. Writing to a
     pub fn set_1_write(self) -> &'a mut W {
         self.variant(SET_AW::SET_1_WRITE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:31 - Returns the useburst status, or disables dma_sreq from generating DMA requests."]
     #[inline(always)]
     pub fn set(&self) -> SET_R {
-        SET_R::new((self.bits & 0xffff_ffff) as u32)
+        SET_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Returns the useburst status, or disables dma_sreq from generating DMA requests."]
     #[inline(always)]
-    pub fn set(&mut self) -> SET_W {
-        SET_W { w: self }
+    pub fn set(&mut self) -> SET_W<0> {
+        SET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

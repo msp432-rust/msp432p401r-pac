@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PMAPCTL_SPEC>> for R {
+impl From<crate::R<PMAPCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PMAPCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PMAPCTL_SPEC>> for W {
+impl From<crate::W<PMAPCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PMAPCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -47,12 +49,9 @@ impl From<PMAPLOCKED_A> for bool {
     }
 }
 #[doc = "Field `PMAPLOCKED` reader - Port mapping lock bit"]
-pub struct PMAPLOCKED_R(crate::FieldReader<bool, PMAPLOCKED_A>);
+pub type PMAPLOCKED_R = crate::BitReader<PMAPLOCKED_A>;
 impl PMAPLOCKED_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PMAPLOCKED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PMAPLOCKED_A {
         match self.bits {
@@ -63,19 +62,12 @@ impl PMAPLOCKED_R {
     #[doc = "Checks if the value of the field is `PMAPLOCKED_0`"]
     #[inline(always)]
     pub fn is_pmaplocked_0(&self) -> bool {
-        **self == PMAPLOCKED_A::PMAPLOCKED_0
+        *self == PMAPLOCKED_A::PMAPLOCKED_0
     }
     #[doc = "Checks if the value of the field is `PMAPLOCKED_1`"]
     #[inline(always)]
     pub fn is_pmaplocked_1(&self) -> bool {
-        **self == PMAPLOCKED_A::PMAPLOCKED_1
-    }
-}
-impl core::ops::Deref for PMAPLOCKED_R {
-    type Target = crate::FieldReader<bool, PMAPLOCKED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PMAPLOCKED_A::PMAPLOCKED_1
     }
 }
 #[doc = "Port mapping reconfiguration control bit\n\nValue on reset: 0"]
@@ -93,12 +85,9 @@ impl From<PMAPRECFG_A> for bool {
     }
 }
 #[doc = "Field `PMAPRECFG` reader - Port mapping reconfiguration control bit"]
-pub struct PMAPRECFG_R(crate::FieldReader<bool, PMAPRECFG_A>);
+pub type PMAPRECFG_R = crate::BitReader<PMAPRECFG_A>;
 impl PMAPRECFG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PMAPRECFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PMAPRECFG_A {
         match self.bits {
@@ -109,31 +98,17 @@ impl PMAPRECFG_R {
     #[doc = "Checks if the value of the field is `PMAPRECFG_0`"]
     #[inline(always)]
     pub fn is_pmaprecfg_0(&self) -> bool {
-        **self == PMAPRECFG_A::PMAPRECFG_0
+        *self == PMAPRECFG_A::PMAPRECFG_0
     }
     #[doc = "Checks if the value of the field is `PMAPRECFG_1`"]
     #[inline(always)]
     pub fn is_pmaprecfg_1(&self) -> bool {
-        **self == PMAPRECFG_A::PMAPRECFG_1
-    }
-}
-impl core::ops::Deref for PMAPRECFG_R {
-    type Target = crate::FieldReader<bool, PMAPRECFG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PMAPRECFG_A::PMAPRECFG_1
     }
 }
 #[doc = "Field `PMAPRECFG` writer - Port mapping reconfiguration control bit"]
-pub struct PMAPRECFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PMAPRECFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PMAPRECFG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PMAPRECFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, PMAPCTL_SPEC, PMAPRECFG_A, O>;
+impl<'a, const O: u8> PMAPRECFG_W<'a, O> {
     #[doc = "Configuration allowed only once"]
     #[inline(always)]
     pub fn pmaprecfg_0(self) -> &'a mut W {
@@ -144,42 +119,27 @@ impl<'a> PMAPRECFG_W<'a> {
     pub fn pmaprecfg_1(self) -> &'a mut W {
         self.variant(PMAPRECFG_A::PMAPRECFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Port mapping lock bit"]
     #[inline(always)]
     pub fn pmaplocked(&self) -> PMAPLOCKED_R {
-        PMAPLOCKED_R::new((self.bits & 0x01) != 0)
+        PMAPLOCKED_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Port mapping reconfiguration control bit"]
     #[inline(always)]
     pub fn pmaprecfg(&self) -> PMAPRECFG_R {
-        PMAPRECFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        PMAPRECFG_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 1 - Port mapping reconfiguration control bit"]
     #[inline(always)]
-    pub fn pmaprecfg(&mut self) -> PMAPRECFG_W {
-        PMAPRECFG_W { w: self }
+    pub fn pmaprecfg(&mut self) -> PMAPRECFG_W<1> {
+        PMAPRECFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

@@ -15,7 +15,7 @@ pub struct RegisterBlock {
     pub rstctl_softreset_clr: crate::Reg<rstctl_softreset_clr::RSTCTL_SOFTRESET_CLR_SPEC>,
     #[doc = "0x18 - Soft Reset Status Set Register"]
     pub rstctl_softreset_set: crate::Reg<rstctl_softreset_set::RSTCTL_SOFTRESET_SET_SPEC>,
-    _reserved7: [u8; 228usize],
+    _reserved7: [u8; 0xe4],
     #[doc = "0x100 - PSS Reset Status Register"]
     pub rstctl_pssreset_stat: crate::Reg<rstctl_pssreset_stat::RSTCTL_PSSRESET_STAT_SPEC>,
     #[doc = "0x104 - PSS Reset Status Clear Register"]

@@ -3,17 +3,17 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - TimerAx Control Register"]
     pub tax_ctl: crate::Reg<tax_ctl::TAXCTL_SPEC>,
-    #[doc = "0x02 - Timer_A Capture/Compare Control Register"]
+    #[doc = "0x02..0x0c - Timer_A Capture/Compare Control Register"]
     pub tax_cctl: [crate::Reg<tax_cctl::TAXCCTL_SPEC>; 5],
-    _reserved2: [u8; 4usize],
+    _reserved2: [u8; 0x04],
     #[doc = "0x10 - TimerA register"]
     pub tax_r: crate::Reg<tax_r::TAXR_SPEC>,
-    #[doc = "0x12 - Timer_A Capture/Compare Register"]
+    #[doc = "0x12..0x1c - Timer_A Capture/Compare Register"]
     pub tax_ccr: [crate::Reg<tax_ccr::TAXCCR_SPEC>; 5],
-    _reserved4: [u8; 4usize],
+    _reserved4: [u8; 0x04],
     #[doc = "0x20 - TimerAx Expansion 0 Register"]
     pub tax_ex0: crate::Reg<tax_ex0::TAXEX0_SPEC>,
-    _reserved5: [u8; 12usize],
+    _reserved5: [u8; 0x0c],
     #[doc = "0x2e - TimerAx Interrupt Vector Register"]
     pub tax_iv: crate::Reg<tax_iv::TAXIV_SPEC>,
 }

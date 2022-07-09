@@ -13,7 +13,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DMA_SWREQ_SPEC>> for W {
+impl From<crate::W<DMA_SWREQ_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DMA_SWREQ_SPEC>) -> Self {
         W(writer)
     }
@@ -34,15 +35,9 @@ impl From<CHNL_SW_REQ_AW> for u32 {
     }
 }
 #[doc = "Field `CHNL_SW_REQ` writer - Set the appropriate bit to generate a software DMA request on the corresponding DMA channel. Writing to a bit where a DMA channel is not implemented does not create a DMA request for that channel."]
-pub struct CHNL_SW_REQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHNL_SW_REQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHNL_SW_REQ_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CHNL_SW_REQ_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DMA_SWREQ_SPEC, u32, CHNL_SW_REQ_AW, 32, O>;
+impl<'a, const O: u8> CHNL_SW_REQ_W<'a, O> {
     #[doc = "Does not create a DMA request for the channel"]
     #[inline(always)]
     pub fn chnl_sw_req_0(self) -> &'a mut W {
@@ -53,20 +48,15 @@ impl<'a> CHNL_SW_REQ_W<'a> {
     pub fn chnl_sw_req_1(self) -> &'a mut W {
         self.variant(CHNL_SW_REQ_AW::CHNL_SW_REQ_1)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bits 0:31 - Set the appropriate bit to generate a software DMA request on the corresponding DMA channel. Writing to a bit where a DMA channel is not implemented does not create a DMA request for that channel."]
     #[inline(always)]
-    pub fn chnl_sw_req(&mut self) -> CHNL_SW_REQ_W {
-        CHNL_SW_REQ_W { w: self }
+    pub fn chnl_sw_req(&mut self) -> CHNL_SW_REQ_W<0> {
+        CHNL_SW_REQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

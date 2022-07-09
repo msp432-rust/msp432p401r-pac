@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SYS_REBOOT_CTL_SPEC>> for R {
+impl From<crate::R<SYS_REBOOT_CTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SYS_REBOOT_CTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,78 +28,38 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SYS_REBOOT_CTL_SPEC>> for W {
+impl From<crate::W<SYS_REBOOT_CTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SYS_REBOOT_CTL_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `REBOOT` reader - Write 1 initiates a Reboot of the device"]
-pub struct REBOOT_R(crate::FieldReader<bool, bool>);
-impl REBOOT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        REBOOT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REBOOT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REBOOT_R = crate::BitReader<bool>;
 #[doc = "Field `REBOOT` writer - Write 1 initiates a Reboot of the device"]
-pub struct REBOOT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REBOOT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type REBOOT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SYS_REBOOT_CTL_SPEC, bool, O>;
 #[doc = "Field `WKEY` writer - Key to enable writes to bit 0"]
-pub struct WKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WKEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type WKEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYS_REBOOT_CTL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - Write 1 initiates a Reboot of the device"]
     #[inline(always)]
     pub fn reboot(&self) -> REBOOT_R {
-        REBOOT_R::new((self.bits & 0x01) != 0)
+        REBOOT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Write 1 initiates a Reboot of the device"]
     #[inline(always)]
-    pub fn reboot(&mut self) -> REBOOT_W {
-        REBOOT_W { w: self }
+    pub fn reboot(&mut self) -> REBOOT_W<0> {
+        REBOOT_W::new(self)
     }
     #[doc = "Bits 8:15 - Key to enable writes to bit 0"]
     #[inline(always)]
-    pub fn wkey(&mut self) -> WKEY_W {
-        WKEY_W { w: self }
+    pub fn wkey(&mut self) -> WKEY_W<8> {
+        WKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

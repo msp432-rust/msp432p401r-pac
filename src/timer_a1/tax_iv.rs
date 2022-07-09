@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TAXIV_SPEC>> for R {
+impl From<crate::R<TAXIV_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TAXIV_SPEC>) -> Self {
         R(reader)
     }
@@ -40,12 +41,9 @@ impl From<TAIV_A> for u16 {
     }
 }
 #[doc = "Field `TAIV` reader - TimerA interrupt vector value"]
-pub struct TAIV_R(crate::FieldReader<u16, TAIV_A>);
+pub type TAIV_R = crate::FieldReader<u16, TAIV_A>;
 impl TAIV_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TAIV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TAIV_A> {
         match self.bits {
@@ -63,56 +61,49 @@ impl TAIV_R {
     #[doc = "Checks if the value of the field is `TAIV_0`"]
     #[inline(always)]
     pub fn is_taiv_0(&self) -> bool {
-        **self == TAIV_A::TAIV_0
+        *self == TAIV_A::TAIV_0
     }
     #[doc = "Checks if the value of the field is `TAIV_2`"]
     #[inline(always)]
     pub fn is_taiv_2(&self) -> bool {
-        **self == TAIV_A::TAIV_2
+        *self == TAIV_A::TAIV_2
     }
     #[doc = "Checks if the value of the field is `TAIV_4`"]
     #[inline(always)]
     pub fn is_taiv_4(&self) -> bool {
-        **self == TAIV_A::TAIV_4
+        *self == TAIV_A::TAIV_4
     }
     #[doc = "Checks if the value of the field is `TAIV_6`"]
     #[inline(always)]
     pub fn is_taiv_6(&self) -> bool {
-        **self == TAIV_A::TAIV_6
+        *self == TAIV_A::TAIV_6
     }
     #[doc = "Checks if the value of the field is `TAIV_8`"]
     #[inline(always)]
     pub fn is_taiv_8(&self) -> bool {
-        **self == TAIV_A::TAIV_8
+        *self == TAIV_A::TAIV_8
     }
     #[doc = "Checks if the value of the field is `TAIV_10`"]
     #[inline(always)]
     pub fn is_taiv_10(&self) -> bool {
-        **self == TAIV_A::TAIV_10
+        *self == TAIV_A::TAIV_10
     }
     #[doc = "Checks if the value of the field is `TAIV_12`"]
     #[inline(always)]
     pub fn is_taiv_12(&self) -> bool {
-        **self == TAIV_A::TAIV_12
+        *self == TAIV_A::TAIV_12
     }
     #[doc = "Checks if the value of the field is `TAIV_14`"]
     #[inline(always)]
     pub fn is_taiv_14(&self) -> bool {
-        **self == TAIV_A::TAIV_14
-    }
-}
-impl core::ops::Deref for TAIV_R {
-    type Target = crate::FieldReader<u16, TAIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TAIV_A::TAIV_14
     }
 }
 impl R {
     #[doc = "Bits 0:15 - TimerA interrupt vector value"]
     #[inline(always)]
     pub fn taiv(&self) -> TAIV_R {
-        TAIV_R::new((self.bits & 0xffff) as u16)
+        TAIV_R::new(self.bits)
     }
 }
 #[doc = "TimerAx Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tax_iv](index.html) module"]

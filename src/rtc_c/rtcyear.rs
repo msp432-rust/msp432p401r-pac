@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RTCYEAR_SPEC>> for R {
+impl From<crate::R<RTCYEAR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RTCYEAR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,63 +28,20 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RTCYEAR_SPEC>> for W {
+impl From<crate::W<RTCYEAR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RTCYEAR_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `YearLowByte` reader - Year low byte. Valid values for Year are 0 to 4095."]
-pub struct YEARLOWBYTE_R(crate::FieldReader<u8, u8>);
-impl YEARLOWBYTE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        YEARLOWBYTE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for YEARLOWBYTE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type YEARLOWBYTE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `YearLowByte` writer - Year low byte. Valid values for Year are 0 to 4095."]
-pub struct YEARLOWBYTE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> YEARLOWBYTE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
-        self.w
-    }
-}
+pub type YEARLOWBYTE_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCYEAR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `YearHighByte` reader - Year high byte. Valid values for Year are 0 to 4095."]
-pub struct YEARHIGHBYTE_R(crate::FieldReader<u8, u8>);
-impl YEARHIGHBYTE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        YEARHIGHBYTE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for YEARHIGHBYTE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type YEARHIGHBYTE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `YearHighByte` writer - Year high byte. Valid values for Year are 0 to 4095."]
-pub struct YEARHIGHBYTE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> YEARHIGHBYTE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u16 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type YEARHIGHBYTE_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCYEAR_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:7 - Year low byte. Valid values for Year are 0 to 4095."]
     #[inline(always)]
@@ -99,15 +57,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Year low byte. Valid values for Year are 0 to 4095."]
     #[inline(always)]
-    pub fn year_low_byte(&mut self) -> YEARLOWBYTE_W {
-        YEARLOWBYTE_W { w: self }
+    pub fn year_low_byte(&mut self) -> YEARLOWBYTE_W<0> {
+        YEARLOWBYTE_W::new(self)
     }
     #[doc = "Bits 8:11 - Year high byte. Valid values for Year are 0 to 4095."]
     #[inline(always)]
-    pub fn year_high_byte(&mut self) -> YEARHIGHBYTE_W {
-        YEARHIGHBYTE_W { w: self }
+    pub fn year_high_byte(&mut self) -> YEARHIGHBYTE_W<8> {
+        YEARHIGHBYTE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

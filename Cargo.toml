@@ -9,8 +9,8 @@ license-file = "LICENSE"
 edition = "2018"
 
 [dependencies]
-cortex-m = "0.7.2"
-cortex-m-rt = "0.6.13"
+cortex-m = "0.7.5"
+cortex-m-rt = "0.7.1"
 bare-metal = "1.0.0"
 vcell = "0.1.x"
 

@@ -15,7 +15,7 @@ pub struct RegisterBlock {
     pub t32mis1: crate::Reg<t32mis1::T32MIS1_SPEC>,
     #[doc = "0x18 - Timer 1 Background Load Register"]
     pub t32bgload1: crate::Reg<t32bgload1::T32BGLOAD1_SPEC>,
-    _reserved7: [u8; 4usize],
+    _reserved7: [u8; 0x04],
     #[doc = "0x20 - Timer 2 Load Register"]
     pub t32load2: crate::Reg<t32load2::T32LOAD2_SPEC>,
     #[doc = "0x24 - Timer 2 Current Value Register"]

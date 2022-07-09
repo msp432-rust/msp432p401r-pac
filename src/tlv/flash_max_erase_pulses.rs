@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLASH_MAX_ERASE_PULSES_SPEC>> for R {
+impl From<crate::R<FLASH_MAX_ERASE_PULSES_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLASH_MAX_ERASE_PULSES_SPEC>) -> Self {
         R(reader)
     }

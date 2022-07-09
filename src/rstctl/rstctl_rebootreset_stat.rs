@@ -7,30 +7,19 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RSTCTL_REBOOTRESET_STAT_SPEC>> for R {
+impl From<crate::R<RSTCTL_REBOOTRESET_STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RSTCTL_REBOOTRESET_STAT_SPEC>) -> Self {
         R(reader)
     }
 }
 #[doc = "Field `REBOOT` reader - Indicates if Reboot reset was caused by the SYSCTL module."]
-pub struct REBOOT_R(crate::FieldReader<bool, bool>);
-impl REBOOT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        REBOOT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REBOOT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REBOOT_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Indicates if Reboot reset was caused by the SYSCTL module."]
     #[inline(always)]
     pub fn reboot(&self) -> REBOOT_R {
-        REBOOT_R::new((self.bits & 0x01) != 0)
+        REBOOT_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Reboot Reset Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rstctl_rebootreset_stat](index.html) module"]

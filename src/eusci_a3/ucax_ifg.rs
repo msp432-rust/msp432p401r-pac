@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCAXIFG_SPEC>> for R {
+impl From<crate::R<UCAXIFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCAXIFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCAXIFG_SPEC>> for W {
+impl From<crate::W<UCAXIFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCAXIFG_SPEC>) -> Self {
         W(writer)
     }
@@ -47,12 +49,9 @@ impl From<UCRXIFG_A> for bool {
     }
 }
 #[doc = "Field `UCRXIFG` reader - Receive interrupt flag"]
-pub struct UCRXIFG_R(crate::FieldReader<bool, UCRXIFG_A>);
+pub type UCRXIFG_R = crate::BitReader<UCRXIFG_A>;
 impl UCRXIFG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UCRXIFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCRXIFG_A {
         match self.bits {
@@ -63,31 +62,17 @@ impl UCRXIFG_R {
     #[doc = "Checks if the value of the field is `UCRXIFG_0`"]
     #[inline(always)]
     pub fn is_ucrxifg_0(&self) -> bool {
-        **self == UCRXIFG_A::UCRXIFG_0
+        *self == UCRXIFG_A::UCRXIFG_0
     }
     #[doc = "Checks if the value of the field is `UCRXIFG_1`"]
     #[inline(always)]
     pub fn is_ucrxifg_1(&self) -> bool {
-        **self == UCRXIFG_A::UCRXIFG_1
-    }
-}
-impl core::ops::Deref for UCRXIFG_R {
-    type Target = crate::FieldReader<bool, UCRXIFG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCRXIFG_A::UCRXIFG_1
     }
 }
 #[doc = "Field `UCRXIFG` writer - Receive interrupt flag"]
-pub struct UCRXIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCRXIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCRXIFG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UCRXIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCAXIFG_SPEC, UCRXIFG_A, O>;
+impl<'a, const O: u8> UCRXIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn ucrxifg_0(self) -> &'a mut W {
@@ -97,22 +82,6 @@ impl<'a> UCRXIFG_W<'a> {
     #[inline(always)]
     pub fn ucrxifg_1(self) -> &'a mut W {
         self.variant(UCRXIFG_A::UCRXIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
-        self.w
     }
 }
 #[doc = "Transmit interrupt flag\n\nValue on reset: 1"]
@@ -130,12 +99,9 @@ impl From<UCTXIFG_A> for bool {
     }
 }
 #[doc = "Field `UCTXIFG` reader - Transmit interrupt flag"]
-pub struct UCTXIFG_R(crate::FieldReader<bool, UCTXIFG_A>);
+pub type UCTXIFG_R = crate::BitReader<UCTXIFG_A>;
 impl UCTXIFG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UCTXIFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCTXIFG_A {
         match self.bits {
@@ -146,31 +112,17 @@ impl UCTXIFG_R {
     #[doc = "Checks if the value of the field is `UCTXIFG_0`"]
     #[inline(always)]
     pub fn is_uctxifg_0(&self) -> bool {
-        **self == UCTXIFG_A::UCTXIFG_0
+        *self == UCTXIFG_A::UCTXIFG_0
     }
     #[doc = "Checks if the value of the field is `UCTXIFG_1`"]
     #[inline(always)]
     pub fn is_uctxifg_1(&self) -> bool {
-        **self == UCTXIFG_A::UCTXIFG_1
-    }
-}
-impl core::ops::Deref for UCTXIFG_R {
-    type Target = crate::FieldReader<bool, UCTXIFG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCTXIFG_A::UCTXIFG_1
     }
 }
 #[doc = "Field `UCTXIFG` writer - Transmit interrupt flag"]
-pub struct UCTXIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCTXIFG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UCTXIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCAXIFG_SPEC, UCTXIFG_A, O>;
+impl<'a, const O: u8> UCTXIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn uctxifg_0(self) -> &'a mut W {
@@ -180,22 +132,6 @@ impl<'a> UCTXIFG_W<'a> {
     #[inline(always)]
     pub fn uctxifg_1(self) -> &'a mut W {
         self.variant(UCTXIFG_A::UCTXIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
-        self.w
     }
 }
 #[doc = "Start bit interrupt flag\n\nValue on reset: 0"]
@@ -213,12 +149,9 @@ impl From<UCSTTIFG_A> for bool {
     }
 }
 #[doc = "Field `UCSTTIFG` reader - Start bit interrupt flag"]
-pub struct UCSTTIFG_R(crate::FieldReader<bool, UCSTTIFG_A>);
+pub type UCSTTIFG_R = crate::BitReader<UCSTTIFG_A>;
 impl UCSTTIFG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UCSTTIFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCSTTIFG_A {
         match self.bits {
@@ -229,31 +162,17 @@ impl UCSTTIFG_R {
     #[doc = "Checks if the value of the field is `UCSTTIFG_0`"]
     #[inline(always)]
     pub fn is_ucsttifg_0(&self) -> bool {
-        **self == UCSTTIFG_A::UCSTTIFG_0
+        *self == UCSTTIFG_A::UCSTTIFG_0
     }
     #[doc = "Checks if the value of the field is `UCSTTIFG_1`"]
     #[inline(always)]
     pub fn is_ucsttifg_1(&self) -> bool {
-        **self == UCSTTIFG_A::UCSTTIFG_1
-    }
-}
-impl core::ops::Deref for UCSTTIFG_R {
-    type Target = crate::FieldReader<bool, UCSTTIFG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCSTTIFG_A::UCSTTIFG_1
     }
 }
 #[doc = "Field `UCSTTIFG` writer - Start bit interrupt flag"]
-pub struct UCSTTIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCSTTIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCSTTIFG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UCSTTIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCAXIFG_SPEC, UCSTTIFG_A, O>;
+impl<'a, const O: u8> UCSTTIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn ucsttifg_0(self) -> &'a mut W {
@@ -263,22 +182,6 @@ impl<'a> UCSTTIFG_W<'a> {
     #[inline(always)]
     pub fn ucsttifg_1(self) -> &'a mut W {
         self.variant(UCSTTIFG_A::UCSTTIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
-        self.w
     }
 }
 #[doc = "Transmit ready interrupt enable\n\nValue on reset: 0"]
@@ -296,12 +199,9 @@ impl From<UCTXCPTIFG_A> for bool {
     }
 }
 #[doc = "Field `UCTXCPTIFG` reader - Transmit ready interrupt enable"]
-pub struct UCTXCPTIFG_R(crate::FieldReader<bool, UCTXCPTIFG_A>);
+pub type UCTXCPTIFG_R = crate::BitReader<UCTXCPTIFG_A>;
 impl UCTXCPTIFG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UCTXCPTIFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCTXCPTIFG_A {
         match self.bits {
@@ -312,31 +212,17 @@ impl UCTXCPTIFG_R {
     #[doc = "Checks if the value of the field is `UCTXCPTIFG_0`"]
     #[inline(always)]
     pub fn is_uctxcptifg_0(&self) -> bool {
-        **self == UCTXCPTIFG_A::UCTXCPTIFG_0
+        *self == UCTXCPTIFG_A::UCTXCPTIFG_0
     }
     #[doc = "Checks if the value of the field is `UCTXCPTIFG_1`"]
     #[inline(always)]
     pub fn is_uctxcptifg_1(&self) -> bool {
-        **self == UCTXCPTIFG_A::UCTXCPTIFG_1
-    }
-}
-impl core::ops::Deref for UCTXCPTIFG_R {
-    type Target = crate::FieldReader<bool, UCTXCPTIFG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCTXCPTIFG_A::UCTXCPTIFG_1
     }
 }
 #[doc = "Field `UCTXCPTIFG` writer - Transmit ready interrupt enable"]
-pub struct UCTXCPTIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCTXCPTIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCTXCPTIFG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UCTXCPTIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCAXIFG_SPEC, UCTXCPTIFG_A, O>;
+impl<'a, const O: u8> UCTXCPTIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn uctxcptifg_0(self) -> &'a mut W {
@@ -347,67 +233,52 @@ impl<'a> UCTXCPTIFG_W<'a> {
     pub fn uctxcptifg_1(self) -> &'a mut W {
         self.variant(UCTXCPTIFG_A::UCTXCPTIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u16 & 0x01) << 3);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Receive interrupt flag"]
     #[inline(always)]
     pub fn ucrxifg(&self) -> UCRXIFG_R {
-        UCRXIFG_R::new((self.bits & 0x01) != 0)
+        UCRXIFG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transmit interrupt flag"]
     #[inline(always)]
     pub fn uctxifg(&self) -> UCTXIFG_R {
-        UCTXIFG_R::new(((self.bits >> 1) & 0x01) != 0)
+        UCTXIFG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Start bit interrupt flag"]
     #[inline(always)]
     pub fn ucsttifg(&self) -> UCSTTIFG_R {
-        UCSTTIFG_R::new(((self.bits >> 2) & 0x01) != 0)
+        UCSTTIFG_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Transmit ready interrupt enable"]
     #[inline(always)]
     pub fn uctxcptifg(&self) -> UCTXCPTIFG_R {
-        UCTXCPTIFG_R::new(((self.bits >> 3) & 0x01) != 0)
+        UCTXCPTIFG_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Receive interrupt flag"]
     #[inline(always)]
-    pub fn ucrxifg(&mut self) -> UCRXIFG_W {
-        UCRXIFG_W { w: self }
+    pub fn ucrxifg(&mut self) -> UCRXIFG_W<0> {
+        UCRXIFG_W::new(self)
     }
     #[doc = "Bit 1 - Transmit interrupt flag"]
     #[inline(always)]
-    pub fn uctxifg(&mut self) -> UCTXIFG_W {
-        UCTXIFG_W { w: self }
+    pub fn uctxifg(&mut self) -> UCTXIFG_W<1> {
+        UCTXIFG_W::new(self)
     }
     #[doc = "Bit 2 - Start bit interrupt flag"]
     #[inline(always)]
-    pub fn ucsttifg(&mut self) -> UCSTTIFG_W {
-        UCSTTIFG_W { w: self }
+    pub fn ucsttifg(&mut self) -> UCSTTIFG_W<2> {
+        UCSTTIFG_W::new(self)
     }
     #[doc = "Bit 3 - Transmit ready interrupt enable"]
     #[inline(always)]
-    pub fn uctxcptifg(&mut self) -> UCTXCPTIFG_W {
-        UCTXCPTIFG_W { w: self }
+    pub fn uctxcptifg(&mut self) -> UCTXCPTIFG_W<3> {
+        UCTXCPTIFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

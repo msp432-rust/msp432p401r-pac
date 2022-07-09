@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_ERASE_SECTADDR_SPEC>> for R {
+impl From<crate::R<FLCTL_ERASE_SECTADDR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_ERASE_SECTADDR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,17 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FLCTL_ERASE_SECTADDR_SPEC>> for W {
+impl From<crate::W<FLCTL_ERASE_SECTADDR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FLCTL_ERASE_SECTADDR_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `SECT_ADDRESS` reader - Address of Sector being Erased"]
-pub struct SECT_ADDRESS_R(crate::FieldReader<u32, u32>);
-impl SECT_ADDRESS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        SECT_ADDRESS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SECT_ADDRESS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SECT_ADDRESS_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SECT_ADDRESS` writer - Address of Sector being Erased"]
-pub struct SECT_ADDRESS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SECT_ADDRESS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x003f_ffff) | (value as u32 & 0x003f_ffff);
-        self.w
-    }
-}
+pub type SECT_ADDRESS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FLCTL_ERASE_SECTADDR_SPEC, u32, u32, 22, O>;
 impl R {
     #[doc = "Bits 0:21 - Address of Sector being Erased"]
     #[inline(always)]
@@ -68,10 +49,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:21 - Address of Sector being Erased"]
     #[inline(always)]
-    pub fn sect_address(&mut self) -> SECT_ADDRESS_W {
-        SECT_ADDRESS_W { w: self }
+    pub fn sect_address(&mut self) -> SECT_ADDRESS_W<0> {
+        SECT_ADDRESS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

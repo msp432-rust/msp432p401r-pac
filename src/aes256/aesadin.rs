@@ -13,47 +13,29 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<AESADIN_SPEC>> for W {
+impl From<crate::W<AESADIN_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<AESADIN_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `AESDIN0x` writer - AES data in byte n when AESADIN is written as half-word"]
-pub struct AESDIN0X_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AESDIN0X_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
-        self.w
-    }
-}
+pub type AESDIN0X_W<'a, const O: u8> = crate::FieldWriter<'a, u16, AESADIN_SPEC, u8, u8, 8, O>;
 #[doc = "Field `AESDIN1x` writer - AES data in byte n+1 when AESADIN is written as half-word"]
-pub struct AESDIN1X_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AESDIN1X_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
-        self.w
-    }
-}
+pub type AESDIN1X_W<'a, const O: u8> = crate::FieldWriter<'a, u16, AESADIN_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - AES data in byte n when AESADIN is written as half-word"]
     #[inline(always)]
-    pub fn aesdin0x(&mut self) -> AESDIN0X_W {
-        AESDIN0X_W { w: self }
+    pub fn aesdin0x(&mut self) -> AESDIN0X_W<0> {
+        AESDIN0X_W::new(self)
     }
     #[doc = "Bits 8:15 - AES data in byte n+1 when AESADIN is written as half-word"]
     #[inline(always)]
-    pub fn aesdin1x(&mut self) -> AESDIN1X_W {
-        AESDIN1X_W { w: self }
+    pub fn aesdin1x(&mut self) -> AESDIN1X_W<8> {
+        AESDIN1X_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

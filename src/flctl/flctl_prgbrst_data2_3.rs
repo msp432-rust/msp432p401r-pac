@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_PRGBRST_DATA2_3_SPEC>> for R {
+impl From<crate::R<FLCTL_PRGBRST_DATA2_3_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_PRGBRST_DATA2_3_SPEC>) -> Self {
         R(reader)
     }
@@ -27,51 +28,32 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FLCTL_PRGBRST_DATA2_3_SPEC>> for W {
+impl From<crate::W<FLCTL_PRGBRST_DATA2_3_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FLCTL_PRGBRST_DATA2_3_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `DATAIN` reader - Program Burst 128 bit Data Word 2"]
-pub struct DATAIN_R(crate::FieldReader<u32, u32>);
-impl DATAIN_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        DATAIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATAIN_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATAIN_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DATAIN` writer - Program Burst 128 bit Data Word 2"]
-pub struct DATAIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATAIN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type DATAIN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FLCTL_PRGBRST_DATA2_3_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Program Burst 128 bit Data Word 2"]
     #[inline(always)]
     pub fn datain(&self) -> DATAIN_R {
-        DATAIN_R::new((self.bits & 0xffff_ffff) as u32)
+        DATAIN_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Program Burst 128 bit Data Word 2"]
     #[inline(always)]
-    pub fn datain(&mut self) -> DATAIN_W {
-        DATAIN_W { w: self }
+    pub fn datain(&mut self) -> DATAIN_W<0> {
+        DATAIN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -3,31 +3,31 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - Power Status Register"]
     pub flctl_power_stat: crate::Reg<flctl_power_stat::FLCTL_POWER_STAT_SPEC>,
-    _reserved1: [u8; 12usize],
+    _reserved1: [u8; 0x0c],
     #[doc = "0x10 - Bank0 Read Control Register"]
     pub flctl_bank0_rdctl: crate::Reg<flctl_bank0_rdctl::FLCTL_BANK0_RDCTL_SPEC>,
     #[doc = "0x14 - Bank1 Read Control Register"]
     pub flctl_bank1_rdctl: crate::Reg<flctl_bank1_rdctl::FLCTL_BANK1_RDCTL_SPEC>,
-    _reserved3: [u8; 8usize],
+    _reserved3: [u8; 0x08],
     #[doc = "0x20 - Read Burst/Compare Control and Status Register"]
     pub flctl_rdbrst_ctlstat: crate::Reg<flctl_rdbrst_ctlstat::FLCTL_RDBRST_CTLSTAT_SPEC>,
     #[doc = "0x24 - Read Burst/Compare Start Address Register"]
     pub flctl_rdbrst_startaddr: crate::Reg<flctl_rdbrst_startaddr::FLCTL_RDBRST_STARTADDR_SPEC>,
     #[doc = "0x28 - Read Burst/Compare Length Register"]
     pub flctl_rdbrst_len: crate::Reg<flctl_rdbrst_len::FLCTL_RDBRST_LEN_SPEC>,
-    _reserved6: [u8; 16usize],
+    _reserved6: [u8; 0x10],
     #[doc = "0x3c - Read Burst/Compare Fail Address Register"]
     pub flctl_rdbrst_failaddr: crate::Reg<flctl_rdbrst_failaddr::FLCTL_RDBRST_FAILADDR_SPEC>,
     #[doc = "0x40 - Read Burst/Compare Fail Count Register"]
     pub flctl_rdbrst_failcnt: crate::Reg<flctl_rdbrst_failcnt::FLCTL_RDBRST_FAILCNT_SPEC>,
-    _reserved8: [u8; 12usize],
+    _reserved8: [u8; 0x0c],
     #[doc = "0x50 - Program Control and Status Register"]
     pub flctl_prg_ctlstat: crate::Reg<flctl_prg_ctlstat::FLCTL_PRG_CTLSTAT_SPEC>,
     #[doc = "0x54 - Program Burst Control and Status Register"]
     pub flctl_prgbrst_ctlstat: crate::Reg<flctl_prgbrst_ctlstat::FLCTL_PRGBRST_CTLSTAT_SPEC>,
     #[doc = "0x58 - Program Burst Start Address Register"]
     pub flctl_prgbrst_startaddr: crate::Reg<flctl_prgbrst_startaddr::FLCTL_PRGBRST_STARTADDR_SPEC>,
-    _reserved11: [u8; 4usize],
+    _reserved11: [u8; 0x04],
     #[doc = "0x60 - Program Burst Data0 Register0"]
     pub flctl_prgbrst_data0_0: crate::Reg<flctl_prgbrst_data0_0::FLCTL_PRGBRST_DATA0_0_SPEC>,
     #[doc = "0x64 - Program Burst Data0 Register1"]
@@ -64,17 +64,17 @@ pub struct RegisterBlock {
     pub flctl_erase_ctlstat: crate::Reg<flctl_erase_ctlstat::FLCTL_ERASE_CTLSTAT_SPEC>,
     #[doc = "0xa4 - Erase Sector Address Register"]
     pub flctl_erase_sectaddr: crate::Reg<flctl_erase_sectaddr::FLCTL_ERASE_SECTADDR_SPEC>,
-    _reserved29: [u8; 8usize],
+    _reserved29: [u8; 0x08],
     #[doc = "0xb0 - Information Memory Bank0 Write/Erase Protection Register"]
     pub flctl_bank0_info_weprot: crate::Reg<flctl_bank0_info_weprot::FLCTL_BANK0_INFO_WEPROT_SPEC>,
     #[doc = "0xb4 - Main Memory Bank0 Write/Erase Protection Register"]
     pub flctl_bank0_main_weprot: crate::Reg<flctl_bank0_main_weprot::FLCTL_BANK0_MAIN_WEPROT_SPEC>,
-    _reserved31: [u8; 8usize],
+    _reserved31: [u8; 0x08],
     #[doc = "0xc0 - Information Memory Bank1 Write/Erase Protection Register"]
     pub flctl_bank1_info_weprot: crate::Reg<flctl_bank1_info_weprot::FLCTL_BANK1_INFO_WEPROT_SPEC>,
     #[doc = "0xc4 - Main Memory Bank1 Write/Erase Protection Register"]
     pub flctl_bank1_main_weprot: crate::Reg<flctl_bank1_main_weprot::FLCTL_BANK1_MAIN_WEPROT_SPEC>,
-    _reserved33: [u8; 8usize],
+    _reserved33: [u8; 0x08],
     #[doc = "0xd0 - Benchmark Control and Status Register"]
     pub flctl_bmrk_ctlstat: crate::Reg<flctl_bmrk_ctlstat::FLCTL_BMRK_CTLSTAT_SPEC>,
     #[doc = "0xd4 - Benchmark Instruction Fetch Count Register"]
@@ -83,7 +83,7 @@ pub struct RegisterBlock {
     pub flctl_bmrk_dread: crate::Reg<flctl_bmrk_dread::FLCTL_BMRK_DREAD_SPEC>,
     #[doc = "0xdc - Benchmark Count Compare Register"]
     pub flctl_bmrk_cmp: crate::Reg<flctl_bmrk_cmp::FLCTL_BMRK_CMP_SPEC>,
-    _reserved37: [u8; 16usize],
+    _reserved37: [u8; 0x10],
     #[doc = "0xf0 - Interrupt Flag Register"]
     pub flctl_ifg: crate::Reg<flctl_ifg::FLCTL_IFG_SPEC>,
     #[doc = "0xf4 - Interrupt Enable Register"]

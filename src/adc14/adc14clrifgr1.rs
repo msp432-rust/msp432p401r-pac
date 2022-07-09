@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ADC14CLRIFGR1_SPEC>> for R {
+impl From<crate::R<ADC14CLRIFGR1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ADC14CLRIFGR1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ADC14CLRIFGR1_SPEC>> for W {
+impl From<crate::W<ADC14CLRIFGR1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ADC14CLRIFGR1_SPEC>) -> Self {
         W(writer)
     }
@@ -47,15 +49,9 @@ impl From<CLRADC14INIFG_AW> for bool {
     }
 }
 #[doc = "Field `CLRADC14INIFG` writer - clear ADC14INIFG"]
-pub struct CLRADC14INIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLRADC14INIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLRADC14INIFG_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLRADC14INIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ADC14CLRIFGR1_SPEC, CLRADC14INIFG_AW, O>;
+impl<'a, const O: u8> CLRADC14INIFG_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn clradc14inifg_0(self) -> &'a mut W {
@@ -65,22 +61,6 @@ impl<'a> CLRADC14INIFG_W<'a> {
     #[inline(always)]
     pub fn clradc14inifg_1(self) -> &'a mut W {
         self.variant(CLRADC14INIFG_AW::CLRADC14INIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
     }
 }
 #[doc = "clear ADC14LOIFG\n\nValue on reset: 0"]
@@ -98,15 +78,9 @@ impl From<CLRADC14LOIFG_AW> for bool {
     }
 }
 #[doc = "Field `CLRADC14LOIFG` writer - clear ADC14LOIFG"]
-pub struct CLRADC14LOIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLRADC14LOIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLRADC14LOIFG_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLRADC14LOIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ADC14CLRIFGR1_SPEC, CLRADC14LOIFG_AW, O>;
+impl<'a, const O: u8> CLRADC14LOIFG_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn clradc14loifg_0(self) -> &'a mut W {
@@ -116,22 +90,6 @@ impl<'a> CLRADC14LOIFG_W<'a> {
     #[inline(always)]
     pub fn clradc14loifg_1(self) -> &'a mut W {
         self.variant(CLRADC14LOIFG_AW::CLRADC14LOIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
     }
 }
 #[doc = "clear ADC14HIIFG\n\nValue on reset: 0"]
@@ -149,15 +107,9 @@ impl From<CLRADC14HIIFG_AW> for bool {
     }
 }
 #[doc = "Field `CLRADC14HIIFG` writer - clear ADC14HIIFG"]
-pub struct CLRADC14HIIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLRADC14HIIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLRADC14HIIFG_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLRADC14HIIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ADC14CLRIFGR1_SPEC, CLRADC14HIIFG_AW, O>;
+impl<'a, const O: u8> CLRADC14HIIFG_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn clradc14hiifg_0(self) -> &'a mut W {
@@ -167,22 +119,6 @@ impl<'a> CLRADC14HIIFG_W<'a> {
     #[inline(always)]
     pub fn clradc14hiifg_1(self) -> &'a mut W {
         self.variant(CLRADC14HIIFG_AW::CLRADC14HIIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
     }
 }
 #[doc = "clear ADC14OVIFG\n\nValue on reset: 0"]
@@ -200,15 +136,9 @@ impl From<CLRADC14OVIFG_AW> for bool {
     }
 }
 #[doc = "Field `CLRADC14OVIFG` writer - clear ADC14OVIFG"]
-pub struct CLRADC14OVIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLRADC14OVIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLRADC14OVIFG_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLRADC14OVIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ADC14CLRIFGR1_SPEC, CLRADC14OVIFG_AW, O>;
+impl<'a, const O: u8> CLRADC14OVIFG_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn clradc14ovifg_0(self) -> &'a mut W {
@@ -218,22 +148,6 @@ impl<'a> CLRADC14OVIFG_W<'a> {
     #[inline(always)]
     pub fn clradc14ovifg_1(self) -> &'a mut W {
         self.variant(CLRADC14OVIFG_AW::CLRADC14OVIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
     }
 }
 #[doc = "clear ADC14TOVIFG\n\nValue on reset: 0"]
@@ -251,15 +165,9 @@ impl From<CLRADC14TOVIFG_AW> for bool {
     }
 }
 #[doc = "Field `CLRADC14TOVIFG` writer - clear ADC14TOVIFG"]
-pub struct CLRADC14TOVIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLRADC14TOVIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLRADC14TOVIFG_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLRADC14TOVIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ADC14CLRIFGR1_SPEC, CLRADC14TOVIFG_AW, O>;
+impl<'a, const O: u8> CLRADC14TOVIFG_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn clradc14tovifg_0(self) -> &'a mut W {
@@ -269,22 +177,6 @@ impl<'a> CLRADC14TOVIFG_W<'a> {
     #[inline(always)]
     pub fn clradc14tovifg_1(self) -> &'a mut W {
         self.variant(CLRADC14TOVIFG_AW::CLRADC14TOVIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
     }
 }
 #[doc = "clear ADC14RDYIFG\n\nValue on reset: 0"]
@@ -302,15 +194,9 @@ impl From<CLRADC14RDYIFG_AW> for bool {
     }
 }
 #[doc = "Field `CLRADC14RDYIFG` writer - clear ADC14RDYIFG"]
-pub struct CLRADC14RDYIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLRADC14RDYIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLRADC14RDYIFG_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLRADC14RDYIFG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ADC14CLRIFGR1_SPEC, CLRADC14RDYIFG_AW, O>;
+impl<'a, const O: u8> CLRADC14RDYIFG_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
     pub fn clradc14rdyifg_0(self) -> &'a mut W {
@@ -321,55 +207,40 @@ impl<'a> CLRADC14RDYIFG_W<'a> {
     pub fn clradc14rdyifg_1(self) -> &'a mut W {
         self.variant(CLRADC14RDYIFG_AW::CLRADC14RDYIFG_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bit 1 - clear ADC14INIFG"]
     #[inline(always)]
-    pub fn clradc14inifg(&mut self) -> CLRADC14INIFG_W {
-        CLRADC14INIFG_W { w: self }
+    pub fn clradc14inifg(&mut self) -> CLRADC14INIFG_W<1> {
+        CLRADC14INIFG_W::new(self)
     }
     #[doc = "Bit 2 - clear ADC14LOIFG"]
     #[inline(always)]
-    pub fn clradc14loifg(&mut self) -> CLRADC14LOIFG_W {
-        CLRADC14LOIFG_W { w: self }
+    pub fn clradc14loifg(&mut self) -> CLRADC14LOIFG_W<2> {
+        CLRADC14LOIFG_W::new(self)
     }
     #[doc = "Bit 3 - clear ADC14HIIFG"]
     #[inline(always)]
-    pub fn clradc14hiifg(&mut self) -> CLRADC14HIIFG_W {
-        CLRADC14HIIFG_W { w: self }
+    pub fn clradc14hiifg(&mut self) -> CLRADC14HIIFG_W<3> {
+        CLRADC14HIIFG_W::new(self)
     }
     #[doc = "Bit 4 - clear ADC14OVIFG"]
     #[inline(always)]
-    pub fn clradc14ovifg(&mut self) -> CLRADC14OVIFG_W {
-        CLRADC14OVIFG_W { w: self }
+    pub fn clradc14ovifg(&mut self) -> CLRADC14OVIFG_W<4> {
+        CLRADC14OVIFG_W::new(self)
     }
     #[doc = "Bit 5 - clear ADC14TOVIFG"]
     #[inline(always)]
-    pub fn clradc14tovifg(&mut self) -> CLRADC14TOVIFG_W {
-        CLRADC14TOVIFG_W { w: self }
+    pub fn clradc14tovifg(&mut self) -> CLRADC14TOVIFG_W<5> {
+        CLRADC14TOVIFG_W::new(self)
     }
     #[doc = "Bit 6 - clear ADC14RDYIFG"]
     #[inline(always)]
-    pub fn clradc14rdyifg(&mut self) -> CLRADC14RDYIFG_W {
-        CLRADC14RDYIFG_W { w: self }
+    pub fn clradc14rdyifg(&mut self) -> CLRADC14RDYIFG_W<6> {
+        CLRADC14RDYIFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

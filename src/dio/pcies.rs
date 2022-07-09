@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PCIES_SPEC>> for R {
+impl From<crate::R<PCIES_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PCIES_SPEC>) -> Self {
         R(reader)
     }
@@ -27,63 +28,20 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PCIES_SPEC>> for W {
+impl From<crate::W<PCIES_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PCIES_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `P5IES` reader - Port 5 Interrupt Edge Select"]
-pub struct P5IES_R(crate::FieldReader<u8, u8>);
-impl P5IES_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P5IES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P5IES_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P5IES_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P5IES` writer - Port 5 Interrupt Edge Select"]
-pub struct P5IES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P5IES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
-        self.w
-    }
-}
+pub type P5IES_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PCIES_SPEC, u8, u8, 8, O>;
 #[doc = "Field `P6IES` reader - Port 6 Interrupt Edge Select"]
-pub struct P6IES_R(crate::FieldReader<u8, u8>);
-impl P6IES_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P6IES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P6IES_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P6IES_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P6IES` writer - Port 6 Interrupt Edge Select"]
-pub struct P6IES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P6IES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
-        self.w
-    }
-}
+pub type P6IES_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PCIES_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Port 5 Interrupt Edge Select"]
     #[inline(always)]
@@ -99,15 +57,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Port 5 Interrupt Edge Select"]
     #[inline(always)]
-    pub fn p5ies(&mut self) -> P5IES_W {
-        P5IES_W { w: self }
+    pub fn p5ies(&mut self) -> P5IES_W<0> {
+        P5IES_W::new(self)
     }
     #[doc = "Bits 8:15 - Port 6 Interrupt Edge Select"]
     #[inline(always)]
-    pub fn p6ies(&mut self) -> P6IES_W {
-        P6IES_W { w: self }
+    pub fn p6ies(&mut self) -> P6IES_W<8> {
+        P6IES_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

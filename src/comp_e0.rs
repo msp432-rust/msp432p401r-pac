@@ -9,7 +9,7 @@ pub struct RegisterBlock {
     pub cex_ctl2: crate::Reg<cex_ctl2::CEXCTL2_SPEC>,
     #[doc = "0x06 - Comparator Control Register 3"]
     pub cex_ctl3: crate::Reg<cex_ctl3::CEXCTL3_SPEC>,
-    _reserved4: [u8; 4usize],
+    _reserved4: [u8; 0x04],
     #[doc = "0x0c - Comparator Interrupt Control Register"]
     pub cex_int: crate::Reg<cex_int::CEXINT_SPEC>,
     #[doc = "0x0e - Comparator Interrupt Vector Word Register"]

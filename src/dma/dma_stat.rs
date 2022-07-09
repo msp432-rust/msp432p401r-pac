@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DMA_STAT_SPEC>> for R {
+impl From<crate::R<DMA_STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DMA_STAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,12 +28,9 @@ impl From<MASTEN_A> for bool {
     }
 }
 #[doc = "Field `MASTEN` reader - Enable status of the controller"]
-pub struct MASTEN_R(crate::FieldReader<bool, MASTEN_A>);
+pub type MASTEN_R = crate::BitReader<MASTEN_A>;
 impl MASTEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MASTEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MASTEN_A {
         match self.bits {
@@ -43,19 +41,12 @@ impl MASTEN_R {
     #[doc = "Checks if the value of the field is `MASTEN_0`"]
     #[inline(always)]
     pub fn is_masten_0(&self) -> bool {
-        **self == MASTEN_A::MASTEN_0
+        *self == MASTEN_A::MASTEN_0
     }
     #[doc = "Checks if the value of the field is `MASTEN_1`"]
     #[inline(always)]
     pub fn is_masten_1(&self) -> bool {
-        **self == MASTEN_A::MASTEN_1
-    }
-}
-impl core::ops::Deref for MASTEN_R {
-    type Target = crate::FieldReader<bool, MASTEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MASTEN_A::MASTEN_1
     }
 }
 #[doc = "Current state of the control state machine. State can be one of the following:\n\nValue on reset: 0"]
@@ -92,12 +83,9 @@ impl From<STATE_A> for u8 {
     }
 }
 #[doc = "Field `STATE` reader - Current state of the control state machine. State can be one of the following:"]
-pub struct STATE_R(crate::FieldReader<u8, STATE_A>);
+pub type STATE_R = crate::FieldReader<u8, STATE_A>;
 impl STATE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        STATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<STATE_A> {
         match self.bits {
@@ -118,64 +106,57 @@ impl STATE_R {
     #[doc = "Checks if the value of the field is `STATE_0`"]
     #[inline(always)]
     pub fn is_state_0(&self) -> bool {
-        **self == STATE_A::STATE_0
+        *self == STATE_A::STATE_0
     }
     #[doc = "Checks if the value of the field is `STATE_1`"]
     #[inline(always)]
     pub fn is_state_1(&self) -> bool {
-        **self == STATE_A::STATE_1
+        *self == STATE_A::STATE_1
     }
     #[doc = "Checks if the value of the field is `STATE_2`"]
     #[inline(always)]
     pub fn is_state_2(&self) -> bool {
-        **self == STATE_A::STATE_2
+        *self == STATE_A::STATE_2
     }
     #[doc = "Checks if the value of the field is `STATE_3`"]
     #[inline(always)]
     pub fn is_state_3(&self) -> bool {
-        **self == STATE_A::STATE_3
+        *self == STATE_A::STATE_3
     }
     #[doc = "Checks if the value of the field is `STATE_4`"]
     #[inline(always)]
     pub fn is_state_4(&self) -> bool {
-        **self == STATE_A::STATE_4
+        *self == STATE_A::STATE_4
     }
     #[doc = "Checks if the value of the field is `STATE_5`"]
     #[inline(always)]
     pub fn is_state_5(&self) -> bool {
-        **self == STATE_A::STATE_5
+        *self == STATE_A::STATE_5
     }
     #[doc = "Checks if the value of the field is `STATE_6`"]
     #[inline(always)]
     pub fn is_state_6(&self) -> bool {
-        **self == STATE_A::STATE_6
+        *self == STATE_A::STATE_6
     }
     #[doc = "Checks if the value of the field is `STATE_7`"]
     #[inline(always)]
     pub fn is_state_7(&self) -> bool {
-        **self == STATE_A::STATE_7
+        *self == STATE_A::STATE_7
     }
     #[doc = "Checks if the value of the field is `STATE_8`"]
     #[inline(always)]
     pub fn is_state_8(&self) -> bool {
-        **self == STATE_A::STATE_8
+        *self == STATE_A::STATE_8
     }
     #[doc = "Checks if the value of the field is `STATE_9`"]
     #[inline(always)]
     pub fn is_state_9(&self) -> bool {
-        **self == STATE_A::STATE_9
+        *self == STATE_A::STATE_9
     }
     #[doc = "Checks if the value of the field is `STATE_10`"]
     #[inline(always)]
     pub fn is_state_10(&self) -> bool {
-        **self == STATE_A::STATE_10
-    }
-}
-impl core::ops::Deref for STATE_R {
-    type Target = crate::FieldReader<u8, STATE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STATE_A::STATE_10
     }
 }
 #[doc = "Number of available DMA channels minus one.\n\nValue on reset: 0"]
@@ -198,12 +179,9 @@ impl From<DMACHANS_A> for u8 {
     }
 }
 #[doc = "Field `DMACHANS` reader - Number of available DMA channels minus one."]
-pub struct DMACHANS_R(crate::FieldReader<u8, DMACHANS_A>);
+pub type DMACHANS_R = crate::FieldReader<u8, DMACHANS_A>;
 impl DMACHANS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DMACHANS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DMACHANS_A> {
         match self.bits {
@@ -217,29 +195,22 @@ impl DMACHANS_R {
     #[doc = "Checks if the value of the field is `DMACHANS_0`"]
     #[inline(always)]
     pub fn is_dmachans_0(&self) -> bool {
-        **self == DMACHANS_A::DMACHANS_0
+        *self == DMACHANS_A::DMACHANS_0
     }
     #[doc = "Checks if the value of the field is `DMACHANS_1`"]
     #[inline(always)]
     pub fn is_dmachans_1(&self) -> bool {
-        **self == DMACHANS_A::DMACHANS_1
+        *self == DMACHANS_A::DMACHANS_1
     }
     #[doc = "Checks if the value of the field is `DMACHANS_30`"]
     #[inline(always)]
     pub fn is_dmachans_30(&self) -> bool {
-        **self == DMACHANS_A::DMACHANS_30
+        *self == DMACHANS_A::DMACHANS_30
     }
     #[doc = "Checks if the value of the field is `DMACHANS_31`"]
     #[inline(always)]
     pub fn is_dmachans_31(&self) -> bool {
-        **self == DMACHANS_A::DMACHANS_31
-    }
-}
-impl core::ops::Deref for DMACHANS_R {
-    type Target = crate::FieldReader<u8, DMACHANS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMACHANS_A::DMACHANS_31
     }
 }
 #[doc = "To reduce the gate count the controller can be configured to exclude the integration test logic. The values 2h to Fh are Reserved.\n\nValue on reset: 0"]
@@ -258,12 +229,9 @@ impl From<TESTSTAT_A> for u8 {
     }
 }
 #[doc = "Field `TESTSTAT` reader - To reduce the gate count the controller can be configured to exclude the integration test logic. The values 2h to Fh are Reserved."]
-pub struct TESTSTAT_R(crate::FieldReader<u8, TESTSTAT_A>);
+pub type TESTSTAT_R = crate::FieldReader<u8, TESTSTAT_A>;
 impl TESTSTAT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TESTSTAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TESTSTAT_A> {
         match self.bits {
@@ -275,26 +243,19 @@ impl TESTSTAT_R {
     #[doc = "Checks if the value of the field is `TESTSTAT_0`"]
     #[inline(always)]
     pub fn is_teststat_0(&self) -> bool {
-        **self == TESTSTAT_A::TESTSTAT_0
+        *self == TESTSTAT_A::TESTSTAT_0
     }
     #[doc = "Checks if the value of the field is `TESTSTAT_1`"]
     #[inline(always)]
     pub fn is_teststat_1(&self) -> bool {
-        **self == TESTSTAT_A::TESTSTAT_1
-    }
-}
-impl core::ops::Deref for TESTSTAT_R {
-    type Target = crate::FieldReader<u8, TESTSTAT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TESTSTAT_A::TESTSTAT_1
     }
 }
 impl R {
     #[doc = "Bit 0 - Enable status of the controller"]
     #[inline(always)]
     pub fn masten(&self) -> MASTEN_R {
-        MASTEN_R::new((self.bits & 0x01) != 0)
+        MASTEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:7 - Current state of the control state machine. State can be one of the following:"]
     #[inline(always)]

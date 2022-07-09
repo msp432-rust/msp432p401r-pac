@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CRC32RESR_HI_SPEC>> for R {
+impl From<crate::R<CRC32RESR_HI_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CRC32RESR_HI_SPEC>) -> Self {
         R(reader)
     }
@@ -27,51 +28,32 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CRC32RESR_HI_SPEC>> for W {
+impl From<crate::W<CRC32RESR_HI_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CRC32RESR_HI_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `CRC32RESR_HI` reader - CRC32 reverse result, upper 16 bits"]
-pub struct CRC32RESR_HI_R(crate::FieldReader<u16, u16>);
-impl CRC32RESR_HI_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CRC32RESR_HI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CRC32RESR_HI_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CRC32RESR_HI_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CRC32RESR_HI` writer - CRC32 reverse result, upper 16 bits"]
-pub struct CRC32RESR_HI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRC32RESR_HI_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u16 & 0xffff);
-        self.w
-    }
-}
+pub type CRC32RESR_HI_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u16, CRC32RESR_HI_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - CRC32 reverse result, upper 16 bits"]
     #[inline(always)]
     pub fn crc32resr_hi(&self) -> CRC32RESR_HI_R {
-        CRC32RESR_HI_R::new((self.bits & 0xffff) as u16)
+        CRC32RESR_HI_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - CRC32 reverse result, upper 16 bits"]
     #[inline(always)]
-    pub fn crc32resr_hi(&mut self) -> CRC32RESR_HI_W {
-        CRC32RESR_HI_W { w: self }
+    pub fn crc32resr_hi(&mut self) -> CRC32RESR_HI_W<0> {
+        CRC32RESR_HI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

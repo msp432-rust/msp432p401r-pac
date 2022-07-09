@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCAXCTLW1_SPEC>> for R {
+impl From<crate::R<UCAXCTLW1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCAXCTLW1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCAXCTLW1_SPEC>> for W {
+impl From<crate::W<UCAXCTLW1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCAXCTLW1_SPEC>) -> Self {
         W(writer)
     }
@@ -52,12 +54,9 @@ impl From<UCGLIT_A> for u8 {
     }
 }
 #[doc = "Field `UCGLIT` reader - Deglitch time"]
-pub struct UCGLIT_R(crate::FieldReader<u8, UCGLIT_A>);
+pub type UCGLIT_R = crate::FieldReader<u8, UCGLIT_A>;
 impl UCGLIT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        UCGLIT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCGLIT_A {
         match self.bits {
@@ -71,41 +70,28 @@ impl UCGLIT_R {
     #[doc = "Checks if the value of the field is `UCGLIT_0`"]
     #[inline(always)]
     pub fn is_ucglit_0(&self) -> bool {
-        **self == UCGLIT_A::UCGLIT_0
+        *self == UCGLIT_A::UCGLIT_0
     }
     #[doc = "Checks if the value of the field is `UCGLIT_1`"]
     #[inline(always)]
     pub fn is_ucglit_1(&self) -> bool {
-        **self == UCGLIT_A::UCGLIT_1
+        *self == UCGLIT_A::UCGLIT_1
     }
     #[doc = "Checks if the value of the field is `UCGLIT_2`"]
     #[inline(always)]
     pub fn is_ucglit_2(&self) -> bool {
-        **self == UCGLIT_A::UCGLIT_2
+        *self == UCGLIT_A::UCGLIT_2
     }
     #[doc = "Checks if the value of the field is `UCGLIT_3`"]
     #[inline(always)]
     pub fn is_ucglit_3(&self) -> bool {
-        **self == UCGLIT_A::UCGLIT_3
-    }
-}
-impl core::ops::Deref for UCGLIT_R {
-    type Target = crate::FieldReader<u8, UCGLIT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCGLIT_A::UCGLIT_3
     }
 }
 #[doc = "Field `UCGLIT` writer - Deglitch time"]
-pub struct UCGLIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCGLIT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCGLIT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type UCGLIT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, UCAXCTLW1_SPEC, u8, UCGLIT_A, 2, O>;
+impl<'a, const O: u8> UCGLIT_W<'a, O> {
     #[doc = "Approximately 2 ns (equivalent of 1 delay element)"]
     #[inline(always)]
     pub fn ucglit_0(self) -> &'a mut W {
@@ -126,27 +112,22 @@ impl<'a> UCGLIT_W<'a> {
     pub fn ucglit_3(self) -> &'a mut W {
         self.variant(UCGLIT_A::UCGLIT_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u16 & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Deglitch time"]
     #[inline(always)]
     pub fn ucglit(&self) -> UCGLIT_R {
-        UCGLIT_R::new((self.bits & 0x03) as u8)
+        UCGLIT_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Deglitch time"]
     #[inline(always)]
-    pub fn ucglit(&mut self) -> UCGLIT_W {
-        UCGLIT_W { w: self }
+    pub fn ucglit(&mut self) -> UCGLIT_W<0> {
+        UCGLIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

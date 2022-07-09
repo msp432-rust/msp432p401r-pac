@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PDIE_SPEC>> for R {
+impl From<crate::R<PDIE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PDIE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,63 +28,20 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PDIE_SPEC>> for W {
+impl From<crate::W<PDIE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PDIE_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `P7IE` reader - Port 7 Interrupt Enable"]
-pub struct P7IE_R(crate::FieldReader<u8, u8>);
-impl P7IE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P7IE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P7IE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P7IE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P7IE` writer - Port 7 Interrupt Enable"]
-pub struct P7IE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P7IE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
-        self.w
-    }
-}
+pub type P7IE_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PDIE_SPEC, u8, u8, 8, O>;
 #[doc = "Field `P8IE` reader - Port 8 Interrupt Enable"]
-pub struct P8IE_R(crate::FieldReader<u8, u8>);
-impl P8IE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P8IE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P8IE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P8IE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P8IE` writer - Port 8 Interrupt Enable"]
-pub struct P8IE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P8IE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
-        self.w
-    }
-}
+pub type P8IE_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PDIE_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Port 7 Interrupt Enable"]
     #[inline(always)]
@@ -99,15 +57,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Port 7 Interrupt Enable"]
     #[inline(always)]
-    pub fn p7ie(&mut self) -> P7IE_W {
-        P7IE_W { w: self }
+    pub fn p7ie(&mut self) -> P7IE_W<0> {
+        P7IE_W::new(self)
     }
     #[doc = "Bits 8:15 - Port 8 Interrupt Enable"]
     #[inline(always)]
-    pub fn p8ie(&mut self) -> P8IE_W {
-        P8IE_W { w: self }
+    pub fn p8ie(&mut self) -> P8IE_W<8> {
+        P8IE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

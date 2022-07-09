@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TAXCTL_SPEC>> for R {
+impl From<crate::R<TAXCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TAXCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<TAXCTL_SPEC>> for W {
+impl From<crate::W<TAXCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<TAXCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -47,12 +49,9 @@ impl From<TAIFG_A> for bool {
     }
 }
 #[doc = "Field `TAIFG` reader - TimerA interrupt flag"]
-pub struct TAIFG_R(crate::FieldReader<bool, TAIFG_A>);
+pub type TAIFG_R = crate::BitReader<TAIFG_A>;
 impl TAIFG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TAIFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TAIFG_A {
         match self.bits {
@@ -63,31 +62,17 @@ impl TAIFG_R {
     #[doc = "Checks if the value of the field is `TAIFG_0`"]
     #[inline(always)]
     pub fn is_taifg_0(&self) -> bool {
-        **self == TAIFG_A::TAIFG_0
+        *self == TAIFG_A::TAIFG_0
     }
     #[doc = "Checks if the value of the field is `TAIFG_1`"]
     #[inline(always)]
     pub fn is_taifg_1(&self) -> bool {
-        **self == TAIFG_A::TAIFG_1
-    }
-}
-impl core::ops::Deref for TAIFG_R {
-    type Target = crate::FieldReader<bool, TAIFG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TAIFG_A::TAIFG_1
     }
 }
 #[doc = "Field `TAIFG` writer - TimerA interrupt flag"]
-pub struct TAIFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAIFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TAIFG_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TAIFG_W<'a, const O: u8> = crate::BitWriter<'a, u16, TAXCTL_SPEC, TAIFG_A, O>;
+impl<'a, const O: u8> TAIFG_W<'a, O> {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn taifg_0(self) -> &'a mut W {
@@ -97,22 +82,6 @@ impl<'a> TAIFG_W<'a> {
     #[inline(always)]
     pub fn taifg_1(self) -> &'a mut W {
         self.variant(TAIFG_A::TAIFG_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u16 & 0x01);
-        self.w
     }
 }
 #[doc = "TimerA interrupt enable\n\nValue on reset: 0"]
@@ -130,12 +99,9 @@ impl From<TAIE_A> for bool {
     }
 }
 #[doc = "Field `TAIE` reader - TimerA interrupt enable"]
-pub struct TAIE_R(crate::FieldReader<bool, TAIE_A>);
+pub type TAIE_R = crate::BitReader<TAIE_A>;
 impl TAIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TAIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TAIE_A {
         match self.bits {
@@ -146,31 +112,17 @@ impl TAIE_R {
     #[doc = "Checks if the value of the field is `TAIE_0`"]
     #[inline(always)]
     pub fn is_taie_0(&self) -> bool {
-        **self == TAIE_A::TAIE_0
+        *self == TAIE_A::TAIE_0
     }
     #[doc = "Checks if the value of the field is `TAIE_1`"]
     #[inline(always)]
     pub fn is_taie_1(&self) -> bool {
-        **self == TAIE_A::TAIE_1
-    }
-}
-impl core::ops::Deref for TAIE_R {
-    type Target = crate::FieldReader<bool, TAIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TAIE_A::TAIE_1
     }
 }
 #[doc = "Field `TAIE` writer - TimerA interrupt enable"]
-pub struct TAIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TAIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TAIE_W<'a, const O: u8> = crate::BitWriter<'a, u16, TAXCTL_SPEC, TAIE_A, O>;
+impl<'a, const O: u8> TAIE_W<'a, O> {
     #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn taie_0(self) -> &'a mut W {
@@ -181,59 +133,11 @@ impl<'a> TAIE_W<'a> {
     pub fn taie_1(self) -> &'a mut W {
         self.variant(TAIE_A::TAIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u16 & 0x01) << 1);
-        self.w
-    }
 }
 #[doc = "Field `TACLR` reader - TimerA clear"]
-pub struct TACLR_R(crate::FieldReader<bool, bool>);
-impl TACLR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TACLR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TACLR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TACLR_R = crate::BitReader<bool>;
 #[doc = "Field `TACLR` writer - TimerA clear"]
-pub struct TACLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TACLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u16 & 0x01) << 2);
-        self.w
-    }
-}
+pub type TACLR_W<'a, const O: u8> = crate::BitWriter<'a, u16, TAXCTL_SPEC, bool, O>;
 #[doc = "Mode control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -254,12 +158,9 @@ impl From<MC_A> for u8 {
     }
 }
 #[doc = "Field `MC` reader - Mode control"]
-pub struct MC_R(crate::FieldReader<u8, MC_A>);
+pub type MC_R = crate::FieldReader<u8, MC_A>;
 impl MC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MC_A {
         match self.bits {
@@ -273,41 +174,27 @@ impl MC_R {
     #[doc = "Checks if the value of the field is `MC_0`"]
     #[inline(always)]
     pub fn is_mc_0(&self) -> bool {
-        **self == MC_A::MC_0
+        *self == MC_A::MC_0
     }
     #[doc = "Checks if the value of the field is `MC_1`"]
     #[inline(always)]
     pub fn is_mc_1(&self) -> bool {
-        **self == MC_A::MC_1
+        *self == MC_A::MC_1
     }
     #[doc = "Checks if the value of the field is `MC_2`"]
     #[inline(always)]
     pub fn is_mc_2(&self) -> bool {
-        **self == MC_A::MC_2
+        *self == MC_A::MC_2
     }
     #[doc = "Checks if the value of the field is `MC_3`"]
     #[inline(always)]
     pub fn is_mc_3(&self) -> bool {
-        **self == MC_A::MC_3
-    }
-}
-impl core::ops::Deref for MC_R {
-    type Target = crate::FieldReader<u8, MC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MC_A::MC_3
     }
 }
 #[doc = "Field `MC` writer - Mode control"]
-pub struct MC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type MC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, TAXCTL_SPEC, u8, MC_A, 2, O>;
+impl<'a, const O: u8> MC_W<'a, O> {
     #[doc = "Stop mode: Timer is halted"]
     #[inline(always)]
     pub fn mc_0(self) -> &'a mut W {
@@ -327,12 +214,6 @@ impl<'a> MC_W<'a> {
     #[inline(always)]
     pub fn mc_3(self) -> &'a mut W {
         self.variant(MC_A::MC_3)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u16 & 0x03) << 4);
-        self.w
     }
 }
 #[doc = "Input divider\n\nValue on reset: 0"]
@@ -355,12 +236,9 @@ impl From<ID_A> for u8 {
     }
 }
 #[doc = "Field `ID` reader - Input divider"]
-pub struct ID_R(crate::FieldReader<u8, ID_A>);
+pub type ID_R = crate::FieldReader<u8, ID_A>;
 impl ID_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ID_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ID_A {
         match self.bits {
@@ -374,41 +252,27 @@ impl ID_R {
     #[doc = "Checks if the value of the field is `ID_0`"]
     #[inline(always)]
     pub fn is_id_0(&self) -> bool {
-        **self == ID_A::ID_0
+        *self == ID_A::ID_0
     }
     #[doc = "Checks if the value of the field is `ID_1`"]
     #[inline(always)]
     pub fn is_id_1(&self) -> bool {
-        **self == ID_A::ID_1
+        *self == ID_A::ID_1
     }
     #[doc = "Checks if the value of the field is `ID_2`"]
     #[inline(always)]
     pub fn is_id_2(&self) -> bool {
-        **self == ID_A::ID_2
+        *self == ID_A::ID_2
     }
     #[doc = "Checks if the value of the field is `ID_3`"]
     #[inline(always)]
     pub fn is_id_3(&self) -> bool {
-        **self == ID_A::ID_3
-    }
-}
-impl core::ops::Deref for ID_R {
-    type Target = crate::FieldReader<u8, ID_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ID_A::ID_3
     }
 }
 #[doc = "Field `ID` writer - Input divider"]
-pub struct ID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ID_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ID_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type ID_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u16, TAXCTL_SPEC, u8, ID_A, 2, O>;
+impl<'a, const O: u8> ID_W<'a, O> {
     #[doc = "/1"]
     #[inline(always)]
     pub fn id_0(self) -> &'a mut W {
@@ -428,12 +292,6 @@ impl<'a> ID_W<'a> {
     #[inline(always)]
     pub fn id_3(self) -> &'a mut W {
         self.variant(ID_A::ID_3)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u16 & 0x03) << 6);
-        self.w
     }
 }
 #[doc = "TimerA clock source select\n\nValue on reset: 0"]
@@ -456,12 +314,9 @@ impl From<TASSEL_A> for u8 {
     }
 }
 #[doc = "Field `TASSEL` reader - TimerA clock source select"]
-pub struct TASSEL_R(crate::FieldReader<u8, TASSEL_A>);
+pub type TASSEL_R = crate::FieldReader<u8, TASSEL_A>;
 impl TASSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TASSEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TASSEL_A {
         match self.bits {
@@ -475,41 +330,28 @@ impl TASSEL_R {
     #[doc = "Checks if the value of the field is `TASSEL_0`"]
     #[inline(always)]
     pub fn is_tassel_0(&self) -> bool {
-        **self == TASSEL_A::TASSEL_0
+        *self == TASSEL_A::TASSEL_0
     }
     #[doc = "Checks if the value of the field is `TASSEL_1`"]
     #[inline(always)]
     pub fn is_tassel_1(&self) -> bool {
-        **self == TASSEL_A::TASSEL_1
+        *self == TASSEL_A::TASSEL_1
     }
     #[doc = "Checks if the value of the field is `TASSEL_2`"]
     #[inline(always)]
     pub fn is_tassel_2(&self) -> bool {
-        **self == TASSEL_A::TASSEL_2
+        *self == TASSEL_A::TASSEL_2
     }
     #[doc = "Checks if the value of the field is `TASSEL_3`"]
     #[inline(always)]
     pub fn is_tassel_3(&self) -> bool {
-        **self == TASSEL_A::TASSEL_3
-    }
-}
-impl core::ops::Deref for TASSEL_R {
-    type Target = crate::FieldReader<u8, TASSEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TASSEL_A::TASSEL_3
     }
 }
 #[doc = "Field `TASSEL` writer - TimerA clock source select"]
-pub struct TASSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASSEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TASSEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TASSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u16, TAXCTL_SPEC, u8, TASSEL_A, 2, O>;
+impl<'a, const O: u8> TASSEL_W<'a, O> {
     #[doc = "TAxCLK"]
     #[inline(always)]
     pub fn tassel_0(self) -> &'a mut W {
@@ -530,77 +372,72 @@ impl<'a> TASSEL_W<'a> {
     pub fn tassel_3(self) -> &'a mut W {
         self.variant(TASSEL_A::TASSEL_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u16 & 0x03) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - TimerA interrupt flag"]
     #[inline(always)]
     pub fn taifg(&self) -> TAIFG_R {
-        TAIFG_R::new((self.bits & 0x01) != 0)
+        TAIFG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - TimerA interrupt enable"]
     #[inline(always)]
     pub fn taie(&self) -> TAIE_R {
-        TAIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        TAIE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - TimerA clear"]
     #[inline(always)]
     pub fn taclr(&self) -> TACLR_R {
-        TACLR_R::new(((self.bits >> 2) & 0x01) != 0)
+        TACLR_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Mode control"]
     #[inline(always)]
     pub fn mc(&self) -> MC_R {
-        MC_R::new(((self.bits >> 4) & 0x03) as u8)
+        MC_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - Input divider"]
     #[inline(always)]
     pub fn id(&self) -> ID_R {
-        ID_R::new(((self.bits >> 6) & 0x03) as u8)
+        ID_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - TimerA clock source select"]
     #[inline(always)]
     pub fn tassel(&self) -> TASSEL_R {
-        TASSEL_R::new(((self.bits >> 8) & 0x03) as u8)
+        TASSEL_R::new(((self.bits >> 8) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - TimerA interrupt flag"]
     #[inline(always)]
-    pub fn taifg(&mut self) -> TAIFG_W {
-        TAIFG_W { w: self }
+    pub fn taifg(&mut self) -> TAIFG_W<0> {
+        TAIFG_W::new(self)
     }
     #[doc = "Bit 1 - TimerA interrupt enable"]
     #[inline(always)]
-    pub fn taie(&mut self) -> TAIE_W {
-        TAIE_W { w: self }
+    pub fn taie(&mut self) -> TAIE_W<1> {
+        TAIE_W::new(self)
     }
     #[doc = "Bit 2 - TimerA clear"]
     #[inline(always)]
-    pub fn taclr(&mut self) -> TACLR_W {
-        TACLR_W { w: self }
+    pub fn taclr(&mut self) -> TACLR_W<2> {
+        TACLR_W::new(self)
     }
     #[doc = "Bits 4:5 - Mode control"]
     #[inline(always)]
-    pub fn mc(&mut self) -> MC_W {
-        MC_W { w: self }
+    pub fn mc(&mut self) -> MC_W<4> {
+        MC_W::new(self)
     }
     #[doc = "Bits 6:7 - Input divider"]
     #[inline(always)]
-    pub fn id(&mut self) -> ID_W {
-        ID_W { w: self }
+    pub fn id(&mut self) -> ID_W<6> {
+        ID_W::new(self)
     }
     #[doc = "Bits 8:9 - TimerA clock source select"]
     #[inline(always)]
-    pub fn tassel(&mut self) -> TASSEL_W {
-        TASSEL_W { w: self }
+    pub fn tassel(&mut self) -> TASSEL_W<8> {
+        TASSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

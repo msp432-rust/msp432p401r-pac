@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SYS_WDTRESET_CTL_SPEC>> for R {
+impl From<crate::R<SYS_WDTRESET_CTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SYS_WDTRESET_CTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SYS_WDTRESET_CTL_SPEC>> for W {
+impl From<crate::W<SYS_WDTRESET_CTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SYS_WDTRESET_CTL_SPEC>) -> Self {
         W(writer)
     }
@@ -47,12 +49,9 @@ impl From<TIMEOUT_A> for bool {
     }
 }
 #[doc = "Field `TIMEOUT` reader - WDT timeout reset type"]
-pub struct TIMEOUT_R(crate::FieldReader<bool, TIMEOUT_A>);
+pub type TIMEOUT_R = crate::BitReader<TIMEOUT_A>;
 impl TIMEOUT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMEOUT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIMEOUT_A {
         match self.bits {
@@ -63,31 +62,18 @@ impl TIMEOUT_R {
     #[doc = "Checks if the value of the field is `TIMEOUT_0`"]
     #[inline(always)]
     pub fn is_timeout_0(&self) -> bool {
-        **self == TIMEOUT_A::TIMEOUT_0
+        *self == TIMEOUT_A::TIMEOUT_0
     }
     #[doc = "Checks if the value of the field is `TIMEOUT_1`"]
     #[inline(always)]
     pub fn is_timeout_1(&self) -> bool {
-        **self == TIMEOUT_A::TIMEOUT_1
-    }
-}
-impl core::ops::Deref for TIMEOUT_R {
-    type Target = crate::FieldReader<bool, TIMEOUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TIMEOUT_A::TIMEOUT_1
     }
 }
 #[doc = "Field `TIMEOUT` writer - WDT timeout reset type"]
-pub struct TIMEOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMEOUT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TIMEOUT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TIMEOUT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SYS_WDTRESET_CTL_SPEC, TIMEOUT_A, O>;
+impl<'a, const O: u8> TIMEOUT_W<'a, O> {
     #[doc = "WDT timeout event generates Soft reset"]
     #[inline(always)]
     pub fn timeout_0(self) -> &'a mut W {
@@ -97,22 +83,6 @@ impl<'a> TIMEOUT_W<'a> {
     #[inline(always)]
     pub fn timeout_1(self) -> &'a mut W {
         self.variant(TIMEOUT_A::TIMEOUT_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 #[doc = "WDT password violation reset type\n\nValue on reset: 1"]
@@ -130,12 +100,9 @@ impl From<VIOLATION_A> for bool {
     }
 }
 #[doc = "Field `VIOLATION` reader - WDT password violation reset type"]
-pub struct VIOLATION_R(crate::FieldReader<bool, VIOLATION_A>);
+pub type VIOLATION_R = crate::BitReader<VIOLATION_A>;
 impl VIOLATION_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VIOLATION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIOLATION_A {
         match self.bits {
@@ -146,31 +113,18 @@ impl VIOLATION_R {
     #[doc = "Checks if the value of the field is `VIOLATION_0`"]
     #[inline(always)]
     pub fn is_violation_0(&self) -> bool {
-        **self == VIOLATION_A::VIOLATION_0
+        *self == VIOLATION_A::VIOLATION_0
     }
     #[doc = "Checks if the value of the field is `VIOLATION_1`"]
     #[inline(always)]
     pub fn is_violation_1(&self) -> bool {
-        **self == VIOLATION_A::VIOLATION_1
-    }
-}
-impl core::ops::Deref for VIOLATION_R {
-    type Target = crate::FieldReader<bool, VIOLATION_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VIOLATION_A::VIOLATION_1
     }
 }
 #[doc = "Field `VIOLATION` writer - WDT password violation reset type"]
-pub struct VIOLATION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VIOLATION_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VIOLATION_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type VIOLATION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SYS_WDTRESET_CTL_SPEC, VIOLATION_A, O>;
+impl<'a, const O: u8> VIOLATION_W<'a, O> {
     #[doc = "WDT password violation event generates Soft reset"]
     #[inline(always)]
     pub fn violation_0(self) -> &'a mut W {
@@ -181,47 +135,32 @@ impl<'a> VIOLATION_W<'a> {
     pub fn violation_1(self) -> &'a mut W {
         self.variant(VIOLATION_A::VIOLATION_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - WDT timeout reset type"]
     #[inline(always)]
     pub fn timeout(&self) -> TIMEOUT_R {
-        TIMEOUT_R::new((self.bits & 0x01) != 0)
+        TIMEOUT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - WDT password violation reset type"]
     #[inline(always)]
     pub fn violation(&self) -> VIOLATION_R {
-        VIOLATION_R::new(((self.bits >> 1) & 0x01) != 0)
+        VIOLATION_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - WDT timeout reset type"]
     #[inline(always)]
-    pub fn timeout(&mut self) -> TIMEOUT_W {
-        TIMEOUT_W { w: self }
+    pub fn timeout(&mut self) -> TIMEOUT_W<0> {
+        TIMEOUT_W::new(self)
     }
     #[doc = "Bit 1 - WDT password violation reset type"]
     #[inline(always)]
-    pub fn violation(&mut self) -> VIOLATION_W {
-        VIOLATION_W { w: self }
+    pub fn violation(&mut self) -> VIOLATION_W<1> {
+        VIOLATION_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

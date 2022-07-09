@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCBXI2COA1_SPEC>> for R {
+impl From<crate::R<UCBXI2COA1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCBXI2COA1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,16 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<UCBXI2COA1_SPEC>> for W {
+impl From<crate::W<UCBXI2COA1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<UCBXI2COA1_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `I2COA1` reader - I2C own address"]
-pub struct I2COA1_R(crate::FieldReader<u16, u16>);
-impl I2COA1_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        I2COA1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for I2COA1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type I2COA1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `I2COA1` writer - I2C own address"]
-pub struct I2COA1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> I2COA1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u16 & 0x03ff);
-        self.w
-    }
-}
+pub type I2COA1_W<'a, const O: u8> = crate::FieldWriter<'a, u16, UCBXI2COA1_SPEC, u16, u16, 10, O>;
 #[doc = "Own Address enable register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UCOAEN_A {
@@ -73,12 +53,9 @@ impl From<UCOAEN_A> for bool {
     }
 }
 #[doc = "Field `UCOAEN` reader - Own Address enable register"]
-pub struct UCOAEN_R(crate::FieldReader<bool, UCOAEN_A>);
+pub type UCOAEN_R = crate::BitReader<UCOAEN_A>;
 impl UCOAEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UCOAEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> UCOAEN_A {
         match self.bits {
@@ -89,31 +66,17 @@ impl UCOAEN_R {
     #[doc = "Checks if the value of the field is `UCOAEN_0`"]
     #[inline(always)]
     pub fn is_ucoaen_0(&self) -> bool {
-        **self == UCOAEN_A::UCOAEN_0
+        *self == UCOAEN_A::UCOAEN_0
     }
     #[doc = "Checks if the value of the field is `UCOAEN_1`"]
     #[inline(always)]
     pub fn is_ucoaen_1(&self) -> bool {
-        **self == UCOAEN_A::UCOAEN_1
-    }
-}
-impl core::ops::Deref for UCOAEN_R {
-    type Target = crate::FieldReader<bool, UCOAEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UCOAEN_A::UCOAEN_1
     }
 }
 #[doc = "Field `UCOAEN` writer - Own Address enable register"]
-pub struct UCOAEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UCOAEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UCOAEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UCOAEN_W<'a, const O: u8> = crate::BitWriter<'a, u16, UCBXI2COA1_SPEC, UCOAEN_A, O>;
+impl<'a, const O: u8> UCOAEN_W<'a, O> {
     #[doc = "The slave address defined in I2COA1 is disabled"]
     #[inline(always)]
     pub fn ucoaen_0(self) -> &'a mut W {
@@ -123,22 +86,6 @@ impl<'a> UCOAEN_W<'a> {
     #[inline(always)]
     pub fn ucoaen_1(self) -> &'a mut W {
         self.variant(UCOAEN_A::UCOAEN_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u16 & 0x01) << 10);
-        self.w
     }
 }
 impl R {
@@ -150,21 +97,22 @@ impl R {
     #[doc = "Bit 10 - Own Address enable register"]
     #[inline(always)]
     pub fn ucoaen(&self) -> UCOAEN_R {
-        UCOAEN_R::new(((self.bits >> 10) & 0x01) != 0)
+        UCOAEN_R::new(((self.bits >> 10) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:9 - I2C own address"]
     #[inline(always)]
-    pub fn i2coa1(&mut self) -> I2COA1_W {
-        I2COA1_W { w: self }
+    pub fn i2coa1(&mut self) -> I2COA1_W<0> {
+        I2COA1_W::new(self)
     }
     #[doc = "Bit 10 - Own Address enable register"]
     #[inline(always)]
-    pub fn ucoaen(&mut self) -> UCOAEN_W {
-        UCOAEN_W { w: self }
+    pub fn ucoaen(&mut self) -> UCOAEN_W<10> {
+        UCOAEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

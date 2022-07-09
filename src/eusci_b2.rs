@@ -5,7 +5,7 @@ pub struct RegisterBlock {
     pub ucbx_ctlw0: crate::Reg<ucbx_ctlw0::UCBXCTLW0_SPEC>,
     #[doc = "0x02 - eUSCI_Bx Control Word Register 1"]
     pub ucbx_ctlw1: crate::Reg<ucbx_ctlw1::UCBXCTLW1_SPEC>,
-    _reserved2: [u8; 2usize],
+    _reserved2: [u8; 0x02],
     #[doc = "0x06 - eUSCI_Bx Baud Rate Control Word Register"]
     pub ucbx_brw: crate::Reg<ucbx_brw::UCBXBRW_SPEC>,
     #[doc = "0x08 - eUSCI_Bx Status Register"]
@@ -16,7 +16,7 @@ pub struct RegisterBlock {
     pub ucbx_rxbuf: crate::Reg<ucbx_rxbuf::UCBXRXBUF_SPEC>,
     #[doc = "0x0e - eUSCI_Bx Transmit Buffer Register"]
     pub ucbx_txbuf: crate::Reg<ucbx_txbuf::UCBXTXBUF_SPEC>,
-    _reserved7: [u8; 4usize],
+    _reserved7: [u8; 0x04],
     #[doc = "0x14 - eUSCI_Bx I2C Own Address 0 Register"]
     pub ucbx_i2coa0: crate::Reg<ucbx_i2coa0::UCBXI2COA0_SPEC>,
     #[doc = "0x16 - eUSCI_Bx I2C Own Address 1 Register"]
@@ -31,7 +31,7 @@ pub struct RegisterBlock {
     pub ucbx_addmask: crate::Reg<ucbx_addmask::UCBXADDMASK_SPEC>,
     #[doc = "0x20 - eUSCI_Bx I2C Slave Address Register"]
     pub ucbx_i2csa: crate::Reg<ucbx_i2csa::UCBXI2CSA_SPEC>,
-    _reserved14: [u8; 8usize],
+    _reserved14: [u8; 0x08],
     #[doc = "0x2a - eUSCI_Bx Interrupt Enable Register"]
     pub ucbx_ie: crate::Reg<ucbx_ie::UCBXIE_SPEC>,
     #[doc = "0x2c - eUSCI_Bx Interrupt Flag Register"]

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ADC14HI1_SPEC>> for R {
+impl From<crate::R<ADC14HI1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ADC14HI1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,16 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ADC14HI1_SPEC>> for W {
+impl From<crate::W<ADC14HI1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ADC14HI1_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `ADC14HI1` reader - High threshold 1"]
-pub struct ADC14HI1_R(crate::FieldReader<u16, u16>);
-impl ADC14HI1_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        ADC14HI1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC14HI1_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC14HI1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ADC14HI1` writer - High threshold 1"]
-pub struct ADC14HI1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14HI1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type ADC14HI1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ADC14HI1_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - High threshold 1"]
     #[inline(always)]
@@ -68,10 +48,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - High threshold 1"]
     #[inline(always)]
-    pub fn adc14hi1(&mut self) -> ADC14HI1_W {
-        ADC14HI1_W { w: self }
+    pub fn adc14hi1(&mut self) -> ADC14HI1_W<0> {
+        ADC14HI1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

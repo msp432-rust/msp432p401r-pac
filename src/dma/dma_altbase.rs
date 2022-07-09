@@ -7,30 +7,19 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DMA_ALTBASE_SPEC>> for R {
+impl From<crate::R<DMA_ALTBASE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DMA_ALTBASE_SPEC>) -> Self {
         R(reader)
     }
 }
 #[doc = "Field `ADDR` reader - Base address of the alternate data structure"]
-pub struct ADDR_R(crate::FieldReader<u32, u32>);
-impl ADDR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Base address of the alternate data structure"]
     #[inline(always)]
     pub fn addr(&self) -> ADDR_R {
-        ADDR_R::new((self.bits & 0xffff_ffff) as u32)
+        ADDR_R::new(self.bits)
     }
 }
 #[doc = "Channel Alternate Control Data Base Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_altbase](index.html) module"]

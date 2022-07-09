@@ -7,39 +7,16 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PEIN_SPEC>> for R {
+impl From<crate::R<PEIN_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PEIN_SPEC>) -> Self {
         R(reader)
     }
 }
 #[doc = "Field `P9IN` reader - Port 9 Input"]
-pub struct P9IN_R(crate::FieldReader<u8, u8>);
-impl P9IN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P9IN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P9IN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P9IN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P10IN` reader - Port 10 Input"]
-pub struct P10IN_R(crate::FieldReader<u8, u8>);
-impl P10IN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P10IN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P10IN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P10IN_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Port 9 Input"]
     #[inline(always)]

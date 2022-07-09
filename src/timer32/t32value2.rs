@@ -7,30 +7,19 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<T32VALUE2_SPEC>> for R {
+impl From<crate::R<T32VALUE2_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<T32VALUE2_SPEC>) -> Self {
         R(reader)
     }
 }
 #[doc = "Field `VALUE` reader - Current value of the decrementing counter"]
-pub struct VALUE_R(crate::FieldReader<u32, u32>);
-impl VALUE_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        VALUE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VALUE_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VALUE_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Current value of the decrementing counter"]
     #[inline(always)]
     pub fn value(&self) -> VALUE_R {
-        VALUE_R::new((self.bits & 0xffff_ffff) as u32)
+        VALUE_R::new(self.bits)
     }
 }
 #[doc = "Timer 2 Current Value Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [t32value2](index.html) module"]

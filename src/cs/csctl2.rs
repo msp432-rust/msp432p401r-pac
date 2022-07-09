@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CSCTL2_SPEC>> for R {
+impl From<crate::R<CSCTL2_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CSCTL2_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CSCTL2_SPEC>> for W {
+impl From<crate::W<CSCTL2_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CSCTL2_SPEC>) -> Self {
         W(writer)
     }
@@ -52,12 +54,9 @@ impl From<LFXTDRIVE_A> for u8 {
     }
 }
 #[doc = "Field `LFXTDRIVE` reader - LFXT oscillator current can be adjusted to its drive needs"]
-pub struct LFXTDRIVE_R(crate::FieldReader<u8, LFXTDRIVE_A>);
+pub type LFXTDRIVE_R = crate::FieldReader<u8, LFXTDRIVE_A>;
 impl LFXTDRIVE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LFXTDRIVE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFXTDRIVE_A {
         match self.bits {
@@ -71,41 +70,28 @@ impl LFXTDRIVE_R {
     #[doc = "Checks if the value of the field is `LFXTDRIVE_0`"]
     #[inline(always)]
     pub fn is_lfxtdrive_0(&self) -> bool {
-        **self == LFXTDRIVE_A::LFXTDRIVE_0
+        *self == LFXTDRIVE_A::LFXTDRIVE_0
     }
     #[doc = "Checks if the value of the field is `LFXTDRIVE_1`"]
     #[inline(always)]
     pub fn is_lfxtdrive_1(&self) -> bool {
-        **self == LFXTDRIVE_A::LFXTDRIVE_1
+        *self == LFXTDRIVE_A::LFXTDRIVE_1
     }
     #[doc = "Checks if the value of the field is `LFXTDRIVE_2`"]
     #[inline(always)]
     pub fn is_lfxtdrive_2(&self) -> bool {
-        **self == LFXTDRIVE_A::LFXTDRIVE_2
+        *self == LFXTDRIVE_A::LFXTDRIVE_2
     }
     #[doc = "Checks if the value of the field is `LFXTDRIVE_3`"]
     #[inline(always)]
     pub fn is_lfxtdrive_3(&self) -> bool {
-        **self == LFXTDRIVE_A::LFXTDRIVE_3
-    }
-}
-impl core::ops::Deref for LFXTDRIVE_R {
-    type Target = crate::FieldReader<u8, LFXTDRIVE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LFXTDRIVE_A::LFXTDRIVE_3
     }
 }
 #[doc = "Field `LFXTDRIVE` writer - LFXT oscillator current can be adjusted to its drive needs"]
-pub struct LFXTDRIVE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFXTDRIVE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LFXTDRIVE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type LFXTDRIVE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CSCTL2_SPEC, u8, LFXTDRIVE_A, 2, O>;
+impl<'a, const O: u8> LFXTDRIVE_W<'a, O> {
     #[doc = "Lowest drive strength and current consumption LFXT oscillator."]
     #[inline(always)]
     pub fn lfxtdrive_0(self) -> &'a mut W {
@@ -126,12 +112,6 @@ impl<'a> LFXTDRIVE_W<'a> {
     pub fn lfxtdrive_3(self) -> &'a mut W {
         self.variant(LFXTDRIVE_A::LFXTDRIVE_3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 #[doc = "Disables the automatic gain control of the LFXT crystal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -148,12 +128,9 @@ impl From<LFXTAGCOFF_A> for bool {
     }
 }
 #[doc = "Field `LFXTAGCOFF` reader - Disables the automatic gain control of the LFXT crystal"]
-pub struct LFXTAGCOFF_R(crate::FieldReader<bool, LFXTAGCOFF_A>);
+pub type LFXTAGCOFF_R = crate::BitReader<LFXTAGCOFF_A>;
 impl LFXTAGCOFF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LFXTAGCOFF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFXTAGCOFF_A {
         match self.bits {
@@ -164,31 +141,17 @@ impl LFXTAGCOFF_R {
     #[doc = "Checks if the value of the field is `LFXTAGCOFF_0`"]
     #[inline(always)]
     pub fn is_lfxtagcoff_0(&self) -> bool {
-        **self == LFXTAGCOFF_A::LFXTAGCOFF_0
+        *self == LFXTAGCOFF_A::LFXTAGCOFF_0
     }
     #[doc = "Checks if the value of the field is `LFXTAGCOFF_1`"]
     #[inline(always)]
     pub fn is_lfxtagcoff_1(&self) -> bool {
-        **self == LFXTAGCOFF_A::LFXTAGCOFF_1
-    }
-}
-impl core::ops::Deref for LFXTAGCOFF_R {
-    type Target = crate::FieldReader<bool, LFXTAGCOFF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LFXTAGCOFF_A::LFXTAGCOFF_1
     }
 }
 #[doc = "Field `LFXTAGCOFF` writer - Disables the automatic gain control of the LFXT crystal"]
-pub struct LFXTAGCOFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFXTAGCOFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LFXTAGCOFF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LFXTAGCOFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSCTL2_SPEC, LFXTAGCOFF_A, O>;
+impl<'a, const O: u8> LFXTAGCOFF_W<'a, O> {
     #[doc = "AGC enabled."]
     #[inline(always)]
     pub fn lfxtagcoff_0(self) -> &'a mut W {
@@ -199,29 +162,13 @@ impl<'a> LFXTAGCOFF_W<'a> {
     pub fn lfxtagcoff_1(self) -> &'a mut W {
         self.variant(LFXTAGCOFF_A::LFXTAGCOFF_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
 #[doc = "Turns on the LFXT oscillator regardless if used as a clock resource\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LFXT_EN_A {
-    #[doc = "0: LFXT is on if it is used as a source for ACLK, MCLK, HSMCLK , or SMCLK\r\r\nand is selected via the port selection and not in bypass mode of operation."]
+    #[doc = "0: LFXT is on if it is used as a source for ACLK, MCLK, HSMCLK , or SMCLK and is selected via the port selection and not in bypass mode of operation."]
     LFXT_EN_0 = 0,
-    #[doc = "1: LFXT is on if LFXT is selected via the port selection and LFXT is not in\r\r\nbypass mode of operation."]
+    #[doc = "1: LFXT is on if LFXT is selected via the port selection and LFXT is not in bypass mode of operation."]
     LFXT_EN_1 = 1,
 }
 impl From<LFXT_EN_A> for bool {
@@ -231,12 +178,9 @@ impl From<LFXT_EN_A> for bool {
     }
 }
 #[doc = "Field `LFXT_EN` reader - Turns on the LFXT oscillator regardless if used as a clock resource"]
-pub struct LFXT_EN_R(crate::FieldReader<bool, LFXT_EN_A>);
+pub type LFXT_EN_R = crate::BitReader<LFXT_EN_A>;
 impl LFXT_EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LFXT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFXT_EN_A {
         match self.bits {
@@ -247,31 +191,17 @@ impl LFXT_EN_R {
     #[doc = "Checks if the value of the field is `LFXT_EN_0`"]
     #[inline(always)]
     pub fn is_lfxt_en_0(&self) -> bool {
-        **self == LFXT_EN_A::LFXT_EN_0
+        *self == LFXT_EN_A::LFXT_EN_0
     }
     #[doc = "Checks if the value of the field is `LFXT_EN_1`"]
     #[inline(always)]
     pub fn is_lfxt_en_1(&self) -> bool {
-        **self == LFXT_EN_A::LFXT_EN_1
-    }
-}
-impl core::ops::Deref for LFXT_EN_R {
-    type Target = crate::FieldReader<bool, LFXT_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LFXT_EN_A::LFXT_EN_1
     }
 }
 #[doc = "Field `LFXT_EN` writer - Turns on the LFXT oscillator regardless if used as a clock resource"]
-pub struct LFXT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFXT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LFXT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LFXT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSCTL2_SPEC, LFXT_EN_A, O>;
+impl<'a, const O: u8> LFXT_EN_W<'a, O> {
     #[doc = "LFXT is on if it is used as a source for ACLK, MCLK, HSMCLK , or SMCLK and is selected via the port selection and not in bypass mode of operation."]
     #[inline(always)]
     pub fn lfxt_en_0(self) -> &'a mut W {
@@ -281,22 +211,6 @@ impl<'a> LFXT_EN_W<'a> {
     #[inline(always)]
     pub fn lfxt_en_1(self) -> &'a mut W {
         self.variant(LFXT_EN_A::LFXT_EN_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
     }
 }
 #[doc = "LFXT bypass select\n\nValue on reset: 0"]
@@ -314,12 +228,9 @@ impl From<LFXTBYPASS_A> for bool {
     }
 }
 #[doc = "Field `LFXTBYPASS` reader - LFXT bypass select"]
-pub struct LFXTBYPASS_R(crate::FieldReader<bool, LFXTBYPASS_A>);
+pub type LFXTBYPASS_R = crate::BitReader<LFXTBYPASS_A>;
 impl LFXTBYPASS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LFXTBYPASS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LFXTBYPASS_A {
         match self.bits {
@@ -330,31 +241,17 @@ impl LFXTBYPASS_R {
     #[doc = "Checks if the value of the field is `LFXTBYPASS_0`"]
     #[inline(always)]
     pub fn is_lfxtbypass_0(&self) -> bool {
-        **self == LFXTBYPASS_A::LFXTBYPASS_0
+        *self == LFXTBYPASS_A::LFXTBYPASS_0
     }
     #[doc = "Checks if the value of the field is `LFXTBYPASS_1`"]
     #[inline(always)]
     pub fn is_lfxtbypass_1(&self) -> bool {
-        **self == LFXTBYPASS_A::LFXTBYPASS_1
-    }
-}
-impl core::ops::Deref for LFXTBYPASS_R {
-    type Target = crate::FieldReader<bool, LFXTBYPASS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LFXTBYPASS_A::LFXTBYPASS_1
     }
 }
 #[doc = "Field `LFXTBYPASS` writer - LFXT bypass select"]
-pub struct LFXTBYPASS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LFXTBYPASS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LFXTBYPASS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LFXTBYPASS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSCTL2_SPEC, LFXTBYPASS_A, O>;
+impl<'a, const O: u8> LFXTBYPASS_W<'a, O> {
     #[doc = "LFXT sourced by external crystal."]
     #[inline(always)]
     pub fn lfxtbypass_0(self) -> &'a mut W {
@@ -364,22 +261,6 @@ impl<'a> LFXTBYPASS_W<'a> {
     #[inline(always)]
     pub fn lfxtbypass_1(self) -> &'a mut W {
         self.variant(LFXTBYPASS_A::LFXTBYPASS_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
     }
 }
 #[doc = "HFXT oscillator drive selection\n\nValue on reset: 1"]
@@ -397,12 +278,9 @@ impl From<HFXTDRIVE_A> for bool {
     }
 }
 #[doc = "Field `HFXTDRIVE` reader - HFXT oscillator drive selection"]
-pub struct HFXTDRIVE_R(crate::FieldReader<bool, HFXTDRIVE_A>);
+pub type HFXTDRIVE_R = crate::BitReader<HFXTDRIVE_A>;
 impl HFXTDRIVE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HFXTDRIVE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFXTDRIVE_A {
         match self.bits {
@@ -413,31 +291,17 @@ impl HFXTDRIVE_R {
     #[doc = "Checks if the value of the field is `HFXTDRIVE_0`"]
     #[inline(always)]
     pub fn is_hfxtdrive_0(&self) -> bool {
-        **self == HFXTDRIVE_A::HFXTDRIVE_0
+        *self == HFXTDRIVE_A::HFXTDRIVE_0
     }
     #[doc = "Checks if the value of the field is `HFXTDRIVE_1`"]
     #[inline(always)]
     pub fn is_hfxtdrive_1(&self) -> bool {
-        **self == HFXTDRIVE_A::HFXTDRIVE_1
-    }
-}
-impl core::ops::Deref for HFXTDRIVE_R {
-    type Target = crate::FieldReader<bool, HFXTDRIVE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HFXTDRIVE_A::HFXTDRIVE_1
     }
 }
 #[doc = "Field `HFXTDRIVE` writer - HFXT oscillator drive selection"]
-pub struct HFXTDRIVE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFXTDRIVE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HFXTDRIVE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HFXTDRIVE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSCTL2_SPEC, HFXTDRIVE_A, O>;
+impl<'a, const O: u8> HFXTDRIVE_W<'a, O> {
     #[doc = "To be used for HFXTFREQ setting 000b"]
     #[inline(always)]
     pub fn hfxtdrive_0(self) -> &'a mut W {
@@ -447,22 +311,6 @@ impl<'a> HFXTDRIVE_W<'a> {
     #[inline(always)]
     pub fn hfxtdrive_1(self) -> &'a mut W {
         self.variant(HFXTDRIVE_A::HFXTDRIVE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
     }
 }
 #[doc = "HFXT frequency selection\n\nValue on reset: 0"]
@@ -491,12 +339,9 @@ impl From<HFXTFREQ_A> for u8 {
     }
 }
 #[doc = "Field `HFXTFREQ` reader - HFXT frequency selection"]
-pub struct HFXTFREQ_R(crate::FieldReader<u8, HFXTFREQ_A>);
+pub type HFXTFREQ_R = crate::FieldReader<u8, HFXTFREQ_A>;
 impl HFXTFREQ_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HFXTFREQ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HFXTFREQ_A> {
         match self.bits {
@@ -513,56 +358,43 @@ impl HFXTFREQ_R {
     #[doc = "Checks if the value of the field is `HFXTFREQ_0`"]
     #[inline(always)]
     pub fn is_hfxtfreq_0(&self) -> bool {
-        **self == HFXTFREQ_A::HFXTFREQ_0
+        *self == HFXTFREQ_A::HFXTFREQ_0
     }
     #[doc = "Checks if the value of the field is `HFXTFREQ_1`"]
     #[inline(always)]
     pub fn is_hfxtfreq_1(&self) -> bool {
-        **self == HFXTFREQ_A::HFXTFREQ_1
+        *self == HFXTFREQ_A::HFXTFREQ_1
     }
     #[doc = "Checks if the value of the field is `HFXTFREQ_2`"]
     #[inline(always)]
     pub fn is_hfxtfreq_2(&self) -> bool {
-        **self == HFXTFREQ_A::HFXTFREQ_2
+        *self == HFXTFREQ_A::HFXTFREQ_2
     }
     #[doc = "Checks if the value of the field is `HFXTFREQ_3`"]
     #[inline(always)]
     pub fn is_hfxtfreq_3(&self) -> bool {
-        **self == HFXTFREQ_A::HFXTFREQ_3
+        *self == HFXTFREQ_A::HFXTFREQ_3
     }
     #[doc = "Checks if the value of the field is `HFXTFREQ_4`"]
     #[inline(always)]
     pub fn is_hfxtfreq_4(&self) -> bool {
-        **self == HFXTFREQ_A::HFXTFREQ_4
+        *self == HFXTFREQ_A::HFXTFREQ_4
     }
     #[doc = "Checks if the value of the field is `HFXTFREQ_5`"]
     #[inline(always)]
     pub fn is_hfxtfreq_5(&self) -> bool {
-        **self == HFXTFREQ_A::HFXTFREQ_5
+        *self == HFXTFREQ_A::HFXTFREQ_5
     }
     #[doc = "Checks if the value of the field is `HFXTFREQ_6`"]
     #[inline(always)]
     pub fn is_hfxtfreq_6(&self) -> bool {
-        **self == HFXTFREQ_A::HFXTFREQ_6
-    }
-}
-impl core::ops::Deref for HFXTFREQ_R {
-    type Target = crate::FieldReader<u8, HFXTFREQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HFXTFREQ_A::HFXTFREQ_6
     }
 }
 #[doc = "Field `HFXTFREQ` writer - HFXT frequency selection"]
-pub struct HFXTFREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFXTFREQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HFXTFREQ_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type HFXTFREQ_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSCTL2_SPEC, u8, HFXTFREQ_A, 3, O>;
+impl<'a, const O: u8> HFXTFREQ_W<'a, O> {
     #[doc = "1 MHz to 4 MHz"]
     #[inline(always)]
     pub fn hfxtfreq_0(self) -> &'a mut W {
@@ -598,12 +430,6 @@ impl<'a> HFXTFREQ_W<'a> {
     pub fn hfxtfreq_6(self) -> &'a mut W {
         self.variant(HFXTFREQ_A::HFXTFREQ_6)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | ((value as u32 & 0x07) << 20);
-        self.w
-    }
 }
 #[doc = "Turns on the HFXT oscillator regardless if used as a clock resource\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -620,12 +446,9 @@ impl From<HFXT_EN_A> for bool {
     }
 }
 #[doc = "Field `HFXT_EN` reader - Turns on the HFXT oscillator regardless if used as a clock resource"]
-pub struct HFXT_EN_R(crate::FieldReader<bool, HFXT_EN_A>);
+pub type HFXT_EN_R = crate::BitReader<HFXT_EN_A>;
 impl HFXT_EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HFXT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFXT_EN_A {
         match self.bits {
@@ -636,31 +459,17 @@ impl HFXT_EN_R {
     #[doc = "Checks if the value of the field is `HFXT_EN_0`"]
     #[inline(always)]
     pub fn is_hfxt_en_0(&self) -> bool {
-        **self == HFXT_EN_A::HFXT_EN_0
+        *self == HFXT_EN_A::HFXT_EN_0
     }
     #[doc = "Checks if the value of the field is `HFXT_EN_1`"]
     #[inline(always)]
     pub fn is_hfxt_en_1(&self) -> bool {
-        **self == HFXT_EN_A::HFXT_EN_1
-    }
-}
-impl core::ops::Deref for HFXT_EN_R {
-    type Target = crate::FieldReader<bool, HFXT_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HFXT_EN_A::HFXT_EN_1
     }
 }
 #[doc = "Field `HFXT_EN` writer - Turns on the HFXT oscillator regardless if used as a clock resource"]
-pub struct HFXT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFXT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HFXT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HFXT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSCTL2_SPEC, HFXT_EN_A, O>;
+impl<'a, const O: u8> HFXT_EN_W<'a, O> {
     #[doc = "HFXT is on if it is used as a source for MCLK, HSMCLK , or SMCLK and is selected via the port selection and not in bypass mode of operation."]
     #[inline(always)]
     pub fn hfxt_en_0(self) -> &'a mut W {
@@ -670,22 +479,6 @@ impl<'a> HFXT_EN_W<'a> {
     #[inline(always)]
     pub fn hfxt_en_1(self) -> &'a mut W {
         self.variant(HFXT_EN_A::HFXT_EN_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
     }
 }
 #[doc = "HFXT bypass select\n\nValue on reset: 0"]
@@ -703,12 +496,9 @@ impl From<HFXTBYPASS_A> for bool {
     }
 }
 #[doc = "Field `HFXTBYPASS` reader - HFXT bypass select"]
-pub struct HFXTBYPASS_R(crate::FieldReader<bool, HFXTBYPASS_A>);
+pub type HFXTBYPASS_R = crate::BitReader<HFXTBYPASS_A>;
 impl HFXTBYPASS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HFXTBYPASS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HFXTBYPASS_A {
         match self.bits {
@@ -719,31 +509,17 @@ impl HFXTBYPASS_R {
     #[doc = "Checks if the value of the field is `HFXTBYPASS_0`"]
     #[inline(always)]
     pub fn is_hfxtbypass_0(&self) -> bool {
-        **self == HFXTBYPASS_A::HFXTBYPASS_0
+        *self == HFXTBYPASS_A::HFXTBYPASS_0
     }
     #[doc = "Checks if the value of the field is `HFXTBYPASS_1`"]
     #[inline(always)]
     pub fn is_hfxtbypass_1(&self) -> bool {
-        **self == HFXTBYPASS_A::HFXTBYPASS_1
-    }
-}
-impl core::ops::Deref for HFXTBYPASS_R {
-    type Target = crate::FieldReader<bool, HFXTBYPASS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HFXTBYPASS_A::HFXTBYPASS_1
     }
 }
 #[doc = "Field `HFXTBYPASS` writer - HFXT bypass select"]
-pub struct HFXTBYPASS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFXTBYPASS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HFXTBYPASS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HFXTBYPASS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSCTL2_SPEC, HFXTBYPASS_A, O>;
+impl<'a, const O: u8> HFXTBYPASS_W<'a, O> {
     #[doc = "HFXT sourced by external crystal."]
     #[inline(always)]
     pub fn hfxtbypass_0(self) -> &'a mut W {
@@ -754,107 +530,92 @@ impl<'a> HFXTBYPASS_W<'a> {
     pub fn hfxtbypass_1(self) -> &'a mut W {
         self.variant(HFXTBYPASS_A::HFXTBYPASS_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - LFXT oscillator current can be adjusted to its drive needs"]
     #[inline(always)]
     pub fn lfxtdrive(&self) -> LFXTDRIVE_R {
-        LFXTDRIVE_R::new((self.bits & 0x03) as u8)
+        LFXTDRIVE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 7 - Disables the automatic gain control of the LFXT crystal"]
     #[inline(always)]
     pub fn lfxtagcoff(&self) -> LFXTAGCOFF_R {
-        LFXTAGCOFF_R::new(((self.bits >> 7) & 0x01) != 0)
+        LFXTAGCOFF_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Turns on the LFXT oscillator regardless if used as a clock resource"]
     #[inline(always)]
     pub fn lfxt_en(&self) -> LFXT_EN_R {
-        LFXT_EN_R::new(((self.bits >> 8) & 0x01) != 0)
+        LFXT_EN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - LFXT bypass select"]
     #[inline(always)]
     pub fn lfxtbypass(&self) -> LFXTBYPASS_R {
-        LFXTBYPASS_R::new(((self.bits >> 9) & 0x01) != 0)
+        LFXTBYPASS_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 16 - HFXT oscillator drive selection"]
     #[inline(always)]
     pub fn hfxtdrive(&self) -> HFXTDRIVE_R {
-        HFXTDRIVE_R::new(((self.bits >> 16) & 0x01) != 0)
+        HFXTDRIVE_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bits 20:22 - HFXT frequency selection"]
     #[inline(always)]
     pub fn hfxtfreq(&self) -> HFXTFREQ_R {
-        HFXTFREQ_R::new(((self.bits >> 20) & 0x07) as u8)
+        HFXTFREQ_R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bit 24 - Turns on the HFXT oscillator regardless if used as a clock resource"]
     #[inline(always)]
     pub fn hfxt_en(&self) -> HFXT_EN_R {
-        HFXT_EN_R::new(((self.bits >> 24) & 0x01) != 0)
+        HFXT_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - HFXT bypass select"]
     #[inline(always)]
     pub fn hfxtbypass(&self) -> HFXTBYPASS_R {
-        HFXTBYPASS_R::new(((self.bits >> 25) & 0x01) != 0)
+        HFXTBYPASS_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - LFXT oscillator current can be adjusted to its drive needs"]
     #[inline(always)]
-    pub fn lfxtdrive(&mut self) -> LFXTDRIVE_W {
-        LFXTDRIVE_W { w: self }
+    pub fn lfxtdrive(&mut self) -> LFXTDRIVE_W<0> {
+        LFXTDRIVE_W::new(self)
     }
     #[doc = "Bit 7 - Disables the automatic gain control of the LFXT crystal"]
     #[inline(always)]
-    pub fn lfxtagcoff(&mut self) -> LFXTAGCOFF_W {
-        LFXTAGCOFF_W { w: self }
+    pub fn lfxtagcoff(&mut self) -> LFXTAGCOFF_W<7> {
+        LFXTAGCOFF_W::new(self)
     }
     #[doc = "Bit 8 - Turns on the LFXT oscillator regardless if used as a clock resource"]
     #[inline(always)]
-    pub fn lfxt_en(&mut self) -> LFXT_EN_W {
-        LFXT_EN_W { w: self }
+    pub fn lfxt_en(&mut self) -> LFXT_EN_W<8> {
+        LFXT_EN_W::new(self)
     }
     #[doc = "Bit 9 - LFXT bypass select"]
     #[inline(always)]
-    pub fn lfxtbypass(&mut self) -> LFXTBYPASS_W {
-        LFXTBYPASS_W { w: self }
+    pub fn lfxtbypass(&mut self) -> LFXTBYPASS_W<9> {
+        LFXTBYPASS_W::new(self)
     }
     #[doc = "Bit 16 - HFXT oscillator drive selection"]
     #[inline(always)]
-    pub fn hfxtdrive(&mut self) -> HFXTDRIVE_W {
-        HFXTDRIVE_W { w: self }
+    pub fn hfxtdrive(&mut self) -> HFXTDRIVE_W<16> {
+        HFXTDRIVE_W::new(self)
     }
     #[doc = "Bits 20:22 - HFXT frequency selection"]
     #[inline(always)]
-    pub fn hfxtfreq(&mut self) -> HFXTFREQ_W {
-        HFXTFREQ_W { w: self }
+    pub fn hfxtfreq(&mut self) -> HFXTFREQ_W<20> {
+        HFXTFREQ_W::new(self)
     }
     #[doc = "Bit 24 - Turns on the HFXT oscillator regardless if used as a clock resource"]
     #[inline(always)]
-    pub fn hfxt_en(&mut self) -> HFXT_EN_W {
-        HFXT_EN_W { w: self }
+    pub fn hfxt_en(&mut self) -> HFXT_EN_W<24> {
+        HFXT_EN_W::new(self)
     }
     #[doc = "Bit 25 - HFXT bypass select"]
     #[inline(always)]
-    pub fn hfxtbypass(&mut self) -> HFXTBYPASS_W {
-        HFXTBYPASS_W { w: self }
+    pub fn hfxtbypass(&mut self) -> HFXTBYPASS_W<25> {
+        HFXTBYPASS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

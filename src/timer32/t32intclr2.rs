@@ -13,30 +13,22 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<T32INTCLR2_SPEC>> for W {
+impl From<crate::W<T32INTCLR2_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<T32INTCLR2_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `INTCLR` writer - Write clears the interrupt output"]
-pub struct INTCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INTCLR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type INTCLR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, T32INTCLR2_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Write clears the interrupt output"]
     #[inline(always)]
-    pub fn intclr(&mut self) -> INTCLR_W {
-        INTCLR_W { w: self }
+    pub fn intclr(&mut self) -> INTCLR_W<0> {
+        INTCLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

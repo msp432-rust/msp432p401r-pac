@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_PRGBRST_CTLSTAT_SPEC>> for R {
+impl From<crate::R<FLCTL_PRGBRST_CTLSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_PRGBRST_CTLSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,33 +28,14 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FLCTL_PRGBRST_CTLSTAT_SPEC>> for W {
+impl From<crate::W<FLCTL_PRGBRST_CTLSTAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FLCTL_PRGBRST_CTLSTAT_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `START` writer - Trigger start of burst program operation"]
-pub struct START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_PRGBRST_CTLSTAT_SPEC, bool, O>;
 #[doc = "Type of memory that burst program is carried out on\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -72,12 +54,9 @@ impl From<TYPE_A> for u8 {
     }
 }
 #[doc = "Field `TYPE` reader - Type of memory that burst program is carried out on"]
-pub struct TYPE_R(crate::FieldReader<u8, TYPE_A>);
+pub type TYPE_R = crate::FieldReader<u8, TYPE_A>;
 impl TYPE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TYPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TYPE_A> {
         match self.bits {
@@ -90,36 +69,23 @@ impl TYPE_R {
     #[doc = "Checks if the value of the field is `TYPE_0`"]
     #[inline(always)]
     pub fn is_type_0(&self) -> bool {
-        **self == TYPE_A::TYPE_0
+        *self == TYPE_A::TYPE_0
     }
     #[doc = "Checks if the value of the field is `TYPE_1`"]
     #[inline(always)]
     pub fn is_type_1(&self) -> bool {
-        **self == TYPE_A::TYPE_1
+        *self == TYPE_A::TYPE_1
     }
     #[doc = "Checks if the value of the field is `TYPE_3`"]
     #[inline(always)]
     pub fn is_type_3(&self) -> bool {
-        **self == TYPE_A::TYPE_3
-    }
-}
-impl core::ops::Deref for TYPE_R {
-    type Target = crate::FieldReader<u8, TYPE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TYPE_A::TYPE_3
     }
 }
 #[doc = "Field `TYPE` writer - Type of memory that burst program is carried out on"]
-pub struct TYPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TYPE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TYPE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TYPE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FLCTL_PRGBRST_CTLSTAT_SPEC, u8, TYPE_A, 2, O>;
+impl<'a, const O: u8> TYPE_W<'a, O> {
     #[doc = "Main Memory"]
     #[inline(always)]
     pub fn type_0(self) -> &'a mut W {
@@ -134,12 +100,6 @@ impl<'a> TYPE_W<'a> {
     #[inline(always)]
     pub fn type_3(self) -> &'a mut W {
         self.variant(TYPE_A::TYPE_3)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
-        self.w
     }
 }
 #[doc = "Length of burst\n\nValue on reset: 0"]
@@ -164,12 +124,9 @@ impl From<LEN_A> for u8 {
     }
 }
 #[doc = "Field `LEN` reader - Length of burst"]
-pub struct LEN_R(crate::FieldReader<u8, LEN_A>);
+pub type LEN_R = crate::FieldReader<u8, LEN_A>;
 impl LEN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LEN_A> {
         match self.bits {
@@ -184,46 +141,33 @@ impl LEN_R {
     #[doc = "Checks if the value of the field is `LEN_0`"]
     #[inline(always)]
     pub fn is_len_0(&self) -> bool {
-        **self == LEN_A::LEN_0
+        *self == LEN_A::LEN_0
     }
     #[doc = "Checks if the value of the field is `LEN_1`"]
     #[inline(always)]
     pub fn is_len_1(&self) -> bool {
-        **self == LEN_A::LEN_1
+        *self == LEN_A::LEN_1
     }
     #[doc = "Checks if the value of the field is `LEN_2`"]
     #[inline(always)]
     pub fn is_len_2(&self) -> bool {
-        **self == LEN_A::LEN_2
+        *self == LEN_A::LEN_2
     }
     #[doc = "Checks if the value of the field is `LEN_3`"]
     #[inline(always)]
     pub fn is_len_3(&self) -> bool {
-        **self == LEN_A::LEN_3
+        *self == LEN_A::LEN_3
     }
     #[doc = "Checks if the value of the field is `LEN_4`"]
     #[inline(always)]
     pub fn is_len_4(&self) -> bool {
-        **self == LEN_A::LEN_4
-    }
-}
-impl core::ops::Deref for LEN_R {
-    type Target = crate::FieldReader<u8, LEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LEN_A::LEN_4
     }
 }
 #[doc = "Field `LEN` writer - Length of burst"]
-pub struct LEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LEN_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type LEN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FLCTL_PRGBRST_CTLSTAT_SPEC, u8, LEN_A, 3, O>;
+impl<'a, const O: u8> LEN_W<'a, O> {
     #[doc = "No burst operation"]
     #[inline(always)]
     pub fn len_0(self) -> &'a mut W {
@@ -249,12 +193,6 @@ impl<'a> LEN_W<'a> {
     pub fn len_4(self) -> &'a mut W {
         self.variant(LEN_A::LEN_4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 3)) | ((value as u32 & 0x07) << 3);
-        self.w
-    }
 }
 #[doc = "Auto-Verify operation before the Burst Program\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -271,12 +209,9 @@ impl From<AUTO_PRE_A> for bool {
     }
 }
 #[doc = "Field `AUTO_PRE` reader - Auto-Verify operation before the Burst Program"]
-pub struct AUTO_PRE_R(crate::FieldReader<bool, AUTO_PRE_A>);
+pub type AUTO_PRE_R = crate::BitReader<AUTO_PRE_A>;
 impl AUTO_PRE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AUTO_PRE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AUTO_PRE_A {
         match self.bits {
@@ -287,31 +222,18 @@ impl AUTO_PRE_R {
     #[doc = "Checks if the value of the field is `AUTO_PRE_0`"]
     #[inline(always)]
     pub fn is_auto_pre_0(&self) -> bool {
-        **self == AUTO_PRE_A::AUTO_PRE_0
+        *self == AUTO_PRE_A::AUTO_PRE_0
     }
     #[doc = "Checks if the value of the field is `AUTO_PRE_1`"]
     #[inline(always)]
     pub fn is_auto_pre_1(&self) -> bool {
-        **self == AUTO_PRE_A::AUTO_PRE_1
-    }
-}
-impl core::ops::Deref for AUTO_PRE_R {
-    type Target = crate::FieldReader<bool, AUTO_PRE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AUTO_PRE_A::AUTO_PRE_1
     }
 }
 #[doc = "Field `AUTO_PRE` writer - Auto-Verify operation before the Burst Program"]
-pub struct AUTO_PRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUTO_PRE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AUTO_PRE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type AUTO_PRE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FLCTL_PRGBRST_CTLSTAT_SPEC, AUTO_PRE_A, O>;
+impl<'a, const O: u8> AUTO_PRE_W<'a, O> {
     #[doc = "No program verify operations carried out"]
     #[inline(always)]
     pub fn auto_pre_0(self) -> &'a mut W {
@@ -321,22 +243,6 @@ impl<'a> AUTO_PRE_W<'a> {
     #[inline(always)]
     pub fn auto_pre_1(self) -> &'a mut W {
         self.variant(AUTO_PRE_A::AUTO_PRE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
     }
 }
 #[doc = "Auto-Verify operation after the Burst Program\n\nValue on reset: 1"]
@@ -354,12 +260,9 @@ impl From<AUTO_PST_A> for bool {
     }
 }
 #[doc = "Field `AUTO_PST` reader - Auto-Verify operation after the Burst Program"]
-pub struct AUTO_PST_R(crate::FieldReader<bool, AUTO_PST_A>);
+pub type AUTO_PST_R = crate::BitReader<AUTO_PST_A>;
 impl AUTO_PST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AUTO_PST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AUTO_PST_A {
         match self.bits {
@@ -370,31 +273,18 @@ impl AUTO_PST_R {
     #[doc = "Checks if the value of the field is `AUTO_PST_0`"]
     #[inline(always)]
     pub fn is_auto_pst_0(&self) -> bool {
-        **self == AUTO_PST_A::AUTO_PST_0
+        *self == AUTO_PST_A::AUTO_PST_0
     }
     #[doc = "Checks if the value of the field is `AUTO_PST_1`"]
     #[inline(always)]
     pub fn is_auto_pst_1(&self) -> bool {
-        **self == AUTO_PST_A::AUTO_PST_1
-    }
-}
-impl core::ops::Deref for AUTO_PST_R {
-    type Target = crate::FieldReader<bool, AUTO_PST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AUTO_PST_A::AUTO_PST_1
     }
 }
 #[doc = "Field `AUTO_PST` writer - Auto-Verify operation after the Burst Program"]
-pub struct AUTO_PST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AUTO_PST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AUTO_PST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type AUTO_PST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FLCTL_PRGBRST_CTLSTAT_SPEC, AUTO_PST_A, O>;
+impl<'a, const O: u8> AUTO_PST_W<'a, O> {
     #[doc = "No program verify operations carried out"]
     #[inline(always)]
     pub fn auto_pst_0(self) -> &'a mut W {
@@ -404,22 +294,6 @@ impl<'a> AUTO_PST_W<'a> {
     #[inline(always)]
     pub fn auto_pst_1(self) -> &'a mut W {
         self.variant(AUTO_PST_A::AUTO_PST_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
     }
 }
 #[doc = "Status of a Burst Operation\n\nValue on reset: 0"]
@@ -448,12 +322,9 @@ impl From<BURST_STATUS_A> for u8 {
     }
 }
 #[doc = "Field `BURST_STATUS` reader - Status of a Burst Operation"]
-pub struct BURST_STATUS_R(crate::FieldReader<u8, BURST_STATUS_A>);
+pub type BURST_STATUS_R = crate::FieldReader<u8, BURST_STATUS_A>;
 impl BURST_STATUS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BURST_STATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<BURST_STATUS_A> {
         match self.bits {
@@ -470,184 +341,123 @@ impl BURST_STATUS_R {
     #[doc = "Checks if the value of the field is `BURST_STATUS_0`"]
     #[inline(always)]
     pub fn is_burst_status_0(&self) -> bool {
-        **self == BURST_STATUS_A::BURST_STATUS_0
+        *self == BURST_STATUS_A::BURST_STATUS_0
     }
     #[doc = "Checks if the value of the field is `BURST_STATUS_1`"]
     #[inline(always)]
     pub fn is_burst_status_1(&self) -> bool {
-        **self == BURST_STATUS_A::BURST_STATUS_1
+        *self == BURST_STATUS_A::BURST_STATUS_1
     }
     #[doc = "Checks if the value of the field is `BURST_STATUS_2`"]
     #[inline(always)]
     pub fn is_burst_status_2(&self) -> bool {
-        **self == BURST_STATUS_A::BURST_STATUS_2
+        *self == BURST_STATUS_A::BURST_STATUS_2
     }
     #[doc = "Checks if the value of the field is `BURST_STATUS_3`"]
     #[inline(always)]
     pub fn is_burst_status_3(&self) -> bool {
-        **self == BURST_STATUS_A::BURST_STATUS_3
+        *self == BURST_STATUS_A::BURST_STATUS_3
     }
     #[doc = "Checks if the value of the field is `BURST_STATUS_4`"]
     #[inline(always)]
     pub fn is_burst_status_4(&self) -> bool {
-        **self == BURST_STATUS_A::BURST_STATUS_4
+        *self == BURST_STATUS_A::BURST_STATUS_4
     }
     #[doc = "Checks if the value of the field is `BURST_STATUS_5`"]
     #[inline(always)]
     pub fn is_burst_status_5(&self) -> bool {
-        **self == BURST_STATUS_A::BURST_STATUS_5
+        *self == BURST_STATUS_A::BURST_STATUS_5
     }
     #[doc = "Checks if the value of the field is `BURST_STATUS_7`"]
     #[inline(always)]
     pub fn is_burst_status_7(&self) -> bool {
-        **self == BURST_STATUS_A::BURST_STATUS_7
-    }
-}
-impl core::ops::Deref for BURST_STATUS_R {
-    type Target = crate::FieldReader<u8, BURST_STATUS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BURST_STATUS_A::BURST_STATUS_7
     }
 }
 #[doc = "Field `PRE_ERR` reader - Burst Operation encountered preprogram auto-verify errors"]
-pub struct PRE_ERR_R(crate::FieldReader<bool, bool>);
-impl PRE_ERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRE_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRE_ERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRE_ERR_R = crate::BitReader<bool>;
 #[doc = "Field `PST_ERR` reader - Burst Operation encountered postprogram auto-verify errors"]
-pub struct PST_ERR_R(crate::FieldReader<bool, bool>);
-impl PST_ERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PST_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PST_ERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PST_ERR_R = crate::BitReader<bool>;
 #[doc = "Field `ADDR_ERR` reader - Burst Operation was terminated due to attempted program of reserved memory"]
-pub struct ADDR_ERR_R(crate::FieldReader<bool, bool>);
-impl ADDR_ERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADDR_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDR_ERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDR_ERR_R = crate::BitReader<bool>;
 #[doc = "Field `CLR_STAT` writer - Clear status bits 21-16 of this register"]
-pub struct CLR_STAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLR_STAT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type CLR_STAT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FLCTL_PRGBRST_CTLSTAT_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 1:2 - Type of memory that burst program is carried out on"]
     #[inline(always)]
     pub fn type_(&self) -> TYPE_R {
-        TYPE_R::new(((self.bits >> 1) & 0x03) as u8)
+        TYPE_R::new(((self.bits >> 1) & 3) as u8)
     }
     #[doc = "Bits 3:5 - Length of burst"]
     #[inline(always)]
     pub fn len(&self) -> LEN_R {
-        LEN_R::new(((self.bits >> 3) & 0x07) as u8)
+        LEN_R::new(((self.bits >> 3) & 7) as u8)
     }
     #[doc = "Bit 6 - Auto-Verify operation before the Burst Program"]
     #[inline(always)]
     pub fn auto_pre(&self) -> AUTO_PRE_R {
-        AUTO_PRE_R::new(((self.bits >> 6) & 0x01) != 0)
+        AUTO_PRE_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Auto-Verify operation after the Burst Program"]
     #[inline(always)]
     pub fn auto_pst(&self) -> AUTO_PST_R {
-        AUTO_PST_R::new(((self.bits >> 7) & 0x01) != 0)
+        AUTO_PST_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 16:18 - Status of a Burst Operation"]
     #[inline(always)]
     pub fn burst_status(&self) -> BURST_STATUS_R {
-        BURST_STATUS_R::new(((self.bits >> 16) & 0x07) as u8)
+        BURST_STATUS_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bit 19 - Burst Operation encountered preprogram auto-verify errors"]
     #[inline(always)]
     pub fn pre_err(&self) -> PRE_ERR_R {
-        PRE_ERR_R::new(((self.bits >> 19) & 0x01) != 0)
+        PRE_ERR_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Burst Operation encountered postprogram auto-verify errors"]
     #[inline(always)]
     pub fn pst_err(&self) -> PST_ERR_R {
-        PST_ERR_R::new(((self.bits >> 20) & 0x01) != 0)
+        PST_ERR_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Burst Operation was terminated due to attempted program of reserved memory"]
     #[inline(always)]
     pub fn addr_err(&self) -> ADDR_ERR_R {
-        ADDR_ERR_R::new(((self.bits >> 21) & 0x01) != 0)
+        ADDR_ERR_R::new(((self.bits >> 21) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Trigger start of burst program operation"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
-        START_W { w: self }
+    pub fn start(&mut self) -> START_W<0> {
+        START_W::new(self)
     }
     #[doc = "Bits 1:2 - Type of memory that burst program is carried out on"]
     #[inline(always)]
-    pub fn type_(&mut self) -> TYPE_W {
-        TYPE_W { w: self }
+    pub fn type_(&mut self) -> TYPE_W<1> {
+        TYPE_W::new(self)
     }
     #[doc = "Bits 3:5 - Length of burst"]
     #[inline(always)]
-    pub fn len(&mut self) -> LEN_W {
-        LEN_W { w: self }
+    pub fn len(&mut self) -> LEN_W<3> {
+        LEN_W::new(self)
     }
     #[doc = "Bit 6 - Auto-Verify operation before the Burst Program"]
     #[inline(always)]
-    pub fn auto_pre(&mut self) -> AUTO_PRE_W {
-        AUTO_PRE_W { w: self }
+    pub fn auto_pre(&mut self) -> AUTO_PRE_W<6> {
+        AUTO_PRE_W::new(self)
     }
     #[doc = "Bit 7 - Auto-Verify operation after the Burst Program"]
     #[inline(always)]
-    pub fn auto_pst(&mut self) -> AUTO_PST_W {
-        AUTO_PST_W { w: self }
+    pub fn auto_pst(&mut self) -> AUTO_PST_W<7> {
+        AUTO_PST_W::new(self)
     }
     #[doc = "Bit 23 - Clear status bits 21-16 of this register"]
     #[inline(always)]
-    pub fn clr_stat(&mut self) -> CLR_STAT_W {
-        CLR_STAT_W { w: self }
+    pub fn clr_stat(&mut self) -> CLR_STAT_W<23> {
+        CLR_STAT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

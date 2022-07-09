@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ADC14IER1_SPEC>> for R {
+impl From<crate::R<ADC14IER1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ADC14IER1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ADC14IER1_SPEC>> for W {
+impl From<crate::W<ADC14IER1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ADC14IER1_SPEC>) -> Self {
         W(writer)
     }
@@ -47,12 +49,9 @@ impl From<ADC14INIE_A> for bool {
     }
 }
 #[doc = "Field `ADC14INIE` reader - Interrupt enable for ADC14MEMx within comparator window"]
-pub struct ADC14INIE_R(crate::FieldReader<bool, ADC14INIE_A>);
+pub type ADC14INIE_R = crate::BitReader<ADC14INIE_A>;
 impl ADC14INIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC14INIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14INIE_A {
         match self.bits {
@@ -63,31 +62,17 @@ impl ADC14INIE_R {
     #[doc = "Checks if the value of the field is `ADC14INIE_0`"]
     #[inline(always)]
     pub fn is_adc14inie_0(&self) -> bool {
-        **self == ADC14INIE_A::ADC14INIE_0
+        *self == ADC14INIE_A::ADC14INIE_0
     }
     #[doc = "Checks if the value of the field is `ADC14INIE_1`"]
     #[inline(always)]
     pub fn is_adc14inie_1(&self) -> bool {
-        **self == ADC14INIE_A::ADC14INIE_1
-    }
-}
-impl core::ops::Deref for ADC14INIE_R {
-    type Target = crate::FieldReader<bool, ADC14INIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14INIE_A::ADC14INIE_1
     }
 }
 #[doc = "Field `ADC14INIE` writer - Interrupt enable for ADC14MEMx within comparator window"]
-pub struct ADC14INIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14INIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14INIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADC14INIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC14IER1_SPEC, ADC14INIE_A, O>;
+impl<'a, const O: u8> ADC14INIE_W<'a, O> {
     #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn adc14inie_0(self) -> &'a mut W {
@@ -97,22 +82,6 @@ impl<'a> ADC14INIE_W<'a> {
     #[inline(always)]
     pub fn adc14inie_1(self) -> &'a mut W {
         self.variant(ADC14INIE_A::ADC14INIE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
     }
 }
 #[doc = "Interrupt enable for ADC14MEMx below comparator window\n\nValue on reset: 0"]
@@ -130,12 +99,9 @@ impl From<ADC14LOIE_A> for bool {
     }
 }
 #[doc = "Field `ADC14LOIE` reader - Interrupt enable for ADC14MEMx below comparator window"]
-pub struct ADC14LOIE_R(crate::FieldReader<bool, ADC14LOIE_A>);
+pub type ADC14LOIE_R = crate::BitReader<ADC14LOIE_A>;
 impl ADC14LOIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC14LOIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14LOIE_A {
         match self.bits {
@@ -146,31 +112,17 @@ impl ADC14LOIE_R {
     #[doc = "Checks if the value of the field is `ADC14LOIE_0`"]
     #[inline(always)]
     pub fn is_adc14loie_0(&self) -> bool {
-        **self == ADC14LOIE_A::ADC14LOIE_0
+        *self == ADC14LOIE_A::ADC14LOIE_0
     }
     #[doc = "Checks if the value of the field is `ADC14LOIE_1`"]
     #[inline(always)]
     pub fn is_adc14loie_1(&self) -> bool {
-        **self == ADC14LOIE_A::ADC14LOIE_1
-    }
-}
-impl core::ops::Deref for ADC14LOIE_R {
-    type Target = crate::FieldReader<bool, ADC14LOIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14LOIE_A::ADC14LOIE_1
     }
 }
 #[doc = "Field `ADC14LOIE` writer - Interrupt enable for ADC14MEMx below comparator window"]
-pub struct ADC14LOIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14LOIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14LOIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADC14LOIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC14IER1_SPEC, ADC14LOIE_A, O>;
+impl<'a, const O: u8> ADC14LOIE_W<'a, O> {
     #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn adc14loie_0(self) -> &'a mut W {
@@ -180,22 +132,6 @@ impl<'a> ADC14LOIE_W<'a> {
     #[inline(always)]
     pub fn adc14loie_1(self) -> &'a mut W {
         self.variant(ADC14LOIE_A::ADC14LOIE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
     }
 }
 #[doc = "Interrupt enable for ADC14MEMx above comparator window\n\nValue on reset: 0"]
@@ -213,12 +149,9 @@ impl From<ADC14HIIE_A> for bool {
     }
 }
 #[doc = "Field `ADC14HIIE` reader - Interrupt enable for ADC14MEMx above comparator window"]
-pub struct ADC14HIIE_R(crate::FieldReader<bool, ADC14HIIE_A>);
+pub type ADC14HIIE_R = crate::BitReader<ADC14HIIE_A>;
 impl ADC14HIIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC14HIIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14HIIE_A {
         match self.bits {
@@ -229,31 +162,17 @@ impl ADC14HIIE_R {
     #[doc = "Checks if the value of the field is `ADC14HIIE_0`"]
     #[inline(always)]
     pub fn is_adc14hiie_0(&self) -> bool {
-        **self == ADC14HIIE_A::ADC14HIIE_0
+        *self == ADC14HIIE_A::ADC14HIIE_0
     }
     #[doc = "Checks if the value of the field is `ADC14HIIE_1`"]
     #[inline(always)]
     pub fn is_adc14hiie_1(&self) -> bool {
-        **self == ADC14HIIE_A::ADC14HIIE_1
-    }
-}
-impl core::ops::Deref for ADC14HIIE_R {
-    type Target = crate::FieldReader<bool, ADC14HIIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14HIIE_A::ADC14HIIE_1
     }
 }
 #[doc = "Field `ADC14HIIE` writer - Interrupt enable for ADC14MEMx above comparator window"]
-pub struct ADC14HIIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14HIIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14HIIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADC14HIIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC14IER1_SPEC, ADC14HIIE_A, O>;
+impl<'a, const O: u8> ADC14HIIE_W<'a, O> {
     #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn adc14hiie_0(self) -> &'a mut W {
@@ -263,22 +182,6 @@ impl<'a> ADC14HIIE_W<'a> {
     #[inline(always)]
     pub fn adc14hiie_1(self) -> &'a mut W {
         self.variant(ADC14HIIE_A::ADC14HIIE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
     }
 }
 #[doc = "ADC14MEMx overflow-interrupt enable\n\nValue on reset: 0"]
@@ -296,12 +199,9 @@ impl From<ADC14OVIE_A> for bool {
     }
 }
 #[doc = "Field `ADC14OVIE` reader - ADC14MEMx overflow-interrupt enable"]
-pub struct ADC14OVIE_R(crate::FieldReader<bool, ADC14OVIE_A>);
+pub type ADC14OVIE_R = crate::BitReader<ADC14OVIE_A>;
 impl ADC14OVIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC14OVIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14OVIE_A {
         match self.bits {
@@ -312,31 +212,17 @@ impl ADC14OVIE_R {
     #[doc = "Checks if the value of the field is `ADC14OVIE_0`"]
     #[inline(always)]
     pub fn is_adc14ovie_0(&self) -> bool {
-        **self == ADC14OVIE_A::ADC14OVIE_0
+        *self == ADC14OVIE_A::ADC14OVIE_0
     }
     #[doc = "Checks if the value of the field is `ADC14OVIE_1`"]
     #[inline(always)]
     pub fn is_adc14ovie_1(&self) -> bool {
-        **self == ADC14OVIE_A::ADC14OVIE_1
-    }
-}
-impl core::ops::Deref for ADC14OVIE_R {
-    type Target = crate::FieldReader<bool, ADC14OVIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14OVIE_A::ADC14OVIE_1
     }
 }
 #[doc = "Field `ADC14OVIE` writer - ADC14MEMx overflow-interrupt enable"]
-pub struct ADC14OVIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14OVIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14OVIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADC14OVIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC14IER1_SPEC, ADC14OVIE_A, O>;
+impl<'a, const O: u8> ADC14OVIE_W<'a, O> {
     #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn adc14ovie_0(self) -> &'a mut W {
@@ -346,22 +232,6 @@ impl<'a> ADC14OVIE_W<'a> {
     #[inline(always)]
     pub fn adc14ovie_1(self) -> &'a mut W {
         self.variant(ADC14OVIE_A::ADC14OVIE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
     }
 }
 #[doc = "ADC14 conversion-time-overflow interrupt enable\n\nValue on reset: 0"]
@@ -379,12 +249,9 @@ impl From<ADC14TOVIE_A> for bool {
     }
 }
 #[doc = "Field `ADC14TOVIE` reader - ADC14 conversion-time-overflow interrupt enable"]
-pub struct ADC14TOVIE_R(crate::FieldReader<bool, ADC14TOVIE_A>);
+pub type ADC14TOVIE_R = crate::BitReader<ADC14TOVIE_A>;
 impl ADC14TOVIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC14TOVIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14TOVIE_A {
         match self.bits {
@@ -395,31 +262,17 @@ impl ADC14TOVIE_R {
     #[doc = "Checks if the value of the field is `ADC14TOVIE_0`"]
     #[inline(always)]
     pub fn is_adc14tovie_0(&self) -> bool {
-        **self == ADC14TOVIE_A::ADC14TOVIE_0
+        *self == ADC14TOVIE_A::ADC14TOVIE_0
     }
     #[doc = "Checks if the value of the field is `ADC14TOVIE_1`"]
     #[inline(always)]
     pub fn is_adc14tovie_1(&self) -> bool {
-        **self == ADC14TOVIE_A::ADC14TOVIE_1
-    }
-}
-impl core::ops::Deref for ADC14TOVIE_R {
-    type Target = crate::FieldReader<bool, ADC14TOVIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14TOVIE_A::ADC14TOVIE_1
     }
 }
 #[doc = "Field `ADC14TOVIE` writer - ADC14 conversion-time-overflow interrupt enable"]
-pub struct ADC14TOVIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14TOVIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14TOVIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADC14TOVIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC14IER1_SPEC, ADC14TOVIE_A, O>;
+impl<'a, const O: u8> ADC14TOVIE_W<'a, O> {
     #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn adc14tovie_0(self) -> &'a mut W {
@@ -429,22 +282,6 @@ impl<'a> ADC14TOVIE_W<'a> {
     #[inline(always)]
     pub fn adc14tovie_1(self) -> &'a mut W {
         self.variant(ADC14TOVIE_A::ADC14TOVIE_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
     }
 }
 #[doc = "ADC14 local buffered reference ready interrupt enable\n\nValue on reset: 0"]
@@ -462,12 +299,9 @@ impl From<ADC14RDYIE_A> for bool {
     }
 }
 #[doc = "Field `ADC14RDYIE` reader - ADC14 local buffered reference ready interrupt enable"]
-pub struct ADC14RDYIE_R(crate::FieldReader<bool, ADC14RDYIE_A>);
+pub type ADC14RDYIE_R = crate::BitReader<ADC14RDYIE_A>;
 impl ADC14RDYIE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC14RDYIE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC14RDYIE_A {
         match self.bits {
@@ -478,31 +312,17 @@ impl ADC14RDYIE_R {
     #[doc = "Checks if the value of the field is `ADC14RDYIE_0`"]
     #[inline(always)]
     pub fn is_adc14rdyie_0(&self) -> bool {
-        **self == ADC14RDYIE_A::ADC14RDYIE_0
+        *self == ADC14RDYIE_A::ADC14RDYIE_0
     }
     #[doc = "Checks if the value of the field is `ADC14RDYIE_1`"]
     #[inline(always)]
     pub fn is_adc14rdyie_1(&self) -> bool {
-        **self == ADC14RDYIE_A::ADC14RDYIE_1
-    }
-}
-impl core::ops::Deref for ADC14RDYIE_R {
-    type Target = crate::FieldReader<bool, ADC14RDYIE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC14RDYIE_A::ADC14RDYIE_1
     }
 }
 #[doc = "Field `ADC14RDYIE` writer - ADC14 local buffered reference ready interrupt enable"]
-pub struct ADC14RDYIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC14RDYIE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC14RDYIE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ADC14RDYIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC14IER1_SPEC, ADC14RDYIE_A, O>;
+impl<'a, const O: u8> ADC14RDYIE_W<'a, O> {
     #[doc = "Interrupt disabled"]
     #[inline(always)]
     pub fn adc14rdyie_0(self) -> &'a mut W {
@@ -513,87 +333,72 @@ impl<'a> ADC14RDYIE_W<'a> {
     pub fn adc14rdyie_1(self) -> &'a mut W {
         self.variant(ADC14RDYIE_A::ADC14RDYIE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 1 - Interrupt enable for ADC14MEMx within comparator window"]
     #[inline(always)]
     pub fn adc14inie(&self) -> ADC14INIE_R {
-        ADC14INIE_R::new(((self.bits >> 1) & 0x01) != 0)
+        ADC14INIE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Interrupt enable for ADC14MEMx below comparator window"]
     #[inline(always)]
     pub fn adc14loie(&self) -> ADC14LOIE_R {
-        ADC14LOIE_R::new(((self.bits >> 2) & 0x01) != 0)
+        ADC14LOIE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Interrupt enable for ADC14MEMx above comparator window"]
     #[inline(always)]
     pub fn adc14hiie(&self) -> ADC14HIIE_R {
-        ADC14HIIE_R::new(((self.bits >> 3) & 0x01) != 0)
+        ADC14HIIE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - ADC14MEMx overflow-interrupt enable"]
     #[inline(always)]
     pub fn adc14ovie(&self) -> ADC14OVIE_R {
-        ADC14OVIE_R::new(((self.bits >> 4) & 0x01) != 0)
+        ADC14OVIE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - ADC14 conversion-time-overflow interrupt enable"]
     #[inline(always)]
     pub fn adc14tovie(&self) -> ADC14TOVIE_R {
-        ADC14TOVIE_R::new(((self.bits >> 5) & 0x01) != 0)
+        ADC14TOVIE_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - ADC14 local buffered reference ready interrupt enable"]
     #[inline(always)]
     pub fn adc14rdyie(&self) -> ADC14RDYIE_R {
-        ADC14RDYIE_R::new(((self.bits >> 6) & 0x01) != 0)
+        ADC14RDYIE_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 1 - Interrupt enable for ADC14MEMx within comparator window"]
     #[inline(always)]
-    pub fn adc14inie(&mut self) -> ADC14INIE_W {
-        ADC14INIE_W { w: self }
+    pub fn adc14inie(&mut self) -> ADC14INIE_W<1> {
+        ADC14INIE_W::new(self)
     }
     #[doc = "Bit 2 - Interrupt enable for ADC14MEMx below comparator window"]
     #[inline(always)]
-    pub fn adc14loie(&mut self) -> ADC14LOIE_W {
-        ADC14LOIE_W { w: self }
+    pub fn adc14loie(&mut self) -> ADC14LOIE_W<2> {
+        ADC14LOIE_W::new(self)
     }
     #[doc = "Bit 3 - Interrupt enable for ADC14MEMx above comparator window"]
     #[inline(always)]
-    pub fn adc14hiie(&mut self) -> ADC14HIIE_W {
-        ADC14HIIE_W { w: self }
+    pub fn adc14hiie(&mut self) -> ADC14HIIE_W<3> {
+        ADC14HIIE_W::new(self)
     }
     #[doc = "Bit 4 - ADC14MEMx overflow-interrupt enable"]
     #[inline(always)]
-    pub fn adc14ovie(&mut self) -> ADC14OVIE_W {
-        ADC14OVIE_W { w: self }
+    pub fn adc14ovie(&mut self) -> ADC14OVIE_W<4> {
+        ADC14OVIE_W::new(self)
     }
     #[doc = "Bit 5 - ADC14 conversion-time-overflow interrupt enable"]
     #[inline(always)]
-    pub fn adc14tovie(&mut self) -> ADC14TOVIE_W {
-        ADC14TOVIE_W { w: self }
+    pub fn adc14tovie(&mut self) -> ADC14TOVIE_W<5> {
+        ADC14TOVIE_W::new(self)
     }
     #[doc = "Bit 6 - ADC14 local buffered reference ready interrupt enable"]
     #[inline(always)]
-    pub fn adc14rdyie(&mut self) -> ADC14RDYIE_W {
-        ADC14RDYIE_W { w: self }
+    pub fn adc14rdyie(&mut self) -> ADC14RDYIE_W<6> {
+        ADC14RDYIE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

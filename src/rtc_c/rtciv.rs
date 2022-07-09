@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RTCIV_SPEC>> for R {
+impl From<crate::R<RTCIV_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RTCIV_SPEC>) -> Self {
         R(reader)
     }
@@ -38,12 +39,9 @@ impl From<RTCIV_A> for u16 {
     }
 }
 #[doc = "Field `RTCIV` reader - Real-time clock interrupt vector value"]
-pub struct RTCIV_R(crate::FieldReader<u16, RTCIV_A>);
+pub type RTCIV_R = crate::FieldReader<u16, RTCIV_A>;
 impl RTCIV_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RTCIV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RTCIV_A> {
         match self.bits {
@@ -60,51 +58,44 @@ impl RTCIV_R {
     #[doc = "Checks if the value of the field is `RTCIV_0`"]
     #[inline(always)]
     pub fn is_rtciv_0(&self) -> bool {
-        **self == RTCIV_A::RTCIV_0
+        *self == RTCIV_A::RTCIV_0
     }
     #[doc = "Checks if the value of the field is `RTCIV_2`"]
     #[inline(always)]
     pub fn is_rtciv_2(&self) -> bool {
-        **self == RTCIV_A::RTCIV_2
+        *self == RTCIV_A::RTCIV_2
     }
     #[doc = "Checks if the value of the field is `RTCIV_4`"]
     #[inline(always)]
     pub fn is_rtciv_4(&self) -> bool {
-        **self == RTCIV_A::RTCIV_4
+        *self == RTCIV_A::RTCIV_4
     }
     #[doc = "Checks if the value of the field is `RTCIV_6`"]
     #[inline(always)]
     pub fn is_rtciv_6(&self) -> bool {
-        **self == RTCIV_A::RTCIV_6
+        *self == RTCIV_A::RTCIV_6
     }
     #[doc = "Checks if the value of the field is `RTCIV_8`"]
     #[inline(always)]
     pub fn is_rtciv_8(&self) -> bool {
-        **self == RTCIV_A::RTCIV_8
+        *self == RTCIV_A::RTCIV_8
     }
     #[doc = "Checks if the value of the field is `RTCIV_10`"]
     #[inline(always)]
     pub fn is_rtciv_10(&self) -> bool {
-        **self == RTCIV_A::RTCIV_10
+        *self == RTCIV_A::RTCIV_10
     }
     #[doc = "Checks if the value of the field is `RTCIV_12`"]
     #[inline(always)]
     pub fn is_rtciv_12(&self) -> bool {
-        **self == RTCIV_A::RTCIV_12
-    }
-}
-impl core::ops::Deref for RTCIV_R {
-    type Target = crate::FieldReader<u16, RTCIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RTCIV_A::RTCIV_12
     }
 }
 impl R {
     #[doc = "Bits 0:15 - Real-time clock interrupt vector value"]
     #[inline(always)]
     pub fn rtciv(&self) -> RTCIV_R {
-        RTCIV_R::new((self.bits & 0xffff) as u16)
+        RTCIV_R::new(self.bits)
     }
 }
 #[doc = "Real-Time Clock Interrupt Vector Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtciv](index.html) module"]

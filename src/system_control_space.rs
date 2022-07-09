@@ -1,7 +1,7 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    _reserved0: [u8; 4usize],
+    _reserved0: [u8; 0x04],
     #[doc = "0x04 - Interrupt Control Type Register"]
     pub ictr: crate::Reg<ictr::ICTR_SPEC>,
     #[doc = "0x08 - Auxiliary Control Register"]

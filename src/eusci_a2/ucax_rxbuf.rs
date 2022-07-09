@@ -7,25 +7,14 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<UCAXRXBUF_SPEC>> for R {
+impl From<crate::R<UCAXRXBUF_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<UCAXRXBUF_SPEC>) -> Self {
         R(reader)
     }
 }
 #[doc = "Field `UCRXBUF` reader - Receive data buffer"]
-pub struct UCRXBUF_R(crate::FieldReader<u8, u8>);
-impl UCRXBUF_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        UCRXBUF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UCRXBUF_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UCRXBUF_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Receive data buffer"]
     #[inline(always)]

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RTCTIM0_SPEC>> for R {
+impl From<crate::R<RTCTIM0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RTCTIM0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,63 +28,20 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RTCTIM0_SPEC>> for W {
+impl From<crate::W<RTCTIM0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RTCTIM0_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `Seconds` reader - Seconds (0 to 59)"]
-pub struct SECONDS_R(crate::FieldReader<u8, u8>);
-impl SECONDS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SECONDS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SECONDS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SECONDS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Seconds` writer - Seconds (0 to 59)"]
-pub struct SECONDS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SECONDS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u16 & 0x3f);
-        self.w
-    }
-}
+pub type SECONDS_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCTIM0_SPEC, u8, u8, 6, O>;
 #[doc = "Field `Minutes` reader - Minutes (0 to 59)"]
-pub struct MINUTES_R(crate::FieldReader<u8, u8>);
-impl MINUTES_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MINUTES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MINUTES_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MINUTES_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Minutes` writer - Minutes (0 to 59)"]
-pub struct MINUTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MINUTES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | ((value as u16 & 0x3f) << 8);
-        self.w
-    }
-}
+pub type MINUTES_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCTIM0_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Seconds (0 to 59)"]
     #[inline(always)]
@@ -99,15 +57,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Seconds (0 to 59)"]
     #[inline(always)]
-    pub fn seconds(&mut self) -> SECONDS_W {
-        SECONDS_W { w: self }
+    pub fn seconds(&mut self) -> SECONDS_W<0> {
+        SECONDS_W::new(self)
     }
     #[doc = "Bits 8:13 - Minutes (0 to 59)"]
     #[inline(always)]
-    pub fn minutes(&mut self) -> MINUTES_W {
-        MINUTES_W { w: self }
+    pub fn minutes(&mut self) -> MINUTES_W<8> {
+        MINUTES_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

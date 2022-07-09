@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PCSEL1_SPEC>> for R {
+impl From<crate::R<PCSEL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PCSEL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,63 +28,20 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PCSEL1_SPEC>> for W {
+impl From<crate::W<PCSEL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PCSEL1_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `P5SEL1` reader - Port 5 Select 1"]
-pub struct P5SEL1_R(crate::FieldReader<u8, u8>);
-impl P5SEL1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P5SEL1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P5SEL1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P5SEL1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P5SEL1` writer - Port 5 Select 1"]
-pub struct P5SEL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P5SEL1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
-        self.w
-    }
-}
+pub type P5SEL1_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PCSEL1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `P6SEL1` reader - Port 6 Select 1"]
-pub struct P6SEL1_R(crate::FieldReader<u8, u8>);
-impl P6SEL1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        P6SEL1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P6SEL1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P6SEL1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `P6SEL1` writer - Port 6 Select 1"]
-pub struct P6SEL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P6SEL1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u16 & 0xff) << 8);
-        self.w
-    }
-}
+pub type P6SEL1_W<'a, const O: u8> = crate::FieldWriter<'a, u16, PCSEL1_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Port 5 Select 1"]
     #[inline(always)]
@@ -99,15 +57,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Port 5 Select 1"]
     #[inline(always)]
-    pub fn p5sel1(&mut self) -> P5SEL1_W {
-        P5SEL1_W { w: self }
+    pub fn p5sel1(&mut self) -> P5SEL1_W<0> {
+        P5SEL1_W::new(self)
     }
     #[doc = "Bits 8:15 - Port 6 Select 1"]
     #[inline(always)]
-    pub fn p6sel1(&mut self) -> P6SEL1_W {
-        P6SEL1_W { w: self }
+    pub fn p6sel1(&mut self) -> P6SEL1_W<8> {
+        P6SEL1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

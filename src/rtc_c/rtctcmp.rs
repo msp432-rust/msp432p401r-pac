@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RTCTCMP_SPEC>> for R {
+impl From<crate::R<RTCTCMP_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RTCTCMP_SPEC>) -> Self {
         R(reader)
     }
@@ -27,37 +28,16 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RTCTCMP_SPEC>> for W {
+impl From<crate::W<RTCTCMP_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RTCTCMP_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `RTCTCMP` reader - Real-time clock temperature compensation"]
-pub struct RTCTCMP_R(crate::FieldReader<u8, u8>);
-impl RTCTCMP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RTCTCMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTCTCMP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTCTCMP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RTCTCMP` writer - Real-time clock temperature compensation"]
-pub struct RTCTCMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCTCMP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u16 & 0xff);
-        self.w
-    }
-}
+pub type RTCTCMP_W<'a, const O: u8> = crate::FieldWriter<'a, u16, RTCTCMP_SPEC, u8, u8, 8, O>;
 #[doc = "Real-time clock temperature compensation write OK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCTCOK_A {
@@ -73,12 +53,9 @@ impl From<RTCTCOK_A> for bool {
     }
 }
 #[doc = "Field `RTCTCOK` reader - Real-time clock temperature compensation write OK"]
-pub struct RTCTCOK_R(crate::FieldReader<bool, RTCTCOK_A>);
+pub type RTCTCOK_R = crate::BitReader<RTCTCOK_A>;
 impl RTCTCOK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCTCOK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCTCOK_A {
         match self.bits {
@@ -89,35 +66,16 @@ impl RTCTCOK_R {
     #[doc = "Checks if the value of the field is `RTCTCOK_0`"]
     #[inline(always)]
     pub fn is_rtctcok_0(&self) -> bool {
-        **self == RTCTCOK_A::RTCTCOK_0
+        *self == RTCTCOK_A::RTCTCOK_0
     }
     #[doc = "Checks if the value of the field is `RTCTCOK_1`"]
     #[inline(always)]
     pub fn is_rtctcok_1(&self) -> bool {
-        **self == RTCTCOK_A::RTCTCOK_1
-    }
-}
-impl core::ops::Deref for RTCTCOK_R {
-    type Target = crate::FieldReader<bool, RTCTCOK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RTCTCOK_A::RTCTCOK_1
     }
 }
 #[doc = "Field `RTCTCRDY` reader - Real-time clock temperature compensation ready"]
-pub struct RTCTCRDY_R(crate::FieldReader<bool, bool>);
-impl RTCTCRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCTCRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTCTCRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTCTCRDY_R = crate::BitReader<bool>;
 #[doc = "Real-time clock temperature compensation sign\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCTCMPS_A {
@@ -133,12 +91,9 @@ impl From<RTCTCMPS_A> for bool {
     }
 }
 #[doc = "Field `RTCTCMPS` reader - Real-time clock temperature compensation sign"]
-pub struct RTCTCMPS_R(crate::FieldReader<bool, RTCTCMPS_A>);
+pub type RTCTCMPS_R = crate::BitReader<RTCTCMPS_A>;
 impl RTCTCMPS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCTCMPS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCTCMPS_A {
         match self.bits {
@@ -149,31 +104,17 @@ impl RTCTCMPS_R {
     #[doc = "Checks if the value of the field is `RTCTCMPS_0`"]
     #[inline(always)]
     pub fn is_rtctcmps_0(&self) -> bool {
-        **self == RTCTCMPS_A::RTCTCMPS_0
+        *self == RTCTCMPS_A::RTCTCMPS_0
     }
     #[doc = "Checks if the value of the field is `RTCTCMPS_1`"]
     #[inline(always)]
     pub fn is_rtctcmps_1(&self) -> bool {
-        **self == RTCTCMPS_A::RTCTCMPS_1
-    }
-}
-impl core::ops::Deref for RTCTCMPS_R {
-    type Target = crate::FieldReader<bool, RTCTCMPS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RTCTCMPS_A::RTCTCMPS_1
     }
 }
 #[doc = "Field `RTCTCMPS` writer - Real-time clock temperature compensation sign"]
-pub struct RTCTCMPS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCTCMPS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RTCTCMPS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RTCTCMPS_W<'a, const O: u8> = crate::BitWriter<'a, u16, RTCTCMP_SPEC, RTCTCMPS_A, O>;
+impl<'a, const O: u8> RTCTCMPS_W<'a, O> {
     #[doc = "Down calibration. Frequency adjusted down"]
     #[inline(always)]
     pub fn rtctcmps_0(self) -> &'a mut W {
@@ -183,22 +124,6 @@ impl<'a> RTCTCMPS_W<'a> {
     #[inline(always)]
     pub fn rtctcmps_1(self) -> &'a mut W {
         self.variant(RTCTCMPS_A::RTCTCMPS_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u16 & 0x01) << 15);
-        self.w
     }
 }
 impl R {
@@ -210,31 +135,32 @@ impl R {
     #[doc = "Bit 13 - Real-time clock temperature compensation write OK"]
     #[inline(always)]
     pub fn rtctcok(&self) -> RTCTCOK_R {
-        RTCTCOK_R::new(((self.bits >> 13) & 0x01) != 0)
+        RTCTCOK_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Real-time clock temperature compensation ready"]
     #[inline(always)]
     pub fn rtctcrdy(&self) -> RTCTCRDY_R {
-        RTCTCRDY_R::new(((self.bits >> 14) & 0x01) != 0)
+        RTCTCRDY_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Real-time clock temperature compensation sign"]
     #[inline(always)]
     pub fn rtctcmps(&self) -> RTCTCMPS_R {
-        RTCTCMPS_R::new(((self.bits >> 15) & 0x01) != 0)
+        RTCTCMPS_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Real-time clock temperature compensation"]
     #[inline(always)]
-    pub fn rtctcmp(&mut self) -> RTCTCMP_W {
-        RTCTCMP_W { w: self }
+    pub fn rtctcmp(&mut self) -> RTCTCMP_W<0> {
+        RTCTCMP_W::new(self)
     }
     #[doc = "Bit 15 - Real-time clock temperature compensation sign"]
     #[inline(always)]
-    pub fn rtctcmps(&mut self) -> RTCTCMPS_W {
-        RTCTCMPS_W { w: self }
+    pub fn rtctcmps(&mut self) -> RTCTCMPS_W<15> {
+        RTCTCMPS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u16) -> &mut Self {
         self.0.bits(bits);
         self

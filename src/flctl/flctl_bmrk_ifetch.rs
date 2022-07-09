@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_BMRK_IFETCH_SPEC>> for R {
+impl From<crate::R<FLCTL_BMRK_IFETCH_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_BMRK_IFETCH_SPEC>) -> Self {
         R(reader)
     }
@@ -27,51 +28,32 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FLCTL_BMRK_IFETCH_SPEC>> for W {
+impl From<crate::W<FLCTL_BMRK_IFETCH_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FLCTL_BMRK_IFETCH_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `COUNT` reader - Reflects the number of Instruction Fetches to the Flash (increments by one on each fetch)"]
-pub struct COUNT_R(crate::FieldReader<u32, u32>);
-impl COUNT_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        COUNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COUNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COUNT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `COUNT` writer - Reflects the number of Instruction Fetches to the Flash (increments by one on each fetch)"]
-pub struct COUNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COUNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type COUNT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FLCTL_BMRK_IFETCH_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Reflects the number of Instruction Fetches to the Flash (increments by one on each fetch)"]
     #[inline(always)]
     pub fn count(&self) -> COUNT_R {
-        COUNT_R::new((self.bits & 0xffff_ffff) as u32)
+        COUNT_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Reflects the number of Instruction Fetches to the Flash (increments by one on each fetch)"]
     #[inline(always)]
-    pub fn count(&mut self) -> COUNT_W {
-        COUNT_W { w: self }
+    pub fn count(&mut self) -> COUNT_W<0> {
+        COUNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

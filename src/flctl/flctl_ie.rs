@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_IE_SPEC>> for R {
+impl From<crate::R<FLCTL_IE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_IE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,383 +28,129 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FLCTL_IE_SPEC>> for W {
+impl From<crate::W<FLCTL_IE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FLCTL_IE_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `RDBRST` reader - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct RDBRST_R(crate::FieldReader<bool, bool>);
-impl RDBRST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RDBRST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RDBRST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RDBRST_R = crate::BitReader<bool>;
 #[doc = "Field `RDBRST` writer - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct RDBRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RDBRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RDBRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_IE_SPEC, bool, O>;
 #[doc = "Field `AVPRE` reader - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct AVPRE_R(crate::FieldReader<bool, bool>);
-impl AVPRE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AVPRE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AVPRE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AVPRE_R = crate::BitReader<bool>;
 #[doc = "Field `AVPRE` writer - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct AVPRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AVPRE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type AVPRE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_IE_SPEC, bool, O>;
 #[doc = "Field `AVPST` reader - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct AVPST_R(crate::FieldReader<bool, bool>);
-impl AVPST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AVPST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AVPST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AVPST_R = crate::BitReader<bool>;
 #[doc = "Field `AVPST` writer - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct AVPST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AVPST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type AVPST_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_IE_SPEC, bool, O>;
 #[doc = "Field `PRG` reader - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct PRG_R(crate::FieldReader<bool, bool>);
-impl PRG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRG_R = crate::BitReader<bool>;
 #[doc = "Field `PRG` writer - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct PRG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type PRG_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_IE_SPEC, bool, O>;
 #[doc = "Field `PRGB` reader - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct PRGB_R(crate::FieldReader<bool, bool>);
-impl PRGB_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRGB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRGB_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRGB_R = crate::BitReader<bool>;
 #[doc = "Field `PRGB` writer - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct PRGB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRGB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type PRGB_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_IE_SPEC, bool, O>;
 #[doc = "Field `ERASE` reader - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct ERASE_R(crate::FieldReader<bool, bool>);
-impl ERASE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ERASE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERASE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERASE_R = crate::BitReader<bool>;
 #[doc = "Field `ERASE` writer - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct ERASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERASE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_IE_SPEC, bool, O>;
 #[doc = "Field `BMRK` reader - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct BMRK_R(crate::FieldReader<bool, bool>);
-impl BMRK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BMRK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BMRK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BMRK_R = crate::BitReader<bool>;
 #[doc = "Field `BMRK` writer - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct BMRK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BMRK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type BMRK_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_IE_SPEC, bool, O>;
 #[doc = "Field `PRG_ERR` reader - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct PRG_ERR_R(crate::FieldReader<bool, bool>);
-impl PRG_ERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PRG_ERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRG_ERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRG_ERR_R = crate::BitReader<bool>;
 #[doc = "Field `PRG_ERR` writer - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
-pub struct PRG_ERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRG_ERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type PRG_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLCTL_IE_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
     pub fn rdbrst(&self) -> RDBRST_R {
-        RDBRST_R::new((self.bits & 0x01) != 0)
+        RDBRST_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
     pub fn avpre(&self) -> AVPRE_R {
-        AVPRE_R::new(((self.bits >> 1) & 0x01) != 0)
+        AVPRE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
     pub fn avpst(&self) -> AVPST_R {
-        AVPST_R::new(((self.bits >> 2) & 0x01) != 0)
+        AVPST_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
     pub fn prg(&self) -> PRG_R {
-        PRG_R::new(((self.bits >> 3) & 0x01) != 0)
+        PRG_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
     pub fn prgb(&self) -> PRGB_R {
-        PRGB_R::new(((self.bits >> 4) & 0x01) != 0)
+        PRGB_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
     pub fn erase(&self) -> ERASE_R {
-        ERASE_R::new(((self.bits >> 5) & 0x01) != 0)
+        ERASE_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 8 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
     pub fn bmrk(&self) -> BMRK_R {
-        BMRK_R::new(((self.bits >> 8) & 0x01) != 0)
+        BMRK_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
     pub fn prg_err(&self) -> PRG_ERR_R {
-        PRG_ERR_R::new(((self.bits >> 9) & 0x01) != 0)
+        PRG_ERR_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn rdbrst(&mut self) -> RDBRST_W {
-        RDBRST_W { w: self }
+    pub fn rdbrst(&mut self) -> RDBRST_W<0> {
+        RDBRST_W::new(self)
     }
     #[doc = "Bit 1 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn avpre(&mut self) -> AVPRE_W {
-        AVPRE_W { w: self }
+    pub fn avpre(&mut self) -> AVPRE_W<1> {
+        AVPRE_W::new(self)
     }
     #[doc = "Bit 2 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn avpst(&mut self) -> AVPST_W {
-        AVPST_W { w: self }
+    pub fn avpst(&mut self) -> AVPST_W<2> {
+        AVPST_W::new(self)
     }
     #[doc = "Bit 3 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn prg(&mut self) -> PRG_W {
-        PRG_W { w: self }
+    pub fn prg(&mut self) -> PRG_W<3> {
+        PRG_W::new(self)
     }
     #[doc = "Bit 4 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn prgb(&mut self) -> PRGB_W {
-        PRGB_W { w: self }
+    pub fn prgb(&mut self) -> PRGB_W<4> {
+        PRGB_W::new(self)
     }
     #[doc = "Bit 5 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
-        ERASE_W { w: self }
+    pub fn erase(&mut self) -> ERASE_W<5> {
+        ERASE_W::new(self)
     }
     #[doc = "Bit 8 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn bmrk(&mut self) -> BMRK_W {
-        BMRK_W { w: self }
+    pub fn bmrk(&mut self) -> BMRK_W<8> {
+        BMRK_W::new(self)
     }
     #[doc = "Bit 9 - If set to 1, enables the Controller to generate an interrupt based on the corresponding bit in the FLCTL_IFG"]
     #[inline(always)]
-    pub fn prg_err(&mut self) -> PRG_ERR_W {
-        PRG_ERR_W { w: self }
+    pub fn prg_err(&mut self) -> PRG_ERR_W<9> {
+        PRG_ERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,53 +7,18 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLCTL_READ_TIMCTL_SPEC>> for R {
+impl From<crate::R<FLCTL_READ_TIMCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLCTL_READ_TIMCTL_SPEC>) -> Self {
         R(reader)
     }
 }
 #[doc = "Field `SETUP` reader - Configures the length of the Setup phase for this operation"]
-pub struct SETUP_R(crate::FieldReader<u8, u8>);
-impl SETUP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SETUP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SETUP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SETUP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IREF_BOOST1` reader - Length of the IREF_BOOST1 signal of the IP"]
-pub struct IREF_BOOST1_R(crate::FieldReader<u8, u8>);
-impl IREF_BOOST1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IREF_BOOST1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IREF_BOOST1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IREF_BOOST1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SETUP_LONG` reader - Length of the Setup time into read mode when the device is recovering from one of the following conditions: Moving from Power-down or Standby back to Active and device is not trimmed. Moving from standby to active state in low-frequency active mode. Recovering from the LDO Boost operation after a Mass Erase."]
-pub struct SETUP_LONG_R(crate::FieldReader<u8, u8>);
-impl SETUP_LONG_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SETUP_LONG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SETUP_LONG_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SETUP_LONG_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Configures the length of the Setup phase for this operation"]
     #[inline(always)]

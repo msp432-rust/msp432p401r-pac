@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<T32LOAD2_SPEC>> for R {
+impl From<crate::R<T32LOAD2_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<T32LOAD2_SPEC>) -> Self {
         R(reader)
     }
@@ -27,51 +28,31 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<T32LOAD2_SPEC>> for W {
+impl From<crate::W<T32LOAD2_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<T32LOAD2_SPEC>) -> Self {
         W(writer)
     }
 }
 #[doc = "Field `LOAD` reader - The value from which the Timer 2 counter decrements"]
-pub struct LOAD_R(crate::FieldReader<u32, u32>);
-impl LOAD_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        LOAD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOAD_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOAD_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `LOAD` writer - The value from which the Timer 2 counter decrements"]
-pub struct LOAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOAD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type LOAD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, T32LOAD2_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - The value from which the Timer 2 counter decrements"]
     #[inline(always)]
     pub fn load(&self) -> LOAD_R {
-        LOAD_R::new((self.bits & 0xffff_ffff) as u32)
+        LOAD_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - The value from which the Timer 2 counter decrements"]
     #[inline(always)]
-    pub fn load(&mut self) -> LOAD_W {
-        LOAD_W { w: self }
+    pub fn load(&mut self) -> LOAD_W<0> {
+        LOAD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
